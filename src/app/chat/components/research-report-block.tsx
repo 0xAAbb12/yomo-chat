@@ -2,9 +2,9 @@
 
 import { useCallback, useRef } from "react";
 
+import ReportEditor from "~/components/editor";
 import { LoadingAnimation } from "~/components/yomo/loading-animation";
 import { Markdown } from "~/components/yomo/markdown";
-import ReportEditor from "~/components/editor";
 import { useReplay } from "~/core/replay";
 import { useMessage, useStore } from "~/core/store";
 import { cn } from "~/lib/utils";

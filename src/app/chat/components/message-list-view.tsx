@@ -13,15 +13,6 @@ import {
 import { useTranslations } from "next-intl";
 import React, { useCallback, useMemo, useRef, useState } from "react";
 
-import { LoadingAnimation } from "~/components/yomo/loading-animation";
-import { Markdown } from "~/components/yomo/markdown";
-import { RainbowText } from "~/components/yomo/rainbow-text";
-import { RollingText } from "~/components/yomo/rolling-text";
-import {
-  ScrollContainer,
-  type ScrollContainerRef,
-} from "~/components/yomo/scroll-container";
-import { Tooltip } from "~/components/yomo/tooltip";
 import { Button } from "~/components/ui/button";
 import {
   Card,
@@ -35,6 +26,16 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "~/components/ui/collapsible";
+import { LoadingAnimation } from "~/components/yomo/loading-animation";
+import { Markdown } from "~/components/yomo/markdown";
+import { ProjectReport } from "~/components/yomo/project-report";
+import { RainbowText } from "~/components/yomo/rainbow-text";
+import { RollingText } from "~/components/yomo/rolling-text";
+import {
+  ScrollContainer,
+  type ScrollContainerRef,
+} from "~/components/yomo/scroll-container";
+import { Tooltip } from "~/components/yomo/tooltip";
 import type { Message, Option } from "~/core/messages";
 import {
   closeResearch,
@@ -48,7 +49,6 @@ import {
 } from "~/core/store";
 import { parseJSON } from "~/core/utils";
 import { cn } from "~/lib/utils";
-import { ProjectReport } from "~/components/yomo/project-report";
 
 export function MessageListView({
   className,
@@ -181,7 +181,7 @@ function MessageListItem({
       } else if (message.toolCalls) {
         const toolCall = message.toolCalls.find(f => f.name === 'generate_project_brief_report');
         if (toolCall) {
-          const projectData = JSON.parse(toolCall.result || '{}');
+          const projectData = JSON.parse(toolCall.result ?? '{}');
           content = (
             <div className="w-full px-4">
               <ProjectReport

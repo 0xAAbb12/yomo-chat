@@ -1,6 +1,8 @@
 import { type StateCreator } from "zustand";
-import type { RootState } from ".";
+
 import { LoginType } from "~/lib/modal/user";
+
+import type { RootState } from ".";
 
 export interface UserDetail {
   uid: number;

@@ -1,4 +1,3 @@
-import request, { base3Api, base4Api, base5Api } from "~/lib/request";
 import {
   type AssetsNetworkItem,
   type SendEmailCodeType,
@@ -12,6 +11,7 @@ import {
   type OperateLog,
   type UserInfo,
 } from "~/lib/modal/user";
+import request, { base3Api, base4Api, base5Api } from "~/lib/request";
 /**
  * 用户相关 API
  */

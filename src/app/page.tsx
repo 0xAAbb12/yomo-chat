@@ -1,6 +1,5 @@
 import AnimatedIllustration from '~/components/home/AnimatedIllustration';
 import ClientLayout from '~/components/layout/ClientLayout';
-
 // import { SiteHeader } from "./chat/components/site-header";
 // import { Jumbotron } from "./landing/components/jumbotron";
 // import { Ray } from "./landing/components/ray";

@@ -7,6 +7,7 @@ import {
   persist,
   createJSONStorage,
 } from "zustand/middleware";
+
 import { createUserSlice, type UserSlice } from "./user";
 
 export type RootState = UserSlice;

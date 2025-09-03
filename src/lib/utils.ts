@@ -1,16 +1,16 @@
 
 
+import BigNumber from "bignumber.js";
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
-import BigNumber from "bignumber.js";
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export const numFormat = (num: number | string, digits: number = 2) => {
+export const numFormat = (num: number | string, digits = 2) => {
   if (num !== undefined) {
     num = Number(String(num).replace(/\$\s?|(,*)/g, ""));
-    const si = [
+    const si: any = [
       { value: 1, symbol: "" },
       { value: 1e3, symbol: "K" },
       { value: 1e6, symbol: "M" },

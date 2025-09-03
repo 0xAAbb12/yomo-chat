@@ -1,5 +1,6 @@
 import axios, { type AxiosRequestConfig } from "axios";
 import _ from "lodash";
+
 import { env } from "~/env";
 
 const API_URL = env.NEXT_PUBLIC_API_BASE_URL;
@@ -40,10 +41,10 @@ export const base6Api = axios.create({
 const request = async <T = any>(
   instance:
     | typeof base2Api
-    | typeof base3Api
-    | typeof base4Api
-    | typeof base5Api
-    | typeof base6Api,
+     
+     
+     
+    ,
   config: AxiosRequestConfig
 ): Promise<MyResponseType<T>> => {
   try {
@@ -51,7 +52,7 @@ const request = async <T = any>(
 
     // 检查是否在支持 localStorage 的环境中
     if (typeof localStorage !== "undefined" && typeof window !== "undefined") {
-      const lighgData = JSON.parse(localStorage.getItem("yomo") || "{}");
+      const lighgData = JSON.parse(localStorage.getItem("yomo") ?? "{}");
       instance.defaults.headers.common["X-Auth-Token"] = _.get(
         lighgData,
         "state.token",

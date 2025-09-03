@@ -6,10 +6,10 @@ import Script from "next/script";
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
 
+import LoginAction from "~/components/dialogs/login-action";
 import { ThemeProviderWrapper } from "~/components/yomo/theme-provider-wrapper";
 
 import { Toaster } from "../components/yomo/toaster";
-import LoginAction from "~/components/dialogs/login-action";
 
 export const metadata: Metadata = {
   title: "Yomo",

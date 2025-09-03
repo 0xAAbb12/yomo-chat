@@ -1,7 +1,7 @@
 
 
 import { BadgeInfo } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 
 import { Markdown } from "~/components/yomo/markdown";
 
@@ -11,7 +11,7 @@ import type { Tab } from "./types";
 
 export const AboutTab: Tab = () => {
   const locale = useLocale();
-  const t = useTranslations("settings.about");
+  // const t = useTranslations("settings.about");
 
   const aboutContent = locale === "zh" ? aboutZh : aboutEn;
 

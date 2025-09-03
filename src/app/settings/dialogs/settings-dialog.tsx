@@ -4,7 +4,6 @@ import { Settings } from "lucide-react";
 import { useTranslations } from 'next-intl';
 import { useCallback, useEffect, useMemo, useState } from "react";
 
-import { Tooltip } from "~/components/yomo/tooltip";
 import { Badge } from "~/components/ui/badge";
 import { Button } from "~/components/ui/button";
 import {
@@ -17,6 +16,7 @@ import {
   DialogTrigger,
 } from "~/components/ui/dialog";
 import { Tabs, TabsContent } from "~/components/ui/tabs";
+import { Tooltip } from "~/components/yomo/tooltip";
 import { useReplay } from "~/core/replay";
 import {
   type SettingsState,

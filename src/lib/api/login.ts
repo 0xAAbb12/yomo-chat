@@ -1,6 +1,7 @@
+import { type ChainType, type LoginReq } from "~/lib/modal/user";
 import request, { base2Api } from "~/lib/request";
+
 import { type EmailRegisterParams, type EmailLoginParams } from "../modal/user";
-import { ChainType, type LoginReq } from "~/lib/modal/user";
 
 export const getEmailCode = (email: string) => {
   return request<boolean>(base2Api, {

@@ -1,19 +1,17 @@
-
-
 "use client";
 
-import { GithubOutlined } from "@ant-design/icons";
+// import { GithubOutlined } from "@ant-design/icons";
 import dynamic from "next/dynamic";
-import Link from "next/link";
-import { useTranslations } from "next-intl";
-import { Suspense } from "react";
+// import Link from "next/link";
+// import { useTranslations } from "next-intl";
+// import { Suspense } from "react";
 
-import { Button } from "~/components/ui/button";
+// import { Button } from "~/components/ui/button";
 
-import { Logo } from "../../components/yomo/logo";
-import { ThemeToggle } from "../../components/yomo/theme-toggle";
-import { Tooltip } from "../../components/yomo/tooltip";
-import { SettingsDialog } from "../settings/dialogs/settings-dialog";
+// import { Logo } from "../../components/yomo/logo";
+// import { ThemeToggle } from "../../components/yomo/theme-toggle";
+// import { Tooltip } from "../../components/yomo/tooltip";
+// import { SettingsDialog } from "../settings/dialogs/settings-dialog";
 
 const Main = dynamic(() => import("./main"), {
   ssr: false,
@@ -25,7 +23,7 @@ const Main = dynamic(() => import("./main"), {
 });
 
 export default function HomePage() {
-  const t = useTranslations("chat.page");
+  // const t = useTranslations("chat.page");
 
   return (
     <div className="flex h-screen w-screen justify-center overscroll-none">

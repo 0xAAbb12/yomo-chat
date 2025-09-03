@@ -5,7 +5,6 @@ import { FastForward, Play } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useCallback, useRef, useState } from "react";
 
-import { RainbowText } from "~/components/yomo/rainbow-text";
 import { Button } from "~/components/ui/button";
 import {
   Card,
@@ -13,6 +12,7 @@ import {
   CardHeader,
   CardTitle,
 } from "~/components/ui/card";
+import { RainbowText } from "~/components/yomo/rainbow-text";
 import { fastForwardReplay } from "~/core/api";
 import { useReplayMetadata } from "~/core/api/hooks";
 import type { Option, Resource } from "~/core/messages";

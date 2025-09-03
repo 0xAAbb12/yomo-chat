@@ -4,11 +4,11 @@ import { Check, Copy, Headphones, Pencil, Undo2, X, Download } from "lucide-reac
 import { useTranslations } from "next-intl";
 import { useCallback, useEffect, useState } from "react";
 
-import { ScrollContainer } from "~/components/yomo/scroll-container";
-import { Tooltip } from "~/components/yomo/tooltip";
 import { Button } from "~/components/ui/button";
 import { Card } from "~/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
+import { ScrollContainer } from "~/components/yomo/scroll-container";
+import { Tooltip } from "~/components/yomo/tooltip";
 import { useReplay } from "~/core/replay";
 import { closeResearch, listenToPodcast, useStore } from "~/core/store";
 import { cn } from "~/lib/utils";

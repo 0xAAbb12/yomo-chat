@@ -4,9 +4,9 @@ import { StarFilledIcon, GitHubLogoIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { useTranslations } from 'next-intl';
 
-import { LanguageSwitcher } from "~/components/yomo/language-switcher";
 import { NumberTicker } from "~/components/magicui/number-ticker";
 import { Button } from "~/components/ui/button";
+import { LanguageSwitcher } from "~/components/yomo/language-switcher";
 import { env } from "~/env";
 
 export function SiteHeader() {

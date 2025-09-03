@@ -7,10 +7,10 @@ import type { Resource } from "../messages";
 import { extractReplayIdFromSearchParams } from "../replay/get-replay-id";
 import { fetchStream } from "../sse";
 import { sleep } from "../utils";
+import ThreadMapStorage from "../utils/thread-map";
 
 import { resolveServiceURL } from "./resolve-service-url";
 import type { ChatEvent } from "./types";
-import ThreadMapStorage from "../utils/thread-map";
 
 export async function* chatStream(
   userMessage: string,
@@ -45,7 +45,7 @@ export async function* chatStream(
     return yield* chatReplayStream(userMessage, params, options);
   
   try{
-    const { state } = JSON.parse(localStorage.getItem('yomo') || '{}');
+    const { state } = JSON.parse(localStorage.getItem('yomo') ?? '{}');
     if (!state.token) return;
     const stream = fetchStream(resolveServiceURL("chat/stream"), {
       headers: {
@@ -204,7 +204,7 @@ export function fastForwardReplay(value: boolean) {
 
 export async function* featchStream(thread_id: string, id: string) {
   try{
-    const { state } = JSON.parse(localStorage.getItem('yomo') || '{}');
+    const { state } = JSON.parse(localStorage.getItem('yomo') ?? '{}');
     if (!state.token) return;
     const stream = fetchStream(resolveServiceURL("v1/chat/stream"), {
       headers: {

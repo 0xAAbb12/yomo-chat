@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
-import { useRootStore } from '~/store';
+
 import { getUserDetail } from '~/lib/api/user';
+import { useRootStore } from '~/store';
 
 /**
  * 用户详情 Hook

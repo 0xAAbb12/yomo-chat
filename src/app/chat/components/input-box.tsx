@@ -4,16 +4,16 @@ import { MagicWandIcon } from "@radix-ui/react-icons";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUp, Lightbulb, X } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useCallback, useMemo, useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 
+// import { BorderBeam } from "~/components/magicui/border-beam";
+import { Button } from "~/components/ui/button";
 import { Detective } from "~/components/yomo/icons/detective";
 import MessageInput, {
   type MessageInputRef,
 } from "~/components/yomo/message-input";
 import { ReportStyleDialog } from "~/components/yomo/report-style-dialog";
 import { Tooltip } from "~/components/yomo/tooltip";
-import { BorderBeam } from "~/components/magicui/border-beam";
-import { Button } from "~/components/ui/button";
 import { enhancePrompt } from "~/core/api";
 import { useConfig } from "~/core/api/hooks";
 import type { Option, Resource } from "~/core/messages";

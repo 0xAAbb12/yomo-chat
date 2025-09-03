@@ -11,12 +11,6 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-import { FavIcon } from "~/components/yomo/fav-icon";
-import Image from "~/components/yomo/image";
-import { LoadingAnimation } from "~/components/yomo/loading-animation";
-import { Markdown } from "~/components/yomo/markdown";
-import { RainbowText } from "~/components/yomo/rainbow-text";
-import { Tooltip } from "~/components/yomo/tooltip";
 import {
   Accordion,
   AccordionContent,
@@ -24,6 +18,12 @@ import {
   AccordionTrigger,
 } from "~/components/ui/accordion";
 import { Skeleton } from "~/components/ui/skeleton";
+import { FavIcon } from "~/components/yomo/fav-icon";
+import Image from "~/components/yomo/image";
+import { LoadingAnimation } from "~/components/yomo/loading-animation";
+import { Markdown } from "~/components/yomo/markdown";
+import { RainbowText } from "~/components/yomo/rainbow-text";
+import { Tooltip } from "~/components/yomo/tooltip";
 import { findMCPTool } from "~/core/mcp";
 import type { ToolCallRuntime } from "~/core/messages";
 import { useMessage, useStore } from "~/core/store";
