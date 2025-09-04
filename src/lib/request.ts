@@ -39,13 +39,8 @@ export const base6Api = axios.create({
 });
 
 const request = async <T = any>(
-  instance:
-    | typeof base2Api
-     
-     
-     
-    ,
-  config: AxiosRequestConfig
+  instance: typeof base2Api,
+  config: AxiosRequestConfig,
 ): Promise<MyResponseType<T>> => {
   try {
     let item: string | null = null;
@@ -56,7 +51,7 @@ const request = async <T = any>(
       instance.defaults.headers.common["X-Auth-Token"] = _.get(
         lighgData,
         "state.token",
-        ""
+        "",
       );
       item = window.localStorage.getItem("yomoInitToken");
     }

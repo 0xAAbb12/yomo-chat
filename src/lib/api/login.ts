@@ -43,7 +43,7 @@ export const walletLogin = (
   code: string,
   chain: ChainType,
   type?: string,
-  google2faCode?: string
+  google2faCode?: string,
 ) => {
   return request<{ token: string }>(base2Api, {
     url: `/lg/wallet/login`,
@@ -57,5 +57,13 @@ export const googleLogin = (idToken: string) => {
     url: `/lg/google/login`,
     method: "POST",
     data: { idToken },
+  });
+};
+
+export const googleToken = (id: string) => {
+  return request<{ token: string }>(base2Api, {
+    url: `/lg/google/token`,
+    method: "POST",
+    data: { id },
   });
 };

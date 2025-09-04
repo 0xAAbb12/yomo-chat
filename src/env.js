@@ -1,5 +1,3 @@
-
-
 import { createEnv } from "@t3-oss/env-nextjs";
 import { z } from "zod";
 
@@ -24,6 +22,7 @@ export const env = createEnv({
     NEXT_PUBLIC_API_URL_NO_AUTH: z.string().optional(),
     NEXT_PUBLIC_API_BASE_URL: z.string().optional(),
     NEXT_PUBLIC_STATIC_WEBSITE_ONLY: z.boolean().optional(),
+    NEXT_PUBLIC_GOOGLE_LOGIN_URL: z.string().optional(),
   },
 
   /**
@@ -39,6 +38,7 @@ export const env = createEnv({
       process.env.NEXT_PUBLIC_STATIC_WEBSITE_ONLY === "true",
     AMPLITUDE_API_KEY: process.env.AMPLITUDE_API_KEY,
     GITHUB_OAUTH_TOKEN: process.env.GITHUB_OAUTH_TOKEN,
+    NEXT_PUBLIC_GOOGLE_LOGIN_URL: process.env.NEXT_PUBLIC_GOOGLE_LOGIN_URL,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially

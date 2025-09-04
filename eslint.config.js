@@ -1,5 +1,3 @@
-
-
 import { FlatCompat } from "@eslint/eslintrc";
 import tseslint from "typescript-eslint";
 
@@ -44,40 +42,9 @@ export default tseslint.config(
       "@typescript-eslint/no-unsafe-member-access": "off",
       "@typescript-eslint/no-unsafe-argument": "off",
       "@typescript-eslint/no-unsafe-return": "off",
-      "import/order": [
-        "error",
-        {
-          distinctGroup: false,
-          groups: [
-            "builtin",
-            "external",
-            "internal",
-            "parent",
-            "sibling",
-            "index",
-            "object",
-          ],
-          pathGroups: [
-            {
-              pattern: "~/**",
-              group: "internal",
-            },
-            {
-              pattern: "./**.css",
-              group: "object",
-            },
-            {
-              pattern: "**.md",
-              group: "object",
-            },
-          ],
-          "newlines-between": "always",
-          alphabetize: {
-            order: "asc",
-            caseInsensitive: true,
-          },
-        },
-      ],
+      "@typescript-eslint/prefer-nullish-coalescing": "off",
+      "@typescript-eslint/ban-ts-comment": "off",
+      "import/order": "off",
     },
   },
   {
