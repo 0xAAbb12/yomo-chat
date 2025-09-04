@@ -20,6 +20,7 @@ import { useReplay } from "~/core/replay";
 import { sendMessage, useMessageIds, useStore } from "~/core/store";
 import { env } from "~/env";
 import { cn } from "~/lib/utils";
+import { useRootStore } from "~/store";
 
 import { ConversationStarter } from "./conversation-starter";
 import { InputBox } from "./input-box";
@@ -36,6 +37,7 @@ export function MessagesBlock({ className }: { className?: string }) {
   const [replayStarted, setReplayStarted] = useState(false);
   const abortControllerRef = useRef<AbortController | null>(null);
   const [feedback, setFeedback] = useState<{ option: Option } | null>(null);
+  const { token, setLoginModalOpen } = useRootStore();
   const handleSend = useCallback(
     async (
       message: string,
@@ -47,6 +49,10 @@ export function MessagesBlock({ className }: { className?: string }) {
       const abortController = new AbortController();
       abortControllerRef.current = abortController;
       try {
+         if (!token) {
+          setLoginModalOpen(true);
+          return;
+        }
         await sendMessage(
           message,
           {
@@ -60,7 +66,7 @@ export function MessagesBlock({ className }: { className?: string }) {
         );
       } catch {}
     },
-    [feedback],
+    [feedback, token, setLoginModalOpen],
   );
   const handleCancel = useCallback(() => {
     abortControllerRef.current?.abort();

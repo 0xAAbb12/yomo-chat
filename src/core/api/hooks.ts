@@ -8,7 +8,7 @@ import type { YomoConfig } from "../config";
 import { useReplay } from "../replay";
 
 import { fetchReplayTitle } from "./chat";
-import { resolveServiceURL } from "./resolve-service-url";
+import { resolveServiceNoAuthURL } from "./resolve-service-url";
 
 export function useReplayMetadata() {
   const { isReplay } = useReplay();
@@ -55,7 +55,7 @@ export function useConfig(): {
       setLoading(false);
       return;
     }
-    fetch(resolveServiceURL("./config"))
+    fetch(resolveServiceNoAuthURL("./config"))
       .then((res) => res.json())
       .then((config) => {
         setConfig(config);

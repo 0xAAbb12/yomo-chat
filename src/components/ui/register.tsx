@@ -188,13 +188,14 @@ export default function Register({
             />
 
             {/* 发送/倒计时 */}
-            <button
-              type="button"
+            <Button
+              variant="secondary"
+              disabled={!email}
               onClick={handleSendCode}
               className="absolute px-3 py-1 text-sm font-medium text-orange-500 -translate-y-1/2 right-3 top-1/2 hover:underline"
             >
               {countdown > 0 ? `${countdown}s` : "Get Code"}
-            </button>
+            </Button>
           </div>
         </div>
 

@@ -9,6 +9,12 @@ import {
   ChevronRight,
   Lightbulb,
   Wrench,
+  CheckIcon,
+  CopyIcon,
+  Share2Icon,
+  // ThumbsUpIcon,
+  // ThumbsDownIcon,
+  QuoteIcon,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import React, { useCallback, useMemo, useRef, useState } from "react";
@@ -48,6 +54,7 @@ import {
   useStore,
 } from "~/core/store";
 import { parseJSON } from "~/core/utils";
+import useCopyClipboard from "~/hooks/useCopyClipboard";
 import { cn } from "~/lib/utils";
 
 export function MessageListView({
@@ -140,8 +147,9 @@ function MessageListItem({
   const startOfResearch = useMemo(() => {
     return researchIds.includes(messageId);
   }, [researchIds, messageId]);
+    const [isCopied, setCopied] = useCopyClipboard();
   if (message) {
-    console.log("message", message);
+    // console.log("message", message);
     if (
       message.role === "user" ||
       message.agent === "coordinator" ||
@@ -228,6 +236,31 @@ function MessageListItem({
             }}
           >
             {content}
+            {message.role !== "user" && (
+              <div className="flex items-center gap-2 w-full px-8 mt-2">
+                <div
+                  onClick={() => {
+                    setCopied(
+                      JSON.stringify({
+                        id: message.id,
+                        threadId: message.threadId,
+                        content: message.content,
+                      })
+                    );
+                  }}
+                >
+                  {isCopied ? (
+                    <CheckIcon className="w-4 h-4 text-gray-400 cursor-pointer" />
+                  ) : (
+                    <CopyIcon className="w-4 h-4 text-gray-400 cursor-pointer" />
+                  )}
+                </div>
+                <QuoteIcon className="w-4 h-4 text-gray-400 cursor-pointer" />
+                <Share2Icon className="w-4 h-4 text-gray-400 cursor-pointer" />
+                {/* <ThumbsUpIcon className="w-4 h-4 text-gray-400 cursor-pointer" />
+                <ThumbsDownIcon className="w-4 h-4 text-gray-400 cursor-pointer" /> */}
+              </div>
+            )}
           </motion.li>
         );
       }
@@ -249,7 +282,7 @@ function MessageBubble({
     <div
       className={cn(
         "group flex w-auto max-w-[90vw] flex-col rounded-2xl px-4 py-3 break-words",
-        message.role === "user" && "bg-brand rounded-ee-none",
+        message.role === "user" && "bg-[#F6F6F8] rounded-ee-none",
         message.role === "assistant" && "bg-card rounded-es-none",
         className,
       )}

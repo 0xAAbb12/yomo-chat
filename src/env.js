@@ -21,6 +21,7 @@ export const env = createEnv({
    */
   client: {
     NEXT_PUBLIC_API_URL: z.string().optional(),
+    NEXT_PUBLIC_API_URL_NO_AUTH: z.string().optional(),
     NEXT_PUBLIC_API_BASE_URL: z.string().optional(),
     NEXT_PUBLIC_STATIC_WEBSITE_ONLY: z.boolean().optional(),
   },
@@ -33,6 +34,7 @@ export const env = createEnv({
     NODE_ENV: process.env.NODE_ENV,
     NEXT_PUBLIC_API_BASE_URL: process.env.NEXT_PUBLIC_API_BASE_URL,
     NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
+    NEXT_PUBLIC_API_URL_NO_AUTH: process.env.NEXT_PUBLIC_API_URL_NO_AUTH,
     NEXT_PUBLIC_STATIC_WEBSITE_ONLY:
       process.env.NEXT_PUBLIC_STATIC_WEBSITE_ONLY === "true",
     AMPLITUDE_API_KEY: process.env.AMPLITUDE_API_KEY,

@@ -7,7 +7,7 @@ import { useRootStore } from '~/store';
  * 用户详情 Hook
  */
 export const useUserDetail = () => {
-  const { userDetail, setUserDetail, clearUserDetail } = useRootStore();
+  const { userDetail, setUserDetail, clearUserDetail, updateToken } = useRootStore();
 
   // 获取用户详情
   const fetchUserDetail = useCallback(async () => {
@@ -16,15 +16,19 @@ export const useUserDetail = () => {
       if (response.code === 1 && response.result) {
         setUserDetail(response.result);
         return response.result;
+      } else if (response.code === 401) {
+        updateToken('');
+        clearUserDetail();
+        return null;
       } else {
-        console.error('获取用户详情失败:', response.message);
+        console.log('获取用户详情失败:', response.message);
         return null;
       }
     } catch (error) {
-      console.error('获取用户详情出错:', error);
+      console.log('获取用户详情出错:', error);
       return null;
     }
-  }, [setUserDetail]);
+  }, [setUserDetail, updateToken, clearUserDetail]);
 
   // 清除用户详情
   const clearUser = useCallback(() => {
