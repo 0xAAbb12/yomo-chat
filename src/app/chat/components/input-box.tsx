@@ -23,6 +23,8 @@ import {
   useSettingsStore,
 } from "~/core/store";
 import { cn } from "~/lib/utils";
+import { HistoryIcon } from "~/components/yomo/icons/history";
+import ChatHistory from "~/components/yomo/chat-history";
 
 export function InputBox({
   className,
@@ -59,6 +61,7 @@ export function InputBox({
   const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<MessageInputRef>(null);
   const feedbackRef = useRef<HTMLDivElement>(null);
+  const [open, setOpen] = useState(false);
 
   // Enhancement state
   const [isEnhancing, setIsEnhancing] = useState(false);
@@ -311,6 +314,22 @@ export function InputBox({
               )}
             </Button>
           </Tooltip>
+          <Tooltip title={t("enhancePrompt")}>
+            <Button
+              variant="ghost"
+              size="icon"
+              className={cn(
+                "hover:bg-accent h-10 w-10",
+                "animate-pulse",
+              )}
+              onClick={() => {
+                console.log("add chat clicked");
+                setOpen(true);
+              }}
+            >
+              <HistoryIcon className="text-brand" />
+            </Button>
+          </Tooltip>
           <Tooltip title={responding ? tCommon("stop") : tCommon("send")}>
             <Button
               variant="outline"
@@ -344,6 +363,10 @@ export function InputBox({
           />
         </>
       )} */}
+      <ChatHistory open={open} onOpenChange={() => {
+        console.log("close chat history");
+        setOpen(false);
+      }} />
     </div>
   );
 }

@@ -9,6 +9,7 @@ import {
 } from "zustand/middleware";
 
 import { createUserSlice, type UserSlice } from "./user";
+import { use } from "react";
 
 export type RootState = UserSlice;
 
@@ -29,7 +30,8 @@ export const useRootStore = create<RootState>()(
           // },
           storage: createJSONStorage(() => localStorage),
           partialize: (state) => ({
-            token: state.token
+            token: state.token,
+            userDetail: state.userDetail,
           }),
         }
       )

@@ -33,3 +33,15 @@ export const numFormat = (num: number | string, digits = 2) => {
   }
   return "--";
 };
+
+export function getStateValue(path: string): any {
+  const obj = JSON.parse(localStorage.getItem("yomo") || "{}");
+  if (!obj || !obj.state) return undefined;
+  
+  return path.split('.').reduce((acc, key) => {
+    if (acc && acc.hasOwnProperty(key)) {
+      return acc[key];
+    }
+    return undefined;
+  }, obj);
+}

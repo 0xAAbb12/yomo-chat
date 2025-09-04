@@ -35,21 +35,25 @@
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
   --animate-fade-in: fade-in 1s;
+
   @keyframes fade-in {
     0% {
       opacity: 0;
     }
+
     100% {
       opacity: 1;
     }
   }
 
   --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
+
   @keyframes spotlight {
     0% {
       opacity: 0;
       transform: translate(-72%, -62%) scale(0.5);
     }
+
     to {
       opacity: 1;
       transform: translate(-50%, -40%) scale(1);
@@ -99,36 +103,45 @@
   --color-app: var(--app-background);
   --color-brand: var(--brand);
   --animate-aurora: aurora 8s ease-in-out infinite alternate;
+
   @keyframes aurora {
     0% {
       background-position: 0% 50%;
       transform: rotate(-5deg) scale(0.9);
     }
+
     25% {
       background-position: 50% 100%;
       transform: rotate(5deg) scale(1.1);
     }
+
     50% {
       background-position: 100% 50%;
       transform: rotate(-3deg) scale(0.95);
     }
+
     75% {
       background-position: 50% 0%;
       transform: rotate(3deg) scale(1.05);
     }
+
     100% {
       background-position: 0% 50%;
       transform: rotate(-5deg) scale(0.9);
     }
   }
+
   --animate-shine: shine var(--duration) infinite linear;
+
   @keyframes shine {
     0% {
       background-position: 0% 0%;
     }
+
     50% {
       background-position: 100% 100%;
     }
+
     to {
       background-position: 0% 0%;
     }
@@ -232,6 +245,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -249,6 +263,66 @@
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%) scale(0.95);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideOut {
+    from {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+    }
+
+    to {
+      transform: translateX(100%) scale(0.95);
+      opacity: 0;
+    }
+  }
+
+  .animate-slideIn {
+    animation: slideIn 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  }
+
+  .animate-slideOut {
+    animation: slideOut 0.45s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.4s ease-out forwards;
+  }
+
+  .animate-fadeOut {
+    animation: fadeOut 0.35s ease-in forwards;
   }
 
   /* 自定义渐变 */

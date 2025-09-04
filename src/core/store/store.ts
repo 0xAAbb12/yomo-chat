@@ -31,7 +31,9 @@ export const useStore = create<{
   updateMessages: (messages: Message[]) => void;
   openResearch: (researchId: string | null) => void;
   closeResearch: () => void;
+  clearMessages: () => void;
   setOngoingResearch: (researchId: string | null) => void;
+  setThreadId: (threadId: string | undefined) => void;
 }>((set) => ({
   responding: false,
   threadId: THREAD_ID,
@@ -62,6 +64,19 @@ export const useStore = create<{
       return { messages: newMessages };
     });
   },
+  clearMessages() {
+    set((state) => ({
+      threadId: nanoid(),
+      messageIds: [],
+      messages: new Map<string, Message>(),
+      researchIds: [],
+      researchPlanIds: new Map<string, string>(),
+      researchReportIds: new Map<string, string>(),
+      researchActivityIds: new Map<string, string[]>(),
+      ongoingResearchId: null,
+      openResearchId: null,
+    }));
+  },
   openResearch(researchId: string | null) {
     set({ openResearchId: researchId });
   },
@@ -71,6 +86,9 @@ export const useStore = create<{
   setOngoingResearch(researchId: string | null) {
     set({ ongoingResearchId: researchId });
   },
+  setThreadId(threadId: string | undefined) {
+    set({ threadId });
+  }
 }));
 
 export async function sendMessage(
@@ -167,15 +185,15 @@ function setResponding(value: boolean) {
   useStore.setState({ responding: value });
 }
 
-function existsMessage(id: string) {
+export function existsMessage(id: string) {
   return useStore.getState().messageIds.includes(id);
 }
 
-function getMessage(id: string) {
+export function getMessage(id: string) {
   return useStore.getState().messages.get(id);
 }
 
-function findMessageByToolCallId(toolCallId: string) {
+export function findMessageByToolCallId(toolCallId: string) {
   return Array.from(useStore.getState().messages.values())
     .reverse()
     .find((message) => {
@@ -186,7 +204,7 @@ function findMessageByToolCallId(toolCallId: string) {
     });
 }
 
-function appendMessage(message: Message) {
+export function appendMessage(message: Message) {
   if (
     message.agent === "coder" ||
     message.agent === "reporter" ||
@@ -217,7 +235,7 @@ function getOngoingResearchId() {
   return useStore.getState().ongoingResearchId;
 }
 
-function appendResearch(researchId: string) {
+export function appendResearch(researchId: string) {
   let planMessage: Message | undefined;
   const reversedMessageIds = [...useStore.getState().messageIds].reverse();
   for (const messageId of reversedMessageIds) {
