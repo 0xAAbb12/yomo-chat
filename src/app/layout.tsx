@@ -10,6 +10,7 @@ import LoginAction from "~/components/dialogs/login-action";
 import { ThemeProviderWrapper } from "~/components/yomo/theme-provider-wrapper";
 
 import { Toaster } from "../components/yomo/toaster";
+import "~/assets/style/globals.css";
 
 export const metadata: Metadata = {
   title: "Yomo",

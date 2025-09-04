@@ -192,7 +192,7 @@ export default function Register({
               variant="secondary"
               disabled={!email}
               onClick={handleSendCode}
-              className="absolute px-3 py-1 text-sm font-medium text-orange-500 -translate-y-1/2 right-3 top-1/2 hover:underline"
+              className="absolute px-3 py-1 text-sm font-medium text-orange-500 -translate-y-1/2 right-3 top-1/2 hover:underline bg-transparent"
             >
               {countdown > 0 ? `${countdown}s` : "Get Code"}
             </Button>

@@ -61,7 +61,7 @@ export const googleLogin = (idToken: string) => {
 };
 
 export const googleToken = (id: string) => {
-  return request<{ token: string }>(base2Api, {
+  return request<string>(base2Api, {
     url: `/lg/google/token`,
     method: "POST",
     data: { id },

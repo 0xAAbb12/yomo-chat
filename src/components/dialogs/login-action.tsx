@@ -14,6 +14,7 @@ import { loginWithPopup } from "~/hooks/auth-popup";
 import { googleToken } from "~/lib/api/login";
 import { LoginType } from "~/lib/modal/user";
 import { env } from "~/env";
+import { useRouter } from "next/navigation";
 
 const loginUrl = env.NEXT_PUBLIC_GOOGLE_LOGIN_URL || "";
 
@@ -32,6 +33,7 @@ const LoginAction = () => {
   } = useRootStore();
   const [curState, setCurState] = useState<LoginState>(LoginState.Base);
   const { fetchUserDetail } = useUserDetail();
+  const router = useRouter();
   const handleStateChange = (state: LoginState) => {
     setCurState(state);
   };
@@ -48,9 +50,10 @@ const LoginAction = () => {
       if (res.id) {
         const gtRes = await googleToken(res.id);
         if (gtRes.code === 1 && gtRes.result) {
-          updateToken(gtRes.result.token);
+          updateToken(gtRes.result);
           setLoginModalOpen(false);
           updateLoginType(LoginType.Google);
+          router.push("/chat");
         } else {
           console.error("Google token exchange failed:", gtRes);
         }

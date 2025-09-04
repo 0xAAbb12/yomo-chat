@@ -15,7 +15,7 @@ export default function Footer() {
 
   return (
     <>
-      <footer className="w-full bg-[url(https://c.animaapp.com/metnv0a3g2xoEl/img/rectangle-34624877.svg)] bg-[100%_100%] flex flex-col lg:flex-row lg:h-[72px] items-center justify-between px-4 lg:px-[30px] py-3 lg:py-0">
+      <footer className="w-full backdrop-blur-[4px] bg-[rgba(246,124,0,0.04)] flex flex-col lg:flex-row lg:h-[72px] items-center justify-between px-4 lg:px-[30px] py-3 lg:py-0">
         <div className="flex gap-4 lg:gap-[30px] items-center">
           {footerLinks.map((link, index) => (
             <a

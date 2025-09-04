@@ -9,6 +9,7 @@ import { LoginState } from "~/components/dialogs/login-action";
 import { LoginType } from "~/lib/modal/user";
 import logoImg from "~/assets/images/logo.png";
 import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 /**
  * Register
@@ -25,6 +26,7 @@ export default function EmailLogin({
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [pwd, setPwd] = useState<string>("");
+  const router = useRouter();
   const { updateToken, setLoginModalOpen, updateLoginType } = useRootStore();
 //   const { notify } = useCustomToast();
   const toEmailLogin = useCallback(async () => {
@@ -44,6 +46,7 @@ export default function EmailLogin({
         updateToken(response.result.token);
         setLoginModalOpen(false);
         updateLoginType(LoginType.Email);
+        router.push("/chat")
       } else {
         toast("Login failed");
       }
