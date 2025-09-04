@@ -92,7 +92,7 @@ export function MessagesBlock({ className }: { className?: string }) {
         onSendMessage={handleSend}
       />
       {!isReplay ? (
-        <div className="relative flex h-46 shrink-0 pb-4">
+        <div className="relative flex h-42 shrink-0 pb-4">
           {!responding && messageCount === 0 && (
             <ConversationStarter
               className="absolute top-[-218px] left-0"
