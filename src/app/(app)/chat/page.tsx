@@ -26,7 +26,7 @@ export default function HomePage() {
   // const t = useTranslations("chat.page");
 
   return (
-    <div className="flex h-screen w-screen justify-center overscroll-none">
+    <div className="flex justify-center w-full h-full relative">
       {/* <header className="fixed top-0 left-0 flex h-12 w-full items-center justify-between px-4">
         <Logo />
         <div className="flex items-center">

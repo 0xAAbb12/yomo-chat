@@ -1,11 +1,9 @@
-
-
 import { MagicWandIcon } from "@radix-ui/react-icons";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUp, Lightbulb, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useCallback, useRef, useState } from "react";
-
+import { useStore } from "~/core/store";
 // import { BorderBeam } from "~/components/magicui/border-beam";
 import { Button } from "~/components/ui/button";
 import { Detective } from "~/components/yomo/icons/detective";
@@ -25,6 +23,7 @@ import {
 import { cn } from "~/lib/utils";
 import { HistoryIcon } from "~/components/yomo/icons/history";
 import ChatHistory from "~/components/yomo/chat-history";
+import { AddChat } from "~/components/yomo/icons/add-chat";
 
 export function InputBox({
   className,
@@ -67,6 +66,10 @@ export function InputBox({
   const [isEnhancing, setIsEnhancing] = useState(false);
   const [isEnhanceAnimating, setIsEnhanceAnimating] = useState(false);
   const [currentPrompt, setCurrentPrompt] = useState("");
+
+  const handleAddNewChat = () => {
+    useStore.getState().clearMessages();
+  };
 
   const handleSendMessage = useCallback(
     (message: string, resources: Array<Resource>) => {
@@ -127,94 +130,121 @@ export function InputBox({
   }, [currentPrompt, isEnhancing, reportStyle]);
 
   return (
-    <div
-      className={cn(
-        "bg-card relative flex h-full w-full flex-col rounded-[24px] border",
-        className,
-      )}
-      ref={containerRef}
-    >
-      <div className="w-full">
-        <AnimatePresence>
-          {feedback && (
-            <motion.div
-              ref={feedbackRef}
-              className="bg-background border-brand absolute top-0 left-0 mt-2 ml-4 flex items-center justify-center gap-1 rounded-2xl border px-2 py-0.5"
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0 }}
-              transition={{ duration: 0.2, ease: "easeInOut" }}
+    <div className="flex flex-col">
+      <div className="flex w-full justify-end pb-1">
+        <div className="flex items-center">
+          <Tooltip title={t("enhancePrompt")}>
+            <Button
+              variant="ghost"
+              size="icon"
+              className={cn("hover:bg-accent h-10 w-10", "animate-pulse")}
+              onClick={() => {
+                setOpen(true);
+              }}
             >
-              <div className="text-brand flex h-full w-full items-center justify-center text-sm opacity-90">
-                {feedback.option.text}
-              </div>
-              <X
-                className="cursor-pointer opacity-60"
-                size={16}
-                onClick={onRemoveFeedback}
-              />
-            </motion.div>
-          )}
-          {isEnhanceAnimating && (
-            <motion.div
-              className="pointer-events-none absolute inset-0 z-20"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
+              <HistoryIcon className="text-brand" />
+            </Button>
+          </Tooltip>
+          <Tooltip title={t("addNewChat")}>
+            <Button
+              variant="ghost"
+              size="icon"
+              className={cn("hover:bg-accent h-10 w-10", "animate-pulse")}
+              onClick={() => handleAddNewChat()}
             >
-              <div className="relative h-full w-full">
-                {/* Sparkle effect overlay */}
-                <motion.div
-                  className="absolute inset-0 rounded-[24px] bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-blue-500/10"
-                  animate={{
-                    background: [
-                      "linear-gradient(45deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1), rgba(59, 130, 246, 0.1))",
-                      "linear-gradient(225deg, rgba(147, 51, 234, 0.1), rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1))",
-                      "linear-gradient(45deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1), rgba(59, 130, 246, 0.1))",
-                    ],
-                  }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                />
-                {/* Floating sparkles */}
-                {[...Array(6)].map((_, i) => (
-                  <motion.div
-                    key={i}
-                    className="absolute h-2 w-2 rounded-full bg-blue-400"
-                    style={{
-                      left: `${20 + i * 12}%`,
-                      top: `${30 + (i % 2) * 40}%`,
-                    }}
-                    animate={{
-                      y: [-10, -20, -10],
-                      opacity: [0, 1, 0],
-                      scale: [0.5, 1, 0.5],
-                    }}
-                    transition={{
-                      duration: 1.5,
-                      repeat: Infinity,
-                      delay: i * 0.2,
-                    }}
-                  />
-                ))}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-        <MessageInput
-          className={cn(
-            "h-24 px-4 py-3",
-            feedback && "pt-9",
-            isEnhanceAnimating && "transition-all duration-500",
-          )}
-          ref={inputRef}
-          loading={loading}
-          config={config}
-          onEnter={handleSendMessage}
-          onChange={setCurrentPrompt}
-        />
+              <AddChat className="text-brand-primary h-10 w-10" />
+            </Button>
+          </Tooltip>
+        </div>
       </div>
-      {/* <Tooltip title={responding ? tCommon("stop") : tCommon("send")}>
+      <div
+        className={cn(
+          "bg-card relative flex h-full w-full flex-col rounded-[16px] border",
+          className,
+        )}
+        ref={containerRef}
+      >
+        <div className="w-full">
+          <AnimatePresence>
+            {feedback && (
+              <motion.div
+                ref={feedbackRef}
+                className="bg-background border-brand absolute top-0 left-0 mt-2 ml-4 flex items-center justify-center gap-1 rounded-2xl border px-2 py-0.5"
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0 }}
+                transition={{ duration: 0.2, ease: "easeInOut" }}
+              >
+                <div className="text-brand flex h-full w-full items-center justify-center text-sm opacity-90">
+                  {feedback.option.text}
+                </div>
+                <X
+                  className="cursor-pointer opacity-60"
+                  size={16}
+                  onClick={onRemoveFeedback}
+                />
+              </motion.div>
+            )}
+            {isEnhanceAnimating && (
+              <motion.div
+                className="pointer-events-none"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="relative h-full w-full">
+                  {/* Sparkle effect overlay */}
+                  <motion.div
+                    className="absolute inset-0 rounded-[24px] bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-blue-500/10"
+                    animate={{
+                      background: [
+                        "linear-gradient(45deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1), rgba(59, 130, 246, 0.1))",
+                        "linear-gradient(225deg, rgba(147, 51, 234, 0.1), rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1))",
+                        "linear-gradient(45deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1), rgba(59, 130, 246, 0.1))",
+                      ],
+                    }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  />
+                  {/* Floating sparkles */}
+                  {[...Array(6)].map((_, i) => (
+                    <motion.div
+                      key={i}
+                      className="absolute h-2 w-2 rounded-full bg-blue-400"
+                      style={{
+                        left: `${20 + i * 12}%`,
+                        top: `${30 + (i % 2) * 40}%`,
+                      }}
+                      animate={{
+                        y: [-10, -20, -10],
+                        opacity: [0, 1, 0],
+                        scale: [0.5, 1, 0.5],
+                      }}
+                      transition={{
+                        duration: 1.5,
+                        repeat: Infinity,
+                        delay: i * 0.2,
+                      }}
+                    />
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+          <MessageInput
+            className={cn(
+              "h-18 px-4 py-3",
+              feedback && "pt-9",
+              isEnhanceAnimating && "transition-all duration-500",
+            )}
+            ref={inputRef}
+            loading={loading}
+            config={config}
+            onEnter={handleSendMessage}
+            onChange={setCurrentPrompt}
+          />
+        </div>
+        {/* <Tooltip title={responding ? tCommon("stop") : tCommon("send")}>
         <Button
           variant="outline"
           size="icon"
@@ -230,125 +260,110 @@ export function InputBox({
           )}
         </Button>
       </Tooltip> */}
-      <div className="flex items-center px-4 py-2">
-        <div className="flex grow gap-2">
-          {config?.models.reasoning?.[0] && (
+        <div className="flex items-center px-4 py-2">
+          <div className="flex grow gap-2">
+            {config?.models.reasoning?.[0] && (
+              <Tooltip
+                className="max-w-60"
+                title={
+                  <div>
+                    <h3 className="mb-2 font-bold">
+                      {t("deepThinkingTooltip.title", {
+                        status: enableDeepThinking ? t("on") : t("off"),
+                      })}
+                    </h3>
+                    <p>
+                      {t("deepThinkingTooltip.description", {
+                        model: config.models.reasoning?.[0] ?? "",
+                      })}
+                    </p>
+                  </div>
+                }
+              >
+                <Button
+                  className={cn(
+                    "rounded-2xl",
+                    enableDeepThinking && "!border-brand !text-brand",
+                  )}
+                  variant="outline"
+                  onClick={() => {
+                    setEnableDeepThinking(!enableDeepThinking);
+                  }}
+                >
+                  <Lightbulb /> {t("deepThinking")}
+                </Button>
+              </Tooltip>
+            )}
+
             <Tooltip
               className="max-w-60"
               title={
                 <div>
                   <h3 className="mb-2 font-bold">
-                    {t("deepThinkingTooltip.title", {
-                      status: enableDeepThinking ? t("on") : t("off"),
+                    {t("investigationTooltip.title", {
+                      status: backgroundInvestigation ? t("on") : t("off"),
                     })}
                   </h3>
-                  <p>
-                    {t("deepThinkingTooltip.description", {
-                      model: config.models.reasoning?.[0] ?? "",
-                    })}
-                  </p>
+                  <p>{t("investigationTooltip.description")}</p>
                 </div>
               }
             >
               <Button
                 className={cn(
                   "rounded-2xl",
-                  enableDeepThinking && "!border-brand !text-brand",
+                  backgroundInvestigation && "!border-brand !text-brand",
                 )}
                 variant="outline"
-                onClick={() => {
-                  setEnableDeepThinking(!enableDeepThinking);
-                }}
+                onClick={() =>
+                  setEnableBackgroundInvestigation(!backgroundInvestigation)
+                }
               >
-                <Lightbulb /> {t("deepThinking")}
+                <Detective /> {t("investigation")}
               </Button>
             </Tooltip>
-          )}
+            <ReportStyleDialog />
+          </div>
+          <div className="flex shrink-0 items-center gap-2">
+            <Tooltip title={t("enhancePrompt")}>
+              <Button
+                variant="ghost"
+                size="icon"
+                className={cn(
+                  "hover:bg-accent h-10 w-10",
+                  isEnhancing && "animate-pulse",
+                )}
+                onClick={handleEnhancePrompt}
+                disabled={isEnhancing || currentPrompt.trim() === ""}
+              >
+                {isEnhancing ? (
+                  <div className="flex h-10 w-10 items-center justify-center">
+                    <div className="bg-foreground h-3 w-3 animate-bounce rounded-full opacity-70" />
+                  </div>
+                ) : (
+                  <MagicWandIcon className="text-brand" />
+                )}
+              </Button>
+            </Tooltip>
 
-          <Tooltip
-            className="max-w-60"
-            title={
-              <div>
-                <h3 className="mb-2 font-bold">
-                  {t("investigationTooltip.title", {
-                    status: backgroundInvestigation ? t("on") : t("off"),
-                  })}
-                </h3>
-                <p>{t("investigationTooltip.description")}</p>
-              </div>
-            }
-          >
-            <Button
-              className={cn(
-                "rounded-2xl",
-                backgroundInvestigation && "!border-brand !text-brand",
-              )}
-              variant="outline"
-              onClick={() =>
-                setEnableBackgroundInvestigation(!backgroundInvestigation)
-              }
-            >
-              <Detective /> {t("investigation")}
-            </Button>
-          </Tooltip>
-          <ReportStyleDialog />
+            <Tooltip title={responding ? tCommon("stop") : tCommon("send")}>
+              <Button
+                variant="outline"
+                size="icon"
+                className={cn("h-8 w-8 rounded-full")}
+                onClick={() => inputRef.current?.submit()}
+              >
+                {responding ? (
+                  <div className="flex h-10 w-10 items-center justify-center">
+                    <div className="bg-foreground h-4 w-4 rounded-sm opacity-70" />
+                  </div>
+                ) : (
+                  <ArrowUp />
+                )}
+              </Button>
+            </Tooltip>
+          </div>
         </div>
-        <div className="flex shrink-0 items-center gap-2">
-          <Tooltip title={t("enhancePrompt")}>
-            <Button
-              variant="ghost"
-              size="icon"
-              className={cn(
-                "hover:bg-accent h-10 w-10",
-                isEnhancing && "animate-pulse",
-              )}
-              onClick={handleEnhancePrompt}
-              disabled={isEnhancing || currentPrompt.trim() === ""}
-            >
-              {isEnhancing ? (
-                <div className="flex h-10 w-10 items-center justify-center">
-                  <div className="bg-foreground h-3 w-3 animate-bounce rounded-full opacity-70" />
-                </div>
-              ) : (
-                <MagicWandIcon className="text-brand" />
-              )}
-            </Button>
-          </Tooltip>
-          <Tooltip title={t("enhancePrompt")}>
-            <Button
-              variant="ghost"
-              size="icon"
-              className={cn(
-                "hover:bg-accent h-10 w-10",
-                "animate-pulse",
-              )}
-              onClick={() => {
-                console.log("add chat clicked");
-                setOpen(true);
-              }}
-            >
-              <HistoryIcon className="text-brand" />
-            </Button>
-          </Tooltip>
-          <Tooltip title={responding ? tCommon("stop") : tCommon("send")}>
-            <Button
-              variant="outline"
-              size="icon"
-              className={cn("h-10 w-10 rounded-full")}
-              onClick={() => inputRef.current?.submit()}
-            >
-              {responding ? (
-                <div className="flex h-10 w-10 items-center justify-center">
-                  <div className="bg-foreground h-4 w-4 rounded-sm opacity-70" />
-                </div>
-              ) : (
-                <ArrowUp />
-              )}
-            </Button>
-          </Tooltip>
-        </div>
-      </div>
-      {/* {isEnhancing && (
+        {/* {isEnhancing && (
         <>
           <BorderBeam
             duration={5}
@@ -363,10 +378,14 @@ export function InputBox({
           />
         </>
       )} */}
-      <ChatHistory open={open} onOpenChange={() => {
-        console.log("close chat history");
-        setOpen(false);
-      }} />
+        <ChatHistory
+          open={open}
+          onOpenChange={() => {
+            console.log("close chat history");
+            setOpen(false);
+          }}
+        />
+      </div>
     </div>
   );
 }

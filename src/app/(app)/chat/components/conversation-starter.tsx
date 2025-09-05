@@ -1,5 +1,3 @@
-
-
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
@@ -19,11 +17,11 @@ export function ConversationStarter({
   const questionTitles = t.raw("conversationStartersTitle") as string[];
 
   return (
-    <div className={cn("flex flex-col items-center", className)}>
-      <div className="pointer-events-none fixed inset-0 flex items-center justify-center">
-        <Welcome className="pointer-events-auto mb-15 w-[75%] -translate-y-24" />
+    <div className={cn("mt-[35%] flex flex-col items-center", className)}>
+      <div className="pointer-events-none flex items-center justify-center">
+        <Welcome className="pointer-events-auto" />
       </div>
-      <ul className="flex flex-wrap">
+      <ul className="mt-6 flex flex-wrap">
         {questions.map((question, index) => (
           <motion.li
             key={question}
@@ -44,8 +42,8 @@ export function ConversationStarter({
                 onSend?.(question);
               }}
             >
-              <h2 className="text-xl">{questionTitles[index]}</h2>
-              <span>{question}</span>
+              <h2 className="text-lg text-brand-black font-brand-medium">{questionTitles[index]}</h2>
+              <span className="text-brand-gray1 text-sm">{question}</span>
             </div>
           </motion.li>
         ))}

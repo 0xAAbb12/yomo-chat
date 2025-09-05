@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { LogOut, PanelLeft } from "lucide-react";
 import { Button } from "../ui/button";
 import { cn } from "~/lib/utils";
@@ -17,12 +17,26 @@ import {
 } from "~/components/ui/dropdown-menu";
 import { Separator } from "~/components/ui/separator";
 import { useLogout } from "~/hooks/useLogout";
+import { debounce } from "lodash";
 
-export default function Footer() {
+export default function Nav() {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(true);
   const { userDetail } = useUserDetail();
   const { logout } = useLogout();
+  useEffect(() => {
+    const handleResize = debounce(() => {
+      if (window.innerWidth < 1024) {
+        setIsOpen(false);
+      } else {
+        setIsOpen(true);
+      }
+    }, 200);
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div
       className={cn(

@@ -108,6 +108,7 @@
         "description": "启用后，Yomo 将在规划前进行快速搜索。这对于与时事和新闻相关的研究很有用。"
       },
       "enhancePrompt": "用 AI 增强提示",
+      "addNewChat": "添加新聊天",
       "on": "开启",
       "off": "关闭"
     },
