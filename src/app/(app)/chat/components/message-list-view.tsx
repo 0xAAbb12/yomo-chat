@@ -191,7 +191,7 @@ function MessageListItem({
         if (toolCall) {
           const projectData = JSON.parse(toolCall.result ?? '{}');
           content = (
-            <div className="w-full px-4">
+            <div className="px-4">
               <ProjectReport
                 projectData={projectData}
               />
