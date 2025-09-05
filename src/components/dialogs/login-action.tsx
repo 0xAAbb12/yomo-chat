@@ -34,6 +34,7 @@ const LoginAction = () => {
   const [curState, setCurState] = useState<LoginState>(LoginState.Base);
   const { fetchUserDetail } = useUserDetail();
   const router = useRouter();
+  console.log("loginUrl", loginUrl);
   const handleStateChange = (state: LoginState) => {
     setCurState(state);
   };
