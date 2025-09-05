@@ -48,6 +48,7 @@ export async function* chatStream(
     const { state } = JSON.parse(localStorage.getItem('yomo') ?? '{}');
     if (!state.token) return;
     const stream = fetchStream(resolveServiceURL("chat/stream"), {
+    // const stream = fetchStream(resolveServiceURL("v1/chat/stream_legacy"), {
       headers: {
         "Content-Type": "application/json",
         "X-Auth-Token": state.token,
@@ -60,11 +61,20 @@ export async function* chatStream(
     });
     
     for await (const event of stream) {
-      ThreadMapStorage.set(JSON.parse(event.data).thread_id, event.id);
+      let parsed: any = {};
+      try {
+        parsed = JSON.parse(event.data || "{}");
+      } catch (e) {
+        console.error("ThreadMapStorage Invalid JSON:", event.data, e);
+      }
+      const threadId = parsed?.thread_id;
+      if (threadId) {
+        ThreadMapStorage.set(threadId, event.id);
+      }
       yield {
         id: event.id,
         type: event.event,
-        data: JSON.parse(event.data),
+        data: JSON.parse(event.data || "{}"),
       } as ChatEvent;
     }
   }catch(e){
@@ -217,11 +227,20 @@ export async function* featchStream(thread_id: string, id: string) {
       }),
     });
     for await (const event of stream) {
-      ThreadMapStorage.set(JSON.parse(event.data).thread_id, event.id);
+      let parsed: any = {};
+      try {
+        parsed = JSON.parse(event.data || "{}");
+      } catch (e) {
+        console.error("ThreadMapStorage Invalid JSON:", event.data, e);
+      }
+      const threadId = parsed?.thread_id;
+      if (threadId) {
+        ThreadMapStorage.set(threadId, event.id);
+      }
         yield {
           id: event.id,
           type: event.event,
-          data: JSON.parse(event.data),
+          data: JSON.parse(event.data || "{}"),
         } as ChatEvent;
       }
     }catch(e){
