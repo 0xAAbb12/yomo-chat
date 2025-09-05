@@ -9,7 +9,6 @@ import {
 } from "zustand/middleware";
 
 import { createUserSlice, type UserSlice } from "./user";
-import { use } from "react";
 
 export type RootState = UserSlice;
 

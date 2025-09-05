@@ -65,7 +65,7 @@ export const useStore = create<{
     });
   },
   clearMessages() {
-    set((state) => ({
+    set(() => ({
       threadId: nanoid(),
       messageIds: [],
       messages: new Map<string, Message>(),
