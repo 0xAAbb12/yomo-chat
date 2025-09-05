@@ -212,7 +212,7 @@ function MessageListItem({
                 <Markdown
                   className={cn(
                     message.role === "user" &&
-                      "prose-invert not-dark:text-secondary dark:text-inherit",
+                      "prose-invert text-[#2C2C2C]",
                   )}
                 >
                   {message?.content}
