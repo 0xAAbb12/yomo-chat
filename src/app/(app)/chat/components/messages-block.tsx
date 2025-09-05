@@ -79,12 +79,12 @@ export function MessagesBlock({ className }: { className?: string }) {
   // }, [fastForwarding]);
   return (
     <div className={cn("flex h-full flex-col", className)}>
-      <div className="h-full flex-1">
+      <div className="flex h-full flex-1 justify-center-safe overflow-scroll pb-2">
         {!responding && messageCount === 0 ? (
           <ConversationStarter className="" onSend={handleSend} />
         ) : (
           <MessageListView
-            className="flex flex-grow"
+            className="flex flex-grow justify-center-safe"
             onFeedback={handleFeedback}
             onSendMessage={handleSend}
           />
