@@ -45,6 +45,7 @@ import { Tooltip } from "~/components/yomo/tooltip";
 import type { Message, Option } from "~/core/messages";
 import {
   closeResearch,
+  getMessages,
   openResearch,
   useLastFeedbackMessageId,
   useLastInterruptMessage,
@@ -55,7 +56,10 @@ import {
 } from "~/core/store";
 import { parseJSON } from "~/core/utils";
 import useCopyClipboard from "~/hooks/useCopyClipboard";
-import { cn } from "~/lib/utils";
+import { cn, splitBySeparator } from "~/lib/utils";
+import DeepResearch from "./deep-research";
+import DeepResarchReport from "~/components/report";
+import { MESSAGE_IDS } from "~/components/report/confit";
 
 export function MessageListView({
   className,
@@ -70,6 +74,7 @@ export function MessageListView({
   ) => void;
 }) {
   const scrollContainerRef = useRef<ScrollContainerRef>(null);
+  const messageIndexRef = useRef(0);
   const messageIds = useMessageIds();
   const interruptMessage = useLastInterruptMessage();
   const waitingForFeedbackMessageId = useLastFeedbackMessageId();
@@ -80,6 +85,10 @@ export function MessageListView({
   const ongoingResearchIsOpen = useStore(
     (state) => state.ongoingResearchId === state.openResearchId,
   );
+
+  const messages = getMessages()
+  const deepResearchIds = useStore((state) => state.deepResearchIds);
+  const pastDeepResearchIds = useStore((state) => state.pastDeepResearchIds);
 
   const handleToggleResearch = useCallback(() => {
     // Fix the issue where auto-scrolling to the bottom
@@ -94,6 +103,16 @@ export function MessageListView({
     };
   }, []);
 
+  // const splitDeepResearchIds = useMemo(() => {
+  //   return splitBySeparator(deepResearchIds, '---');
+  // }, [deepResearchIds]);
+
+  // console.log("----messageIds", messageIds);
+  // console.log("----messages", messages);
+  // console.log("deepResearchIds", deepResearchIds);
+  // console.log("splitDeepResearchIds", splitDeepResearchIds);
+  // console.log("pastDeepResearchIds", pastDeepResearchIds);
+
   return (
     <ScrollContainer
       className={cn("flex h-full w-full flex-col overflow-hidden", className)}
@@ -102,7 +121,27 @@ export function MessageListView({
       ref={scrollContainerRef}
     >
       <ul className="flex flex-col">
-        {messageIds.map((messageId) => (
+        {messageIds.map((messageId) => {
+          // TODO 
+          // const ps = pastDeepResearchIds[messageIndexRef.current] || [];
+          // console.log("current", messageIndexRef.current);
+          // if (pastDeepResearchIds.length > 1 && ps && ps.length > 0 && ps.at(-1) === messageId) {
+          //   const arrs = pastDeepResearchIds[messageIndexRef.current] as string[];
+          //   console.log("arrs", arrs);
+          //   messageIndexRef.current += 1;
+          //   return <DeepResearch messages={arrs || []} from="past" />
+          // }
+          if (deepResearchIds[deepResearchIds.length -1] === messageId) {
+              let arr = deepResearchIds;
+              const lastIndex = arr.lastIndexOf('---');
+              arr = deepResearchIds.slice(lastIndex + 1);
+              return <DeepResarchReport messageIds={arr} />
+              // return <DeepResearch messages={arr} from="stream" />
+            }
+          if (deepResearchIds.includes(messageId)) {
+            return null;
+          }
+          return (
           <MessageListItem
             key={messageId}
             messageId={messageId}
@@ -112,7 +151,8 @@ export function MessageListView({
             onSendMessage={onSendMessage}
             onToggleResearch={handleToggleResearch}
           />
-        ))}
+        )
+        })}
         <div className="flex h-8 w-full shrink-0"></div>
       </ul>
       {responding && (noOngoingResearch || !ongoingResearchIsOpen) && (
@@ -153,9 +193,7 @@ function MessageListItem({
     if (
       message.role === "user" ||
       message.agent === "coordinator" ||
-      message.agent === "planner" ||
       message.agent === "podcast" ||
-      message.agent === "reporter" ||
       startOfResearch
     ) {
       let content: React.ReactNode;
@@ -198,7 +236,7 @@ function MessageListItem({
             </div>
           );
         }
-      }  else {
+      } else {
         content = message.content ? (
           <div
             className={cn(

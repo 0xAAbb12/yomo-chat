@@ -11,13 +11,15 @@ import { mergeMessage } from "../messages";
 import { parseJSON } from "../utils";
 
 import { getChatStreamSettings } from "./settings-store";
-
+import { splitBySeparator } from "~/lib/utils";
 const THREAD_ID = nanoid();
 
 export const useStore = create<{
   responding: boolean;
   threadId: string | undefined;
   messageIds: string[];
+  deepResearchIds: string[];
+  pastDeepResearchIds: string[][];
   messages: Map<string, Message>;
   researchIds: string[];
   researchPlanIds: Map<string, string>;
@@ -34,10 +36,13 @@ export const useStore = create<{
   clearMessages: () => void;
   setOngoingResearch: (researchId: string | null) => void;
   setThreadId: (threadId: string | undefined) => void;
+  updatePastDeepResearchIds: (deepResearchIds: string[][]) => void;
 }>((set) => ({
   responding: false,
   threadId: THREAD_ID,
   messageIds: [],
+  deepResearchIds: [],
+  pastDeepResearchIds: [[]],
   messages: new Map<string, Message>(),
   researchIds: [],
   researchPlanIds: new Map<string, string>(),
@@ -47,10 +52,34 @@ export const useStore = create<{
   openResearchId: null,
 
   appendMessage(message: Message) {
-    set((state) => ({
-      messageIds: [...state.messageIds, message.id],
-      messages: new Map(state.messages).set(message.id, message),
-    }));
+    set((state) => {
+      if (
+        message.agent === "planner" ||
+        message.agent === "research_agent" ||
+        message.agent === "social_agent" ||
+        message.agent === "on_chain_agent" ||
+        message.agent === "ta_agent" ||
+        message.agent === "reporter"
+      ) {
+        return {
+          deepResearchIds: [...state.deepResearchIds, message.id],
+          messageIds: [...state.messageIds, message.id],
+          messages: new Map(state.messages).set(message.id, message)
+        }
+      } else {
+        if (message.role === "user" && state.deepResearchIds.length > 0) {
+          return {
+            deepResearchIds: [...state.deepResearchIds, '---'],
+            messageIds: [...state.messageIds, message.id],
+            messages: new Map(state.messages).set(message.id, message),
+          }
+        }
+        return {
+          messageIds: [...state.messageIds, message.id],
+          messages: new Map(state.messages).set(message.id, message),
+        }
+      }
+    });
   },
   updateMessage(message: Message) {
     set((state) => ({
@@ -88,6 +117,11 @@ export const useStore = create<{
   },
   setThreadId(threadId: string | undefined) {
     set({ threadId });
+  },
+  updatePastDeepResearchIds(deepResearchIds: string[][]) {
+    set(() => ({
+      pastDeepResearchIds: deepResearchIds,
+    }));
   }
 }));
 
@@ -177,6 +211,8 @@ export async function sendMessage(
     }
     useStore.getState().setOngoingResearch(null);
   } finally {
+    const arrs = splitBySeparator(useStore.getState().deepResearchIds, '---');
+    useStore.getState().updatePastDeepResearchIds(arrs);
     setResponding(false);
   }
 }
@@ -191,6 +227,14 @@ export function existsMessage(id: string) {
 
 export function getMessage(id: string) {
   return useStore.getState().messages.get(id);
+}
+
+export function getMessages() {
+  return useStore.getState().messages;
+}
+
+export function getDeepResearchIds() {
+  return useStore.getState().deepResearchIds;
 }
 
 export function findMessageByToolCallId(toolCallId: string) {

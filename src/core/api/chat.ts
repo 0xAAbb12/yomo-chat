@@ -47,8 +47,8 @@ export async function* chatStream(
   try{
     const { state } = JSON.parse(localStorage.getItem('yomo') ?? '{}');
     if (!state.token) return;
-    const stream = fetchStream(resolveServiceURL("chat/stream"), {
-    // const stream = fetchStream(resolveServiceURL("v1/chat/stream_legacy"), {
+    // const stream = fetchStream(resolveServiceURL("chat/stream"), {
+    const stream = fetchStream(resolveServiceURL("v1/chat/stream_legacy"), {
       headers: {
         "Content-Type": "application/json",
         "X-Auth-Token": state.token,

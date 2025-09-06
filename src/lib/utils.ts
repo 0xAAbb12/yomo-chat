@@ -45,3 +45,25 @@ export function getStateValue(path: string): any {
     return undefined;
   }, obj);
 }
+
+export function splitBySeparator<T>(arr: T[], separator: T): T[][] {
+  const result: T[][] = [];
+  let temp: T[] = [];
+
+  for (const item of arr) {
+    if (item === separator) {
+      if (temp.length > 0) {
+        result.push(temp);
+        temp = [];
+      }
+    } else {
+      temp.push(item);
+    }
+  }
+
+  if (temp.length > 0) {
+    result.push(temp);
+  }
+
+  return result;
+}
