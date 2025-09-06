@@ -11,7 +11,11 @@ export interface Message {
     | "researcher"
     | "coder"
     | "reporter"
-    | "podcast";
+    | "podcast"
+    | "social_agent"
+    | "on_chain_agent"
+    | "ta_agent"
+    | "research_agent";
   role: MessageRole;
   isStreaming?: boolean;
   content: string;

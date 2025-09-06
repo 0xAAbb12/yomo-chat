@@ -4,9 +4,10 @@ import React, { useState, useMemo, useRef, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Card } from "~/components/ui/card";
+import type { Message } from "~/core/messages";
 
-export default function ResearchFindings({ markdown }: { markdown: string }) {
-  const toc = useMemo(() => buildToc(markdown), [markdown]);
+export default function ResearchFindings({ markdown, message }: { markdown: string, message: Message | undefined }) {
+  const toc = useMemo(() => buildToc(message?.content || ''), [message?.content]);
 
   const [activeId, setActiveId] = useState<string | null>(toc[0]?.id ?? null);
   const isProgrammaticScroll = useRef(false);
@@ -284,7 +285,7 @@ export default function ResearchFindings({ markdown }: { markdown: string }) {
 
         {/* [CHG] 绑定 ref，供定位与观察使用；若你有外层自定义滚动容器，可把 ref 绑到它上面 */}
         <article ref={articleRef} className="min-h-[60vh] min-w-0 flex-1">
-          <MarkdownStyled markdown={markdown} />
+          <MarkdownStyled markdown={message?.content || ''} />
         </article>
       </div>
     </div>
