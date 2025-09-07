@@ -17,13 +17,23 @@ import { ProjectReport } from "../yomo/project-report";
 import { Markdown } from "../yomo/markdown";
 const ACCENT = "#F67C00";
 
-const AGNET_CONFIG:{[key in  string]: { id: string, label: string, icon: any}} = {
-  'planner': { id: "planner", label: "Planner", icon: Gauge },
-  'social_agent': { id: "social_agent", label: "social_agent", icon: Gauge },
-  'on_chain_agent': { id: "on_chain_agent", label: "on_chain_agent", icon: Gauge },
-  'ta_agent': { id: "ta_agent", label: "ta_agent", icon: Gauge },
-  'research_agent': { id: "research_agent", label: "research_agent", icon: Gauge },
-} 
+const AGNET_CONFIG: {
+  [key in string]: { id: string; label: string; icon: any };
+} = {
+  planner: { id: "planner", label: "Planner", icon: Gauge },
+  social_agent: { id: "social_agent", label: "social_agent", icon: Gauge },
+  on_chain_agent: {
+    id: "on_chain_agent",
+    label: "on_chain_agent",
+    icon: Gauge,
+  },
+  ta_agent: { id: "ta_agent", label: "ta_agent", icon: Gauge },
+  research_agent: {
+    id: "research_agent",
+    label: "research_agent",
+    icon: Gauge,
+  },
+};
 
 function LeftTrigger({
   value,
@@ -58,18 +68,18 @@ function LeftTrigger({
 interface ThinkingProcessProps {
   messasges: (Message | undefined)[];
 }
-export default function ThinkingProcess({ messasges }:ThinkingProcessProps) {
-  const [agent, setAgent] = React.useState<string>('planner');
+export default function ThinkingProcess({ messasges }: ThinkingProcessProps) {
+  const [agent, setAgent] = React.useState<string>("planner");
   const items = React.useMemo(() => {
     let agents = new Map<string, Message>();
-    messasges.forEach(msg => {
-      if (msg?.agent && msg.agent !== 'reporter') {
-        agents.set(msg?.agent, msg)
+    messasges.forEach((msg) => {
+      if (msg?.agent && msg.agent !== "reporter") {
+        agents.set(msg?.agent, msg);
       }
-    })
-    console.log("items", Array.from(agents.keys()))
-    return Array.from(agents.keys()).map(key => (AGNET_CONFIG[key]));
-  },[messasges]);
+    });
+    console.log("items", Array.from(agents.keys()));
+    return Array.from(agents.keys()).map((key) => AGNET_CONFIG[key]);
+  }, [messasges]);
 
   return (
     <div className="text-black">
@@ -82,7 +92,7 @@ export default function ThinkingProcess({ messasges }:ThinkingProcessProps) {
       >
         {/* 用一个外层容器强制左右并排布局，避免 Tabs 自身样式影响排版 */}
         <div className="w-full p-4">
-          <div className="flex gap-4">
+          <div className="flex items-start gap-4">
             {/* 左侧：固定 230px，防止换行 */}
             <TabsList className="flex h-auto w-[230px] shrink-0 flex-col gap-3 rounded-xl border border-black/10 bg-white p-3">
               {items.map((it) => (
@@ -97,43 +107,53 @@ export default function ThinkingProcess({ messasges }:ThinkingProcessProps) {
 
             {/* 右侧：flex-1 内容区域，占位布局 */}
             <div className="flex-1">
-              {messasges.filter(f => f?.agent === agent).map(m => {
-                if (m?.toolCalls && m?.toolCalls.length > 0) {
-                  return (
-                    <TabsContent key={m?.id} value={m?.agent || ''} className="m-0">
-                      <h2>Search By Yomo</h2>
-                      {m.toolCalls.map((tool, index) => {
-                        if (tool.name === 'get_web3_project') {
+              {messasges
+                .filter((f) => f?.agent === agent)
+                .map((m) => {
+                  if (m?.toolCalls && m?.toolCalls.length > 0) {
+                    return (
+                      <TabsContent
+                        key={m?.id}
+                        value={m?.agent || ""}
+                        className="m-0"
+                      >
+                        <h2>Search By Yomo</h2>
+                        {m.toolCalls.map((tool, index) => {
+                          if (tool.name === "get_web3_project") {
+                            return (
+                              <ProjectReport
+                                projectData={JSON.parse(tool?.result || "{}")}
+                              />
+                            );
+                          }
                           return (
-                            <ProjectReport projectData={JSON.parse(tool?.result || "{}")} />
-                          )
-                        }
-                        return (
-                          <div className="space-y-4">
-                            <div className="rounded-lg border border-dashed border-black/20 p-4">
-                              <div className="prose max-w-none break-words">
-                                {tool?.result}
+                            <div className="space-y-4">
+                              <div className="rounded-lg border border-dashed border-black/20 p-4">
+                                <div className="prose max-w-none break-words">
+                                  {tool?.result}
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        )
-                      })}
+                          );
+                        })}
+                      </TabsContent>
+                    );
+                  }
+                  return (
+                    <TabsContent
+                      key={m?.id}
+                      value={m?.agent || ""}
+                      className="m-0"
+                    >
+                      <h2>Reasoning</h2>
+                      <div className="flex w-full flex-col break-words">
+                        <Markdown className={cn("prose-invert text-[#2C2C2C]")}>
+                          {m?.content}
+                        </Markdown>
+                      </div>
                     </TabsContent>
-                  )
-                }
-                return (
-                  <TabsContent key={m?.id} value={m?.agent || ''} className="m-0">
-                    <h2>Reasoning</h2>
-                    <div className="flex w-full flex-col break-words">
-                      <Markdown
-                        className={cn("prose-invert text-[#2C2C2C]")}
-                      >
-                        {m?.content}
-                      </Markdown>
-                    </div>
-                  </TabsContent>
-                )
-              })}
+                  );
+                })}
               {/* {items.map((it) => (
                 <TabsContent key={it?.id} value={it?.id || ''} className="m-0">
                   <div className="space-y-4">
