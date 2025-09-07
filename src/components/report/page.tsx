@@ -37,7 +37,7 @@ const PageListView = ({ source }:PageListViewProps) => {
     console.log("pages", pages)
 
     return (
-        <div className="flex flex-col gap-1 max-h-[200px] overflow-auto mb-1">
+        <div className="flex flex-col gap-1 mb-1">
             {pages.map((w, i) => (
                 <PageItem key={i} page={w} />
             ))}

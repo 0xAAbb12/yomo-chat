@@ -21,6 +21,7 @@ import { ScrollArea } from "~/components/ui/scroll-area";
 import { Markdown } from "../yomo/markdown";
 import WebsiteListView from "./website";
 import PageListView from "./page";
+import { ScrollContainer } from "~/components/yomo/scroll-container";
 const ACCENT = "#F67C00";
 
 const AGNET_CONFIG: {
@@ -97,7 +98,7 @@ export default function ThinkingProcess({ messasges }: ThinkingProcessProps) {
         onValueChange={(val) => setAgent(val)}
       >
         {/* 用一个外层容器强制左右并排布局，避免 Tabs 自身样式影响排版 */}
-        <div className="w-full p-4">
+        <div className="w-full">
           <div className="flex items-start gap-4">
             {/* 左侧：固定 230px，防止换行 */}
             <TabsList className="flex h-auto w-[230px] shrink-0 flex-col gap-3 rounded-xl border border-black/10 bg-white p-3">
@@ -112,7 +113,7 @@ export default function ThinkingProcess({ messasges }: ThinkingProcessProps) {
             </TabsList>
 
             {/* 右侧：flex-1 内容区域，占位布局 */}
-            <div className="min-w-0 flex-1">
+            <div className="h-[620px] min-w-0 flex-1 overflow-y-auto">
               {messasges
                 .filter((f) => f?.agent === agent)
                 .map((m) => {
@@ -123,7 +124,7 @@ export default function ThinkingProcess({ messasges }: ThinkingProcessProps) {
                         value={m?.agent || ""}
                         className="m-0"
                       >
-                        <div className="flex gap-2 my-3">
+                        <div className="my-3 flex gap-2">
                           <WrenchIcon className="text-brand-primary" />
                           <h2 className="font-medium">Search By Yomo</h2>
                         </div>
@@ -136,10 +137,12 @@ export default function ThinkingProcess({ messasges }: ThinkingProcessProps) {
                             );
                           }
                           if (tool.name === "search_web3_project") {
-                            return <WebsiteListView source={tool?.result || ''} />
+                            return (
+                              <WebsiteListView source={tool?.result || ""} />
+                            );
                           }
                           if (tool.name === "web_search") {
-                            return <PageListView source={tool?.result || ''} />
+                            return <PageListView source={tool?.result || ""} />;
                           }
                           if (tool.name === "analyze_crypto_technical") {
                             return (
@@ -151,7 +154,7 @@ export default function ThinkingProcess({ messasges }: ThinkingProcessProps) {
                               //     {tool?.result}
                               //   </Markdown>
                               // </div>
-                            )
+                            );
                           }
                           return (
                             <div className="space-y-4">
@@ -172,10 +175,10 @@ export default function ThinkingProcess({ messasges }: ThinkingProcessProps) {
                       value={m?.agent || ""}
                       className="m-0"
                     >
-                      <div className="flex gap-2 my-3">
-                          <BrainIcon className="text-brand-primary" />
-                          <h2 className="font-medium">Reasoning</h2>
-                        </div>
+                      <div className="my-3 flex gap-2">
+                        <BrainIcon className="text-brand-primary" />
+                        <h2 className="font-medium">Reasoning</h2>
+                      </div>
                       <div className="flex w-full flex-col break-words">
                         <MarkdownStyled markdown={m?.content || ""} />
                       </div>
