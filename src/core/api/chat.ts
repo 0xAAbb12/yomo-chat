@@ -11,6 +11,8 @@ import ThreadMapStorage from "../utils/thread-map";
 
 import { resolveServiceURL } from "./resolve-service-url";
 import type { ChatEvent } from "./types";
+import { toast } from "sonner";
+
 
 export async function* chatStream(
   userMessage: string,
@@ -70,6 +72,9 @@ export async function* chatStream(
       const threadId = parsed?.thread_id;
       if (threadId) {
         ThreadMapStorage.set(threadId, event.id);
+      }
+      if (event.event === 'error') {
+        toast("An error occurred while generating the response. Please try again.");
       }
       yield {
         id: event.id,

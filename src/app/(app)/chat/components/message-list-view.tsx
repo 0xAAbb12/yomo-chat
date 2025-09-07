@@ -108,9 +108,9 @@ export function MessageListView({
     })
   }, [messageIds, messages]);
 
-  console.log("----messageIds", messageIds);
-  console.log("----messages", messages);
-  console.log("----messageIdsConfig", messageIdsConfig)
+  console.log("messageIds", messageIds);
+  console.log("messages", messages);
+  console.log("messageIdsConfig", messageIdsConfig)
 
   return (
     <ScrollContainer
@@ -131,7 +131,7 @@ export function MessageListView({
                   break;
                 }
               }
-              console.log(`----arrs__${index}`, arrs)
+              console.log(`arrs__${index}`, arrs)
               return <DeepResarchReport key={index} messageIds={arrs} />
               // return <DeepResearch messages={arrs} from="stream" />
             } else {

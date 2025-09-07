@@ -38,8 +38,6 @@ const WebsiteListView = ({ source }:WebsiteListViewProps) => {
         return []
     }, [source]);
 
-    console.log("websites", websites)
-
     return (
         <div className="flex flex-col gap-1 mb-1">
             {websites.map((w, i) => (
