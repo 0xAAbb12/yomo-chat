@@ -6,8 +6,17 @@ import remarkGfm from "remark-gfm";
 import { Card } from "~/components/ui/card";
 import type { Message } from "~/core/messages";
 
-export default function ResearchFindings({ markdown, message }: { markdown: string, message: Message | undefined }) {
-  const toc = useMemo(() => buildToc(message?.content || ''), [message?.content]);
+export default function ResearchFindings({
+  markdown,
+  message,
+}: {
+  markdown: string;
+  message: Message | undefined;
+}) {
+  const toc = useMemo(
+    () => buildToc(message?.content || ""),
+    [message?.content],
+  );
 
   const [activeId, setActiveId] = useState<string | null>(toc[0]?.id ?? null);
   const isProgrammaticScroll = useRef(false);
@@ -251,10 +260,10 @@ export default function ResearchFindings({ markdown, message }: { markdown: stri
 
       {/* Main */}
       <div className="mt-[30px] flex gap-[30px]">
-        <aside className="relative w-[300px] flex-shrink-0">
+        <aside className="relative w-[230px] flex-shrink-0">
           <Card className="sticky top-6 overflow-auto rounded-2xl border-black/10 p-4 backdrop-blur-md">
             <div className="text-sm font-semibold text-neutral-800">目录</div>
-            <nav className="mt-3 space-y-2">
+            <nav className="space-y-2">
               {toc.map((item, idx) => (
                 <button
                   key={item.id}
@@ -285,7 +294,7 @@ export default function ResearchFindings({ markdown, message }: { markdown: stri
 
         {/* [CHG] 绑定 ref，供定位与观察使用；若你有外层自定义滚动容器，可把 ref 绑到它上面 */}
         <article ref={articleRef} className="min-h-[60vh] min-w-0 flex-1">
-          <MarkdownStyled markdown={message?.content || ''} />
+          <MarkdownStyled markdown={message?.content || ""} />
         </article>
       </div>
     </div>
@@ -329,7 +338,6 @@ function MarkdownStyled({ markdown }: { markdown: string }) {
               <span className="bg-gradient-to-r from-[#f67c00] to-[#f67c00] bg-clip-text text-transparent">
                 {children}
               </span>
-              <span className="block h-1 w-40 rounded-full bg-[#f67c00]" />
             </h1>
           ),
           h2: ({ node, children, ...props }) => {
@@ -340,7 +348,7 @@ function MarkdownStyled({ markdown }: { markdown: string }) {
               <h2
                 id={id}
                 {...props}
-                className="mt-10 scroll-mt-24 text-2xl font-bold text-black"
+                className="mt-4 scroll-mt-24 text-2xl font-bold text-black"
               >
                 {children}
               </h2>
@@ -352,7 +360,7 @@ function MarkdownStyled({ markdown }: { markdown: string }) {
             </h3>
           ),
           p: ({ node, children, ...props }) => (
-            <p {...props} className="leading-7 text-neutral-800">
+            <p {...props} className="mb-3 leading-7 text-neutral-800">
               {children}
             </p>
           ),
@@ -373,19 +381,24 @@ function MarkdownStyled({ markdown }: { markdown: string }) {
             </a>
           ),
           ul: ({ node, children, ...props }) => (
-            <ul {...props} className="my-4 space-y-2">
+            <ul {...props} className="my-4 space-y-2 !pl-1">
               {children}
             </ul>
           ),
+          ol: ({ node, children, ...props }) => (
+            <ol {...props} className="my-4 space-y-2 !pl-1">
+              {children}
+            </ol>
+          ),
           li: ({ node, children, ...props }) => (
-            <li {...props} className="relative list-none pl-5 text-neutral-800">
+            <li {...props} className="relative list-none pl-4 text-neutral-800">
               <span className="absolute top-2 left-0 h-1.5 w-1.5 rounded-full bg-[#f67c00]" />
               {children}
             </li>
           ),
           table: ({ node, children, ...props }) => (
             <div className="my-4 overflow-hidden rounded-xl border border-black/10 bg-black/5">
-              <table className="w-full text-sm" {...props}>
+              <table className="!my-0 w-full text-sm" {...props}>
                 {children}
               </table>
             </div>
@@ -434,7 +447,7 @@ function MarkdownStyled({ markdown }: { markdown: string }) {
               {children}
             </blockquote>
           ),
-          hr: (props) => <hr className="my-8 border-black/10" {...props} />,
+          hr: (props) => <hr className="my-3 border-black/10" {...props} />,
         }}
       >
         {markdown}
