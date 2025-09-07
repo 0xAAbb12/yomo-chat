@@ -10,13 +10,17 @@ import {
   Radar,
   ChartLine,
   ChevronRight,
-  type LucideProps,
+  WrenchIcon,
+  BrainIcon,
 } from "lucide-react";
 import type { Message } from "~/core/messages";
 import { ProjectReport } from "../yomo/project-report";
 import MarkdownStyled from "./MarkdownStyled";
 import { ScrollArea } from "~/components/ui/scroll-area";
 // import { Markdown } from "../yomo/markdown";
+import { Markdown } from "../yomo/markdown";
+import WebsiteListView from "./website";
+import PageListView from "./page";
 const ACCENT = "#F67C00";
 
 const AGNET_CONFIG: {
@@ -119,7 +123,10 @@ export default function ThinkingProcess({ messasges }: ThinkingProcessProps) {
                         value={m?.agent || ""}
                         className="m-0"
                       >
-                        <h2>Search By Yomo</h2>
+                        <div className="flex gap-2 my-3">
+                          <WrenchIcon className="text-brand-primary" />
+                          <h2 className="font-medium">Search By Yomo</h2>
+                        </div>
                         {m.toolCalls.map((tool, index) => {
                           if (tool.name === "get_web3_project") {
                             return (
@@ -127,6 +134,24 @@ export default function ThinkingProcess({ messasges }: ThinkingProcessProps) {
                                 projectData={JSON.parse(tool?.result || "{}")}
                               />
                             );
+                          }
+                          if (tool.name === "search_web3_project") {
+                            return <WebsiteListView source={tool?.result || ''} />
+                          }
+                          if (tool.name === "web_search") {
+                            return <PageListView source={tool?.result || ''} />
+                          }
+                          if (tool.name === "analyze_crypto_technical") {
+                            return (
+                              <div className="flex w-full flex-col break-words">
+                                <MarkdownStyled markdown={tool?.result || ""} />
+                              </div>
+                              // <div className="flex w-full flex-col break-words">
+                              //   <Markdown className={cn("prose-invert text-[#2C2C2C]")}>
+                              //     {tool?.result}
+                              //   </Markdown>
+                              // </div>
+                            )
                           }
                           return (
                             <div className="space-y-4">
@@ -147,7 +172,10 @@ export default function ThinkingProcess({ messasges }: ThinkingProcessProps) {
                       value={m?.agent || ""}
                       className="m-0"
                     >
-                      <h2>Reasoning</h2>
+                      <div className="flex gap-2 my-3">
+                          <BrainIcon className="text-brand-primary" />
+                          <h2 className="font-medium">Reasoning</h2>
+                        </div>
                       <div className="flex w-full flex-col break-words">
                         <MarkdownStyled markdown={m?.content || ""} />
                       </div>
