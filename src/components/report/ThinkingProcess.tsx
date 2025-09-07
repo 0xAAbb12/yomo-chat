@@ -14,7 +14,9 @@ import {
 } from "lucide-react";
 import type { Message } from "~/core/messages";
 import { ProjectReport } from "../yomo/project-report";
-import { Markdown } from "../yomo/markdown";
+import MarkdownStyled from "./MarkdownStyled";
+import { ScrollArea } from "~/components/ui/scroll-area";
+// import { Markdown } from "../yomo/markdown";
 const ACCENT = "#F67C00";
 
 const AGNET_CONFIG: {
@@ -106,7 +108,7 @@ export default function ThinkingProcess({ messasges }: ThinkingProcessProps) {
             </TabsList>
 
             {/* 右侧：flex-1 内容区域，占位布局 */}
-            <div className="flex-1">
+            <div className="min-w-0 flex-1">
               {messasges
                 .filter((f) => f?.agent === agent)
                 .map((m) => {
@@ -147,24 +149,11 @@ export default function ThinkingProcess({ messasges }: ThinkingProcessProps) {
                     >
                       <h2>Reasoning</h2>
                       <div className="flex w-full flex-col break-words">
-                        <Markdown className={cn("prose-invert text-[#2C2C2C]")}>
-                          {m?.content}
-                        </Markdown>
+                        <MarkdownStyled markdown={m?.content || ""} />
                       </div>
                     </TabsContent>
                   );
                 })}
-              {/* {items.map((it) => (
-                <TabsContent key={it?.id} value={it?.id || ''} className="m-0">
-                  <div className="space-y-4">
-                    <div className="h-24 rounded-lg border border-dashed border-black/20">
-                      {it.label}
-                    </div>
-                    <div className="h-40 rounded-lg border border-dashed border-black/20" />
-                    <div className="h-32 rounded-lg border border-dashed border-black/20" />
-                  </div>
-                </TabsContent>
-              ))} */}
             </div>
           </div>
         </div>
