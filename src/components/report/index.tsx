@@ -16,8 +16,8 @@ interface ReportProps {
 export default function DeepResarchReport({
     messageIds = MESSAGE_IDS,
 }: ReportProps) {
-  // const messages = MESSAGES;
-  const messages = getMessages();
+  const messages = MESSAGES;
+  // const messages = getMessages();
   console.log("messageIds", messageIds);
   console.log("messages", messages);
   const repostMesssage = useMemo(() => {
