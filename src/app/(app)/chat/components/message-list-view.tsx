@@ -1,5 +1,3 @@
-
-
 import { LoadingOutlined } from "@ant-design/icons";
 import { motion } from "framer-motion";
 import {
@@ -56,7 +54,7 @@ import {
 } from "~/core/store";
 import { parseJSON } from "~/core/utils";
 import useCopyClipboard from "~/hooks/useCopyClipboard";
-import { cn, splitBySeparator } from "~/lib/utils";
+import { cn } from "~/lib/utils";
 import DeepResearch from "./deep-research";
 import DeepResarchReport from "~/components/report";
 import { MESSAGE_IDS } from "~/components/report/confit";
@@ -74,7 +72,6 @@ export function MessageListView({
   ) => void;
 }) {
   const scrollContainerRef = useRef<ScrollContainerRef>(null);
-  const messageIndexRef = useRef(0);
   const messageIds = useMessageIds();
   const interruptMessage = useLastInterruptMessage();
   const waitingForFeedbackMessageId = useLastFeedbackMessageId();
@@ -85,10 +82,7 @@ export function MessageListView({
   const ongoingResearchIsOpen = useStore(
     (state) => state.ongoingResearchId === state.openResearchId,
   );
-
-  const messages = getMessages()
-  const deepResearchIds = useStore((state) => state.deepResearchIds);
-  const pastDeepResearchIds = useStore((state) => state.pastDeepResearchIds);
+  const messages = getMessages();
 
   const handleToggleResearch = useCallback(() => {
     // Fix the issue where auto-scrolling to the bottom
@@ -103,15 +97,20 @@ export function MessageListView({
     };
   }, []);
 
-  // const splitDeepResearchIds = useMemo(() => {
-  //   return splitBySeparator(deepResearchIds, '---');
-  // }, [deepResearchIds]);
+  const deepAgents = ['planner', 'reporter', 'social_agent', 'on_chain_agent', 'ta_agent', 'research_agent']
+  const messageIdsConfig = useMemo(() => {
+    return messageIds.map(m => {
+      const message = messages.get(m)
+      return {
+        id: m,
+        isDeepResearch: deepAgents.indexOf(message?.agent || '') > -1
+      }
+    })
+  }, [messageIds, messages]);
 
-  // console.log("----messageIds", messageIds);
-  // console.log("----messages", messages);
-  // console.log("deepResearchIds", deepResearchIds);
-  // console.log("splitDeepResearchIds", splitDeepResearchIds);
-  // console.log("pastDeepResearchIds", pastDeepResearchIds);
+  console.log("----messageIds", messageIds);
+  console.log("----messages", messages);
+  console.log("----messageIdsConfig", messageIdsConfig)
 
   return (
     <ScrollContainer
@@ -121,37 +120,35 @@ export function MessageListView({
       ref={scrollContainerRef}
     >
       <ul className="flex flex-col">
-        {messageIds.map((messageId) => {
-          // TODO 
-          // const ps = pastDeepResearchIds[messageIndexRef.current] || [];
-          // console.log("current", messageIndexRef.current);
-          // if (pastDeepResearchIds.length > 1 && ps && ps.length > 0 && ps.at(-1) === messageId) {
-          //   const arrs = pastDeepResearchIds[messageIndexRef.current] as string[];
-          //   console.log("arrs", arrs);
-          //   messageIndexRef.current += 1;
-          //   return <DeepResearch messages={arrs || []} from="past" />
-          // }
-          if (deepResearchIds[deepResearchIds.length -1] === messageId) {
-              let arr = deepResearchIds;
-              const lastIndex = arr.lastIndexOf('---');
-              arr = deepResearchIds.slice(lastIndex + 1);
-              return <DeepResarchReport messageIds={arr} />
-              // return <DeepResearch messages={arr} from="stream" />
+        {messageIds.map((messageId, index) => {
+          if (messageIdsConfig[index]?.isDeepResearch) {
+            if (!messageIdsConfig[index-1]?.isDeepResearch && messageIdsConfig[index]?.isDeepResearch) {
+              let arrs: string[] = []
+              for(let i = index; i <= messageIdsConfig.length; i++) {
+                if (messageIdsConfig[i]?.isDeepResearch) {
+                  messageIdsConfig[i] && arrs.push(messageIdsConfig[i]?.id as string)
+                } else {
+                  break;
+                }
+              }
+              console.log(`----arrs__${index}`, arrs)
+              return <DeepResarchReport messageIds={arrs} />
+              // return <DeepResearch messages={arrs} from="stream" />
+            } else {
+              return null;
             }
-          if (deepResearchIds.includes(messageId)) {
-            return null;
           }
           return (
-          <MessageListItem
-            key={messageId}
-            messageId={messageId}
-            waitForFeedback={waitingForFeedbackMessageId === messageId}
-            interruptMessage={interruptMessage}
-            onFeedback={onFeedback}
-            onSendMessage={onSendMessage}
-            onToggleResearch={handleToggleResearch}
-          />
-        )
+            <MessageListItem
+              key={messageId}
+              messageId={messageId}
+              waitForFeedback={waitingForFeedbackMessageId === messageId}
+              interruptMessage={interruptMessage}
+              onFeedback={onFeedback}
+              onSendMessage={onSendMessage}
+              onToggleResearch={handleToggleResearch}
+            />
+          )
         })}
         <div className="flex h-8 w-full shrink-0"></div>
       </ul>

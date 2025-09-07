@@ -1,0 +1,942 @@
+id:
+event: tool_calls
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "planner", "id": "run--ef43ebc0-4079-4db1-803b-5177805446a9", "role": "assistant", "finish_reason": "STOP", "tool_calls": [{"name": "web_search", "args": {"query": "Pell 值得购买吗?"}, "id": "bcd512eb-3053-402c-b11a-0115481f2f10", "type": "tool_call"}], "tool_call_chunks": [{"name": "web_search", "args": "{\"query\": \"Pell \\u503c\\u5f97\\u8d2d\\u4e70\\u5417?\"}", "id": "bcd512eb-3053-402c-b11a-0115481f2f10", "index": null, "type": "tool_call_chunk"}]}
+id:
+event: tool_calls
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "planner", "id": "run--a6adc3b1-2f67-4a11-a290-c6b8a25100f3", "role": "assistant", "finish_reason": "STOP", "tool_calls": [{"name": "search_web3_project", "args": {"search_query": "Pell Network"}, "id": "7884c5ac-710f-4b19-ad2d-c8c4e33c80cb", "type": "tool_call"}], "tool_call_chunks": [{"name": "search_web3_project", "args": "{\"search_query\": \"Pell Network\"}", "id": "7884c5ac-710f-4b19-ad2d-c8c4e33c80cb", "index": null, "type": "tool_call_chunk"}]}
+id:
+event: tool_calls
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "planner", "id": "run--341849da-848f-4fb6-aca7-0156e9056886", "role": "assistant", "finish_reason": "STOP", "tool_calls": [{"name": "get_web3_project", "args": {"name": "Pell Network"}, "id": "32c4c43e-4c9a-4e0f-bfb5-8fd6fa96e87b", "type": "tool_call"}], "tool_call_chunks": [{"name": "get_web3_project", "args": "{\"name\": \"Pell Network\"}", "id": "32c4c43e-4c9a-4e0f-bfb5-8fd6fa96e87b", "index": null, "type": "tool_call_chunk"}]}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "planner", "id": "run--23ce69ca-7d9b-4b25-a89d-6016e15a5920", "role": "assistant", "content": "Pell Network 是一个旨在为比特币生态系统创建去中心化代币经济安全租赁平台的项目。它通过构建一个聚合原生 BTC 质押和 LSD 再质押服务的网络，允许质押者选择验证基于 Pell Network 生态系统构建的新软件模块。质押者通过授权 Pell Network 智能合约"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "planner", "id": "run--23ce69ca-7d9b-4b25-a89d-6016e15a5920", "role": "assistant", "content": "对其质押资产施加额外的削减条件来选择加入，从而实现加密经济安全性的扩展。\n\n该项目的简短介绍是“为比特币生态系统提供主动验证服务”。\n\nPell Network 已通过两轮融资（战略轮和 Pre-Seed 轮）筹集了总计 6,50"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "planner", "id": "run--23ce69ca-7d9b-4b25-a89d-6016e15a5920", "role": "assistant", "content": "0,000 美元。其投资者包括 Mirana Ventures、Paper Ventures、Halo Capital、MultiversX 等。\n\n以下是 Pell Network (PELL) 的一些市场数据：\n*   **代币价格**: 约为 $0.00265133872644917"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "planner", "id": "run--23ce69ca-7d9b-4b25-a89d-6016e15a5920", "role": "assistant", "content": "\n*   **24 小时价格变化**: 下降 7.4383%\n*   **市值**: 约 $890,849.81\n*   **完全稀释估值 (FDV)**: 约 $5,567,811"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "planner", "id": "run--23ce69ca-7d9b-4b25-a89d-6016e15a5920", "role": "assistant", "content": ".33\n*   **24 小时交易量**: 约 $390,347\n\n链上数据显示，Pell Network 的总锁定价值（TVL）为 385,300,545 美元，并且在过去 7 天内增长"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "planner", "id": "run--23ce69ca-7d9b-4b25-a89d-6016e15a5920", "role": "assistant", "content": "了 4.7473%。TVL 主要由各种形式的比特币（BTC、WBTC、FBTC 等）、以太坊（NETH、UBTC 等）和稳定币（USDC、USDT）组成。\n\n关于代币经济学：\n*   **代币符号**: PELL\n"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "planner", "id": "run--23ce69ca-7d9b-4b25-a89d-6016e15a5920", "role": "assistant", "content": "*   **流通供应量**: 336,000,000 PELL\n*   **总供应量**: 2,100,000,000 PELL\n\n您可以通过 Pell Network 的官方网站 `https://pell.network/`，以及其 GitHub 和 Twitter 页面"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "planner", "id": "run--23ce69ca-7d9b-4b25-a89d-6016e15a5920", "role": "assistant", "content": "了解更多信息。\n\n**投资建议需谨慎**：\n以上信息仅为 Pell Network 项目的客观数据。至于 Pell 是否值得购买，这取决于您的个人投资目标、风险承受能力以及您对加密货币市场和该项目未来潜力的判断。在做出任何投资决定之前，建议您："}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "planner", "id": "run--23ce69ca-7d9b-4b25-a89d-6016e15a5920", "role": "assistant", "content": "\n1.  **深入研究**：仔细阅读项目的白皮书、路线图和官方公告。\n2.  **评估风险**：了解加密货币市场的波动性，以及 Pell Network 项目可能面临的技术、市场和监管风险。\n3.  **咨询专业人士**：如果可能，咨询"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "planner", "id": "run--23ce69ca-7d9b-4b25-a89d-6016e15a5920", "role": "assistant", "content": "专业的金融顾问或加密货币专家。\n4.  **关注发展**：密切关注项目的进展、社区活动和市场表现。", "finish_reason": "STOP"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "planner", "id": "run--ad5987f0-5085-4c04-9b11-cee17c0a0f08", "role": "assistant", "content": "\n\n"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "planner", "id": "run--ad5987f0-5085-4c04-9b11-cee17c0a0f08", "role": "assistant", "content": "现在，为了提供更"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "planner", "id": "run--ad5987f0-5085-4c04-9b11-cee17c0a0f08", "role": "assistant", "content": "全面的信息，我将基于这些数据，制定一个详细的研报计划，分配"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "planner", "id": "run--ad5987f0-5085-4c04-9b11-cee17c0a0f08", "role": "assistant", "content": "给我的专业研究代理。\n\n```json\n{\n  \"on_chain_research"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "planner", "id": "run--ad5987f0-5085-4c04-9b11-cee17c0a0f08", "role": "assistant", "content": "_topic\": \"分析 Pell Network 的链上活动和数据：详细分析其 TVL 组成（BTC、ETH、稳定币等具体代币种类"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "planner", "id": "run--ad5987f0-5085-4c04-9b11-cee17c0a0f08", "role": "assistant", "content": "和数量）、TVL 历史趋势（包括最高点和近期变化）、活跃地址数量（如果数据可用）、链上交易量以及智能合约交互情况"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "planner", "id": "run--ad5987f0-5085-4c04-9b11-cee17c0a0f08", "role": "assistant", "content": "。研究 PELL 代币的链上流动性、主要持有者分布、大额交易行为，并识别潜在的风险指标或异常模式。\",\n  \"social_research_topic\": \"围绕 Pell Network 在主要社交媒体平台（如 Twitter"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "planner", "id": "run--ad5987f0-5085-4c04-9b11-cee17c0a0f08", "role": "assistant", "content": "、Discord、Telegram、Reddit 等）和Web3社区中的讨论和情绪。分析关键意见领袖 (KOL) 对 Pell Network 的看法和推广情况。评估社区活跃度、用户参与度、项目公告在社区中的反"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "planner", "id": "run--ad5987f0-5085-4c04-9b11-cee17c0a0f08", "role": "assistant", "content": "响、以及是否存在负面情绪或 FUD (Fear, Uncertainty, Doubt) 迹象。收集用户对项目功能、安全性、经济模型和未来发展方向的普遍反馈。\",\n  \"ta_research_topic\": \"对 Pell Network (PELL) 代币进行技术分析：研究其历史价格走势、"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "planner", "id": "run--ad5987f0-5085-4c04-9b11-cee17c0a0f08", "role": "assistant", "content": "成交量模式、支持与阻力位、以及关键技术指标（如 RSI, MACD, 均线等）。评估当前的市场结构、波动性、流动性以及潜在的价格预测。比较 PELL 与类似比特币生态系统项目或再质押赛道项目的市场表现。分析其上市交易所"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "planner", "id": "run--ad5987f0-5085-4c04-9b11-cee17c0a0f08", "role": "assistant", "content": "的深度和价差，并评估其市场操纵风险。\",\n  \"research_topic\": \"进行 Pell Network 的综合性研究：深入分析其“比特币生态系统去中心化代币经济安全租赁平台”的核心技术架构和创新点（如原生 BTC 质押和 LSD 再质押服务）。研究"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "planner", "id": "run--ad5987f0-5085-4c04-9b11-cee17c0a0f08", "role": "assistant", "content": "其在比特币生态系统中的定位和竞争优势，包括与现有解决方案的比较。分析其团队背景、合作伙伴、投资机构及其对项目的影响。评估其经济模型（代币供应、分配、用途、销毁机制等）的可持续性和增长潜力。识别项目的潜在风险（技术、安全"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "planner", "id": "run--ad5987f0-5085-4c04-9b11-cee17c0a0f08", "role": "assistant", "content": "、监管、竞争等）和未来发展路线图。探讨其市场采用率和用户增长策略，以及其对整体 Web3 市场特别是比特币生态系统的潜在影响。\"\n}\n```", "finish_reason": "STOP"}
+id:
+event: tool_calls
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "planner", "id": "run--83479f07-2da7-4516-8096-4b352f08ad71", "role": "assistant", "finish_reason": "STOP", "tool_calls": [{"name": "AgentTopics", "args": {"on_chain_research_topic": "分析 Pell Network 的链上活动和数据：详细分析其 TVL 组成（BTC、ETH、稳定币等具体代币种类和数量）、TVL 历史趋势（包括最高点和近期变化）、活跃地址数量（如果数据可用）、链上交易量以及智能合约交互情况。研究 PELL 代币的链上流动性、主要持有者分布、大额交易行为，并识别潜在的风险指标或异常模式。", "ta_research_topic": "对 Pell Network (PELL) 代币进行技术分析：研究其历史价格走势、成交量模式、支持与阻力位、以及关键技术指标（如 RSI, MACD, 均线等）。评估当前的市场结构、波动性、流动性以及潜在的价格预测。比较 PELL 与类似比特币生态系统项目或再质押赛道项目的市场表现。分析其上市交易所的深度和价差，并评估其市场操纵风险。", "social_research_topic": "围绕 Pell Network 在主要社交媒体平台（如 Twitter、Discord、Telegram、Reddit 等）和Web3社区中的讨论和情绪。分析关键意见领袖 (KOL) 对 Pell Network 的看法和推广情况。评估社区活跃度、用户参与度、项目公告在社区中的反响、以及是否存在负面情绪或 FUD (Fear, Uncertainty, Doubt) 迹象。收集用户对项目功能、安全性、经济模型和未来发展方向的普遍反馈。", "research_topic": "进行 Pell Network 的综合性研究：深入分析其“比特币生态系统去中心化代币经济安全租赁平台”的核心技术架构和创新点（如原生 BTC 质押和 LSD 再质押服务）。研究其在比特币生态系统中的定位和竞争优势，包括与现有解决方案的比较。分析其团队背景、合作伙伴、投资机构及其对项目的影响。评估其经济模型（代币供应、分配、用途、销毁机制等）的可持续性和增长潜力。识别项目的潜在风险（技术、安全、监管、竞争等）和未来发展路线图。探讨其市场采用率和用户增长策略，以及其对整体 Web3 市场特别是比特币生态系统的潜在影响。"}, "id": "c8dac651-78f4-45d4-ba86-2cacbf36223a", "type": "tool_call"}], "tool_call_chunks": [{"name": "AgentTopics", "args": "{\"on_chain_research_topic\": \"\\u5206\\u6790 Pell Network \\u7684\\u94fe\\u4e0a\\u6d3b\\u52a8\\u548c\\u6570\\u636e\\uff1a\\u8be6\\u7ec6\\u5206\\u6790\\u5176 TVL \\u7ec4\\u6210\\uff08BTC\\u3001ETH\\u3001\\u7a33\\u5b9a\\u5e01\\u7b49\\u5177\\u4f53\\u4ee3\\u5e01\\u79cd\\u7c7b\\u548c\\u6570\\u91cf\\uff09\\u3001TVL \\u5386\\u53f2\\u8d8b\\u52bf\\uff08\\u5305\\u62ec\\u6700\\u9ad8\\u70b9\\u548c\\u8fd1\\u671f\\u53d8\\u5316\\uff09\\u3001\\u6d3b\\u8dc3\\u5730\\u5740\\u6570\\u91cf\\uff08\\u5982\\u679c\\u6570\\u636e\\u53ef\\u7528\\uff09\\u3001\\u94fe\\u4e0a\\u4ea4\\u6613\\u91cf\\u4ee5\\u53ca\\u667a\\u80fd\\u5408\\u7ea6\\u4ea4\\u4e92\\u60c5\\u51b5\\u3002\\u7814\\u7a76 PELL \\u4ee3\\u5e01\\u7684\\u94fe\\u4e0a\\u6d41\\u52a8\\u6027\\u3001\\u4e3b\\u8981\\u6301\\u6709\\u8005\\u5206\\u5e03\\u3001\\u5927\\u989d\\u4ea4\\u6613\\u884c\\u4e3a\\uff0c\\u5e76\\u8bc6\\u522b\\u6f5c\\u5728\\u7684\\u98ce\\u9669\\u6307\\u6807\\u6216\\u5f02\\u5e38\\u6a21\\u5f0f\\u3002\", \"ta_research_topic\": \"\\u5bf9 Pell Network (PELL) \\u4ee3\\u5e01\\u8fdb\\u884c\\u6280\\u672f\\u5206\\u6790\\uff1a\\u7814\\u7a76\\u5176\\u5386\\u53f2\\u4ef7\\u683c\\u8d70\\u52bf\\u3001\\u6210\\u4ea4\\u91cf\\u6a21\\u5f0f\\u3001\\u652f\\u6301\\u4e0e\\u963b\\u529b\\u4f4d\\u3001\\u4ee5\\u53ca\\u5173\\u952e\\u6280\\u672f\\u6307\\u6807\\uff08\\u5982 RSI, MACD, \\u5747\\u7ebf\\u7b49\\uff09\\u3002\\u8bc4\\u4f30\\u5f53\\u524d\\u7684\\u5e02\\u573a\\u7ed3\\u6784\\u3001\\u6ce2\\u52a8\\u6027\\u3001\\u6d41\\u52a8\\u6027\\u4ee5\\u53ca\\u6f5c\\u5728\\u7684\\u4ef7\\u683c\\u9884\\u6d4b\\u3002\\u6bd4\\u8f83 PELL \\u4e0e\\u7c7b\\u4f3c\\u6bd4\\u7279\\u5e01\\u751f\\u6001\\u7cfb\\u7edf\\u9879\\u76ee\\u6216\\u518d\\u8d28\\u62bc\\u8d5b\\u9053\\u9879\\u76ee\\u7684\\u5e02\\u573a\\u8868\\u73b0\\u3002\\u5206\\u6790\\u5176\\u4e0a\\u5e02\\u4ea4\\u6613\\u6240\\u7684\\u6df1\\u5ea6\\u548c\\u4ef7\\u5dee\\uff0c\\u5e76\\u8bc4\\u4f30\\u5176\\u5e02\\u573a\\u64cd\\u7eb5\\u98ce\\u9669\\u3002\", \"social_research_topic\": \"\\u56f4\\u7ed5 Pell Network \\u5728\\u4e3b\\u8981\\u793e\\u4ea4\\u5a92\\u4f53\\u5e73\\u53f0\\uff08\\u5982 Twitter\\u3001Discord\\u3001Telegram\\u3001Reddit \\u7b49\\uff09\\u548cWeb3\\u793e\\u533a\\u4e2d\\u7684\\u8ba8\\u8bba\\u548c\\u60c5\\u7eea\\u3002\\u5206\\u6790\\u5173\\u952e\\u610f\\u89c1\\u9886\\u8896 (KOL) \\u5bf9 Pell Network \\u7684\\u770b\\u6cd5\\u548c\\u63a8\\u5e7f\\u60c5\\u51b5\\u3002\\u8bc4\\u4f30\\u793e\\u533a\\u6d3b\\u8dc3\\u5ea6\\u3001\\u7528\\u6237\\u53c2\\u4e0e\\u5ea6\\u3001\\u9879\\u76ee\\u516c\\u544a\\u5728\\u793e\\u533a\\u4e2d\\u7684\\u53cd\\u54cd\\u3001\\u4ee5\\u53ca\\u662f\\u5426\\u5b58\\u5728\\u8d1f\\u9762\\u60c5\\u7eea\\u6216 FUD (Fear, Uncertainty, Doubt) \\u8ff9\\u8c61\\u3002\\u6536\\u96c6\\u7528\\u6237\\u5bf9\\u9879\\u76ee\\u529f\\u80fd\\u3001\\u5b89\\u5168\\u6027\\u3001\\u7ecf\\u6d4e\\u6a21\\u578b\\u548c\\u672a\\u6765\\u53d1\\u5c55\\u65b9\\u5411\\u7684\\u666e\\u904d\\u53cd\\u9988\\u3002\", \"research_topic\": \"\\u8fdb\\u884c Pell Network \\u7684\\u7efc\\u5408\\u6027\\u7814\\u7a76\\uff1a\\u6df1\\u5165\\u5206\\u6790\\u5176\\u201c\\u6bd4\\u7279\\u5e01\\u751f\\u6001\\u7cfb\\u7edf\\u53bb\\u4e2d\\u5fc3\\u5316\\u4ee3\\u5e01\\u7ecf\\u6d4e\\u5b89\\u5168\\u79df\\u8d41\\u5e73\\u53f0\\u201d\\u7684\\u6838\\u5fc3\\u6280\\u672f\\u67b6\\u6784\\u548c\\u521b\\u65b0\\u70b9\\uff08\\u5982\\u539f\\u751f BTC \\u8d28\\u62bc\\u548c LSD \\u518d\\u8d28\\u62bc\\u670d\\u52a1\\uff09\\u3002\\u7814\\u7a76\\u5176\\u5728\\u6bd4\\u7279\\u5e01\\u751f\\u6001\\u7cfb\\u7edf\\u4e2d\\u7684\\u5b9a\\u4f4d\\u548c\\u7ade\\u4e89\\u4f18\\u52bf\\uff0c\\u5305\\u62ec\\u4e0e\\u73b0\\u6709\\u89e3\\u51b3\\u65b9\\u6848\\u7684\\u6bd4\\u8f83\\u3002\\u5206\\u6790\\u5176\\u56e2\\u961f\\u80cc\\u666f\\u3001\\u5408\\u4f5c\\u4f19\\u4f34\\u3001\\u6295\\u8d44\\u673a\\u6784\\u53ca\\u5176\\u5bf9\\u9879\\u76ee\\u7684\\u5f71\\u54cd\\u3002\\u8bc4\\u4f30\\u5176\\u7ecf\\u6d4e\\u6a21\\u578b\\uff08\\u4ee3\\u5e01\\u4f9b\\u5e94\\u3001\\u5206\\u914d\\u3001\\u7528\\u9014\\u3001\\u9500\\u6bc1\\u673a\\u5236\\u7b49\\uff09\\u7684\\u53ef\\u6301\\u7eed\\u6027\\u548c\\u589e\\u957f\\u6f5c\\u529b\\u3002\\u8bc6\\u522b\\u9879\\u76ee\\u7684\\u6f5c\\u5728\\u98ce\\u9669\\uff08\\u6280\\u672f\\u3001\\u5b89\\u5168\\u3001\\u76d1\\u7ba1\\u3001\\u7ade\\u4e89\\u7b49\\uff09\\u548c\\u672a\\u6765\\u53d1\\u5c55\\u8def\\u7ebf\\u56fe\\u3002\\u63a2\\u8ba8\\u5176\\u5e02\\u573a\\u91c7\\u7528\\u7387\\u548c\\u7528\\u6237\\u589e\\u957f\\u7b56\\u7565\\uff0c\\u4ee5\\u53ca\\u5176\\u5bf9\\u6574\\u4f53 Web3 \\u5e02\\u573a\\u7279\\u522b\\u662f\\u6bd4\\u7279\\u5e01\\u751f\\u6001\\u7cfb\\u7edf\\u7684\\u6f5c\\u5728\\u5f71\\u54cd\\u3002\"}", "id": "c8dac651-78f4-45d4-ba86-2cacbf36223a", "index": null, "type": "tool_call_chunk"}]}
+id:
+event: tool_calls
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--7522adcc-f42e-452a-aea1-9750d3abba9e", "role": "assistant", "finish_reason": "STOP", "tool_calls": [{"name": "web_search", "args": {"query": "Pell Network overview"}, "id": "c3b0f3c0-c362-4572-a927-8e8e6e20e823", "type": "tool_call"}, {"name": "web_search", "args": {"query": "Pell Network core technology architecture native BTC staking LSD re-staking"}, "id": "c9219c16-2729-460d-b00e-58d02113107d", "type": "tool_call"}, {"name": "web_search", "args": {"query": "Pell Network Bitcoin ecosystem positioning competitive advantage"}, "id": "1accebd1-f542-48d5-adde-5a6087209f42", "type": "tool_call"}, {"name": "web_search", "args": {"query": "Pell Network team partners investors"}, "id": "46294fc3-03de-4ca0-80f2-72b2f67a6b24", "type": "tool_call"}, {"name": "web_search", "args": {"query": "Pell Network tokenomics economic model"}, "id": "10889ed6-dddc-433f-baae-a8eb6bb6fa30", "type": "tool_call"}, {"name": "web_search", "args": {"query": "Pell Network risks future roadmap"}, "id": "9b793961-8134-4023-84a2-f088172f80e9", "type": "tool_call"}, {"name": "web_search", "args": {"query": "Pell Network market adoption user growth strategy"}, "id": "0de65ae2-c3ce-4296-8a80-4778e32f1cce", "type": "tool_call"}], "tool_call_chunks": [{"name": "web_search", "args": "{\"query\": \"Pell Network overview\"}", "id": "c3b0f3c0-c362-4572-a927-8e8e6e20e823", "index": null, "type": "tool_call_chunk"}, {"name": "web_search", "args": "{\"query\": \"Pell Network core technology architecture native BTC staking LSD re-staking\"}", "id": "c9219c16-2729-460d-b00e-58d02113107d", "index": null, "type": "tool_call_chunk"}, {"name": "web_search", "args": "{\"query\": \"Pell Network Bitcoin ecosystem positioning competitive advantage\"}", "id": "1accebd1-f542-48d5-adde-5a6087209f42", "index": null, "type": "tool_call_chunk"}, {"name": "web_search", "args": "{\"query\": \"Pell Network team partners investors\"}", "id": "46294fc3-03de-4ca0-80f2-72b2f67a6b24", "index": null, "type": "tool_call_chunk"}, {"name": "web_search", "args": "{\"query\": \"Pell Network tokenomics economic model\"}", "id": "10889ed6-dddc-433f-baae-a8eb6bb6fa30", "index": null, "type": "tool_call_chunk"}, {"name": "web_search", "args": "{\"query\": \"Pell Network risks future roadmap\"}", "id": "9b793961-8134-4023-84a2-f088172f80e9", "index": null, "type": "tool_call_chunk"}, {"name": "web_search", "args": "{\"query\": \"Pell Network market adoption user growth strategy\"}", "id": "0de65ae2-c3ce-4296-8a80-4778e32f1cce", "index": null, "type": "tool_call_chunk"}]}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "social_agent", "id": "run--6221d083-a974-4dde-86fc-4bc7eb164502", "role": "assistant", "content": "Problem Statement:\n\n围绕 Pell Network 在主要社交媒体平台（如 Twitter、Discord、Telegram、Reddit 等）和Web3社区中的讨论和情绪。分析关键意见领袖 (KOL) 对 Pell Network 的看法和推广情况。评估社区活跃度、用户参与度、项目公告在社区中的反响、"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "social_agent", "id": "run--6221d083-a974-4dde-86fc-4bc7eb164502", "role": "assistant", "content": "以及是否存在负面情绪或 FUD (Fear, Uncertainty, Doubt) 迹象。收集用户对项目功能、安全性、经济模型和未来发展方向的普遍反馈。\n\nSocial Media Analysis:\n\nPell Network 的社交媒体存在和社区情绪主要体现在其在 Twitter、Discord、Telegram 等"}
+id:
+event: tool_calls
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--be8b32b7-159d-4e8b-8a58-d006ca2e62f5", "role": "assistant", "finish_reason": "STOP", "tool_calls": [{"name": "web_search", "args": {"query": "Pell Network on-chain data analysis"}, "id": "ed5638ac-7fee-448b-88b4-e56d78e09d57", "type": "tool_call"}, {"name": "web_search", "args": {"query": "Pell Network TVL breakdown DefiLlama"}, "id": "27ccfc9e-e2f6-4497-a956-7d9f34dcc6ff", "type": "tool_call"}, {"name": "web_search", "args": {"query": "Pell Network PELL token contract address Etherscan"}, "id": "cac83706-91ed-4ed7-8e5b-a780560d9cd1", "type": "tool_call"}], "tool_call_chunks": [{"name": "web_search", "args": "{\"query\": \"Pell Network on-chain data analysis\"}", "id": "ed5638ac-7fee-448b-88b4-e56d78e09d57", "index": null, "type": "tool_call_chunk"}, {"name": "web_search", "args": "{\"query\": \"Pell Network TVL breakdown DefiLlama\"}", "id": "27ccfc9e-e2f6-4497-a956-7d9f34dcc6ff", "index": null, "type": "tool_call_chunk"}, {"name": "web_search", "args": "{\"query\": \"Pell Network PELL token contract address Etherscan\"}", "id": "cac83706-91ed-4ed7-8e5b-a780560d9cd1", "index": null, "type": "tool_call_chunk"}]}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "social_agent", "id": "run--6221d083-a974-4dde-86fc-4bc7eb164502", "role": "assistant", "content": "平台上的互动。综合来看，目前关于 Pell Network 的公开信息和讨论相对有限，这可能表明其仍处于早期阶段或社区尚未形成大规模的关注。\n\n普遍情绪和讨论：\n\n关于 Pell Network 的直接公开讨论和情绪分析数据较少。主要的讨论集中在其技术特点和潜在用"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "social_agent", "id": "run--6221d083-a974-4dde-86fc-4bc7eb164502", "role": "assistant", "content": "例上，例如关于其作为以太坊流动性质押协议的特性，以及提供 ETH 跨链互操作性解决方案的愿景。用户普遍关注其收益机制和安全性，特别是作为 LSDFi 协议的一部分，其稳定性至关重要。\n\nKOLs 观点和推广：\n\n目前在"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "social_agent", "id": "run--6221d083-a974-4dde-86fc-4bc7eb164502", "role": "assistant", "content": "公开的搜索结果中，并未发现有显著的 KOL 对 Pell Network 进行大规模推广或发表深入看法。这可能意味着该项目尚未引起头部加密 KOL 的广泛关注，或其推广策略更侧重于技术社区或特定利基群体。\n\n社区活跃度、用户参与度与公告反响：\n\n从"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "social_agent", "id": "run--6221d083-a974-4dde-86fc-4bc7eb164502", "role": "assistant", "content": "现有信息来看，Pell Network 在 GitHub 上有代码更新，但关于其社区活跃度、用户参与度以及对项目公告的具体反响，缺乏直接的数据支持。例如，其在 Discord 和 Telegram 上的社群规模和日活跃用户数等关键指标未在公开信息中明确体现。这使得"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "social_agent", "id": "run--6221d083-a974-4dde-86fc-4bc7eb164502", "role": "assistant", "content": "评估其社区的粘性和参与度变得困难。项目公告通常通过官方渠道发布，但在缺乏社区互动数据的情况下，难以评估其在用户中的反响程度。\n\n负面情绪或 FUD：\n\n截至目前，公开可获取的信息中，尚未发现针对 Pell Network 的显著负面情绪或 F"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "social_agent", "id": "run--6221d083-a974-4dde-86fc-4bc7eb164502", "role": "assistant", "content": "UD 迹象。这可能有两个原因：一是项目确实没有产生负面事件；二是由于其社区规模或知名度尚不足以引爆大规模的负面讨论。对新项目而言，缺乏 FUD 在早期可能是一种中性状态，但同时也可能意味着关注度不高。\n\n用户反馈"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "social_agent", "id": "run--6221d083-a974-4dde-86fc-4bc7eb164502", "role": "assistant", "content": "（功能、安全性、经济模型、未来发展）：\n\n*   **功能**: Pell Network 的核心功能是作为以太坊的流动性质押衍生品 (LSD) 协议，旨在为以太坊和各种 Layer2 网络提供 ETH 跨链互操作性。用户反馈可能围绕其跨"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "social_agent", "id": "run--6221d083-a974-4dde-86fc-4bc7eb164502", "role": "assistant", "content": "链桥的效率、易用性和兼容性。\n*   **安全性**: 作为处理 ETH 资产的协议，安全性是用户最为关注的核心问题。虽然具体的用户反馈不明确，但理论上，用户会关心其智能合约审计情况、TVL (Total Value Locked) 的增长是否稳"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "social_agent", "id": "run--6221d083-a974-4dde-86fc-4bc7eb164502", "role": "assistant", "content": "健、以及面对潜在攻击的防护能力。\n*   **经济模型**: Pell Network 的经济模型可能涉及其代币机制、质押奖励、治理模式等。用户会关注其代币的价值捕获能力、通胀/通缩机制以及对持有者的激励是否可持续。\n*   **未来"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "ta_agent", "id": "run--cbaa5550-99e4-41f0-b20a-cc8fe516aa85", "role": "assistant", "content": "Problem Statement:\n\n对 Pell Network (PELL) 代币进行技术分析，包括其历史价格走势、成交量模式、支持与阻力位、关键技术指标（如 RSI, MACD, 均线等）。评估当前的市场结构、波动性、流动性以及潜在的价格预测。比较"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "social_agent", "id": "run--6221d083-a974-4dde-86fc-4bc7eb164502", "role": "assistant", "content": "发展**: 用户普遍期望项目能持续创新，扩大生态系统，并确保长期价值。对于 Pell Network 而言，其未来发展方向可能包括拓展更多 Layer2 网络的集成、增强跨链互操作性解决方案、以及进一步提升去中心化程度。\n\n结论:\n\nPell Network 是一个专注于"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "ta_agent", "id": "run--cbaa5550-99e4-41f0-b20a-cc8fe516aa85", "role": "assistant", "content": " PELL 与类似比特币生态系统项目或再质押赛道项目的市场表现。分析其上市交易所的深度和价差，并评估其市场操纵风险。\n\nTechnical Analysis:\n\n由于 Pell Network (PELL) 是一个相对较新的项目，并且其代币 PELL 的主要交易信息"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "social_agent", "id": "run--6221d083-a974-4dde-86fc-4bc7eb164502", "role": "assistant", "content": "以太坊流动性质押衍生品和跨链互操作性的 Web3 项目。目前，关于该项目的公开讨论和社区活跃度数据相对有限，这使得全面评估其在主要社交媒体平台和 Web3 社区中的情绪、KOL 影响力、社区参与度以及具体用户反馈存在"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "ta_agent", "id": "run--cbaa5550-99e4-41f0-b20a-cc8fe516aa85", "role": "assistant", "content": "可能集中在少数交易所或聚合平台。首先，需要确定 PELL 代币的主要交易市场，以便获取其技术指标数据和市场信息。通过初步搜索，发现 PELL 代币通常在 MEXC、Gate.io 等交易所上市，并通过 CoinGecko 和 CoinMarketCap 等数据聚合平台提供数据"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "social_agent", "id": "run--6221d083-a974-4dde-86fc-4bc7eb164502", "role": "assistant", "content": "一定挑战。\n\n现有信息表明，项目在技术开发上有所投入（如 GitHub 更新），但尚未引起广泛的 KOL 关注或形成大规模的社区讨论。没有发现明显的负面情绪或 FUD 迹象，但同时也缺乏强烈的正面反馈和高参与度的社区活动数据。\n\n用户"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "ta_agent", "id": "run--cbaa5550-99e4-41f0-b20a-cc8fe516aa85", "role": "assistant", "content": "。这些交易所目前不在 `analyze_crypto_technical` 工具支持的范围内，因此将主要依靠 `web_search_tool` 获取公开的市场数据和分析。\n\n"}
+id:
+event: tool_calls
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "ta_agent", "id": "run--cbaa5550-99e4-41f0-b20a-cc8fe516aa85", "role": "assistant", "finish_reason": "STOP", "tool_calls": [{"name": "web_search", "args": {"query": "Pell Network PELL token exchanges"}, "id": "7e053857-494e-4af2-8463-3a73b2b5cd97", "type": "tool_call"}], "tool_call_chunks": [{"name": "web_search", "args": "{\"query\": \"Pell Network PELL token exchanges\"}", "id": "7e053857-494e-4af2-8463-3a73b2b5cd97", "index": null, "type": "tool_call_chunk"}]}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "social_agent", "id": "run--6221d083-a974-4dde-86fc-4bc7eb164502", "role": "assistant", "content": "对其功能、安全性、经济模型和未来发展方向的普遍反馈，从现有资料来看，主要基于对同类 Web3 协议的普遍期望和关注点，而非大量直接的用户评价。为了获得更全面的洞察，需要更深入地分析其官方社群（Discord, Telegram）的内部"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "social_agent", "id": "run--6221d083-a974-4dde-86fc-4bc7eb164502", "role": "assistant", "content": "动态和私有讨论。\n\nReferences:\n- [Pell Network 简介 - LD Capital](https://www.ldcap.com/research/8243.html)\n- [Pell Network ETH 跨链互操作性协议](https://web.archive.org/web/20230"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "social_agent", "id": "run--6221d083-a974-4dde-86fc-4bc7eb164502", "role": "assistant", "content": "606040851/https://www.ldcap.com/research/8243.html)\n- [Pell Network - GitHub](https://github.com/Pell-Network)\n", "finish_reason": "STOP"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "ta_agent", "id": "run--d0c15043-487d-4d8d-9ce9-a90a2fb250b4", "role": "assistant", "content": "Technical Analysis:\n\n### Problem Statement:\n对 Pell Network (PELL) 代币进行技术分析，包括其历史价格走势、成交量模式、支持与阻力位、关键技术指标（如 RSI, MACD, 均线等）。评估当前的市场结构、波动性、流动性以及潜在的价格预测。比较"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "ta_agent", "id": "run--d0c15043-487d-4d8d-9ce9-a90a2fb250b4", "role": "assistant", "content": " PELL 与类似比特币生态系统项目或再质押赛道项目的市场表现。分析其上市交易所的深度和价差，并评估其市场操纵风险。\n\n### Technical Analysis:\n\n由于 Pell Network (PELL) 代币目前主要在 Gate.io, Bybit, 和 MEXC 等交易所"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "ta_agent", "id": "run--d0c15043-487d-4d8d-9ce9-a90a2fb250b4", "role": "assistant", "content": "上市，而这些交易所不在我们可用的 `analyze_crypto_technical` 工具的支持范围内，因此无法直接获取和分析具体的RSI、MACD、均线等技术指标。本分析将基于公开的市场数据和信息进行。\n\n#### 1. 价格走势和历史表现\n\n*   **当前价格与"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "ta_agent", "id": "run--d0c15043-487d-4d8d-9ce9-a90a2fb250b4", "role": "assistant", "content": "历史高低点**: Pell Network Token (PELL) 的当前价格约为 $0.003896。其历史最高价为 $0.02489，出现在2025年3月15日（大约2个月前），当前价格比历史高点低了约"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "ta_agent", "id": "run--d0c15043-487d-4d8d-9ce9-a90a2fb250b4", "role": "assistant", "content": "84.3%。历史最低价为 $0.002953，出现在2025年4月6日（大约1个月前），当前价格比历史低点高出约32.0%。\n*   **近期价格变化**: 在过去24小时内，PELL 的价格下跌"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "ta_agent", "id": "run--d0c15043-487d-4d8d-9ce9-a90a2fb250b4", "role": "assistant", "content": "了0.10%；在过去7天内，价格下跌了1.50%。\n\n#### 2. 成交量模式与流动性\n\n*   **24小时交易量**: PELL 在过去24小时内的交易量约为 $930,440。这表明其"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "ta_agent", "id": "run--d0c15043-487d-4d8d-9ce9-a90a2fb250b4", "role": "assistant", "content": "交易活跃度相对较低。\n*   **交易所深度和价差**:\n    *   在 Gate.io 上的 PELL/USDT 交易对，2%买卖深度分别为 $801 和 $603，价差为0.03%。\n    *   在 Bybit "}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "ta_agent", "id": "run--d0c15043-487d-4d8d-9ce9-a90a2fb250b4", "role": "assistant", "content": "上的 PELL/USDT 交易对，2%买卖深度分别为 $2,366 和 $2,858，价差为0.08%。\n    *   在 MEXC 上的 PELL/USDT 交易对，2%买卖深度分别为 $2,1"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "ta_agent", "id": "run--d0c15043-487d-4d8d-9ce9-a90a2fb250b4", "role": "assistant", "content": "66 和 $1,635，价差为0.59%。\n    *   BitMart 上的 PELL/USDT 交易对，2%买卖深度分别为 $116 和 $252，价差为1.27%。\n    *   BloFin"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "ta_agent", "id": "run--d0c15043-487d-4d8d-9ce9-a90a2fb250b4", "role": "assistant", "content": " 上的 PELL/USDT 交易对，2%买卖深度分别为 $8,377 和 $10,339，价差为0.28%。\n    *   WEEX 上的 PELL/USDT 交易对，2%买卖深度分别为 $85"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "ta_agent", "id": "run--d0c15043-487d-4d8d-9ce9-a90a2fb250b4", "role": "assistant", "content": " 和 $52，价差为2.81%。\n    *   整体来看，PELL 在主要交易对上的2%深度相对较低，最高的交易深度出现在 Bybit 和 BloFin，但总量仍不足以支持大额交易而不引起显著的价格波动。\n\n#### 3. 市值"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "ta_agent", "id": "run--d0c15043-487d-4d8d-9ce9-a90a2fb250b4", "role": "assistant", "content": "与完全稀释估值 (FDV)\n\n*   **市值**: Pell Network Token 的市值为 $1,308,999，在 CoinGecko 排名第3365位。\n*   **完全稀释估值 (FDV)**: PELL 的完全"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "ta_agent", "id": "run--d0c15043-487d-4d8d-9ce9-a90a2fb250b4", "role": "assistant", "content": "稀释估值为 $8,181,242。\n*   **市值/FDV比率**: 市值与FDV的比率为0.16。这表明当前流通供应量远低于总供应量，未来随着更多代币的解锁和流通，潜在的抛压"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "ta_agent", "id": "run--d0c15043-487d-4d8d-9ce9-a90a2fb250b4", "role": "assistant", "content": "较大，可能会对价格产生负面影响。\n\n#### 4. 市场结构与波动性\n\n*   **价格区间**: PELL 在过去24小时的价格区间为 $0.003788 - $0.003904，过去7天价格区间为 $0.0"}
+id:
+event: tool_calls
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--75ebd4df-9bd9-44cb-a984-f59fe6bb26cf", "role": "assistant", "finish_reason": "STOP", "tool_calls": [{"name": "web_search", "args": {"query": "Pell Network TVL DefiLlama"}, "id": "d722dd4c-1dd3-4ae2-bec0-3060269aa8e3", "type": "tool_call"}, {"name": "web_search", "args": {"query": "Pell Network active addresses transaction count"}, "id": "2b1969e0-1bf3-410c-8e85-666a58a58030", "type": "tool_call"}, {"name": "web_search", "args": {"query": "Pell Network PELL token top holders"}, "id": "f8e657c5-2eae-4b0d-92c4-e0e26baa95ea", "type": "tool_call"}, {"name": "web_search", "args": {"query": "Pell Network potential risks indicators"}, "id": "938279b2-7d4b-4f09-b596-9fe4a68bb78a", "type": "tool_call"}], "tool_call_chunks": [{"name": "web_search", "args": "{\"query\": \"Pell Network TVL DefiLlama\"}", "id": "d722dd4c-1dd3-4ae2-bec0-3060269aa8e3", "index": null, "type": "tool_call_chunk"}, {"name": "web_search", "args": "{\"query\": \"Pell Network active addresses transaction count\"}", "id": "2b1969e0-1bf3-410c-8e85-666a58a58030", "index": null, "type": "tool_call_chunk"}, {"name": "web_search", "args": "{\"query\": \"Pell Network PELL token top holders\"}", "id": "f8e657c5-2eae-4b0d-92c4-e0e26baa95ea", "index": null, "type": "tool_call_chunk"}, {"name": "web_search", "args": "{\"query\": \"Pell Network potential risks indicators\"}", "id": "938279b2-7d4b-4f09-b596-9fe4a68bb78a", "index": null, "type": "tool_call_chunk"}]}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "ta_agent", "id": "run--d0c15043-487d-4d8d-9ce9-a90a2fb250b4", "role": "assistant", "content": "03612 - $0.004036。这表明其短期波动性相对较高。\n*   **市场情绪**: CoinGecko显示社区对 Pell Network Token (PELL) 的情绪是看涨的，100%看涨。然而，这与近期的价格下跌趋势"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "ta_agent", "id": "run--d0c15043-487d-4d8d-9ce9-a90a2fb250b4", "role": "assistant", "content": "形成对比，可能需要谨慎对待。\n\n#### 5. 与类似项目的比较\n\n*   **与全球加密货币市场对比**: 在过去7天，PELL 的价格下跌了1.50%，而全球加密货币市场整体上涨了10.30%。\n*   **与以太坊生态系统项目对比"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "ta_agent", "id": "run--d0c15043-487d-4d8d-9ce9-a90a2fb250b4", "role": "assistant", "content": "**: 在过去7天，PELL 的表现也逊于类似的以太坊生态系统加密货币，后者整体上涨了12.70%。\n*   尽管 Pell Network 致力于比特币生态系统和再质押赛道，但搜索结果中并未直接提供其与特定比特币生态系统项目或再质押赛"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "ta_agent", "id": "run--d0c15043-487d-4d8d-9ce9-a90a2fb250b4", "role": "assistant", "content": "道项目的详细市场表现比较数据。\n\n#### 6. 市场操纵风险\n\n*   **流动性不足**: PELL 的日交易量相对较低，且主要交易对的2%深度有限。低流动性意味着较小的买卖订单也可能导致价格出现显著波动。\n*   **中心"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "ta_agent", "id": "run--d0c15043-487d-4d8d-9ce9-a90a2fb250b4", "role": "assistant", "content": "化风险**: 根据 GoPlus 的信息，代币创建者可以对代币合约进行更改，例如禁用销售、更改费用、铸造、转移代币等。这表明存在一定的中心化风险，可能导致潜在的市场操纵行为。\n*   **少量交易所集中**: PELL 的交易主要集中在少数"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "ta_agent", "id": "run--d0c15043-487d-4d8d-9ce9-a90a2fb250b4", "role": "assistant", "content": "几家交易所，这可能使其更容易受到特定交易所政策或大户行为的影响。\n\n### Conclusion:\n\nPell Network (PELL) 代币目前处于相对早期阶段，其市场表现出以下特点：\n\n*   **价格波动性大，处于历史高点回撤状态**: PELL 自"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "ta_agent", "id": "run--d0c15043-487d-4d8d-9ce9-a90a2fb250b4", "role": "assistant", "content": "历史高点以来已大幅下跌，并在近期表现出一定的价格波动。\n*   **流动性较低，潜在操纵风险高**: 较低的24小时交易量和有限的交易深度表明其流动性不足，这使得价格更容易受到少量大额交易或鲸鱼行为的影响，存在"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "ta_agent", "id": "run--d0c15043-487d-4d8d-9ce9-a90a2fb250b4", "role": "assistant", "content": "较高的市场操纵风险。\n*   **流通供应量与总供应量差距大**: 巨大的市值与完全稀释估值之间的差距表明未来将有大量代币进入流通，这可能带来持续的卖压。\n*   **市场表现弱于大盘和以太坊生态**:"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "ta_agent", "id": "run--d0c15043-487d-4d8d-9ce9-a90a2fb250b4", "role": "assistant", "content": " 近期 PELL 的价格表现明显弱于全球加密货币市场和以太坊生态系统的平均水平，这可能反映出市场对其短期前景的信心不足。\n*   **缺乏详细技术指标数据**: 由于缺乏直接的技术指标数据，无法进行深入的RSI、MACD、均线等分析，因此"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "ta_agent", "id": "run--d0c15043-487d-4d8d-9ce9-a90a2fb250b4", "role": "assistant", "content": "难以判断其具体的超买超卖状态、趋势强度和潜在反转信号。\n\n鉴于上述分析，投资者在考虑 PELL 代币时应保持高度谨慎。低流动性和潜在的中心化风险使得该代币更容易受到市场操纵。在缺乏更多历史数据和详细技术指标的情况下"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "ta_agent", "id": "run--d0c15043-487d-4d8d-9ce9-a90a2fb250b4", "role": "assistant", "content": "，对 PELL 进行准确的价格预测具有挑战性。建议投资者密切关注项目的基本面进展、代币解锁情况以及市场对再质押赛道和比特币生态系统的整体情绪。\n\n### References:\n- [Pell Network Token Price Chart (PELL) - CoinGecko](https://www"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "ta_agent", "id": "run--d0c15043-487d-4d8d-9ce9-a90a2fb250b4", "role": "assistant", "content": ".coingecko.com/en/coins/pell-network-token)\n- [Pell Network (PELL) Exchanges - Where to Buy,Sell,Trade | CoinLore](https://www.coinlore.com/coin/pell-network/exchanges)\n- [Pell Network Token (PELL"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "ta_agent", "id": "run--d0c15043-487d-4d8d-9ce9-a90a2fb250b4", "role": "assistant", "content": ") Trading Pairs & Exchanges - DropsTab](https://dropstab.com/coins/pell-network/exchanges)\n", "finish_reason": "STOP"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "## Pell Network 链上活动和数据分析\n\n### 问题陈述\n本分析旨在详细探讨 Pell Network 的链上活动和数据，具体包括其总锁定价值（TVL）的组成（例如 BTC、ETH、稳定币等具体代币种类和数量）、TVL 历史趋势（包括最高点"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "和近期变化）、活跃地址数量、链上交易量以及智能合约交互情况。同时，还将研究 PELL 代币的链上流动性、主要持有者分布、大额交易行为，并识别潜在的风险指标或异常模式。\n\n### 链上分析\n\n#### 1. 总锁定价值（"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "TVL）分析\nPell Network 的总锁定价值（TVL）反映了其生态系统的规模和用户信任度。\n\n*   **TVL 现状与组成**:\n    *   根据 DefiLlama 的数据，截至当前（根据搜索结果，数据日期可能略有滞后，但为"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "最近可得数据），Pell Network 的总锁定价值（TVL）约为 **3.7323 亿美元**。\n    *   其 TVL 主要分布在多个链上，体现了其全链（Omnichain）的特性。主要的链上分布包括：\n        *   Plume Main"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "net：1.7786 亿美元\n        *   BounceBit：7029 万美元\n        *   Goat：4560 万美元\n        *   CORE：3663 万美元\n        *   BOB：3381 万美元\n        *   Arbitrum：6"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "88 万美元\n        *   BSC：174 万美元\n        *   Bitlayer：237,926 美元\n        *   Ethereum：24,201 美元\n    *   Pell Network 的核心机制是比特币（BTC）再质押，"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "利用 BTC 及其流动性质押衍生品（LSD）为 BTC 生态系统项目提供“主动验证服务”（AVS）。这表明其 TVL 的主要组成部分是各类 **BTC 资产和 BTC LSD**，以及少量的 **EGLD**。具体到每种代币的"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "详细数量和美元价值，公开数据中未提供精确的链上分解。\n\n*   **TVL 历史趋势**:\n    *   Pell Network 的白皮书和相关文章指出，该项目于 2025 年初启动。\n    *   根据其官网博客文章，截至 **"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "2024 年 11 月 4 日**，Pell Network 的 TVL 曾超过 **4 亿美元**，在再质押领域排名第 6，并显示出 40.20% 的月增长率。这表明项目在早期阶段增长迅速，但"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "近期（截至 DefiLlama 最新数据）TVL 有所下降。\n\n#### 2. 活跃地址、链上交易量与智能合约交互\n\n*   **活跃地址数量**:\n    *   虽然没有实时的活跃地址数据，但截至 **2024 年 11 月 4 日"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "**，曾有 **436,611 个质押者**参与链上活动。这表明用户参与度较高，但该数据点已有所滞后，且不代表每日活跃地址。\n\n*   **链上交易量**:\n    *   Pell Network 的整体链上交易量（"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "不限于 PELL 代币）难以从现有公开数据中直接获取。\n    *   PELL 代币的 24 小时交易量在不同数据来源中存在差异，CoinGecko 报告约为 **930,440 美元**，而 ICO Drops 报告约为 **34"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "4,760 美元**。这些数据反映了 PELL 代币在中心化交易所的流动性，但并非整个 Pell Network 协议的交易活动。\n\n*   **智能合约交互情况**:\n    *   Pell Network 作为再质押协议，其智能合约交互主要围绕"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "质押、委托、解质押和提款等操作。由于其全链设计，这些交互发生在多个兼容 EVM 的区块链上。\n    *   项目在 2024 年 4 月/5 月进行了两次安全审计（MetaTrust 和 PeckShield），审计报告指出发现"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "的风险问题均已解决或缓解，这表明项目方在智能合约安全性方面有所投入。\n\n#### 3. PELL 代币分析\n\n*   **链上流动性**:\n    *   PELL 代币可以在多个中心化交易所进行交易，包括 Gate.io、Bybit 和 MEXC 等"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "。这些交易所提供了 PELL/USDT 和 PELL/USDC 等交易对，通过这些交易对可以初步评估其在中心化市场上的流动性。\n    *   24 小时交易量虽然存在差异，但数十万到近百万美元的交易量表明其具备一定的市场"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "流动性。\n\n*   **主要持有者分布**:\n    *   TokenMetrics 的数据显示，PELL 代币的“前 10 名持有者比例”为 0%，这可能意味着该平台没有公开的详细大户持仓信息，或其代币分发较为分散。\n    *   根据白"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "皮书，PELL 代币的总供应量为 21 亿枚，其中有明确的分配和锁定计划：\n        *   团队分配：3.15 亿 PELL (15%)，6 个月锁定期后线性释放 30 个月。\n        *   DAO 财"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "库：4.83 亿 PELL (23%)，13.04% TGE 解锁，剩余线性释放 36 个月。\n        *   生态系统增长：4.62 亿 PELL (22%)，9.09% TGE 解锁"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "，剩余线性释放 36 个月。\n        *   投资者：3.5007 亿 PELL (0%)，62 天后线性释放 792 天。\n        *   公开发售：4199 万 PELL (3%)，33.33% T"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "GE 解锁，剩余线性释放 6 个月。\n    *   这些分配和释放计划表明大部分代币处于锁定状态，长期内会逐步释放到流通中，这对于短期市场流动性和价格波动有重要影响。\n\n*   **大额交易行为与潜在风险指标**:\n    *"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "   **代币价格波动大**: PELL 代币从其历史最高价 0.02489 美元（2025 年 3 月 15 日）下跌了约 84.3%。这表明其价格波动剧烈，投资风险较高。\n    *   "}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "**FDV 远高于市值**: PELL 的完全稀释估值（FDV）远高于其当前市值（CoinGecko 数据显示 FDV 818 万美元，市值 131 万美元），这意味着未来有大量代币等待解锁和进入流通，可能对代币价格造成"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "下行压力。\n    *   **锁仓和释放计划**: 团队、DAO 财库、生态系统增长和投资者的代币大部分处于锁仓状态，未来会逐步解锁。这些解锁事件如果伴随大额卖出，可能导致价格波动。\n    *   **审计"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "与安全风险**: 尽管 Pell Network 已经通过了安全审计，但所有区块链项目都存在智能合约漏洞和网络攻击的风险。白皮书也提及了“操作员串通攻击”和“潜在的不可预见质押漏洞”等技术风险，并提出了相应的缓解措施，例如"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "限制 AVS 价值流通、提高攻击成本、安全审计、持续风险评估以及延迟惩罚和否决惩罚事件。\n    *   **监管不确定性**: 加密货币的法律法规环境不断演变，监管变化可能对 Pell Network 的运营产生影响。\n    *   **流动"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "性风险**: 虽然在一些中心化交易所有交易，但相对较低的交易量和深度可能导致大额交易时的滑点风险。\n\n### 结论\nPell Network 作为一个新兴的全链再质押网络，在短时间内吸引了可观的 TVL，并与多个链和"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "协议建立了合作关系，显示出其在 BTCFi 和再质押领域的潜力。其核心价值主张在于通过聚合 BTC 和 EGLD 的流动性质押衍生品来增强多链生态系统的安全性并提高资本效率。\n\n然而，作为一个新项目，Pell Network 也面临挑战：\n1"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": ".  **TVL 的可持续性**：目前的 TVL 虽然可观，但其增长和保持需要持续吸引用户和资产。\n2.  **数据透明度**：对于活跃地址、具体 TVL 代币组成和详细代币持有者分布等更细致的链上数据，"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "公开可用的聚合信息有限，这在一定程度上增加了分析的难度和不确定性。\n3.  **代币经济模型风险**：PELL 代币的大部分供应量尚未流通，未来解锁的代币可能对市场价格造成压力。\n4.  **市场和技术风险**：加密"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "## Pell Network 综合性研究报告\n\n### Problem Statement\n\n本研究旨在对 Pell Network 进行综合性分析，深入探讨其“比特币生态系统去中心化代币经济安全租赁平台”的核心技术架构和创新点（如原生 BTC 质押和 LSD 再质押服务）。同时，将"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "货币市场的固有波动性，以及再质押协议特有的技术风险（如惩罚机制、串通攻击等），需要持续关注和有效的风险管理。\n\n总的来说，Pell Network 在技术和生态系统建设方面表现积极，但其长期发展需要克服数据透明度、代币释放压力"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "研究其在比特币生态系统中的定位和竞争优势，包括与现有解决方案的比较。此外，还将分析其团队背景、合作伙伴、投资机构及其对项目的影响，评估其经济模型（代币供应、分配、用途、销毁机制等）的可持续性和增长潜力。最后，识别项目的潜在风险（技术、"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "和市场竞争等多重挑战。投资者和用户在参与前应充分了解其机制和潜在风险。\n\n### References\n- [WHITE PAPER - Pell Network](https://pell.network/pdf/pell-network-whitepaper-v1.0.pdf)\n- [Pell Network | BTC Rest"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "aking - TwitterScore](https://twitterscore.io/twitter/Pell_Network/overview/)\n- [Pell Network Price, Research, News & Fundraising - Messari](https://messari.io/project/pell-network)\n- [PELL Network Token (PELL) | ERC-20 | Address - E"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "安全、监管、竞争等）和未来发展路线图，并探讨其市场采用率和用户增长策略，以及其对整体 Web3 市场特别是比特币生态系统的潜在影响。\n\n### Research Findings\n\n#### 核心技术架构与创新点\n\nPell Network 定位为比特币生态系统的去中心化代币经济安全"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "therscan](https://etherscan.io/token/0xC65d8d96cddDB31328186EFA113a460b0Af9Ec63)\n- [Pell Network Token Price Chart (PELL) - CoinGe"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "cko](https://www.coingecko.com/en/coins/pell-network-token)\n- [Pell Network - DefiLlama - DeFi Dashboard](https://defillama.com/protocol/pell-network)\n- [Pell Network - First & Omnichain Bitcoin Rest"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "租赁平台。其核心创新在于构建了一个全链（Omnichain）再质押网络，旨在增强比特币（BTC）的经济效用和多链生态系统的安全性。\n\n*   **全链再质押网络（Omnichain Restaking Network）**: Pell Network 简化了使用 BTC 及其"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "aking Network for BTCFi](https://pell.network/blogsDetails?id=24)\n- [Pell Network - All information about Pell Network ICO (Token Sale)](https://icodrops.com/pell-network/)\n- [Pell Network Token (PELL) Price Today](https://app.tokenmetrics."}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "com/pell-network-token)\n- [Pell Network: Revolutionising dApp Security and Efficiency ... - Medium](https://lithiumdigital.medium.com/pell-network-revolutionising-dapp-security-and-efficiency-through-omnichain-bitcoin-restaking-373"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "流动性质押衍生品 (LSD) 提供加密经济安全的服务。它允许质押者在不同的区块链生态系统中重复利用其资产，从而提高去中心化应用的安全性并降低其成本。\n*   **分层模块化架构（Layered Modular Architecture）**: Pell Network 的技术架构包含"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "f32a4217a)\n- [What Is Pell & Pell Network? A Complete Guide to Pell's Omnichain ... - Gate.io Learn](https://www.gate.com/learn/articles/what-is-pell-pell-network-a-complete-guide-to"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "on_chain_agent", "id": "run--5dc1feff-ef6a-47a3-a101-f2a88866def6", "role": "assistant", "content": "-pells-omnichain-restaking-revolution/7183)\n- [Litepaper | Pell Network Litepaper](https://pell.gitbook.io/pell-network-litepaper)", "finish_reason": "STOP"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "三个核心层，以增强跨不同区块链生态系统的共享安全性：\n    *   **再质押层 (Restaking Layer)**: 这一层在各种区块链（包括 EVM 兼容链、Solana 和基于 Move 的链等）上实施再质押合约。用户（再质押者）可以"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "无缝执行质押、委托、解除质押和提款等操作，而无需切换钱包或 RPC 节点。\n    *   **Pell Chain (核心层)**: 作为网络的骨干，Pell Chain 充当聚合再质押层数据并与服务层同步的中心。它利用"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": " Cosmos SDK 和 Tendermint PBFT 共识引擎，实现约五秒的快速出块时间和即时最终性，理论上每秒可处理超过 4,000 笔交易。Pell Chain 还采用动态隐藏委员会（Dynamic Hidden Committee, DHC）机制来增强支付通道的"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "安全性，通过轮换身份来维护隐私和安全通信。\n    *   **服务层 (Service Layer)**: 这一层为去中心化验证服务（Decentralized Validated Services, DVS）提供坚实的安全基础。开发者可以在此层部署 BTC 再质押服务，利用 Pell"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": " Network 提供的基础智能合约，增强生态系统内服务的可靠性和安全性。\n*   **去中心化验证服务（Decentralized Validated Services, DVS）**: DVS 是 Pell 的核心，利用 BTC 的共享安全性。这些服务可以包括数据可用性协议、桥或预言机，为开发者提供"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "一个市场，使他们能够在不依赖高度通胀奖励的情况下激励验证者。\n*   **原生 BTC 质押和 LSD 再质押服务**: Pell Network 允许 BTC 持有者通过多种方式再质押其资产，以获取额外的收益：\n    *   **原生再质押（"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "Native Restaking）**: 验证者可以通过将其提款凭证指向 Pell Network 合约来再质押他们的 BTC。这相当于“比特币 → Pell Network”的收益叠加。\n    *   **LSD 再质押（LSD Restaking）**: 验证者可以通过将其 LSD（已通过其他协议再质押"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "的 BTC）转移到 Pell Network 智能合约来再质押其 LSD。这相当于“DeFi → Pell Network”的收益叠加。\n    *   **BTC LP 再质押**: 验证者质押包含 BTC 的 LP 代币对。\n    *   **LSD LP 再质押"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "**: 验证者质押包含流动性质押 BTC 代币的 LP 代币对。\n*   **跨链互操作性**: Pell 的分层模块化架构促进了跨多个区块链生态系统（如 EVM 和 Cosmos SDK）的无缝集成，降低了开发者的集成成本。"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "\n*   **主动验证服务 (Actively Validated Services, AVS)**: 这些服务主动监控和验证网络内的交易，进一步增强了安全性和操作效率。\n\n#### 在比特币生态系统中的定位和竞争优势\n\nPell Network 在比特币生态系统中扮演着关键角色，旨在通过再质押机制"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "解锁比特币的潜在价值，并提供去中心化的安全租赁服务。\n\n*   **比特币优先的方法**: 与以太坊生态系统中的 EigenLayer 等协议不同，Pell Network 专为比特币设计，通过去中心化验证服务弥补了比特币原生 DeFi 功能的不足，使比特币持有"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "者能够直接参与 DeFi。\n*   **将比特币转变为生产性资产**: 通过允许比特币持有者再质押其资产以增强网络安全性，Pell 将比特币从被动持有资产转变为具有收益能力的生产性资产，同时不牺牲流动性或控制权。\n*   **全"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "链验证的扩展性和安全性**: Pell 的全链 BTC 再质押网络允许节点运营商跨多个区块链提供验证服务，为跨链 DeFi 应用提供了无与伦比的扩展性和兼容性。\n*   **灵活的收益结构**: 通过 Pell 的再质押机制，BTC 持有者可以"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "获得双重收益，既可获得 Babylon 的 PoS 安全奖励，又可获得 Pell DVS 的额外收益，从而提高整体资本回报率。\n*   **广泛的安全覆盖**: Pell 的再质押机制为多个 PoS 项目和应用提供了安全支持，创建了一个共享安全网络，进一步增强"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "了各种链的去中心化。\n*   **安全租赁模型**: Pell 的安全租赁服务使项目能够以更低的成本获得高安全性的验证服务，为多链生态系统中的开发者提供了更具成本效益的选择。\n*   **与现有解决方案的比较**: 尽管 EigenLayer 在以太坊再"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "质押领域处于领先地位，但其缺乏原生的比特币集成。Pell Network 的比特币优先设计、全链验证技术以及为 BTCFi 量身定制的解决方案，使其在不断发展的比特币 DeFi 生态系统中具有显著的竞争优势。\n\n#### 团队背景、合作伙伴和投资机构\n\n*"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "   **团队背景**: Pell Network 由总部位于新加坡的杰出创始团队领导，联合创始人包括 Xavier Xiang、Steven Shen、Makoto Uramura 和 Tyler Wu，Matteo Pelati 担任数据工程主管。团队拥有 20 名研发开发人员，在区块链开发方面拥有深厚专业知识，并在"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "提供创新 DeFi 解决方案方面取得了成功。\n*   **投资机构**: Pell Network 已通过两轮融资筹集了总计 650 万美元。\n    *   2024 年 10 月 15 日：种子轮融资 300 万美元，由 Paper"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": " Ventures、Halo Capital 和 Mirana Ventures 共同领投，D11-Labs 和 Delta Blockchain Fund 等参与。\n    *   2025 年 1 月 28 日：种子轮融资 350 万美元，投资者包括 Taisu、Mirana、Delta Blockchain Fund 和 Ark"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "Stream 等。\n    *   共有 12 家机构投资者，包括 Halo Capital、Mirana 和 Paper Ventures。\n*   **合作伙伴**: Pell Network 在 2024 年建立了重要的战略合作伙伴关系：\n    *   2024 年 10 月 3 日：与 **Babylon Bitcoin"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": " Staking** 合作，旨在彻底改变比特币质押并增强区块链安全性。\n    *   2024 年 10 月 11 日：与 **Valor Quest** 合作，将去中心化验证服务（DVS）引入 Telegram 游戏生态系统。\n    *   202"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "4 年 10 月底：与 **Mezo** 建立战略合作伙伴关系，结合 Pell 的全链 DVS 网络和 Mezo 的比特币经济层。\n    *   同时，宣布与 **exSat Network** 合作，通过集成先进技术增强比特币基础设施。\n    *   2"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "024 年 12 月 19 日：与 **Corn** 集成，这是一个利用 Arbitrum Orbit 堆栈的区块链网络。\n    *   2024 年 12 月 24 日：与 **xLaunchpadApp** 合作，在 MultiversX 生态系统中"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "推广比特币再质押。\n    *   2024 年 12 月 27 日：与 **Hemi** 合作，增强 DeFi 领域的安全性和质押。\n    *   还与 **Bitlayer, Bedrock, Solv Protocol, Core Chain, Plume Network, HSK"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "Chain** 等项目合作，进一步加强其网络并扩展其功能。\n\n#### 经济模型\n\nPELL 代币 (PELL) 是 Pell Network 生态系统的原生加密资产，总供应量为 2,100,000,000 个。其经济模型旨在通过代币效"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "用、分配和治理来确保项目的可持续性和增长。\n\n*   **代币供应与分配**:\n    *   总供应量: 2,100,000,000 PELL\n    *   初始流通供应量: 336,000,000"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": " PELL (16.00%)\n    *   分配细目 (附有解锁时间表):\n        *   **社区与启动 (Community & Launch)**: 25% (2.1 亿 PELL 在 TGE 解锁 40%，剩余 60% 在 36"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": " 个月内线性释放)\n        *   **生态系统增长 (Ecosystem Growth)**: 22% (TGE 解锁 9.09%，剩余在 36 个月内线性释放)\n        *   **DAO 财库 (DAO Treasury)**: 18.33"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "% (TGE 解锁 16.36%，剩余在 36 个月内线性释放)\n        *   **投资者 (Investors)**: 16.67% (6 个月锁定期，之后 24 个月线性释放 80%)\n        *   **公"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "开发售 (Public Sale)**: 3% (TGE 解锁 33.33%，剩余在 6 个月内线性释放 66.67%)\n        *   **团队 (Founding Team)**: 15% (6 个月锁定期，之后 3"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "0 个月线性释放 98%)\n*   **代币用途**: PELL 代币在 Pell Network 生态系统中具有多种核心功能：\n    *   **Pell Chain 的 Gas 费**: 作为网络交易的 Gas 代币。\n    *   **保护 PoS 区块链/系统**: "}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "验证者质押 PELL，用户可委托 PELL 给验证者以赚取区块奖励。交易费（Gas）以 PELL 支付，并分配给验证者、委托者及其他网络参与者，有助于防止垃圾信息和 DDoS 攻击。\n    *   **跨链中介**: PE"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "LL 作为跨链交易的中介，在源链销毁并在目标链铸造，实现价值的无缝转移。\n    *   **网络和资产批准**: 参与者使用 PELL 评估和批准新网络及资产。\n    *   **Pell 节点和 DVS 上"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "市质押**: 运行 Pell 节点或希望上市的去中心化验证服务（DVS）需要质押 PELL 代币。\n    *   **支付租用的加密经济安全性**: 对于没有原生代币的项目或应用，PELL 可作为支付租用加密经济安全性的选项。\n    "}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "*   **争议解决**: PELL 持有者协助解决委托者、管理者和网络之间的争议。\n    *   **推动网络决策**: PELL 持有者有权建议和投票决定 Pell Network 协议的关键更新和改进。\n*   **可持续性与增长潜力**: 通过精心设计的代币分配和多"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "功能用途，Pell Network 旨在激励长期参与并吸引开发者和用户。PELL 代币的价值与网络增长和 DVS 服务的采用紧密相关。\n\n#### 潜在风险和未来发展路线图\n\n*   **潜在风险**:\n    *   **技术风险**: 跨链互操作性复杂"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "性高，比特币固有的局限性（如脚本限制）可能减缓 DeFAI 的采用。Pell Network 的智能合约虽然经过审计，但执行仍然存在技术风险。\n    *   **安全风险**: 运营商串通攻击和潜在的意外削减漏洞。Pell 通过限制 D"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "VS 价值流通、主动增加攻击成本、安全审计、持续风险评估以及延迟削减和否决削减事件等机制来缓解这些风险。\n    *   **监管风险**: PELL 代币的法律分类可能因监管发展、立法框架变化或监管机构的解释而演变。不"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "遵守规定可能导致制裁。\n    *   **竞争风险**: Pell Network 与 Babylon 和 EigenLayer 等资金更充足的竞争对手竞争。\n    *   **市场风险**: 加密资产市场波动性大，PELL 代币价值可能因宏观经济因素而波动。\n    *   **"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "流动性风险**: PELL 代币在二级市场可能出现流动性受限的情况。\n    *   **诈骗风险**: 与加密资产盗用或私钥丢失相关的风险。\n    *   **税务风险**: 购买和出售 PELL 代币的税务影响取决于不同司法管辖"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "区的具体税收法规。\n    *   **项目实施风险**: 协议层面更新实施不当或未能适应不断变化的加密资产市场可能对 Pell Network 和 PELL 代币产生不利影响。\n*   **未来发展路线图**: Pell Network 制定了清晰的增长和创新路径：\n    *   **"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "2025 年第一季度 (平台启动与集成阶段)**: 主网部署，集成 MultiversX，支持 EGLD 再质押，引入 30 多个节点运营商和 20 多个 DVS 提供商，并推出 DVS 开发者门户。\n    *   **"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "2025 年第二季度 (治理与资产扩展阶段)**: 通过专用论坛实施社区治理机制，将支持资产扩展到 ETH 和 SOL，并将节点运营商网络扩展到 50 多个。\n    *   **2025 年第三季度至第四季度 (技术增强与用"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "例开发)**: 引入定制化的削减机制，改进多链和多虚拟机支持以实现无缝全链部署，并扩展到包括保险和数据服务在内的商业应用。\n    *   **长期愿景**: 开发用于交易验证和风险建模的去中心化 AI 代理系统，构建跨"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "以太坊、BNB 链和比特币 Layer 2 的统一 BTC 再质押网络，并建立符合监管要求的再质押产品框架。\n\n#### 市场采用率和用户增长策略\n\n*   **市场采用率**: 截至 2025 年 3 月，Pell Network 的"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "总锁定价值 (TVL) 已超过 5.3 亿美元，在再质押领域排名靠前。链上质押者数量达到 505,000 人，并持续快速增长。\n*   **用户增长策略**:\n    *   **社区参与活动**: 开展了 Test"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "net 启动、空投活动（提供 5000 万 Pell 空投积分）和 GoldMiner 活动（提供 1 BTCB + 11 BNB 抽奖和 30% 收益）等，以激励早期用户参与。\n    *   **扩大生态系统集成**: 与多个"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "区块链生态系统和 DeFi 平台建立战略合作伙伴关系，支持更多区块链（包括 BTC、EVM 兼容链以及 Solana 和 NEAR 等非 EVM 平台），以扩大其覆盖范围和用户群体。\n    *   **教育推广**: 通过教育活动提高对再质押及其优势的认识"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "。\n    *   **DeFAI 基础设施建设**: 战略性地将去中心化金融与人工智能结合（DeFAI），通过 AI 代理框架实现自动化收益策略，吸引新的用户和开发者。\n*   **对整体 Web3 市场特别是比特币生态系统的潜在影响**:\n    *   Pell Network"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": " 通过将比特币纳入加密经济安全领域，极大地扩展了 BTCFi 的能力，并解锁了比特币在去中心化生态系统中的巨大潜力。\n    *   其全链再质押解决方案在 BTCFi 领域代表着一项重大创新，特别是在 BTC LSD 的多层利用和资本效率"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "提升方面。\n    *   随着 BTCFi 市场的持续扩展，Pell Network 将进一步优化其业务模型并吸引更多 DVS 用户，为 BTC 再质押的应用场景注入新的活力。\n    *   Pell Network 开启了 BTCFi 领域的新价值路径，并可能成为未来"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": " BTCFi 生态系统中的关键参与者，有望促进比特币在更广泛的 Web3 领域中的应用和价值。\n\n### Conclusion\n\nPell Network 作为一个专注于比特币生态系统的去中心化代币经济安全租赁平台，展现了强大的技术架构和创新潜力。其全链再质押网络"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "、分层模块化设计以及原生 BTC 质押和 LSD 再质押服务，使其在比特币 DeFi 领域占据了独特的竞争优势，尤其是在提升比特币资产利用率和提供共享安全服务方面。\n\n项目团队拥有深厚的区块链开发经验，并通过与 Babylon、Mezo、Plume Network 等多个"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "重要合作伙伴的战略合作，以及来自 Halo Capital、Mirana Ventures 等知名投资机构的资金支持，稳固了其市场地位。PELL 代币的经济模型通过多元化的效用和合理的分配机制，旨在促进网络的长期可持续发展和社区治理。\n\n尽管 Pell Network 面临技术复杂性、市场"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "竞争和监管不确定性等潜在风险，但其通过严格的安全审计、风险评估以及灵活的治理机制来应对这些挑战。未来发展路线图清晰，计划持续扩展生态系统集成、加强技术能力，并探索 AI 等前沿领域的应用。\n\n凭借其显著的市场采用率和积极"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "的用户增长策略，Pell Network 有望在 Web3 市场，特别是比特币生态系统中发挥日益重要的作用，推动比特币的价值释放及其在去中心化应用中的更广泛应用。\n\n### References\n\n- [Pell Network Token (PELL) Price Today, News & Live Chart](https://www.forbes"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": ".com/digital-assets/assets/pell-network-token-pell/)\n- [Pell Network: Revolutionising dApp Security and Efficiency through Omnichain Bitcoin Restaking | by Lithium Digital | Medium](https://lithiumdigital.medium.com/pell-network-revolutionising-dapp-security-and"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "-efficiency-through-omnichain-bitcoin-restaking-373f32a4217a)\n- [Pell Network Token Price Chart (PELL)](https://www.coingecko.com/en/coins/pell-network-token)\n- [Pell Network - First & Omn"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "ichain Bitcoin Restaking Network for BTCFi](https://pell.network/blogsDetails?id=16)\n- [Pell Network - First & Omnichain Bitcoin Restaking Network for BTCFi](https://pell.network/blogsDetails?id=24)\n- [Litepaper | Pell Network Litepaper"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "](https://pell.gitbook.io/pell-network-litepaper)\n- [WHITE PAPER - Pell Network](https://pell.network/pdf/pell-network-whitepaper-v1.0.pdf)\n- [Pell Network Listing Details: Launch Dates, Price Prediction, How to ..."}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "](https://web3.bitget.com/en/academy/pell-network-listing-details-launch-dates-price-prediction-and-how-to-buy-pell-token)\n- [Pell Network - 2025 Company Profile, Team, Funding & Competitors](https"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "://tracxn.com/d/companies/pell-network/__C6rqtK-b24vH3Ba9uRmKgz9dRUCfzAxtmsJGPZHnz-w)\n- [Pell Network - Valuation, Funding & Investors](https://pitchbook.com"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "/profiles/company/691995-07)\n- [Pell Network secures $3M funding to build Omnichain DVS network](https://cointelegraph.com/press-releases/pell-network-secures-3m-funding-to-build-omnichain"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "-dvs-network)\n- [PELL Tokenomics - Pell Network](https://docs.pell.network/pell-tokenomics)\n- [Latest Pell Network (PELL) News Update - CoinMarketCap](https://coinmarketcap.com/cmc-ai/pell-network/latest-updates/)"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": "\n- [Pell Network | BTC Restaking on X: \\\\\\\"🚀 Pell Network 2025 Q1 - Q3 Roadmap is here! We’re pioneering the future of Restaking + DeFAI, merging restaking, AI infrastructure, and yield innovation into one powerful ecosystem. 🔹 Q1: Foundation –"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "research_agent", "id": "run--4be5e450-5759-4261-9c36-9ca9c78f200f", "role": "assistant", "content": " $PELL token launch, IDO, Megapool kick-off 🔹 Q2: Expansion – Diversified / X](https://x.com/Pell_Network/status/1892776213556711889)", "finish_reason": "STOP"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "# A Comprehensive Analysis of Pell Network: An Omnichain Bitcoin Restaking Platform\n\n## Key Points\n\n*   Pell Network functions as a decentralized tokenized economic security rental platform within the Bitcoin ecosystem, employing an omnichain restaking network to enhance the economic utility of Bitcoin (BTC) and bolster multi-chain ecosystem"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " security.\n*   The platform's layered modular architecture, comprising a Restaking Layer, Pell Chain, and Service Layer, facilitates seamless cross-chain integration and provides a robust foundation for Decentralized Validated Services (DVS).\n*   Pell Network has attracted significant investment, securing $6.5 million across"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " two seed rounds, and established strategic partnerships with key players such as Babylon Bitcoin Staking and Mezo, demonstrating strong industry backing.\n*   The PELL token's economic model is designed for utility within the ecosystem, serving as gas, collateral for DVS, and a governance instrument, with a significant portion of its supply subject"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " to structured unlock schedules.\n*   As of early 2025, Pell Network's Total Value Locked (TVL) exceeded $530 million, with a later recorded figure of approximately $373.23 million distributed across various chains, indicating considerable early adoption and asset accumulation.\n*   While"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " PELL token's low liquidity, substantial FDV-to-market-cap ratio, and potential for centralized control suggest inherent market manipulation risks, the project exhibits a clear roadmap for future development, including enhanced AI integration and regulatory compliance.\n\n---\n\n## Overview\n\nPell Network emerges as a pivotal innovation within the burgeoning Bitcoin ecosystem"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": ", addressing the critical need for enhanced economic utility and decentralized security mechanisms. Positioned as an \"omnichain decentralized token economic security rental platform,\" its core mission revolves around leveraging Bitcoin and its Liquid Staking Derivatives (LSDs) to provide cryptoeconomic security across diverse blockchain environments. This report undertakes a rigorous"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " academic analysis of Pell Network, examining its intricate technological architecture, strategic market positioning, financial backing, and the sustainability of its economic model. Furthermore, it delves into the on-chain dynamics of the PELL token, assesses community sentiment, and identifies inherent risks and future developmental trajectories. The objective is to provide a comprehensive understanding"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " of Pell Network's potential impact on the broader Web3 landscape, particularly its role in expanding the functionalities and interoperability of the Bitcoin DeFi (BTCFi) sector.\n\n---\n\n## Detailed Analysis\n\n### Core Technological Architecture and Innovations\n\nPell Network introduces a sophisticated, layered modular architecture designed to provide shared security across a"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " multitude of blockchain ecosystems. This framework represents a significant advancement in the utilization of Bitcoin's economic weight for decentralized applications.\n\n*   **Omnichain Restaking Network**: The fundamental innovation lies in simplifying the process of providing cryptoeconomic security using BTC and its Liquid Staking Derivatives (LSDs). This allows st"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "akers to reuse their assets across various blockchain ecosystems, thereby enhancing the security of decentralized applications and reducing operational costs.\n*   **Layered Modular Architecture**: The network is structured into three distinct yet interconnected layers:\n    *   **Restaking Layer**: This layer facilitates the execution of restaking contracts on a variety of blockchains"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": ", including EVM-compatible chains, Solana, and Move-based chains. It enables users (restakers) to perform staking, delegation, unstaking, and withdrawal operations seamlessly, eliminating the need to switch wallets or RPC nodes.\n    *   **Pell Chain (Core Layer)**: Serving as the network"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "'s backbone, the Pell Chain aggregates restaking layer data and synchronizes with the service layer. It is built upon the Cosmos SDK and Tendermint PBFT consensus engine, ensuring rapid block finality (approximately five-second block times) and high transaction throughput (theoretically over 4,000 transactions per second)."}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " The Pell Chain incorporates a Dynamic Hidden Committee (DHC) mechanism to bolster payment channel security through rotating identities, safeguarding privacy and secure communication.\n    *   **Service Layer**: This layer provides a robust security foundation for Decentralized Validated Services (DVS). Developers can deploy BTC restaking services here, leveraging Pell Network"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "'s foundational smart contracts to enhance the reliability and security of ecosystem services.\n\n*   **Decentralized Validated Services (DVS)**: DVS are central to Pell's design, deriving security from shared BTC. These services, which can include data availability protocols, bridges, or oracles, offer a marketplace"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " for developers to incentivize validators without relying on highly inflationary rewards.\n*   **Native BTC Staking and LSD Restaking Services**: Pell Network offers diversified avenues for BTC holders to re-stake their assets for additional yield:\n    *   **Native Restaking**: Validators can restake their BTC by directing their withdrawal credentials"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " to Pell Network contracts, effectively stacking yield from \"Bitcoin → Pell Network.\"\n    *   **LSD Restaking**: Validators can restake their Liquid Staking Derivatives (LSDs) of BTC by transferring them to Pell Network smart contracts, representing a yield stack from \"DeFi → Pell Network.\"\n    *"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "   **BTC LP Restaking**: Involves staking BTC-inclusive LP token pairs.\n    *   **LSD LP Restaking**: Involves staking LP token pairs that include Liquid Staked BTC tokens.\n*   **Cross-Chain Interoperability**: The modular architecture promotes seamless integration across various blockchain ecosystems"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " (e.g., EVM and Cosmos SDK), thereby reducing integration costs for developers.\n*   **Actively Validated Services (AVS)**: AVS actively monitor and validate transactions within the network, contributing to enhanced security and operational efficiency.\n\n### Positioning and Competitive Advantages in the Bitcoin Ecosystem\n\nPell Network strategically positions itself"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " as a critical enabler within the Bitcoin ecosystem, unlocking latent value through its restaking mechanisms and offering decentralized security rental services.\n\n*   **Bitcoin-First Approach**: Unlike protocols such as EigenLayer which are primarily Ethereum-centric, Pell Network is purpose-built for Bitcoin. It addresses the limitations of Bitcoin's native DeFi functionalities by providing"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " decentralized validation services, allowing BTC holders direct participation in DeFi.\n*   **Transforming Bitcoin into a Productive Asset**: By enabling BTC holders to restake their assets for network security, Pell transmutes Bitcoin from a passively held asset into a yield-generating, productive asset, all without compromising liquidity or control.\n*"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "   **Scalability and Security through Omnichain Validation**: Pell's omnichain BTC restaking network enables node operators to provide validation services across multiple blockchains, offering unparalleled scalability and compatibility for cross-chain DeFi applications.\n*   **Flexible Yield Structures**: Through Pell's restaking mechanisms, BTC holders can realize"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " dual yields: rewards from Babylon's PoS security and additional yields from Pell DVS, thereby enhancing overall capital efficiency.\n*   **Broad Security Coverage**: Pell's restaking mechanism extends security support to numerous PoS projects and applications, fostering a shared security network that decentralizes various chains.\n*   **Security"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " Rental Model**: The platform’s security rental service offers projects a cost-effective pathway to acquire high-security validation services, presenting a more economical option for developers operating within multi-chain environments.\n*   **Comparative Advantage**: While EigenLayer leads in Ethereum restaking, its lack of native Bitcoin integration distinguishes Pell Network. Pell'"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "s Bitcoin-first design, omnichain validation technology, and tailored solutions for BTCFi provide it with a significant competitive edge in the evolving Bitcoin DeFi landscape.\n\n### Team, Partnerships, and Investment Landscape\n\nPell Network is steered by a distinguished founding team based in Singapore, including Xavier Xiang, Steven Shen, Makoto Uramura,"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " and Tyler Wu, with Matteo Pelati as Head of Data Engineering. The team comprises 20 R&D developers, possessing extensive expertise in blockchain development and a proven track record in delivering innovative DeFi solutions.\n\nPell Network has successfully raised a total of $6.5 million through two seed funding rounds:\n*   **"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "October 15, 2024**: Seed Round I secured $3 million, co-led by Paper Ventures, Halo Capital, and Mirana Ventures, with participation from D11-Labs and Delta Blockchain Fund.\n*   **January 28, 2025**: Seed Round II"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " raised an additional $3.5 million, with investors including Taisu, Mirana, Delta Blockchain Fund, and ArkStream.\nIn total, 12 institutional investors, including Halo Capital, Mirana, and Paper Ventures, have contributed to Pell Network's funding.\n\nThe network has forged significant strategic partnerships in"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " 2024, amplifying its reach and capabilities:\n*   **October 3, 2024**: Collaboration with **Babylon Bitcoin Staking** to revolutionize Bitcoin staking and enhance blockchain security.\n*   **October 11, 2024**: Partnership with **Valor Quest** to introduce Decentral"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "ized Validation Services (DVS) into the Telegram gaming ecosystem.\n*   **Late October 2024**: Strategic alliance with **Mezo**, combining Pell's omnichain DVS network with Mezo's Bitcoin economic layer.\n*   Announcement of a partnership with **exSat Network** to enhance Bitcoin"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " infrastructure through advanced integrations.\n*   **December 19, 2024**: Integration with **Corn**, a blockchain network utilizing the Arbitrum Orbit stack.\n*   **December 24, 2024**: Collaboration with **xLaunchpadApp** to promote Bitcoin restaking within the"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " MultiversX ecosystem.\n*   **December 27, 2024**: Partnership with **Hemi** to enhance security and staking in the DeFi sector.\n*   Further collaborations include **Bitlayer, Bedrock, Solv Protocol, Core Chain, Plume Network, and HSKChain**, collectively"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " strengthening its network and expanding its functionalities.\n\n### Economic Model of the PELL Token\n\nThe PELL token, with a total supply of 2,100,000,000 units, is the native crypto-asset of the Pell Network ecosystem. Its economic model is structured to ensure sustainability"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " and growth through diverse utility, distribution, and governance mechanisms.\n\n**PELL Token Supply and Distribution:**\n\n| Category             | Allocation (%) | Amount (PELL)   | Initial Unlock (TGE) | Release Schedule                                 |\n| :------------------- | :------------- | :-------------- | :------------------- | :-----------------------------------------------"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " |\n| Community & Launch   | 25.00%         | 525,000,000     | 40.00%               | Remaining 60% linear over 36 months              |\n| Ecosystem Growth     | 22.0"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "0%         | 462,000,000     | 9.09%                | Remaining linear over 36 months                  |\n| DAO Treasury         | 18.33%         | 384,930,000     | 16.3"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "6%               | Remaining linear over 36 months                  |\n| Investors            | 16.67%         | 350,070,000     | 0.00%                | 6-month cliff, then 80% linear over 24 months    "}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "|\n| Public Sale          | 3.00%          | 63,000,000      | 33.33%               | Remaining 66.67% linear over 6 months            |\n| Founding Team        | 15.00%         | 3"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "15,000,000     | 0.00%                | 6-month cliff, then 98% linear over 30 months    |\n| **Total**            | **100.00%**    | **2,100,000,0"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "00** |                      |                                                  |\n\n*Note: Initial circulating supply is 336,000,000 PELL (16.00% of total supply).*\n\n**PELL Token Utility**:\nThe PELL token serves multiple integral functions within the Pell Network ecosystem:\n*   **Gas"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " Fees for Pell Chain**: Utilized for transaction fees on the Pell Chain.\n*   **Securing PoS Blockchains/Systems**: Validators stake PELL, and users can delegate PELL to validators to earn block rewards. Transaction fees are paid in PELL and distributed among validators, delegators, and other network participants, mitigating"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " spam and DDoS attacks.\n*   **Cross-Chain Intermediation**: PELL acts as an intermediary for cross-chain transactions, burned on the source chain and minted on the destination chain to enable seamless value transfer.\n*   **Network and Asset Approval**: PELL holders participate in evaluating and approving new networks and assets.\n*   "}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "**Pell Node and DVS Listing Staking**: Running a Pell node or listing a Decentralized Validated Service (DVS) requires staking PELL tokens.\n*   **Payment for Cryptoeconomic Security Rental**: For projects or applications without native tokens, PELL can be used to pay for rented cryptoeconom"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "ic security.\n*   **Dispute Resolution**: PELL holders assist in resolving disputes among delegators, administrators, and the network.\n*   **Driving Network Decisions**: PELL holders possess the right to propose and vote on critical updates and improvements to the Pell Network protocol.\n\n**Sustainability and Growth Potential**: The meticulously"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " designed token allocation and multifaceted utility of PELL are intended to incentivize long-term participation and attract both developers and users. The value of the PELL token is intrinsically linked to the network's growth and the adoption of DVS services, fostering a sustainable ecosystem.\n\n### On-Chain Activity and Data Analysis\n\nThe"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " on-chain data for Pell Network reflects its nascent but growing presence in the DeFi space, particularly within the restaking domain.\n\n**Total Value Locked (TVL) Analysis**:\n*   **Current TVL and Distribution**: According to DefiLlama, Pell Network's Total Value Locked (TVL) is"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " approximately **$373.23 million**. This TVL is distributed across multiple chains, underscoring its omnichain strategy.\n    *   Plume Mainnet: $177.86 million\n    *   BounceBit: $70.29 million\n    *   "}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "Goat: $45.60 million\n    *   CORE: $36.63 million\n    *   BOB: $33.81 million\n    *   Arbitrum: $6.88 million\n    *   BSC: $1.74 million\n    *   "}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "Bitlayer: $0.24 million\n    *   Ethereum: $0.02 million\n*   The primary constituents of Pell Network's TVL are expected to be **BTC assets and BTC Liquid Staking Derivatives (LSDs)**, along with a smaller proportion of **EGLD**,"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " reflecting its core mechanism of Bitcoin restaking.\n*   **Historical TVL Trend**: Whitepapers and related articles indicate the project's launch in early 2025. A blog post from **November 4, 2024**, noted Pell Network's TVL exceeding **$40"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "0 million**, ranking 6th in the restaking sector with a 40.20% monthly growth rate. This suggests a period of rapid early growth, followed by a recent decline in TVL to the current $373.23 million figure.\n\n**Active Addresses, On-Chain Transaction Volume, and Smart Contract"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " Interactions**:\n*   **Active Addresses**: While real-time active address data is not publicly detailed, as of **November 4, 2024**, approximately **436,611 stakers** had participated in on-chain activities. This indicates a relatively high level of user engagement,"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " though this data point is now dated and does not represent daily active users.\n*   **On-Chain Transaction Volume**: Comprehensive on-chain transaction volume for the entire Pell Network protocol is not readily available. The 24-hour trading volume for the PELL token varies across data aggregators, with CoinGecko"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " reporting approximately **$930,440** and ICO Drops indicating around **$344,760**. These figures primarily reflect PELL token liquidity on centralized exchanges rather than the full scope of protocol activity.\n*   **Smart Contract Interactions**: As a restaking protocol, primary smart contract interactions revolve around staking"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": ", delegation, unstaking, and withdrawal operations. Given its omnichain design, these interactions are distributed across multiple EVM-compatible blockchains. Pell Network underwent security audits by MetaTrust and PeckShield in April/May 2024, with reported issues addressed, demonstrating an investment in smart contract security.\n\n###"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " Social Media Presence and Community Sentiment\n\nThe social media presence and community sentiment surrounding Pell Network, as observed across major platforms like Twitter, Discord, and Telegram, suggest a project in its early stages of community development.\n\n*   **General Sentiment and Discussion**: Publicly available data on direct discussions and emotional sentiment concerning Pell Network is limited. Primary"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " discussions revolve around its technological attributes and potential applications, particularly its role as an Ethereum Liquid Staking Derivative (LSD) protocol and its ambition to provide ETH cross-chain interoperability solutions. User interest is largely directed towards yield generation mechanisms and security, critical factors for LSDFi protocols.\n*   **Key Opinion Leaders"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " (KOL) and Promotion**: A significant absence of prominent KOLs widely promoting or offering in-depth analyses of Pell Network is noted. This suggests that the project may not yet have garnered widespread attention from top-tier crypto KOLs, possibly indicating a focus on more niche or technical communities in its promotional strategies.\n*   **"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "Community Activity, User Engagement, and Announcement Response**: While GitHub shows code updates, concrete metrics on community activity, user engagement, and the specific reception of project announcements are not publicly disclosed. The scale of its Discord and Telegram communities, daily active users, and the degree of interaction are not transparent. This limitation hinders a comprehensive assessment of community cohesion"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " and engagement.\n*   **Negative Sentiment or FUD (Fear, Uncertainty, Doubt)**: Current public information does not indicate any significant negative sentiment or FUD directed at Pell Network. This could imply either a lack of adverse events or that the project's community scale and visibility are not yet large enough to generate"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " widespread negative discourse. For emerging projects, an absence of FUD can be a neutral state, but it might also signal lower overall awareness.\n*   **User Feedback (Functionality, Security, Economic Model, Future Development)**:\n    *   **Functionality**: Pell Network's core function as an Ethereum"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " LSD protocol aiming for cross-chain ETH interoperability suggests user feedback would likely focus on the efficiency, user-friendliness, and compatibility of its cross-chain bridge.\n    *   **Security**: As a protocol handling ETH assets, security is paramount. While specific user feedback is scarce, concerns would inherently revolve around smart"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " contract audit outcomes, the stability of Total Value Locked (TVL) growth, and its resilience against potential attacks.\n    *   **Economic Model**: The economic model, encompassing token mechanisms, staking rewards, and governance, would draw user attention to its value accrual capabilities, inflation/deflation dynamics, and the sustainability of holder"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " incentives.\n    *   **Future Development**: Users typically anticipate continuous innovation, ecosystem expansion, and long-term value. For Pell Network, future development could involve integrating more Layer2 networks, enhancing cross-chain interoperability solutions, and increasing decentralization.\n\n### Technical Analysis of PELL Token\n\nA technical analysis of the PELL"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " token reveals characteristics consistent with a relatively new crypto-asset with moderate liquidity and significant price volatility. Due to the lack of direct access to real-time technical indicators (RSI, MACD, Moving Averages) for the specified exchanges, this analysis relies on observable market data.\n\n*   **Price Action and Historical Performance**:\n    "}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "*   **Current Price**: Approximately $0.003896.\n    *   **All-Time High (ATH)**: $0.02489, recorded on March 15, 2025 (approximately two months prior to the current assessment), representing an 84.3%"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " decline from ATH.\n    *   **All-Time Low (ATL)**: $0.002953, recorded on April 6, 2025 (approximately one month prior), indicating a 32.0% increase from ATL.\n    *   **Recent Price Movement"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "**: A 0.10% decrease in the past 24 hours and a 1.50% decrease over the past 7 days.\n*   **Trading Volume and Liquidity**:\n    *   **24-Hour Trading Volume**: Approximately $930,440. This figure indicates"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " relatively subdued trading activity.\n    *   **Exchange Depth and Spread (2% Buy/Sell Depth for PELL/USDT pairs)**:\n        *   Gate.io: Buy Depth: $801, Sell Depth: $603, Spread: 0.03%\n        *"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "   Bybit: Buy Depth: $2,366, Sell Depth: $2,858, Spread: 0.08%\n        *   MEXC: Buy Depth: $2,166, Sell Depth: $1,635, Spread: 0.59"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "%\n        *   BitMart: Buy Depth: $116, Sell Depth: $252, Spread: 1.27%\n        *   BloFin: Buy Depth: $8,377, Sell Depth: $10,339, Spread: 0.2"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "8%\n        *   WEEX: Buy Depth: $85, Sell Depth: $52, Spread: 2.81%\n    *   The generally low 2% depth across major trading pairs suggests that even moderately sized orders could significantly impact PELL's price, indicating limited market"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " liquidity.\n*   **Market Capitalization and Fully Diluted Valuation (FDV)**:\n    *   **Market Capitalization (MCap)**: $1,308,999 (Ranked 3365 on CoinGecko).\n    *   **Fully Diluted Valuation (FDV"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": ")**: $8,181,242.\n    *   **MCap/FDV Ratio**: 0.16. This low ratio signifies that the current circulating supply is substantially smaller than the total supply. The substantial difference between MCap and FDV suggests considerable potential selling pressure in the future as more"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " tokens unlock and enter circulation, potentially exerting downward pressure on the price.\n*   **Market Structure and Volatility**:\n    *   **Price Range (24h)**: $0.003788 - $0.003904.\n    *   **Price Range (7d"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": ")**: $0.003612 - $0.004036.\n    *   These ranges highlight significant short-term price volatility.\n    *   **Market Sentiment**: CoinGecko indicates a 100% bullish community sentiment for PELL. However, this contrasts"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " with recent downward price action, suggesting a need for cautious interpretation.\n*   **Comparison with Similar Projects**:\n    *   **Against Global Crypto Market**: PELL's 7-day decline of 1.50% lags behind the global cryptocurrency market's 10.30% gain."}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "\n    *   **Against Ethereum Ecosystem**: PELL also underperformed the Ethereum ecosystem cryptocurrencies, which collectively rose by 12.70% over the same period. While Pell Network is dedicated to the Bitcoin ecosystem and restaking, specific comparative data with analogous Bitcoin-centric projects was not provided.\n*   "}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "**Market Manipulation Risk**:\n    *   **Insufficient Liquidity**: The low daily trading volume and shallow order book depth make PELL susceptible to significant price fluctuations from relatively small orders, increasing manipulation risk.\n    *   **Centralization Risk**: GoPlus data indicates that token creators retain the ability to modify the token contract (e.g"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "., disable sales, alter fees, mint, transfer tokens). This introduces a degree of centralization risk that could enable potential market manipulation.\n    *   **Concentrated Exchange Trading**: PELL's trading is concentrated on a limited number of exchanges, potentially making it more vulnerable to the policies of specific exchanges or the actions"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " of large holders.\n\n### Potential Risks and Future Development Roadmap\n\nPell Network, while innovative, faces several inherent risks characteristic of the nascent Web3 and DeFi landscape. Concurrently, it outlines a clear, ambitious roadmap for future growth and technological enhancement.\n\n**Potential Risks**:\n*   **Technological Risks**: The inherent"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " complexity of cross-chain interoperability and the limitations of Bitcoin's native scripting capabilities may impede DeFi adoption. While Pell Network's smart contracts have undergone audits, execution risks persist.\n*   **Security Risks**: Concerns include potential collusion among operators and unforeseen slashing vulnerabilities. Pell mitigates these through measures such as limiting"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " DVS value flow, increasing attack costs, ongoing security audits, continuous risk assessments, and delayed/vetoed slashing events.\n*   **Regulatory Risks**: The legal classification of PELL tokens may evolve with regulatory shifts, legislative changes, or governmental interpretations. Non-compliance could result in sanctions.\n*   **Competitive"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " Risks**: Pell Network operates in a competitive landscape, contending with more established and well-funded projects like Babylon and EigenLayer.\n*   **Market Risks**: The volatile nature of crypto-assets exposes PELL token value to fluctuations driven by macroeconomic factors.\n*   **Liquidity Risks**: The PELL token may experience restricted"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " liquidity in secondary markets, impacting ease of trade.\n*   **Fraud Risk**: Risks associated with misappropriation of crypto-assets or loss of private keys.\n*   **Taxation Risks**: The tax implications of acquiring and disposing of PELL tokens vary significantly based on jurisdiction.\n*   **Project Implementation Risks"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "**: Improper implementation of protocol updates or failure to adapt to the evolving crypto-asset market could adversely affect Pell Network and the PELL token.\n\n**Future Development Roadmap**: Pell Network has articulated a structured path for expansion and innovation:\n*   **Q1 2025 (Platform Launch & Integration Phase)**: Deployment"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " of the mainnet, integration with MultiversX, support for EGLD restaking, onboarding of over 30 node operators and 20 DVS providers, and the launch of a DVS developer portal.\n*   **Q2 2025 (Governance & Asset Expansion Phase)**: Implementation of community"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " governance mechanisms via a dedicated forum, expansion of supported assets to include ETH and SOL, and growth of the node operator network to over 50 participants.\n*   **Q3-Q4 2025 (Technological Enhancement & Use Case Development)**: Introduction of customized slashing mechanisms, improvements in multi-chain and multi"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "-VM support for seamless omnichain deployment, and expansion into commercial applications such as insurance and data services.\n*   **Long-Term Vision**: Development of decentralized AI agent systems for transaction validation and risk modeling, establishment of a unified BTC restaking network across Ethereum, BNB Chain, and Bitcoin Layer 2s"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": ", and creation of a regulatory-compliant framework for restaking products.\n\n### Market Adoption and User Growth Strategy\n\nPell Network has demonstrated significant early market traction and employs a multi-faceted strategy for user growth.\n\n*   **Market Adoption**: As of March 2025, Pell Network's Total Value"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " Locked (TVL) had surpassed $530 million, securing a leading position within the restaking domain. The number of on-chain stakers reached 505,000 and continues to grow rapidly.\n*   **User Growth Strategy**:\n    *   **Community Engagement Activities**: Initiatives include Testnet launches"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": ", airdrop campaigns (offering 50 million Pell airdrop points), and the GoldMiner event (featuring a 1 BTCB + 11 BNB giveaway and 30% yield incentives) to encourage early user participation.\n    *   **Ecosystem Integration Expansion**: Strategic partnerships with numerous blockchain"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " ecosystems and DeFi platforms, along with support for a wider array of blockchains (including BTC, EVM-compatible chains, and non-EVM platforms like Solana and NEAR), aim to broaden its reach and user base.\n    *   **Educational Outreach**: Campaigns designed to increase awareness and understanding of restaking and its"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " benefits.\n    *   **DeFAI Infrastructure Development**: A strategic blend of decentralized finance with artificial intelligence (DeFAI), leveraging an AI agent framework to enable automated yield strategies, thereby attracting new users and developers.\n*   **Potential Impact on the Overall Web3 Market and Bitcoin Ecosystem**:\n    *   By"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " integrating Bitcoin into the cryptoeconomic security paradigm, Pell Network significantly enhances BTCFi capabilities, unlocking Bitcoin's vast potential within decentralized ecosystems.\n    *   Its omnichain restaking solution represents a substantial innovation within the BTCFi sector, particularly in its multi-layered utilization of BTC LSDs and enhancement of capital efficiency."}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "\n    *   As the BTCFi market continues its expansion, Pell Network is poised to optimize its operational model further and attract additional DVS users, injecting new vitality into BTC restaking applications.\n    *   Pell Network introduces novel value pathways within the BTCFi domain and is positioned to become a pivotal participant in the future"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " BTCFi ecosystem, likely fostering broader adoption and value realization of Bitcoin in the wider Web3 space.\n\n---\n\n## Survey Note\n\nThis report synthesizes information from distinct research outputs concerning Pell Network, adhering to rigorous academic standards.\n\n### Literature Review & Theoretical Framework\n\nThe analysis is constructed upon the foundational concepts of decentralized"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " finance (DeFi), blockchain interoperability, and cryptoeconomic security. It implicitly references the theoretical framework of shared security models, where the economic value of one asset (BTC) can be leveraged to secure distributed services across multiple chains. The report integrates insights from the provided research outputs, which serve as primary data sources, effectively"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " functioning as a focused literature review on Pell Network's core functionalities and market position.\n\n### Methodology & Data Analysis\n\nThe methodology employed is one of systematic data synthesis and critical evaluation. Information was extracted from four distinct research outputs: general project overview (Research), on-chain metrics (On-Chain Research), social sentiment"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " (Social Research), and technical token analysis (TA Research). These data points were meticulously compiled, categorized, and cross-referenced to ensure accuracy and coherence. Quantitative data, such as TVL figures, token allocations, and trading volumes, were presented where available. Qualitative insights, including team background, partnerships, and community sentiment"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": ", were derived from textual analysis of the provided descriptions. Limitations in data availability, such as precise active address counts or detailed on-chain token breakdowns, are explicitly acknowledged.\n\n### Critical Discussion\n\nWhile the provided data offers a comprehensive overview, several limitations warrant discussion. The absence of real-time, granular on-chain data"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " for all requested metrics (e.g., daily active addresses, precise token composition within TVL) constrains a more in-depth quantitative assessment. The social sentiment analysis relies heavily on public statements and high-level observations, as direct access to nuanced community discussions within platforms like Discord and Telegram was not part of the input"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": ", making a definitive assessment of sentiment challenging. Furthermore, the technical analysis of the PELL token is limited by the inability to directly execute technical indicator calculations, leading to a reliance on aggregated market data rather than dynamic chart analysis. The significant discrepancy between PELL's market capitalization and fully diluted valuation, coupled with low liquidity, represents"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " a substantial risk factor that requires ongoing monitoring as token unlocks progress. The potential for centralized control, as indicated by GoPlus data, introduces an additional layer of systemic risk that warrants further investigation beyond the scope of the provided information.\n\n### Future Research Directions\n\nFuture research endeavors could significantly enrich the understanding of Pell Network's"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " trajectory. Recommended areas include:\n*   **In-depth On-Chain Metrics Analysis**: Utilizing blockchain analytics tools to track real-time active addresses, detailed TVL token composition, and smart contract interaction patterns.\n*   **Longitudinal Sentiment Analysis**: Employing natural language processing (NLP) and sentiment analysis tools on"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " broader social media datasets and private community channels (if accessible and ethical) to gauge evolving community sentiment and identify emerging FUD or positive trends.\n*   **Comparative Performance Benchmarking**: A detailed comparative study of PELL's market performance against a curated basket of direct competitors in the Bitcoin restaking and broader restaking sectors"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": ", utilizing advanced statistical methods.\n*   **Security Audits and Risk Mitigation Deep Dive**: A comprehensive technical review of Pell Network's smart contract audit reports, focusing on the mitigation strategies for identified vulnerabilities and an assessment of their effectiveness.\n*   **Regulatory Landscape Evolution**: Continuous monitoring and analysis of the evolving regulatory frameworks"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " for restaking protocols and cross-chain solutions in key jurisdictions.\n*   **Economic Model Simulation**: Development of a simulation model to project the long-term impact of token unlock schedules, DVS adoption rates, and network fees on PELL token valuation and ecosystem sustainability.\n\n---\n\n## Key Citations\n\n- ["}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "Pell Network Token (PELL) Price Today, News & Live Chart](https://www.forbes.com/digital-assets/assets/pell-network-token-pell/)\n- [Pell Network: Revolutionising dApp Security and Efficiency through Omnichain Bitcoin Restaking | by Lithium Digital | Medium](https"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "://lithiumdigital.medium.com/pell-network-revolutionising-dapp-security-and-efficiency-through-omnichain-bitcoin-restaking-373f32a4217a)\n- [Pell Network Token Price Chart (PELL)](https://www.coinge"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "cko.com/en/coins/pell-network-token)\n- [Pell Network - First & Omnichain Bitcoin Restaking Network for BTCFi](https://pell.network/blogsDetails?id=16)\n- [Pell Network - First & Omnichain Bitcoin Restaking Network for BTC"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "Fi](https://pell.network/blogsDetails?id=24)\n- [Litepaper | Pell Network Litepaper](https://pell.gitbook.io/pell-network-litepaper)\n- [WHITE PAPER - Pell Network](https://pell.network/pdf/pell-network-whitepaper"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "-v1.0.pdf)\n- [Pell Network Listing Details: Launch Dates, Price Prediction, How to ...](https://web3.bitget.com/en/academy/pell-network-listing-details-launch-dates-price-prediction-and-how-to-buy-pell"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "-token)\n- [Pell Network - 2025 Company Profile, Team, Funding & Competitors](https://tracxn.com/d/companies/pell-network/__C6rqtK-b24vH3Ba9uRmKgz9dRUCfzAxtms"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "JGPZHnz-w)\n- [Pell Network - Valuation, Funding & Investors](https://pitchbook.com/profiles/company/691995-07)\n- [Pell Network secures $3M funding to build Omnichain DVS network](https://cointelegraph."}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "com/press-releases/pell-network-secures-3m-funding-to-build-omnichain-dvs-network)\n- [PELL Tokenomics - Pell Network](https://docs.pell.network/pell-tokenomics)\n- [Latest Pell Network (PELL) News Update -"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " CoinMarketCap](https://coinmarketcap.com/cmc-ai/pell-network/latest-updates/)\n- [Pell Network | BTC Restaking on X: \\\\\\\"🚀 Pell Network 2025 Q1 - Q3 Roadmap is here! We’re pioneering the future of Restaking"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " + DeFAI, merging restaking, AI infrastructure, and yield innovation into one powerful ecosystem. 🔹 Q1: Foundation – $PELL token launch, IDO, Megapool kick-off 🔹 Q2: Expansion – Diversified / X](https://x.com/Pell_Network/status"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "/1892776213556711889)\n- [Pell Network | BTC Restaking - TwitterScore](https://twitterscore.io/twitter/Pell_Network/overview/)\n- [Pell Network Price, Research, News & Fundraising"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " - Messari](https://messari.io/project/pell-network)\n- [PELL Network Token (PELL) | ERC-20 | Address - Etherscan](https://etherscan.io/token/0xC65d8d96cddDB31328186"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "EFA113a460b0Af9Ec63)\n- [Pell Network - DefiLlama - DeFi Dashboard](https://defillama.com/protocol/pell-network)\n- [Pell Network - All information about Pell Network ICO (Token Sale)](https://ic"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "odrops.com/pell-network/)\n- [Pell Network Token (PELL) Price Today](https://app.tokenmetrics.com/pell-network-token)\n- [What Is Pell & Pell Network? A Complete Guide to Pell's Omnichain ... - Gate.io Learn](https://"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "www.gate.com/learn/articles/what-is-pell-pell-network-a-complete-guide-to-pells-omnichain-restaking-revolution/7183)\n- [Pell Network 简介 - LD Capital](https://www.ldcap.com/research/"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "8243.html)\n- [Pell Network ETH 跨链互操作性协议](https://web.archive.org/web/20230606040851/https://www.ldcap.com/research/8243.html)\n-"}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": " [Pell Network - GitHub](https://github.com/Pell-Network)\n- [Pell Network (PELL) Exchanges - Where to Buy,Sell,Trade | CoinLore](https://www.coinlore.com/coin/pell-network/exchanges)\n- [Pell Network Token ("}
+id:
+event: message_chunk
+data: {"thread_id": "8f1e6b38-1cb2-4f57-8965-77cb65f58abc", "agent": "reporter", "id": "run--e6732777-ce38-4237-80f6-4e8b10a5fb52", "role": "assistant", "content": "PELL) Trading Pairs & Exchanges - DropsTab](https://dropstab.com/coins/pell-network/exchanges)", "finish_reason": "STOP"}
