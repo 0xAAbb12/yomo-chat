@@ -34,8 +34,6 @@ const PageListView = ({ source }:PageListViewProps) => {
         return []
     }, [source]);
 
-    console.log("pages", pages)
-
     return (
         <div className="flex flex-col gap-1 mb-1">
             {pages.map((w, i) => (

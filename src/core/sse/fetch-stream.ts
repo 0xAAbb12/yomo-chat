@@ -1,6 +1,9 @@
+"use client";
 
-
+import { rootStore } from "~/store";
+import Router from "next/router";
 import { type StreamEvent } from "./StreamEvent";
+import { toast } from "sonner";
 
 export async function* fetchStream(
   url: string,
@@ -15,6 +18,12 @@ export async function* fetchStream(
     ...init,
   });
   if (response.status !== 200) {
+    if (response.status === 401) {
+      rootStore.getState().updateToken("");
+      await Router.push("/");
+    }
+    toast("An error occurred while generating the response. Please try again.");
+    // toast("")
     throw new Error(`Failed to fetch from ${url}: ${response.status}`);
   }
   // Read from response body, event by event. An event always ends with a '\n\n'.

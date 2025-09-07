@@ -37,3 +37,6 @@ export const useRootStore = create<RootState>()(
     )
   )
 );
+
+// 直接暴露 store
+export const rootStore = useRootStore;

@@ -84,7 +84,6 @@ export default function ThinkingProcess({ messasges }: ThinkingProcessProps) {
         agents.set(msg?.agent, msg);
       }
     });
-    console.log("items", Array.from(agents.keys()));
     return Array.from(agents.keys()).map((key) => AGNET_CONFIG[key]);
   }, [messasges]);
 
@@ -156,15 +155,15 @@ export default function ThinkingProcess({ messasges }: ThinkingProcessProps) {
                               // </div>
                             );
                           }
-                          return (
-                            <div className="space-y-4">
-                              <div className="rounded-lg border border-dashed border-black/20 p-4">
-                                <div className="prose max-w-none break-words">
-                                  {tool?.result}
-                                </div>
-                              </div>
-                            </div>
-                          );
+                          // return (
+                          //   <div className="space-y-4">
+                          //     <div className="rounded-lg border border-dashed border-black/20 p-4">
+                          //       <div className="prose max-w-none break-words">
+                          //         {tool?.result}
+                          //       </div>
+                          //     </div>
+                          //   </div>
+                          // );
                         })}
                       </TabsContent>
                     );
