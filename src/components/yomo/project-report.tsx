@@ -16,6 +16,7 @@ import WebsiteIcon from "~/assets/images/search/Website_icon.png";
 import DocsIcon from "~/assets/images/search/Docs_icon.png";
 import DAppIcon from "~/assets/images/search/DApp_icon.png";
 import XIcon from "~/assets/images/search/X_icon.png";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 export const ProjectReport = ({
   projectData,
@@ -31,10 +32,10 @@ export const ProjectReport = ({
       {projectData && (
         <>
           {/* 项目介绍部分 */}
-          <div className="px-4 mb-6">
-            <div className="flex items-center gap-2 mb-3">
-              <div className="w-1 h-5 bg-orange-500 rounded"></div>
-              <div className="text-lg font-brand-medium">
+          <div className="mb-6 px-4">
+            <div className="mb-3 flex items-center gap-2">
+              <div className="h-5 w-1 rounded bg-orange-500"></div>
+              <div className="font-brand-medium text-lg">
                 Project Introduction
               </div>
             </div>
@@ -57,7 +58,7 @@ export const ProjectReport = ({
                           <span className="text-gray-500">-</span>
                           <span>{member.position}</span>
                         </div>
-                      )
+                      ),
                     )}
                   </div>
                 </div>
@@ -73,7 +74,7 @@ export const ProjectReport = ({
 
           {/* 融资信息部分 */}
           {projectData?.fundraising_info && (
-            <div className="px-4 mt-4 mb-6">
+            <div className="mt-4 mb-6 px-4">
               {/* <div className="flex items-center gap-2 mb-3">
                 <div className="w-1 h-5 bg-orange-500 rounded"></div>
                 <div className="text-lg font-brand-medium">
@@ -87,7 +88,7 @@ export const ProjectReport = ({
                 Array.isArray(projectData.fundraising_info.investors) &&
                 projectData.fundraising_info.investors.length > 0 && (
                   <>
-                    <div className="mb-4 text-base font-brand-medium">
+                    <div className="font-brand-medium mb-4 text-base">
                       Investment Institutions:
                     </div>
                     <div className="">
@@ -96,14 +97,14 @@ export const ProjectReport = ({
                           (investor: any, index: number) => (
                             <div
                               key={index}
-                              className="flex items-center gap-1 px-2 py-1 bg-gray-100 border border-gray-200 rounded-[8px]"
+                              className="flex items-center gap-1 rounded-[8px] border border-gray-200 bg-gray-100 px-2 py-1"
                               title={investor.name}
                             >
                               {investor.logo && (
                                 <img
                                   src={investor.logo}
                                   alt={investor.name}
-                                  className="object-cover w-5 h-5 rounded-full"
+                                  className="h-5 w-5 rounded-full object-cover"
                                   onError={(e) => {
                                     // 如果图片加载失败，隐藏图片元素
                                     e.currentTarget.style.display = "none";
@@ -114,7 +115,7 @@ export const ProjectReport = ({
                                 {investor.name}
                               </span>
                             </div>
-                          )
+                          ),
                         )}
                       </div>
                     </div>
@@ -125,10 +126,10 @@ export const ProjectReport = ({
 
           {/* 项目数据部分 */}
           {(projectData?.social_media_stats || projectData?.on_chain_data) && (
-            <div className="px-4 mb-6">
-              <div className="flex items-center gap-2 mb-3">
-                <div className="w-1 h-5 bg-orange-500 rounded"></div>
-                <div className="text-lg font-brand-medium">Project Data</div>
+            <div className="mb-6 px-4">
+              <div className="mb-3 flex items-center gap-2">
+                <div className="h-5 w-1 rounded bg-orange-500"></div>
+                <div className="font-brand-medium text-lg">Project Data</div>
               </div>
               {/* <div className="mb-3 text-sm text-gray-700">社区热度与媒体报道</div>
                 <Card className="mb-4 bg-gray-100 border border-gray-200 h-36">
@@ -142,7 +143,7 @@ export const ProjectReport = ({
                     <span className="text-gray-700">X (Twitter)</span>
                     <span className="text-black">
                       {numFormat(
-                        projectData.social_media_stats.twitter.followers || 0
+                        projectData.social_media_stats.twitter.followers || 0,
                       )}{" "}
                       {projectData.social_media_stats.twitter
                         ?.followers_7d_increment && (
@@ -150,7 +151,7 @@ export const ProjectReport = ({
                           (
                           {formatPercentage(
                             projectData.social_media_stats.twitter
-                              .followers_7d_increment || 0
+                              .followers_7d_increment || 0,
                           )}
                           /7d)
                         </span>
@@ -163,13 +164,13 @@ export const ProjectReport = ({
                     <span className="text-gray-700">Telegram</span>
                     <span className="text-black">
                       {numFormat(
-                        projectData.social_media_stats.telegram.members || 0
+                        projectData.social_media_stats.telegram.members || 0,
                       )}{" "}
                       <span className="text-green-500">
                         (
                         {formatPercentage(
                           projectData.social_media_stats.telegram
-                            .members_7d_increment || 0
+                            .members_7d_increment || 0,
                         )}
                         /7d)
                       </span>
@@ -181,13 +182,13 @@ export const ProjectReport = ({
                     <span className="text-gray-700">Discord</span>
                     <span className="text-black">
                       {numFormat(
-                        projectData.social_media_stats.discord.members || 0
+                        projectData.social_media_stats.discord.members || 0,
                       )}{" "}
                       <span className="text-green-500">
                         (
                         {formatPercentage(
                           projectData.social_media_stats.discord
-                            .members_7d_increase || 0
+                            .members_7d_increase || 0,
                         )}
                         /7d)
                       </span>
@@ -199,7 +200,7 @@ export const ProjectReport = ({
                     <span className="text-gray-700">Twitter mentions</span>
                     <span className="text-black">
                       {numFormat(
-                        projectData.social_media_stats.twitter.mentions || 0
+                        projectData.social_media_stats.twitter.mentions || 0,
                       )}{" "}
                       {projectData.social_media_stats.twitter
                         .mentions_7d_increment && (
@@ -207,7 +208,7 @@ export const ProjectReport = ({
                           (
                           {formatPercentage(
                             projectData.social_media_stats.twitter
-                              .mentions_7d_increment || 0
+                              .mentions_7d_increment || 0,
                           )}
                           /7d)
                         </span>
@@ -227,7 +228,7 @@ export const ProjectReport = ({
                   )} */}
                 {projectData?.social_media_stats?.media_mentions &&
                   Array.isArray(
-                    projectData.social_media_stats.media_mentions
+                    projectData.social_media_stats.media_mentions,
                   ) &&
                   projectData.social_media_stats.media_mentions.length > 0 && (
                     <div className="space-y-2">
@@ -252,7 +253,7 @@ export const ProjectReport = ({
                                   href={item}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="inline-block px-3 py-1 text-sm text-blue-700 transition-colors bg-blue-100 rounded-full cursor-pointer hover:bg-blue-200"
+                                  className="inline-block cursor-pointer rounded-full bg-blue-100 px-3 py-1 text-sm text-blue-700 transition-colors hover:bg-blue-200"
                                   title={item}
                                 >
                                   {displayName}
@@ -276,7 +277,7 @@ export const ProjectReport = ({
                                   href={url}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="inline-block px-3 py-1 text-sm text-blue-700 transition-colors bg-blue-100 rounded-full cursor-pointer hover:bg-blue-200"
+                                  className="inline-block cursor-pointer rounded-full bg-blue-100 px-3 py-1 text-sm text-blue-700 transition-colors hover:bg-blue-200"
                                   title={displayName}
                                 >
                                   {displayName}
@@ -286,7 +287,7 @@ export const ProjectReport = ({
 
                             // 如果既不是字符串也不是对象，跳过渲染
                             return null;
-                          }
+                          },
                         )}
                       </div>
                     </div>
@@ -364,7 +365,7 @@ export const ProjectReport = ({
                       </span>
                       <span className="text-black">
                         {numFormat(
-                          projectData.on_chain_data.active_addresses_7d
+                          projectData.on_chain_data.active_addresses_7d,
                         )}
                         {projectData.on_chain_data
                           .active_addresses_7d_change && (
@@ -398,7 +399,7 @@ export const ProjectReport = ({
                       </span>
                       <span className="text-black">
                         {numFormat(
-                          projectData.on_chain_data.contract_interactions_7d
+                          projectData.on_chain_data.contract_interactions_7d,
                         )}
                         {projectData.on_chain_data
                           .contract_interactions_7d_change && (
@@ -432,7 +433,7 @@ export const ProjectReport = ({
                       </span>
                       <span className="text-black">
                         {numFormat(
-                          projectData.on_chain_data.contract_interactions_30d
+                          projectData.on_chain_data.contract_interactions_30d,
                         )}
                       </span>
                     </div>
@@ -453,7 +454,7 @@ export const ProjectReport = ({
                       <span className="text-black">
                         $
                         {numFormat(
-                          projectData.on_chain_data.protocol_revenue_30d
+                          projectData.on_chain_data.protocol_revenue_30d,
                         )}
                       </span>
                     </div>
@@ -481,14 +482,14 @@ export const ProjectReport = ({
           )}
           {/* 市场数据部分 */}
           {projectData?.market_data && (
-            <div className="px-4 mb-6">
-              <div className="flex items-center gap-2 mb-3">
-                <div className="w-1 h-5 bg-orange-500 rounded"></div>
-                <div className="text-lg font-brand-medium">Markets</div>
+            <div className="mb-6 px-4">
+              <div className="mb-3 flex items-center gap-2">
+                <div className="h-5 w-1 rounded bg-orange-500"></div>
+                <div className="font-brand-medium text-lg">Markets</div>
               </div>
               {projectData?.market_data?.kline_30d &&
                 projectData.market_data.kline_30d.length > 0 && (
-                  <div className="pt-2 pb-2 mb-6">
+                  <div className="mb-6 pt-2 pb-2">
                     <ChartContainer title="30 days price trend">
                       <PriceChart
                         height={144}
@@ -505,7 +506,7 @@ export const ProjectReport = ({
                   <span className="text-black">
                     $
                     {numFormat(
-                      projectData.market_data?.trading_volume_24h || 0
+                      projectData.market_data?.trading_volume_24h || 0,
                     )}{" "}
                     <span
                       className={`${
@@ -531,7 +532,7 @@ export const ProjectReport = ({
                   <span className="text-black">
                     $
                     {numFormat(
-                      projectData.market_data.circulating_market_cap || 0
+                      projectData.market_data.circulating_market_cap || 0,
                     )}{" "}
                   </span>
                 </div>
@@ -540,45 +541,55 @@ export const ProjectReport = ({
                   <span className="text-black">
                     $
                     {numFormat(
-                      projectData.market_data.fully_diluted_valuation || 0
+                      projectData.market_data.fully_diluted_valuation || 0,
                     )}
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-gray-700">Support Exchanges</span>
-                  <div className="flex-1 ml-2 overflow-hidden">
-                    <div className="flex gap-1 overflow-x-auto scrollbar-hide">
-                      <div className="flex gap-1 ml-auto">
-                        {projectData.market_data.support_exchanges?.map(
-                          (exchange: any, index: number) => {
-                            // 安全检查：确保exchange是对象且包含必要属性
-                            if (
-                              typeof exchange === "object" &&
-                              exchange !== null &&
-                              exchange.name
-                            ) {
-                              return (
-                                <div
-                                  key={index}
-                                  className="flex items-center justify-center flex-shrink-0 w-5 h-5 bg-blue-500 rounded-full"
-                                  title={exchange.name}
-                                >
-                                  <img
+                  <div className="ml-2 flex-1 overflow-hidden">
+                    <div className="scrollbar-hide flex gap-1 overflow-x-auto">
+                      <div className="ml-auto flex gap-1">
+                        {(projectData.market_data?.support_exchanges &&
+                          projectData.market_data?.support_exchanges
+                            ?.slice(0, 10)
+                            ?.map((exchange: any, index: number) => {
+                              // 安全检查：确保exchange是对象且包含必要属性
+                              if (
+                                typeof exchange === "object" &&
+                                exchange !== null &&
+                                exchange.name
+                              ) {
+                                return (
+                                  <div
+                                    key={index}
+                                    className="flex h-5 flex-shrink-0 items-center justify-center"
+                                    title={exchange.name}
+                                  >
+                                    {/* <Avatar className="h-full rounded-full object-cover">
+                                    <AvatarImage src={exchange.logo} />
+                                    <AvatarFallback className="bg-[#e8eef7] font-medium text-[#0f172a]">
+                                      
+                                    </AvatarFallback>
+                                  </Avatar> */}
+                                    <span className="text-sm">
+                                      {exchange.name}
+                                    </span>
+                                    {/* <img
                                     src={exchange.logo || ""}
                                     alt={exchange.name}
-                                    className="object-cover w-full h-full rounded-full"
+                                    className="h-full w-full rounded-full object-cover"
                                     onError={(e) => {
                                       // 如果图片加载失败，隐藏图片元素
                                       e.currentTarget.style.display = "none";
                                     }}
-                                  />
-                                </div>
-                              );
-                            }
-                            return null;
-                          }
-                        ) || (
-                          <div className="flex-shrink-0 w-3 h-3 bg-gray-300 rounded-full"></div>
+                                  /> */}
+                                  </div>
+                                );
+                              }
+                              return null;
+                            })) || (
+                          <div className="h-3 w-3 flex-shrink-0 rounded-full bg-gray-300"></div>
                         )}
                       </div>
                     </div>
@@ -590,10 +601,10 @@ export const ProjectReport = ({
 
           {/* 代币经济学部分 */}
           {projectData?.tokenomics && (
-            <div className="px-4 mb-6">
-              <div className="flex items-center gap-2 mb-3">
-                <div className="w-1 h-5 bg-orange-500 rounded"></div>
-                <div className="text-lg font-brand-medium">Tokenomics</div>
+            <div className="mb-6 px-4">
+              <div className="mb-3 flex items-center gap-2">
+                <div className="h-5 w-1 rounded bg-orange-500"></div>
+                <div className="font-brand-medium text-lg">Tokenomics</div>
               </div>
 
               <div className="mb-4 space-y-2 text-sm">
@@ -607,7 +618,7 @@ export const ProjectReport = ({
                   <span className="text-gray-700">Circulating Supply</span>
                   <span className="text-black">
                     {numFormat(
-                      projectData?.tokenomics?.circulating_supply || 0
+                      projectData?.tokenomics?.circulating_supply || 0,
                     )}
                   </span>
                 </div>
@@ -621,8 +632,8 @@ export const ProjectReport = ({
                   projectData.tokenomics.support_chains.length > 0 && (
                     <div className="flex justify-between">
                       <span className="text-gray-700">Support Chains</span>
-                      <div className="flex-1 ml-2 overflow-hidden">
-                        <div className="flex justify-end gap-1 overflow-x-auto scrollbar-hide">
+                      <div className="ml-2 flex-1 overflow-hidden">
+                        <div className="scrollbar-hide flex justify-end gap-1 overflow-x-auto">
                           {projectData.tokenomics.support_chains.map(
                             (chain: any, index: number) => {
                               // 安全检查：确保chain是有效的字符串或对象
@@ -641,7 +652,7 @@ export const ProjectReport = ({
                                 );
                               }
                               return null;
-                            }
+                            },
                           )}
                         </div>
                       </div>
@@ -649,7 +660,7 @@ export const ProjectReport = ({
                   )}
                 <div className="flex justify-between">
                   <span className="text-gray-700">Referral Docs</span>
-                  <span className="text-blue-600 underline cursor-pointer">
+                  <span className="cursor-pointer text-blue-600 underline">
                     {projectData?.tokenomics?.token_symbol} Tokenomics
                   </span>
                 </div>
@@ -659,25 +670,25 @@ export const ProjectReport = ({
               {(() => {
                 return (
                   <>
-                    <div className="mb-2 text-base font-brand-medium">
+                    <div className="font-brand-medium mb-2 text-base">
                       Distribution Overview
                     </div>
-                    <div className="p-3 mb-2 bg-white border border-gray-200 rounded-lg">
+                    <div className="mb-2 rounded-lg border border-gray-200 bg-white p-3">
                       <div className="mb-4 space-y-2 text-sm">
-                        <div className="flex items-center justify-between pb-3 border-b border-gray-200">
+                        <div className="flex items-center justify-between border-b border-gray-200 pb-3">
                           <span className="text-gray-600">Token Symbol:</span>
                           <span className="font-semibold text-gray-800">
                             {projectData?.tokenomics?.token_symbol || "-"}
                           </span>
                         </div>
-                        <div className="flex items-center justify-between pb-3 border-b border-gray-200">
+                        <div className="flex items-center justify-between border-b border-gray-200 pb-3">
                           <span className="text-gray-600">
                             Token Total Supply:
                           </span>
                           <span className="font-semibold text-gray-800">
                             {projectData?.tokenomics?.total_supply
                               ? numFormat(
-                                  projectData?.tokenomics?.total_supply || 0
+                                  projectData?.tokenomics?.total_supply || 0,
                                 )
                               : "-"}
                           </span>
@@ -686,11 +697,11 @@ export const ProjectReport = ({
                           <span className="text-gray-600">
                             Initial Circulating Supply:
                           </span>
-                          <span className="font-semibold text-right text-gray-800">
+                          <span className="text-right font-semibold text-gray-800">
                             {projectData?.tokenomics?.circulating_supply
                               ? `${numFormat(
                                   projectData?.tokenomics?.circulating_supply ||
-                                    0
+                                    0,
                                 )} `
                               : "-"}
                             {/* (${(
@@ -857,22 +868,22 @@ export const ProjectReport = ({
             ];
 
             const availablePlatforms = allPlatforms.filter(
-              (platform) => platform.url
+              (platform) => platform.url,
             );
 
             if (availablePlatforms.length === 0) return null;
 
             return (
-              <div className="px-4 mb-6">
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="w-1 h-5 bg-orange-500 rounded"></div>
-                  <div className="text-lg font-brand-medium">Project Links</div>
+              <div className="mb-6 px-4">
+                <div className="mb-3 flex items-center gap-2">
+                  <div className="h-5 w-1 rounded bg-orange-500"></div>
+                  <div className="font-brand-medium text-lg">Project Links</div>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {availablePlatforms.map((platform: any, index: number) => (
                     <div
                       key={index}
-                      className="flex items-center gap-1 px-2 py-1  border border-gray-200 rounded-[8px] hover:bg-gray-100 cursor-pointer"
+                      className="flex cursor-pointer items-center gap-1 rounded-[8px] border border-gray-200 px-2 py-1 hover:bg-gray-100"
                       title={platform.name}
                       onClick={() =>
                         platform.url && window.open(platform.url, "_blank")
@@ -882,7 +893,7 @@ export const ProjectReport = ({
                         <img
                           src={platform.icon}
                           alt={platform.name}
-                          className="object-cover w-5 h-5 rounded-full"
+                          className="h-5 w-5 rounded-full object-cover"
                           onError={(e) => {
                             e.currentTarget.style.display = "none";
                           }}
@@ -922,10 +933,10 @@ export const ProjectReport = ({
           {/* 融资信息部分 */}
           {projectData?.fundraising_info?.round_info &&
             projectData.fundraising_info.round_info.length > 0 && (
-              <div className="px-4 mb-4">
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="w-1 h-5 bg-orange-500 rounded"></div>
-                  <div className="text-lg font-brand-medium">
+              <div className="mb-4 px-4">
+                <div className="mb-3 flex items-center gap-2">
+                  <div className="h-5 w-1 rounded bg-orange-500"></div>
+                  <div className="font-brand-medium text-lg">
                     Funding Rounds
                   </div>
                 </div>
@@ -934,7 +945,7 @@ export const ProjectReport = ({
                     (round: any, index: number) => (
                       <div
                         key={index}
-                        className="flex items-center justify-between p-2 rounded-lg bg-gray-50"
+                        className="flex items-center justify-between rounded-lg bg-gray-50 p-2"
                       >
                         <div className="flex items-center gap-3">
                           <div className="text-sm font-medium text-gray-900">
@@ -947,7 +958,7 @@ export const ProjectReport = ({
                                 year: "numeric",
                                 month: "short",
                                 day: "numeric",
-                              }
+                              },
                             )}
                           </div>
                         </div>
@@ -955,10 +966,10 @@ export const ProjectReport = ({
                           ${numFormat(round.amount, 2)}
                         </div>
                       </div>
-                    )
+                    ),
                   )}
                   {projectData?.fundraising_info?.total_raised && (
-                    <div className="flex items-center justify-between p-2 border border-green-200 rounded-lg bg-green-50">
+                    <div className="flex items-center justify-between rounded-lg border border-green-200 bg-green-50 p-2">
                       <div className="text-sm font-medium text-gray-900">
                         Total Raised
                       </div>
@@ -966,7 +977,7 @@ export const ProjectReport = ({
                         $
                         {numFormat(
                           projectData.fundraising_info?.total_raised || 0,
-                          2
+                          2,
                         )}
                       </div>
                     </div>
