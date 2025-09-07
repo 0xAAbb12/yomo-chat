@@ -1,200 +1,199 @@
 import type { Message } from "~/core/messages"
-
+// [
+//         "vthBaZgxIEr0L6PSgKwnZ",
+//         {
+//             "id": "vthBaZgxIEr0L6PSgKwnZ",
+//             "threadId": "7R4rZOFgshpSxa2sHQSTb",
+//             "role": "user",
+//             "content": "Pell network值得够买吗",
+//             "contentChunks": [
+//                 "Pell network值得够买吗"
+//             ],
+//             "resources": []
+//         }
+//     ],
+//     [
+//         "run--9c70ad79-a7f7-43f4-957d-d53400cfae84",
+//         {
+//             "id": "run--9c70ad79-a7f7-43f4-957d-d53400cfae84",
+//             "threadId": "7R4rZOFgshpSxa2sHQSTb",
+//             "agent": "planner",
+//             "role": "assistant",
+//             "content": "",
+//             "contentChunks": [],
+//             "reasoningContent": "",
+//             "reasoningContentChunks": [],
+//             "isStreaming": false,
+//             "toolCalls": [
+//                 {
+//                     "id": "42ba1a33-c546-4786-b187-3a4098f551d3",
+//                     "name": "search_web3_project",
+//                     "args": {
+//                         "search_query": "Pell network"
+//                     },
+//                     "result": "[{\"id\": \"da757b8b-518f-471d-84b1-9b6623932b62\", \"name\": \"Pell Network\", \"token_symbol\": \"PELL\", \"website\": \"https://pell.network/\", \"logo\": \"https://public.rootdata.com/images/b12/1720773778045.jpg\"}]"
+//                 }
+//             ],
+//             "finishReason": "STOP"
+//         }
+//     ],
+//     [
+//         "run--3d8bc53b-c675-44a1-808b-d8d31cf282d0",
+//         {
+//             "id": "run--3d8bc53b-c675-44a1-808b-d8d31cf282d0",
+//             "threadId": "7R4rZOFgshpSxa2sHQSTb",
+//             "agent": "planner",
+//             "role": "assistant",
+//             "content": "",
+//             "contentChunks": [],
+//             "reasoningContent": "",
+//             "reasoningContentChunks": [],
+//             "isStreaming": false,
+//             "toolCalls": [
+//                 {
+//                     "id": "95fbf887-9185-42d5-a87c-f2dbf5ce0bdb",
+//                     "name": "get_web3_project",
+//                     "args": {
+//                         "name": "Pell Network"
+//                     },
+//                     "result": "{\"project_id\": \"da757b8b-518f-471d-84b1-9b6623932b62\", \"project_info\": {\"name\": \"Pell Network\", \"short_intro\": \"Actively Validated Services for Bitcoin Ecosystem\", \"logo\": \"https://public.rootdata.com/images/b12/1720773778045.jpg\", \"description\": \"Pell Network aims to create a decentralized token economy security leasing platform for the Bitcoin ecosystem. By constructing a network that aggregates native BTC Stake and LSD Restake services, it allows stakers to choose to validate new software modules built upon the Pell Network ecosystem. Stakers opt-in by granting Pell Network smart contracts the ability to impose additional reduction conditions on their staked assets, thereby allowing for the expansion of cryptographic economic security.\", \"team_info\": null, \"sector_analysis\": null, \"fund_raising\": \"Pell Network has successfully raised a total of $6.5 million across two funding rounds. The project secured $3 million in a Pre-Seed round on October 14, 2024, followed by a Strategic round which raised $3.5 million on January 26, 2025. The project has attracted a diverse group of notable investors, including Mirana Ventures, Paper Ventures, Halo Capital, MultiversX, GoPlus Security, Web3Port, Mantle Network, D11 Labs, Cogitent Ventures, ArkStream Capital, Side Door Ventures, Delta Blockchain Fund, Taisu Ventures, J17 Capital, Contribution Capital, Sats Ventures, Core Ventures, 071labs, and Astrarizon Ventures.\", \"summary\": \"Pell Network presents a compelling value proposition by extending the concept of 'Actively Validated Services' (AVS), similar to restaking models in other ecosystems, specifically to the Bitcoin network. This approach aims to leverage Bitcoin's robust security for a wider range of decentralized applications. A key strength lies in its ability to aggregate both native BTC and LSD restaking, offering flexibility and broader participation for stakers looking to contribute to the economic security of new modules. The project has demonstrated significant traction, reflected in its Total Value Locked (TVL) of over $406 million, though it has seen a decrease from its peak of over $656 million. This indicates a strong initial adoption but also highlights market volatility or ongoing development phases. Pell Network's financial backing is robust, with $6.5 million raised from a diverse group of prominent Web3 investors, signaling confidence in its vision and technological approach. With a current token price of approximately $0.0025 and a circulating market cap of around $844k, the project is still in its early stages concerning market valuation relative to its fully diluted valuation of $5.28 million. The engagement on social platforms, particularly Telegram with over 73,000 members, suggests a growing community interest. The wide distribution of TVL across various BTC and other crypto assets points to a versatile and integrated platform. The project's success will heavily depend on its ability to continuously attract new software modules to build upon its network and to maintain and grow its TVL by providing a secure and attractive environment for BTC and LSD stakers.\"}, \"fundraising_info\": {\"total_raised\": \"6500000.0\", \"investors\": [{\"name\": \"Mirana Ventures\", \"logo\": \"https://public.rootdata.com/images/b16/1668835396046.jpg\"}, {\"name\": \"Paper Ventures\", \"logo\": \"https://public.rootdata.com/images/b6/1706107127444.jpg\"}, {\"name\": \"Halo Capital\", \"logo\": \"https://public.rootdata.com/images/b6/1725607689288.png\"}, {\"name\": \"MultiversX\", \"logo\": \"https://public.rootdata.com/images/b6/1667667380503.jpg\"}, {\"name\": \"GoPlus Security\", \"logo\": \"https://public.rootdata.com/images/b6/1709916008330.jpg\"}, {\"name\": \"Web3Port\", \"logo\": \"https://public.rootdata.com/images/b16/1666858927960.jpg\"}, {\"name\": \"Mantle Network\", \"logo\": \"https://public.rootdata.com/images/b6/1669975630936.jpg\"}, {\"name\": \"D11 Labs\", \"logo\": \"https://public.rootdata.com/images/b30/1699360676820.jpg\"}, {\"name\": \"Cogitent Ventures\", \"logo\": \"https://public.rootdata.com/images/b17/1666867258167.jpg\"}, {\"name\": \"ArkStream Capital\", \"logo\": \"https://public.rootdata.com/images/b16/1668834996505.jpg\"}, {\"name\": \"Side Door Ventures\", \"logo\": \"https://public.rootdata.com/images/b12/1666841983154.jpg\"}, {\"name\": \"Delta Blockchain Fund\", \"logo\": \"https://public.rootdata.com/images/b16/1668931241495.jpg\"}, {\"name\": \"Taisu Ventures\", \"logo\": \"https://public.rootdata.com/images/b6/1704879781492.jpg\"}, {\"name\": \"J17 Capital\", \"logo\": \"https://public.rootdata.com/images/b12/1688459341366.jpg\"}, {\"name\": \"Contribution Capital\", \"logo\": \"https://public.rootdata.com/images/b6/1720494595461.jpg\"}, {\"name\": \"Sats Ventures\", \"logo\": \"https://public.rootdata.com/images/b6/1721088854395.jpg\"}, {\"name\": \"Core Ventures\", \"logo\": \"https://public.rootdata.com/images/b6/1721089037994.jpg\"}, {\"name\": \"071labs\", \"logo\": \"https://public.rootdata.com/images/b12/1724926696707.png\"}, {\"name\": \"Astrarizon Ventures\", \"logo\": \"https://public.rootdata.com/images/b6/1738048957796.jpg\"}], \"round_info\": [{\"round\": \"Strategic\", \"amount\": \"3500000.0\", \"date\": 1737936000, \"other_details\": \"\"}, {\"round\": \"Pre-Seed\", \"amount\": \"3000000.0\", \"date\": 1728950400, \"other_details\": \"\"}]}, \"social_media_links\": {\"website\": \"https://pell.network/\", \"twitter\": \"https://twitter.com/Pell_Network\", \"defliama\": \"\", \"telegram\": \"https://t.me/Pell_Network\", \"discord\": \"https://discord.com/invite/pell-network\", \"medium\": \"\", \"github\": \"https://github.com/0xPellNetwork/pell_media_kit\"}, \"social_media_stats\": {\"social_media_links\": {\"website\": \"https://pell.network/\", \"twitter\": \"https://twitter.com/Pell_Network\", \"defliama\": \"\", \"telegram\": \"https://t.me/Pell_Network\", \"discord\": \"https://discord.com/invite/pell-network\", \"medium\": \"\", \"github\": \"https://github.com/0xPellNetwork/pell_media_kit\"}, \"twitter\": null, \"telegram\": {\"members\": 73895, \"members_7d_increment\": null, \"trend\": []}, \"discord\": null, \"media_mentions\": []}, \"on_chain_data\": {\"tvl\": 406034589.0, \"tvl_7d_increment\": 7.2787, \"tvl_peak\": 656254574.0, \"tvl_trend\": [{\"timestamp\": 1756684800, \"value\": 378485582}, {\"timestamp\": 1756771200, \"value\": 374508901}, {\"timestamp\": 1756857600, \"value\": 385300545}, {\"timestamp\": 1756944000, \"value\": 410837109}, {\"timestamp\": 1757030400, \"value\": 405086650}, {\"timestamp\": 1757116800, \"value\": 405434194}, {\"timestamp\": 1757173211, \"value\": 406034589}], \"tvl_distribution\": [{\"category\": \"BTC\", \"value\": 5150.41476}, {\"category\": \"ABTC\", \"value\": 108.6269}, {\"category\": \"BBTC\", \"value\": 65.80243}, {\"category\": \"BTCB\", \"value\": 36379.26934}, {\"category\": \"FBTC\", \"value\": 2571.36519}, {\"category\": \"IBTC\", \"value\": 15.50192}, {\"category\": \"LBTC\", \"value\": 22279.93989}, {\"category\": \"NETH\", \"value\": 23380172.92871}, {\"category\": \"OBTC\", \"value\": 16.6143}, {\"category\": \"SBTC\", \"value\": 4e-05}, {\"category\": \"TBTC\", \"value\": 2703.17044}, {\"category\": \"UBTC\", \"value\": 22816444.08203}, {\"category\": \"USDC\", \"value\": 2298.26998}, {\"category\": \"USDT\", \"value\": 24381.59259}, {\"category\": \"USDX\", \"value\": 7998581.03999}, {\"category\": \"WBNB\", \"value\": 826.07622}, {\"category\": \"WBTC\", \"value\": 145450.37714}, {\"category\": \"WHSK\", \"value\": 4.18945}, {\"category\": \"ZBTC\", \"value\": 487.39439}, {\"category\": \"BFBTC\", \"value\": 44.3047}, {\"category\": \"ESBTC\", \"value\": 110770000.0}, {\"category\": \"M-BTC\", \"value\": 6872.32881}, {\"category\": \"RNETH\", \"value\": 22360566.7352}, {\"category\": \"STBTC\", \"value\": 172007.29519}, {\"category\": \"SUBTC\", \"value\": 11087314.08071}, {\"category\": \"SUSDX\", \"value\": 1021.72687}, {\"category\": \"USDT0\", \"value\": 917.99474}, {\"category\": \"WGBTC\", \"value\": 19.23723}, {\"category\": \"WRBTC\", \"value\": 1679.36476}, {\"category\": \"WZETA\", \"value\": 138.928}, {\"category\": \"IOWBTC\", \"value\": 12759.77516}, {\"category\": \"SATUSD\", \"value\": 2826.11717}, {\"category\": \"STCORE\", \"value\": 3934.7057}, {\"category\": \"STZETA\", \"value\": 223.84019}, {\"category\": \"UNIBTC\", \"value\": 4760624.58076}, {\"category\": \"YBTC.B\", \"value\": 55421012.15272}, {\"category\": \"BTC.BTC\", \"value\": 31.82241}, {\"category\": \"ENZOBTC\", \"value\": 44304817.7002}, {\"category\": \"PUMPBTC\", \"value\": 4598217.36258}, {\"category\": \"SLISBNB\", \"value\": 597.17603}, {\"category\": \"SOLVBTC\", \"value\": 31043224.4124}, {\"category\": \"UNIIOTX\", \"value\": 64609.30937}, {\"category\": \"WSTBBTC\", \"value\": 66758780.19645}, {\"category\": \"XSOLVBTC\", \"value\": 188518.19684}, {\"category\": \"SOLVBTC.B\", \"value\": 2989.37361}, {\"category\": \"SOLVBTC.M\", \"value\": 1956.08595}, {\"category\": \"AMERSOLVBTC\", \"value\": 1837.60737}, {\"category\": \"SOLVBTC.BBN\", \"value\": 29099.35279}, {\"category\": \"SOLVBTC.ENA\", \"value\": 11.0788}], \"active_addresses_7d\": null, \"active_addresses_7d_change\": null, \"contract_interactions_7d\": null, \"contract_interactions_7d_change\": null, \"contract_interactions_30d\": null, \"contract_interactions_trend\": null, \"txns_30d\": null, \"protocol_revenue_30d\": null, \"protocol_fees_24h\": null, \"protocol_revenue_24h\": null, \"protocol_fees_30d\": null}, \"market_data\": {\"token_price\": 0.00251452015909154, \"token_price_desc\": \"$0.0025145202\", \"token_price_change_24h\": -3.7422, \"trading_volume_24h\": 483391.65636717, \"trading_volume_24h_desc\": \"$483,392\", \"trading_volume_change_24h\": 101.5365, \"kline_30d\": null, \"circulating_market_cap\": 844878.773454759, \"circulating_market_cap_source\": \"CoinMarketCap\", \"fully_diluted_valuation\": 5280492.33, \"fully_diluted_valuation_source\": \"CoinMarketCap\", \"support_exchanges\": [{\"name\": \"Bybit\", \"logo\": \"\"}, {\"name\": \"Gate\", \"logo\": \"\"}, {\"name\": \"MEXC\", \"logo\": \"\"}, {\"name\": \"BitKan\", \"logo\": \"\"}, {\"name\": \"BloFin\", \"logo\": \"\"}]}, \"tokenomics\": {\"token_symbol\": \"PELL\", \"circulating_supply\": 336000000.0, \"total_supply\": 2100000000.0, \"support_chains\": null, \"support_chains_source\": null, \"referral_docs\": [], \"distribution_overview\": null}, \"campaign\": null}"
+//                 }
+//             ],
+//             "finishReason": "STOP"
+//         }
+//     ],
+//     [
+//         "run--723cbcbb-9196-4b67-b3da-e5d686730457",
+//         {
+//             "id": "run--723cbcbb-9196-4b67-b3da-e5d686730457",
+//             "threadId": "7R4rZOFgshpSxa2sHQSTb",
+//             "agent": "planner",
+//             "role": "assistant",
+//             "content": "我无法提供投资建议。投资加密货币具有固有风险，您应该根据自己的研究和风险承受能力做出决策。\n\n以下是关于 Pell Network 的详细信息，供您参考：\n\n**项目概述：**\n\n*   **项目名称：** Pell Network\n*   **代币符号：** PELL\n*   **官方网站：** https://pell.network/\n*   **简介：** Pell Network 旨在为比特币生态系统创建一个去中心化的代币经济安全租赁平台。它通过构建一个聚合原生 BTC 质押和 LSD 再质押服务的网络，允许质押者选择验证基于 Pell Network 生态系统的新软件模块。它致力于将“活跃验证服务”（AVS）概念引入比特币网络，利用比特币的强大安全性来支持更广泛的去中心化应用。\n\n**融资信息：**\n\n*   **总募集资金：** 650 万美元\n*   **融资轮次：**\n    *   种子前轮 (Pre-Seed): 2024年10月14日，募集 300 万美元\n    *   战略轮 (Strategic): 2025年1月26日，募集 350 万美元\n*   **主要投资者：** Mirana Ventures, Paper Ventures, Halo Capital, MultiversX, GoPlus Security, Web3Port, Mantle Network, D11 Labs, Cogitent Ventures, ArkStream Capital, Side Door Ventures, Delta Blockchain Fund, Taisu Ventures, J17 Capital, Contribution Capital, Sats Ventures, Core Ventures, 071labs, 和 Astrarizon Ventures 等。\n\n**市场数据 (截至最近数据点)：**\n\n*   **当前代币价格：** 约 0.0025145202 美元\n*   **24小时价格变化：** -3.7422%\n*   **流通市值：** 844,878.77 美元 (数据来源：CoinMarketCap)\n*   **完全稀释估值 (FDV)：** 5,280,492.33 美元 (数据来源：CoinMarketCap)\n*   **24小时交易量：** 483,391.66 美元\n*   **支持交易平台：** Bybit, Gate, MEXC, BitKan, BloFin\n\n**链上数据：**\n\n*   **总锁定价值 (TVL)：** 406,034,589 美元\n*   **TVL 7天增长：** 7.2787%\n*   **TVL 峰值：** 656,254,574 美元\n*   **TVL 分布：** TVL 分布在多种 BTC 和其他加密资产中，包括 BTC、ABTC、BBTC、BTCB、FBTC、IBTC、LBTC、NETH、OBTC、SBTC、TBTC、UBTC、USDC、USDT、USDX、WBNB、WBTC、WHSK、ZBTC 等。\n\n**代币经济学：**\n\n*   **代币符号：** PELL\n*   **流通供应量：** 336,000,000 PELL\n*   **总供应量：** 2,100,000,000 PELL\n\n**社交媒体和社区：**\n\n*   **Telegram 成员：** 超过 73,000 名成员\n*   **Discord：** https://discord.com/invite/pell-network\n*   **Twitter：** https://twitter.com/Pell_Network\n*   **GitHub：** https://github.com/0xPellNetwork/pell_media_kit\n\n**总结：**\n\nPell Network 的价值主张在于将“活跃验证服务”概念扩展到比特币网络。其优势在于能够聚合原生 BTC 和 LSD 再质押，为质押者提供灵活性。该项目已从知名 Web3 投资者那里获得了 650 万美元的强大资金支持，这表明了市场对其愿景和技术方法的信心。尽管其总锁定价值（TVL）超过 4.06 亿美元，但相比峰值有所下降，这可能反映了市场波动或项目发展阶段。目前该项目的市值相对较低，可能处于早期阶段。其在 Telegram 上拥有庞大的社区基础。项目的成功将取决于其持续吸引新软件模块在其网络上构建的能力，以及通过为 BTC 和 LSD 质押者提供安全且有吸引力的环境来维护和增长其 TVL。\n\n在做出任何投资决策之前，请务必进行深入研究，并考虑咨询专业的财务顾问。",
+//             "contentChunks": [
+//                 "我无法提供投资建议。投资加密货币具有固有风险，您应该根据自己的研究和风险承受能力做出决策。\n\n以下是关于 Pell Network 的详细信息，供您参考：\n\n**项目概述：**\n\n*   **项目名称：** Pell Network\n*   **代币符号：** PELL\n*",
+//                 "   **官方网站：** https://pell.network/\n*   **简介：** Pell Network 旨在为比特币生态系统创建一个去中心化的代币经济安全租赁平台。它通过构建一个聚合原生 BTC 质押和 LSD 再质押服务的网络，允许质押者选择验证基于 Pell Network 生",
+//                 "态系统的新软件模块。它致力于将“活跃验证服务”（AVS）概念引入比特币网络，利用比特币的强大安全性来支持更广泛的去中心化应用。\n\n**融资信息：**\n\n*   **总募集资金：** 650 万美元\n*   **融资轮次",
+//                 "：**\n    *   种子前轮 (Pre-Seed): 2024年10月14日，募集 300 万美元\n    *   战略轮 (Strategic): 2025年1月26日，募集 350 万美元\n*   ",
+//                 "**主要投资者：** Mirana Ventures, Paper Ventures, Halo Capital, MultiversX, GoPlus Security, Web3Port, Mantle Network, D11 Labs, Cogitent Ventures, ArkStream Capital, Side Door Ventures, Delta Blockchain Fund, Taisu Ventures, J17 Capital, Contribution Capital, Sats Ventures,",
+//                 " Core Ventures, 071labs, 和 Astrarizon Ventures 等。\n\n**市场数据 (截至最近数据点)：**\n\n*   **当前代币价格：** 约 0.0025145202 美元\n*   **24小时价格变化：** -3.",
+//                 "7422%\n*   **流通市值：** 844,878.77 美元 (数据来源：CoinMarketCap)\n*   **完全稀释估值 (FDV)：** 5,280,492.33 美元 (",
+//                 "数据来源：CoinMarketCap)\n*   **24小时交易量：** 483,391.66 美元\n*   **支持交易平台：** Bybit, Gate, MEXC, BitKan, BloFin\n\n**链上数据：**\n\n*   **总锁定",
+//                 "价值 (TVL)：** 406,034,589 美元\n*   **TVL 7天增长：** 7.2787%\n*   **TVL 峰值：** 656,254,574 美元\n",
+//                 "*   **TVL 分布：** TVL 分布在多种 BTC 和其他加密资产中，包括 BTC、ABTC、BBTC、BTCB、FBTC、IBTC、LBTC、NETH、OBTC、SBTC、TBTC、UBTC、USDC、USDT、USDX、",
+//                 "WBNB、WBTC、WHSK、ZBTC 等。\n\n**代币经济学：**\n\n*   **代币符号：** PELL\n*   **流通供应量：** 336,000,000 PELL\n*   **总供应量：** 2",
+//                 ",100,000,000 PELL\n\n**社交媒体和社区：**\n\n*   **Telegram 成员：** 超过 73,000 名成员\n*   **Discord：** https://discord.com/invite/pell-network\n*   **Twitter：",
+//                 "** https://twitter.com/Pell_Network\n*   **GitHub：** https://github.com/0xPellNetwork/pell_media_kit\n\n**总结：**\n\nPell Network 的价值主张在于将“活跃验证服务”概念扩展到比特币网络。其优势在于能够",
+//                 "聚合原生 BTC 和 LSD 再质押，为质押者提供灵活性。该项目已从知名 Web3 投资者那里获得了 650 万美元的强大资金支持，这表明了市场对其愿景和技术方法的信心。尽管其总锁定价值（TVL）超过 4.06 ",
+//                 "亿美元，但相比峰值有所下降，这可能反映了市场波动或项目发展阶段。目前该项目的市值相对较低，可能处于早期阶段。其在 Telegram 上拥有庞大的社区基础。项目的成功将取决于其持续吸引新软件模块在其网络上构建的能力，以及通过为 BTC 和 LSD 质押者",
+//                 "提供安全且有吸引力的环境来维护和增长其 TVL。\n\n在做出任何投资决策之前，请务必进行深入研究，并考虑咨询专业的财务顾问。"
+//             ],
+//             "reasoningContent": "",
+//             "reasoningContentChunks": [],
+//             "isStreaming": false,
+//             "finishReason": "STOP"
+//         }
+//     ],
+//     [
+//         "run--1560b4e2-8432-44c5-9ce1-8336a1142ba7",
+//         {
+//             "id": "run--1560b4e2-8432-44c5-9ce1-8336a1142ba7",
+//             "threadId": "7R4rZOFgshpSxa2sHQSTb",
+//             "agent": "planner",
+//             "role": "assistant",
+//             "content": "\n```json\n{\n  \"on_chain_research_topic\": \"Research Pell Network's on-chain data, including the current and historical Total Value Locked (TVL), TVL distribution across different assets (e.g., BTC, various wrapped BTC, stablecoins), analysis of smart contract interactions (if available), daily/weekly active addresses if provided, and any observable on-chain security measures or audits related to its AVS mechanism. Investigate transaction volumes and patterns of the PELL token on supported chains if direct on-chain data is available beyond aggregated sources.\",\n  \"social_research_topic\": \"Conduct a comprehensive sentiment analysis of Pell Network across social media platforms (Twitter, Telegram, Discord), forums (Reddit, specialized crypto forums), and community discussions. Identify key community concerns, positive feedback, common questions, and developer engagement. Track the growth and activity of its Telegram and Discord communities. Monitor for any major news or announcements disseminated through social channels, including partnerships, roadmap updates, or security incidents. Analyze community governance discussions if applicable.\",\n  \"ta_research_topic\": \"Perform technical analysis of the PELL token, including historical price movements, trading volume analysis across its listed exchanges (Bybit, Gate, MEXC, BitKan, BloFin), identification of key support and resistance levels, and potential chart patterns. Analyze the token's circulating market capitalization, fully diluted valuation (FDV), and the ratio between them. Compare PELL's performance against major cryptocurrencies (BTC, ETH) and similar projects in the Bitcoin ecosystem or restaking narratives. Evaluate liquidity across different exchanges.\",\n  \"research_topic\": \"Gather in-depth information on Pell Network's core technology, whitepaper, and its implementation of Actively Validated Services (AVS) within the Bitcoin ecosystem. Research the competitive landscape, identifying other projects focusing on Bitcoin restaking or similar security-sharing models. Analyze the qualifications and background of the team members. Investigate details of their past and upcoming roadmap, partnerships, and strategic alliances. Review available audit reports, security measures, and any reported vulnerabilities. Examine the tokenomics in detail, including emission schedule, vesting periods, and utility of the PELL token beyond staking. Assess the overall market narrative and potential regulatory implications for Bitcoin AVS.\"\n}\n```",
+//             "contentChunks": [
+//                 "\n",
+//                 "```json\n{\n  \"on_chain_research_topic\": \"Research",
+//                 " Pell Network's on-chain data, including the current and historical Total Value Locked (TVL),",
+//                 " TVL distribution across different assets (e.g., BTC, various wrapped BTC, stablecoins), analysis of smart contract interactions (if available), daily/weekly active addresses if",
+//                 " provided, and any observable on-chain security measures or audits related to its AVS mechanism. Investigate transaction volumes and patterns of the PELL token on supported",
+//                 " chains if direct on-chain data is available beyond aggregated sources.\",\n  \"social_research_topic\": \"Conduct a comprehensive sentiment analysis of Pell Network across social media platforms (Twitter, Telegram, Discord), forums (Reddit, specialized crypto forums",
+//                 "), and community discussions. Identify key community concerns, positive feedback, common questions, and developer engagement. Track the growth and activity of its Telegram and Discord communities. Monitor for any major news or announcements disseminated through social channels, including partnerships, roadmap updates, or",
+//                 " security incidents. Analyze community governance discussions if applicable.\",\n  \"ta_research_topic\": \"Perform technical analysis of the PELL token, including historical price movements, trading volume analysis across its listed exchanges (Bybit, Gate, MEXC, BitKan, BloFin), identification of key support and resistance levels, and potential",
+//                 " chart patterns. Analyze the token's circulating market capitalization, fully diluted valuation (FDV), and the ratio between them. Compare PELL's performance against major cryptocurrencies (BTC, ETH) and similar projects in the Bitcoin ecosystem or restaking narratives. Evaluate liquidity across different exchanges.\",\n  \"research_topic\": \"Gather",
+//                 " in-depth information on Pell Network's core technology, whitepaper, and its implementation of Actively Validated Services (AVS) within the Bitcoin ecosystem. Research the competitive landscape, identifying other projects focusing on Bitcoin restaking or similar security-sharing models. Analyze the qualifications and background of the team members. Investigate details",
+//                 " of their past and upcoming roadmap, partnerships, and strategic alliances. Review available audit reports, security measures, and any reported vulnerabilities. Examine the tokenomics in detail, including emission schedule, vesting periods, and utility of the PELL token beyond staking. Assess the overall market narrative and potential regulatory implications for Bitcoin AVS.\"",
+//                 "\n}\n```"
+//             ],
+//             "reasoningContent": "",
+//             "reasoningContentChunks": [],
+//             "isStreaming": false,
+//             "finishReason": "STOP"
+//         }
+//     ],
+//     [
+//         "run--322b8735-7dc0-45f9-b45c-9516bdac14f9",
+//         {
+//             "id": "run--322b8735-7dc0-45f9-b45c-9516bdac14f9",
+//             "threadId": "7R4rZOFgshpSxa2sHQSTb",
+//             "agent": "planner",
+//             "role": "assistant",
+//             "content": "",
+//             "contentChunks": [],
+//             "reasoningContent": "",
+//             "reasoningContentChunks": [],
+//             "isStreaming": false,
+//             "toolCalls": [
+//                 {
+//                     "id": "fe2b3d73-aacd-4f86-8914-1c8fcdba28ce",
+//                     "name": "AgentTopics",
+//                     "args": {
+//                         "on_chain_research_topic": "Research Pell Network's on-chain data, including the current and historical Total Value Locked (TVL), TVL distribution across different assets (e.g., BTC, various wrapped BTC, stablecoins), analysis of smart contract interactions (if available), daily/weekly active addresses if provided, and any observable on-chain security measures or audits related to its AVS mechanism. Investigate transaction volumes and patterns of the PELL token on supported chains if direct on-chain data is available beyond aggregated sources.",
+//                         "social_research_topic": "Conduct a comprehensive sentiment analysis of Pell Network across social media platforms (Twitter, Telegram, Discord), forums (Reddit, specialized crypto forums), and community discussions. Identify key community concerns, positive feedback, common questions, and developer engagement. Track the growth and activity of its Telegram and Discord communities. Monitor for any major news or announcements disseminated through social channels, including partnerships, roadmap updates, or security incidents. Analyze community governance discussions if applicable.",
+//                         "research_topic": "Gather in-depth information on Pell Network's core technology, whitepaper, and its implementation of Actively Validated Services (AVS) within the Bitcoin ecosystem. Research the competitive landscape, identifying other projects focusing on Bitcoin restaking or similar security-sharing models. Analyze the qualifications and background of the team members. Investigate details of their past and upcoming roadmap, partnerships, and strategic alliances. Review available audit reports, security measures, and any reported vulnerabilities. Examine the tokenomics in detail, including emission schedule, vesting periods, and utility of the PELL token beyond staking. Assess the overall market narrative and potential regulatory implications for Bitcoin AVS.",
+//                         "ta_research_topic": "Perform technical analysis of the PELL token, including historical price movements, trading volume analysis across its listed exchanges (Bybit, Gate, MEXC, BitKan, BloFin), identification of key support and resistance levels, and potential chart patterns. Analyze the token's circulating market capitalization, fully diluted valuation (FDV), and the ratio between them. Compare PELL's performance against major cryptocurrencies (BTC, ETH) and similar projects in the Bitcoin ecosystem or restaking narratives. Evaluate liquidity across different exchanges."
+//                     }
+//                 }
+//             ],
+//             "finishReason": "STOP"
+//         }
+//     ],
+//     [
+//         "run--e0a8f982-798a-4c31-aa9e-a0e535e5508f",
+//         {
+//             "id": "run--e0a8f982-798a-4c31-aa9e-a0e535e5508f",
+//             "threadId": "7R4rZOFgshpSxa2sHQSTb",
+//             "agent": "research_agent",
+//             "role": "assistant",
+//             "content": "Problem Statement:\n\nThe task is to gather in-depth information on Pell Network, covering its core technology, whitepaper, and implementation of Actively Validated Services (AVS) within the Bitcoin ecosystem. Additionally, it requires research into the competitive landscape of Bitcoin restaking, analysis of the team's qualifications, investigation of their roadmap and partnerships, review of audit reports and security measures, detailed examination of tokenomics, and assessment of the overall market narrative and potential regulatory implications for Bitcoin AVS.\n\nResearch Findings:\n\n**Pell Network's Core Technology, Whitepaper, and AVS Implementation**\n\nPell Network is an Actively Validated Service (AVS) designed to bring restaking to Bitcoin. It aims to enable the creation of various Bitcoin-native applications, or AVSs, by leveraging Bitcoin's Proof-of-Work (PoW) security. Pell Network introduces a trust-minimized \"Bitcoin Restaking Bridge\" that allows users to restake their BTC, enabling AVSs to opt-in and utilize this pooled security. This approach extends Bitcoin's security guarantees to a broader ecosystem of decentralized applications and services. The whitepaper likely details the cryptographic mechanisms, consensus protocols, and economic incentives that underpin their AVS framework on Bitcoin.\n\n**Competitive Landscape: Bitcoin Restaking and Security-Sharing Models**\n\nThe concept of restaking, especially on Bitcoin, is gaining traction. Several projects are emerging in this space, aiming to extend Bitcoin's security to other protocols and applications. Key competitors or similar projects would include those focused on:\n*   **Bitcoin",
+//             "contentChunks": [
+//                 "Problem Statement:\n\nThe task is to gather in-depth information on Pell Network, covering its core technology, whitepaper, and implementation of Actively Validated Services (AVS) within the Bitcoin ecosystem. Additionally, it requires research into the competitive landscape of Bitcoin restaking, analysis of the team's qualifications,",
+//                 " investigation of their roadmap and partnerships, review of audit reports and security measures, detailed examination of tokenomics, and assessment of the overall market narrative and potential regulatory implications for Bitcoin AVS.\n\nResearch Findings:\n\n**Pell Network's Core Technology, Whitepaper, and AVS Implementation**\n\nPell Network is an",
+//                 " Actively Validated Service (AVS) designed to bring restaking to Bitcoin. It aims to enable the creation of various Bitcoin-native applications, or AVSs, by leveraging Bitcoin's Proof-of-Work (PoW) security. Pell Network introduces a trust-minimized \"Bitcoin Restaking Bridge",
+//                 "\" that allows users to restake their BTC, enabling AVSs to opt-in and utilize this pooled security. This approach extends Bitcoin's security guarantees to a broader ecosystem of decentralized applications and services. The whitepaper likely details the cryptographic mechanisms, consensus protocols, and economic incentives that underpin their AVS framework on",
+//                 " Bitcoin.\n\n**Competitive Landscape: Bitcoin Restaking and Security-Sharing Models**\n\nThe concept of restaking, especially on Bitcoin, is gaining traction. Several projects are emerging in this space, aiming to extend Bitcoin's security to other protocols and applications. Key competitors or similar projects would include those focused on:\n*   **Bitcoin"
+//             ],
+//             "reasoningContent": "",
+//             "reasoningContentChunks": [],
+//             "isStreaming": true
+//         }
+//     ],
+//     [
+//         "run--70ce8f4f-9a0e-41c3-bfdb-cc04e9e14fc0",
+//         {
+//             "id": "run--70ce8f4f-9a0e-41c3-bfdb-cc04e9e14fc0",
+//             "threadId": "7R4rZOFgshpSxa2sHQSTb",
+//             "agent": "on_chain_agent",
+//             "role": "assistant",
+//             "content": "",
+//             "contentChunks": [],
+//             "reasoningContent": "",
+//             "reasoningContentChunks": [],
+//             "isStreaming": false,
+//             "toolCalls": [
+//                 {
+//                     "id": "14895104-8031-4ab1-a49c-a1481d753a90",
+//                     "name": "web_search",
+//                     "args": {
+//                         "query": "Pell Network on-chain data"
+//                     }
+//                 }
+//             ],
+//             "finishReason": "STOP"
+//         }
+//     ],
 export const MESSAGES:Map<string, Message> = new Map([
-    [
-        "vthBaZgxIEr0L6PSgKwnZ",
-        {
-            "id": "vthBaZgxIEr0L6PSgKwnZ",
-            "threadId": "7R4rZOFgshpSxa2sHQSTb",
-            "role": "user",
-            "content": "Pell network值得够买吗",
-            "contentChunks": [
-                "Pell network值得够买吗"
-            ],
-            "resources": []
-        }
-    ],
-    [
-        "run--9c70ad79-a7f7-43f4-957d-d53400cfae84",
-        {
-            "id": "run--9c70ad79-a7f7-43f4-957d-d53400cfae84",
-            "threadId": "7R4rZOFgshpSxa2sHQSTb",
-            "agent": "planner",
-            "role": "assistant",
-            "content": "",
-            "contentChunks": [],
-            "reasoningContent": "",
-            "reasoningContentChunks": [],
-            "isStreaming": false,
-            "toolCalls": [
-                {
-                    "id": "42ba1a33-c546-4786-b187-3a4098f551d3",
-                    "name": "search_web3_project",
-                    "args": {
-                        "search_query": "Pell network"
-                    },
-                    "result": "[{\"id\": \"da757b8b-518f-471d-84b1-9b6623932b62\", \"name\": \"Pell Network\", \"token_symbol\": \"PELL\", \"website\": \"https://pell.network/\", \"logo\": \"https://public.rootdata.com/images/b12/1720773778045.jpg\"}]"
-                }
-            ],
-            "finishReason": "STOP"
-        }
-    ],
-    [
-        "run--3d8bc53b-c675-44a1-808b-d8d31cf282d0",
-        {
-            "id": "run--3d8bc53b-c675-44a1-808b-d8d31cf282d0",
-            "threadId": "7R4rZOFgshpSxa2sHQSTb",
-            "agent": "planner",
-            "role": "assistant",
-            "content": "",
-            "contentChunks": [],
-            "reasoningContent": "",
-            "reasoningContentChunks": [],
-            "isStreaming": false,
-            "toolCalls": [
-                {
-                    "id": "95fbf887-9185-42d5-a87c-f2dbf5ce0bdb",
-                    "name": "get_web3_project",
-                    "args": {
-                        "name": "Pell Network"
-                    },
-                    "result": "{\"project_id\": \"da757b8b-518f-471d-84b1-9b6623932b62\", \"project_info\": {\"name\": \"Pell Network\", \"short_intro\": \"Actively Validated Services for Bitcoin Ecosystem\", \"logo\": \"https://public.rootdata.com/images/b12/1720773778045.jpg\", \"description\": \"Pell Network aims to create a decentralized token economy security leasing platform for the Bitcoin ecosystem. By constructing a network that aggregates native BTC Stake and LSD Restake services, it allows stakers to choose to validate new software modules built upon the Pell Network ecosystem. Stakers opt-in by granting Pell Network smart contracts the ability to impose additional reduction conditions on their staked assets, thereby allowing for the expansion of cryptographic economic security.\", \"team_info\": null, \"sector_analysis\": null, \"fund_raising\": \"Pell Network has successfully raised a total of $6.5 million across two funding rounds. The project secured $3 million in a Pre-Seed round on October 14, 2024, followed by a Strategic round which raised $3.5 million on January 26, 2025. The project has attracted a diverse group of notable investors, including Mirana Ventures, Paper Ventures, Halo Capital, MultiversX, GoPlus Security, Web3Port, Mantle Network, D11 Labs, Cogitent Ventures, ArkStream Capital, Side Door Ventures, Delta Blockchain Fund, Taisu Ventures, J17 Capital, Contribution Capital, Sats Ventures, Core Ventures, 071labs, and Astrarizon Ventures.\", \"summary\": \"Pell Network presents a compelling value proposition by extending the concept of 'Actively Validated Services' (AVS), similar to restaking models in other ecosystems, specifically to the Bitcoin network. This approach aims to leverage Bitcoin's robust security for a wider range of decentralized applications. A key strength lies in its ability to aggregate both native BTC and LSD restaking, offering flexibility and broader participation for stakers looking to contribute to the economic security of new modules. The project has demonstrated significant traction, reflected in its Total Value Locked (TVL) of over $406 million, though it has seen a decrease from its peak of over $656 million. This indicates a strong initial adoption but also highlights market volatility or ongoing development phases. Pell Network's financial backing is robust, with $6.5 million raised from a diverse group of prominent Web3 investors, signaling confidence in its vision and technological approach. With a current token price of approximately $0.0025 and a circulating market cap of around $844k, the project is still in its early stages concerning market valuation relative to its fully diluted valuation of $5.28 million. The engagement on social platforms, particularly Telegram with over 73,000 members, suggests a growing community interest. The wide distribution of TVL across various BTC and other crypto assets points to a versatile and integrated platform. The project's success will heavily depend on its ability to continuously attract new software modules to build upon its network and to maintain and grow its TVL by providing a secure and attractive environment for BTC and LSD stakers.\"}, \"fundraising_info\": {\"total_raised\": \"6500000.0\", \"investors\": [{\"name\": \"Mirana Ventures\", \"logo\": \"https://public.rootdata.com/images/b16/1668835396046.jpg\"}, {\"name\": \"Paper Ventures\", \"logo\": \"https://public.rootdata.com/images/b6/1706107127444.jpg\"}, {\"name\": \"Halo Capital\", \"logo\": \"https://public.rootdata.com/images/b6/1725607689288.png\"}, {\"name\": \"MultiversX\", \"logo\": \"https://public.rootdata.com/images/b6/1667667380503.jpg\"}, {\"name\": \"GoPlus Security\", \"logo\": \"https://public.rootdata.com/images/b6/1709916008330.jpg\"}, {\"name\": \"Web3Port\", \"logo\": \"https://public.rootdata.com/images/b16/1666858927960.jpg\"}, {\"name\": \"Mantle Network\", \"logo\": \"https://public.rootdata.com/images/b6/1669975630936.jpg\"}, {\"name\": \"D11 Labs\", \"logo\": \"https://public.rootdata.com/images/b30/1699360676820.jpg\"}, {\"name\": \"Cogitent Ventures\", \"logo\": \"https://public.rootdata.com/images/b17/1666867258167.jpg\"}, {\"name\": \"ArkStream Capital\", \"logo\": \"https://public.rootdata.com/images/b16/1668834996505.jpg\"}, {\"name\": \"Side Door Ventures\", \"logo\": \"https://public.rootdata.com/images/b12/1666841983154.jpg\"}, {\"name\": \"Delta Blockchain Fund\", \"logo\": \"https://public.rootdata.com/images/b16/1668931241495.jpg\"}, {\"name\": \"Taisu Ventures\", \"logo\": \"https://public.rootdata.com/images/b6/1704879781492.jpg\"}, {\"name\": \"J17 Capital\", \"logo\": \"https://public.rootdata.com/images/b12/1688459341366.jpg\"}, {\"name\": \"Contribution Capital\", \"logo\": \"https://public.rootdata.com/images/b6/1720494595461.jpg\"}, {\"name\": \"Sats Ventures\", \"logo\": \"https://public.rootdata.com/images/b6/1721088854395.jpg\"}, {\"name\": \"Core Ventures\", \"logo\": \"https://public.rootdata.com/images/b6/1721089037994.jpg\"}, {\"name\": \"071labs\", \"logo\": \"https://public.rootdata.com/images/b12/1724926696707.png\"}, {\"name\": \"Astrarizon Ventures\", \"logo\": \"https://public.rootdata.com/images/b6/1738048957796.jpg\"}], \"round_info\": [{\"round\": \"Strategic\", \"amount\": \"3500000.0\", \"date\": 1737936000, \"other_details\": \"\"}, {\"round\": \"Pre-Seed\", \"amount\": \"3000000.0\", \"date\": 1728950400, \"other_details\": \"\"}]}, \"social_media_links\": {\"website\": \"https://pell.network/\", \"twitter\": \"https://twitter.com/Pell_Network\", \"defliama\": \"\", \"telegram\": \"https://t.me/Pell_Network\", \"discord\": \"https://discord.com/invite/pell-network\", \"medium\": \"\", \"github\": \"https://github.com/0xPellNetwork/pell_media_kit\"}, \"social_media_stats\": {\"social_media_links\": {\"website\": \"https://pell.network/\", \"twitter\": \"https://twitter.com/Pell_Network\", \"defliama\": \"\", \"telegram\": \"https://t.me/Pell_Network\", \"discord\": \"https://discord.com/invite/pell-network\", \"medium\": \"\", \"github\": \"https://github.com/0xPellNetwork/pell_media_kit\"}, \"twitter\": null, \"telegram\": {\"members\": 73895, \"members_7d_increment\": null, \"trend\": []}, \"discord\": null, \"media_mentions\": []}, \"on_chain_data\": {\"tvl\": 406034589.0, \"tvl_7d_increment\": 7.2787, \"tvl_peak\": 656254574.0, \"tvl_trend\": [{\"timestamp\": 1756684800, \"value\": 378485582}, {\"timestamp\": 1756771200, \"value\": 374508901}, {\"timestamp\": 1756857600, \"value\": 385300545}, {\"timestamp\": 1756944000, \"value\": 410837109}, {\"timestamp\": 1757030400, \"value\": 405086650}, {\"timestamp\": 1757116800, \"value\": 405434194}, {\"timestamp\": 1757173211, \"value\": 406034589}], \"tvl_distribution\": [{\"category\": \"BTC\", \"value\": 5150.41476}, {\"category\": \"ABTC\", \"value\": 108.6269}, {\"category\": \"BBTC\", \"value\": 65.80243}, {\"category\": \"BTCB\", \"value\": 36379.26934}, {\"category\": \"FBTC\", \"value\": 2571.36519}, {\"category\": \"IBTC\", \"value\": 15.50192}, {\"category\": \"LBTC\", \"value\": 22279.93989}, {\"category\": \"NETH\", \"value\": 23380172.92871}, {\"category\": \"OBTC\", \"value\": 16.6143}, {\"category\": \"SBTC\", \"value\": 4e-05}, {\"category\": \"TBTC\", \"value\": 2703.17044}, {\"category\": \"UBTC\", \"value\": 22816444.08203}, {\"category\": \"USDC\", \"value\": 2298.26998}, {\"category\": \"USDT\", \"value\": 24381.59259}, {\"category\": \"USDX\", \"value\": 7998581.03999}, {\"category\": \"WBNB\", \"value\": 826.07622}, {\"category\": \"WBTC\", \"value\": 145450.37714}, {\"category\": \"WHSK\", \"value\": 4.18945}, {\"category\": \"ZBTC\", \"value\": 487.39439}, {\"category\": \"BFBTC\", \"value\": 44.3047}, {\"category\": \"ESBTC\", \"value\": 110770000.0}, {\"category\": \"M-BTC\", \"value\": 6872.32881}, {\"category\": \"RNETH\", \"value\": 22360566.7352}, {\"category\": \"STBTC\", \"value\": 172007.29519}, {\"category\": \"SUBTC\", \"value\": 11087314.08071}, {\"category\": \"SUSDX\", \"value\": 1021.72687}, {\"category\": \"USDT0\", \"value\": 917.99474}, {\"category\": \"WGBTC\", \"value\": 19.23723}, {\"category\": \"WRBTC\", \"value\": 1679.36476}, {\"category\": \"WZETA\", \"value\": 138.928}, {\"category\": \"IOWBTC\", \"value\": 12759.77516}, {\"category\": \"SATUSD\", \"value\": 2826.11717}, {\"category\": \"STCORE\", \"value\": 3934.7057}, {\"category\": \"STZETA\", \"value\": 223.84019}, {\"category\": \"UNIBTC\", \"value\": 4760624.58076}, {\"category\": \"YBTC.B\", \"value\": 55421012.15272}, {\"category\": \"BTC.BTC\", \"value\": 31.82241}, {\"category\": \"ENZOBTC\", \"value\": 44304817.7002}, {\"category\": \"PUMPBTC\", \"value\": 4598217.36258}, {\"category\": \"SLISBNB\", \"value\": 597.17603}, {\"category\": \"SOLVBTC\", \"value\": 31043224.4124}, {\"category\": \"UNIIOTX\", \"value\": 64609.30937}, {\"category\": \"WSTBBTC\", \"value\": 66758780.19645}, {\"category\": \"XSOLVBTC\", \"value\": 188518.19684}, {\"category\": \"SOLVBTC.B\", \"value\": 2989.37361}, {\"category\": \"SOLVBTC.M\", \"value\": 1956.08595}, {\"category\": \"AMERSOLVBTC\", \"value\": 1837.60737}, {\"category\": \"SOLVBTC.BBN\", \"value\": 29099.35279}, {\"category\": \"SOLVBTC.ENA\", \"value\": 11.0788}], \"active_addresses_7d\": null, \"active_addresses_7d_change\": null, \"contract_interactions_7d\": null, \"contract_interactions_7d_change\": null, \"contract_interactions_30d\": null, \"contract_interactions_trend\": null, \"txns_30d\": null, \"protocol_revenue_30d\": null, \"protocol_fees_24h\": null, \"protocol_revenue_24h\": null, \"protocol_fees_30d\": null}, \"market_data\": {\"token_price\": 0.00251452015909154, \"token_price_desc\": \"$0.0025145202\", \"token_price_change_24h\": -3.7422, \"trading_volume_24h\": 483391.65636717, \"trading_volume_24h_desc\": \"$483,392\", \"trading_volume_change_24h\": 101.5365, \"kline_30d\": null, \"circulating_market_cap\": 844878.773454759, \"circulating_market_cap_source\": \"CoinMarketCap\", \"fully_diluted_valuation\": 5280492.33, \"fully_diluted_valuation_source\": \"CoinMarketCap\", \"support_exchanges\": [{\"name\": \"Bybit\", \"logo\": \"\"}, {\"name\": \"Gate\", \"logo\": \"\"}, {\"name\": \"MEXC\", \"logo\": \"\"}, {\"name\": \"BitKan\", \"logo\": \"\"}, {\"name\": \"BloFin\", \"logo\": \"\"}]}, \"tokenomics\": {\"token_symbol\": \"PELL\", \"circulating_supply\": 336000000.0, \"total_supply\": 2100000000.0, \"support_chains\": null, \"support_chains_source\": null, \"referral_docs\": [], \"distribution_overview\": null}, \"campaign\": null}"
-                }
-            ],
-            "finishReason": "STOP"
-        }
-    ],
-    [
-        "run--723cbcbb-9196-4b67-b3da-e5d686730457",
-        {
-            "id": "run--723cbcbb-9196-4b67-b3da-e5d686730457",
-            "threadId": "7R4rZOFgshpSxa2sHQSTb",
-            "agent": "planner",
-            "role": "assistant",
-            "content": "我无法提供投资建议。投资加密货币具有固有风险，您应该根据自己的研究和风险承受能力做出决策。\n\n以下是关于 Pell Network 的详细信息，供您参考：\n\n**项目概述：**\n\n*   **项目名称：** Pell Network\n*   **代币符号：** PELL\n*   **官方网站：** https://pell.network/\n*   **简介：** Pell Network 旨在为比特币生态系统创建一个去中心化的代币经济安全租赁平台。它通过构建一个聚合原生 BTC 质押和 LSD 再质押服务的网络，允许质押者选择验证基于 Pell Network 生态系统的新软件模块。它致力于将“活跃验证服务”（AVS）概念引入比特币网络，利用比特币的强大安全性来支持更广泛的去中心化应用。\n\n**融资信息：**\n\n*   **总募集资金：** 650 万美元\n*   **融资轮次：**\n    *   种子前轮 (Pre-Seed): 2024年10月14日，募集 300 万美元\n    *   战略轮 (Strategic): 2025年1月26日，募集 350 万美元\n*   **主要投资者：** Mirana Ventures, Paper Ventures, Halo Capital, MultiversX, GoPlus Security, Web3Port, Mantle Network, D11 Labs, Cogitent Ventures, ArkStream Capital, Side Door Ventures, Delta Blockchain Fund, Taisu Ventures, J17 Capital, Contribution Capital, Sats Ventures, Core Ventures, 071labs, 和 Astrarizon Ventures 等。\n\n**市场数据 (截至最近数据点)：**\n\n*   **当前代币价格：** 约 0.0025145202 美元\n*   **24小时价格变化：** -3.7422%\n*   **流通市值：** 844,878.77 美元 (数据来源：CoinMarketCap)\n*   **完全稀释估值 (FDV)：** 5,280,492.33 美元 (数据来源：CoinMarketCap)\n*   **24小时交易量：** 483,391.66 美元\n*   **支持交易平台：** Bybit, Gate, MEXC, BitKan, BloFin\n\n**链上数据：**\n\n*   **总锁定价值 (TVL)：** 406,034,589 美元\n*   **TVL 7天增长：** 7.2787%\n*   **TVL 峰值：** 656,254,574 美元\n*   **TVL 分布：** TVL 分布在多种 BTC 和其他加密资产中，包括 BTC、ABTC、BBTC、BTCB、FBTC、IBTC、LBTC、NETH、OBTC、SBTC、TBTC、UBTC、USDC、USDT、USDX、WBNB、WBTC、WHSK、ZBTC 等。\n\n**代币经济学：**\n\n*   **代币符号：** PELL\n*   **流通供应量：** 336,000,000 PELL\n*   **总供应量：** 2,100,000,000 PELL\n\n**社交媒体和社区：**\n\n*   **Telegram 成员：** 超过 73,000 名成员\n*   **Discord：** https://discord.com/invite/pell-network\n*   **Twitter：** https://twitter.com/Pell_Network\n*   **GitHub：** https://github.com/0xPellNetwork/pell_media_kit\n\n**总结：**\n\nPell Network 的价值主张在于将“活跃验证服务”概念扩展到比特币网络。其优势在于能够聚合原生 BTC 和 LSD 再质押，为质押者提供灵活性。该项目已从知名 Web3 投资者那里获得了 650 万美元的强大资金支持，这表明了市场对其愿景和技术方法的信心。尽管其总锁定价值（TVL）超过 4.06 亿美元，但相比峰值有所下降，这可能反映了市场波动或项目发展阶段。目前该项目的市值相对较低，可能处于早期阶段。其在 Telegram 上拥有庞大的社区基础。项目的成功将取决于其持续吸引新软件模块在其网络上构建的能力，以及通过为 BTC 和 LSD 质押者提供安全且有吸引力的环境来维护和增长其 TVL。\n\n在做出任何投资决策之前，请务必进行深入研究，并考虑咨询专业的财务顾问。",
-            "contentChunks": [
-                "我无法提供投资建议。投资加密货币具有固有风险，您应该根据自己的研究和风险承受能力做出决策。\n\n以下是关于 Pell Network 的详细信息，供您参考：\n\n**项目概述：**\n\n*   **项目名称：** Pell Network\n*   **代币符号：** PELL\n*",
-                "   **官方网站：** https://pell.network/\n*   **简介：** Pell Network 旨在为比特币生态系统创建一个去中心化的代币经济安全租赁平台。它通过构建一个聚合原生 BTC 质押和 LSD 再质押服务的网络，允许质押者选择验证基于 Pell Network 生",
-                "态系统的新软件模块。它致力于将“活跃验证服务”（AVS）概念引入比特币网络，利用比特币的强大安全性来支持更广泛的去中心化应用。\n\n**融资信息：**\n\n*   **总募集资金：** 650 万美元\n*   **融资轮次",
-                "：**\n    *   种子前轮 (Pre-Seed): 2024年10月14日，募集 300 万美元\n    *   战略轮 (Strategic): 2025年1月26日，募集 350 万美元\n*   ",
-                "**主要投资者：** Mirana Ventures, Paper Ventures, Halo Capital, MultiversX, GoPlus Security, Web3Port, Mantle Network, D11 Labs, Cogitent Ventures, ArkStream Capital, Side Door Ventures, Delta Blockchain Fund, Taisu Ventures, J17 Capital, Contribution Capital, Sats Ventures,",
-                " Core Ventures, 071labs, 和 Astrarizon Ventures 等。\n\n**市场数据 (截至最近数据点)：**\n\n*   **当前代币价格：** 约 0.0025145202 美元\n*   **24小时价格变化：** -3.",
-                "7422%\n*   **流通市值：** 844,878.77 美元 (数据来源：CoinMarketCap)\n*   **完全稀释估值 (FDV)：** 5,280,492.33 美元 (",
-                "数据来源：CoinMarketCap)\n*   **24小时交易量：** 483,391.66 美元\n*   **支持交易平台：** Bybit, Gate, MEXC, BitKan, BloFin\n\n**链上数据：**\n\n*   **总锁定",
-                "价值 (TVL)：** 406,034,589 美元\n*   **TVL 7天增长：** 7.2787%\n*   **TVL 峰值：** 656,254,574 美元\n",
-                "*   **TVL 分布：** TVL 分布在多种 BTC 和其他加密资产中，包括 BTC、ABTC、BBTC、BTCB、FBTC、IBTC、LBTC、NETH、OBTC、SBTC、TBTC、UBTC、USDC、USDT、USDX、",
-                "WBNB、WBTC、WHSK、ZBTC 等。\n\n**代币经济学：**\n\n*   **代币符号：** PELL\n*   **流通供应量：** 336,000,000 PELL\n*   **总供应量：** 2",
-                ",100,000,000 PELL\n\n**社交媒体和社区：**\n\n*   **Telegram 成员：** 超过 73,000 名成员\n*   **Discord：** https://discord.com/invite/pell-network\n*   **Twitter：",
-                "** https://twitter.com/Pell_Network\n*   **GitHub：** https://github.com/0xPellNetwork/pell_media_kit\n\n**总结：**\n\nPell Network 的价值主张在于将“活跃验证服务”概念扩展到比特币网络。其优势在于能够",
-                "聚合原生 BTC 和 LSD 再质押，为质押者提供灵活性。该项目已从知名 Web3 投资者那里获得了 650 万美元的强大资金支持，这表明了市场对其愿景和技术方法的信心。尽管其总锁定价值（TVL）超过 4.06 ",
-                "亿美元，但相比峰值有所下降，这可能反映了市场波动或项目发展阶段。目前该项目的市值相对较低，可能处于早期阶段。其在 Telegram 上拥有庞大的社区基础。项目的成功将取决于其持续吸引新软件模块在其网络上构建的能力，以及通过为 BTC 和 LSD 质押者",
-                "提供安全且有吸引力的环境来维护和增长其 TVL。\n\n在做出任何投资决策之前，请务必进行深入研究，并考虑咨询专业的财务顾问。"
-            ],
-            "reasoningContent": "",
-            "reasoningContentChunks": [],
-            "isStreaming": false,
-            "finishReason": "STOP"
-        }
-    ],
-    [
-        "run--1560b4e2-8432-44c5-9ce1-8336a1142ba7",
-        {
-            "id": "run--1560b4e2-8432-44c5-9ce1-8336a1142ba7",
-            "threadId": "7R4rZOFgshpSxa2sHQSTb",
-            "agent": "planner",
-            "role": "assistant",
-            "content": "\n```json\n{\n  \"on_chain_research_topic\": \"Research Pell Network's on-chain data, including the current and historical Total Value Locked (TVL), TVL distribution across different assets (e.g., BTC, various wrapped BTC, stablecoins), analysis of smart contract interactions (if available), daily/weekly active addresses if provided, and any observable on-chain security measures or audits related to its AVS mechanism. Investigate transaction volumes and patterns of the PELL token on supported chains if direct on-chain data is available beyond aggregated sources.\",\n  \"social_research_topic\": \"Conduct a comprehensive sentiment analysis of Pell Network across social media platforms (Twitter, Telegram, Discord), forums (Reddit, specialized crypto forums), and community discussions. Identify key community concerns, positive feedback, common questions, and developer engagement. Track the growth and activity of its Telegram and Discord communities. Monitor for any major news or announcements disseminated through social channels, including partnerships, roadmap updates, or security incidents. Analyze community governance discussions if applicable.\",\n  \"ta_research_topic\": \"Perform technical analysis of the PELL token, including historical price movements, trading volume analysis across its listed exchanges (Bybit, Gate, MEXC, BitKan, BloFin), identification of key support and resistance levels, and potential chart patterns. Analyze the token's circulating market capitalization, fully diluted valuation (FDV), and the ratio between them. Compare PELL's performance against major cryptocurrencies (BTC, ETH) and similar projects in the Bitcoin ecosystem or restaking narratives. Evaluate liquidity across different exchanges.\",\n  \"research_topic\": \"Gather in-depth information on Pell Network's core technology, whitepaper, and its implementation of Actively Validated Services (AVS) within the Bitcoin ecosystem. Research the competitive landscape, identifying other projects focusing on Bitcoin restaking or similar security-sharing models. Analyze the qualifications and background of the team members. Investigate details of their past and upcoming roadmap, partnerships, and strategic alliances. Review available audit reports, security measures, and any reported vulnerabilities. Examine the tokenomics in detail, including emission schedule, vesting periods, and utility of the PELL token beyond staking. Assess the overall market narrative and potential regulatory implications for Bitcoin AVS.\"\n}\n```",
-            "contentChunks": [
-                "\n",
-                "```json\n{\n  \"on_chain_research_topic\": \"Research",
-                " Pell Network's on-chain data, including the current and historical Total Value Locked (TVL),",
-                " TVL distribution across different assets (e.g., BTC, various wrapped BTC, stablecoins), analysis of smart contract interactions (if available), daily/weekly active addresses if",
-                " provided, and any observable on-chain security measures or audits related to its AVS mechanism. Investigate transaction volumes and patterns of the PELL token on supported",
-                " chains if direct on-chain data is available beyond aggregated sources.\",\n  \"social_research_topic\": \"Conduct a comprehensive sentiment analysis of Pell Network across social media platforms (Twitter, Telegram, Discord), forums (Reddit, specialized crypto forums",
-                "), and community discussions. Identify key community concerns, positive feedback, common questions, and developer engagement. Track the growth and activity of its Telegram and Discord communities. Monitor for any major news or announcements disseminated through social channels, including partnerships, roadmap updates, or",
-                " security incidents. Analyze community governance discussions if applicable.\",\n  \"ta_research_topic\": \"Perform technical analysis of the PELL token, including historical price movements, trading volume analysis across its listed exchanges (Bybit, Gate, MEXC, BitKan, BloFin), identification of key support and resistance levels, and potential",
-                " chart patterns. Analyze the token's circulating market capitalization, fully diluted valuation (FDV), and the ratio between them. Compare PELL's performance against major cryptocurrencies (BTC, ETH) and similar projects in the Bitcoin ecosystem or restaking narratives. Evaluate liquidity across different exchanges.\",\n  \"research_topic\": \"Gather",
-                " in-depth information on Pell Network's core technology, whitepaper, and its implementation of Actively Validated Services (AVS) within the Bitcoin ecosystem. Research the competitive landscape, identifying other projects focusing on Bitcoin restaking or similar security-sharing models. Analyze the qualifications and background of the team members. Investigate details",
-                " of their past and upcoming roadmap, partnerships, and strategic alliances. Review available audit reports, security measures, and any reported vulnerabilities. Examine the tokenomics in detail, including emission schedule, vesting periods, and utility of the PELL token beyond staking. Assess the overall market narrative and potential regulatory implications for Bitcoin AVS.\"",
-                "\n}\n```"
-            ],
-            "reasoningContent": "",
-            "reasoningContentChunks": [],
-            "isStreaming": false,
-            "finishReason": "STOP"
-        }
-    ],
-    [
-        "run--322b8735-7dc0-45f9-b45c-9516bdac14f9",
-        {
-            "id": "run--322b8735-7dc0-45f9-b45c-9516bdac14f9",
-            "threadId": "7R4rZOFgshpSxa2sHQSTb",
-            "agent": "planner",
-            "role": "assistant",
-            "content": "",
-            "contentChunks": [],
-            "reasoningContent": "",
-            "reasoningContentChunks": [],
-            "isStreaming": false,
-            "toolCalls": [
-                {
-                    "id": "fe2b3d73-aacd-4f86-8914-1c8fcdba28ce",
-                    "name": "AgentTopics",
-                    "args": {
-                        "on_chain_research_topic": "Research Pell Network's on-chain data, including the current and historical Total Value Locked (TVL), TVL distribution across different assets (e.g., BTC, various wrapped BTC, stablecoins), analysis of smart contract interactions (if available), daily/weekly active addresses if provided, and any observable on-chain security measures or audits related to its AVS mechanism. Investigate transaction volumes and patterns of the PELL token on supported chains if direct on-chain data is available beyond aggregated sources.",
-                        "social_research_topic": "Conduct a comprehensive sentiment analysis of Pell Network across social media platforms (Twitter, Telegram, Discord), forums (Reddit, specialized crypto forums), and community discussions. Identify key community concerns, positive feedback, common questions, and developer engagement. Track the growth and activity of its Telegram and Discord communities. Monitor for any major news or announcements disseminated through social channels, including partnerships, roadmap updates, or security incidents. Analyze community governance discussions if applicable.",
-                        "research_topic": "Gather in-depth information on Pell Network's core technology, whitepaper, and its implementation of Actively Validated Services (AVS) within the Bitcoin ecosystem. Research the competitive landscape, identifying other projects focusing on Bitcoin restaking or similar security-sharing models. Analyze the qualifications and background of the team members. Investigate details of their past and upcoming roadmap, partnerships, and strategic alliances. Review available audit reports, security measures, and any reported vulnerabilities. Examine the tokenomics in detail, including emission schedule, vesting periods, and utility of the PELL token beyond staking. Assess the overall market narrative and potential regulatory implications for Bitcoin AVS.",
-                        "ta_research_topic": "Perform technical analysis of the PELL token, including historical price movements, trading volume analysis across its listed exchanges (Bybit, Gate, MEXC, BitKan, BloFin), identification of key support and resistance levels, and potential chart patterns. Analyze the token's circulating market capitalization, fully diluted valuation (FDV), and the ratio between them. Compare PELL's performance against major cryptocurrencies (BTC, ETH) and similar projects in the Bitcoin ecosystem or restaking narratives. Evaluate liquidity across different exchanges."
-                    }
-                }
-            ],
-            "finishReason": "STOP"
-        }
-    ],
-    [
-        "run--e0a8f982-798a-4c31-aa9e-a0e535e5508f",
-        {
-            "id": "run--e0a8f982-798a-4c31-aa9e-a0e535e5508f",
-            "threadId": "7R4rZOFgshpSxa2sHQSTb",
-            "agent": "research_agent",
-            "role": "assistant",
-            "content": "Problem Statement:\n\nThe task is to gather in-depth information on Pell Network, covering its core technology, whitepaper, and implementation of Actively Validated Services (AVS) within the Bitcoin ecosystem. Additionally, it requires research into the competitive landscape of Bitcoin restaking, analysis of the team's qualifications, investigation of their roadmap and partnerships, review of audit reports and security measures, detailed examination of tokenomics, and assessment of the overall market narrative and potential regulatory implications for Bitcoin AVS.\n\nResearch Findings:\n\n**Pell Network's Core Technology, Whitepaper, and AVS Implementation**\n\nPell Network is an Actively Validated Service (AVS) designed to bring restaking to Bitcoin. It aims to enable the creation of various Bitcoin-native applications, or AVSs, by leveraging Bitcoin's Proof-of-Work (PoW) security. Pell Network introduces a trust-minimized \"Bitcoin Restaking Bridge\" that allows users to restake their BTC, enabling AVSs to opt-in and utilize this pooled security. This approach extends Bitcoin's security guarantees to a broader ecosystem of decentralized applications and services. The whitepaper likely details the cryptographic mechanisms, consensus protocols, and economic incentives that underpin their AVS framework on Bitcoin.\n\n**Competitive Landscape: Bitcoin Restaking and Security-Sharing Models**\n\nThe concept of restaking, especially on Bitcoin, is gaining traction. Several projects are emerging in this space, aiming to extend Bitcoin's security to other protocols and applications. Key competitors or similar projects would include those focused on:\n*   **Bitcoin",
-            "contentChunks": [
-                "Problem Statement:\n\nThe task is to gather in-depth information on Pell Network, covering its core technology, whitepaper, and implementation of Actively Validated Services (AVS) within the Bitcoin ecosystem. Additionally, it requires research into the competitive landscape of Bitcoin restaking, analysis of the team's qualifications,",
-                " investigation of their roadmap and partnerships, review of audit reports and security measures, detailed examination of tokenomics, and assessment of the overall market narrative and potential regulatory implications for Bitcoin AVS.\n\nResearch Findings:\n\n**Pell Network's Core Technology, Whitepaper, and AVS Implementation**\n\nPell Network is an",
-                " Actively Validated Service (AVS) designed to bring restaking to Bitcoin. It aims to enable the creation of various Bitcoin-native applications, or AVSs, by leveraging Bitcoin's Proof-of-Work (PoW) security. Pell Network introduces a trust-minimized \"Bitcoin Restaking Bridge",
-                "\" that allows users to restake their BTC, enabling AVSs to opt-in and utilize this pooled security. This approach extends Bitcoin's security guarantees to a broader ecosystem of decentralized applications and services. The whitepaper likely details the cryptographic mechanisms, consensus protocols, and economic incentives that underpin their AVS framework on",
-                " Bitcoin.\n\n**Competitive Landscape: Bitcoin Restaking and Security-Sharing Models**\n\nThe concept of restaking, especially on Bitcoin, is gaining traction. Several projects are emerging in this space, aiming to extend Bitcoin's security to other protocols and applications. Key competitors or similar projects would include those focused on:\n*   **Bitcoin"
-            ],
-            "reasoningContent": "",
-            "reasoningContentChunks": [],
-            "isStreaming": true
-        }
-    ],
-    [
-        "run--70ce8f4f-9a0e-41c3-bfdb-cc04e9e14fc0",
-        {
-            "id": "run--70ce8f4f-9a0e-41c3-bfdb-cc04e9e14fc0",
-            "threadId": "7R4rZOFgshpSxa2sHQSTb",
-            "agent": "on_chain_agent",
-            "role": "assistant",
-            "content": "",
-            "contentChunks": [],
-            "reasoningContent": "",
-            "reasoningContentChunks": [],
-            "isStreaming": false,
-            "toolCalls": [
-                {
-                    "id": "14895104-8031-4ab1-a49c-a1481d753a90",
-                    "name": "web_search",
-                    "args": {
-                        "query": "Pell Network on-chain data"
-                    }
-                }
-            ],
-            "finishReason": "STOP"
-        }
-    ],
     [
         "5VMuADzaNWs5uD_wegEkZ",
         {
@@ -1079,16 +1078,16 @@ export const MESSAGES:Map<string, Message> = new Map([
         }
     ]
 ]) as Map<string, Message>
-    // "Qa7cSPiYHTQybX6jl5V1k",
+
+// "vthBaZgxIEr0L6PSgKwnZ",
+// "run--9c70ad79-a7f7-43f4-957d-d53400cfae84",
+// "run--3d8bc53b-c675-44a1-808b-d8d31cf282d0",
+// "run--723cbcbb-9196-4b67-b3da-e5d686730457",
+// "run--1560b4e2-8432-44c5-9ce1-8336a1142ba7",
+// "run--322b8735-7dc0-45f9-b45c-9516bdac14f9",
+// "run--e0a8f982-798a-4c31-aa9e-a0e535e5508f",
+// "run--70ce8f4f-9a0e-41c3-bfdb-cc04e9e14fc0",
 export const MESSAGE_IDS = [
-    "vthBaZgxIEr0L6PSgKwnZ",
-    "run--9c70ad79-a7f7-43f4-957d-d53400cfae84",
-    "run--3d8bc53b-c675-44a1-808b-d8d31cf282d0",
-    "run--723cbcbb-9196-4b67-b3da-e5d686730457",
-    "run--1560b4e2-8432-44c5-9ce1-8336a1142ba7",
-    "run--322b8735-7dc0-45f9-b45c-9516bdac14f9",
-    "run--e0a8f982-798a-4c31-aa9e-a0e535e5508f",
-    "run--70ce8f4f-9a0e-41c3-bfdb-cc04e9e14fc0",
     "5VMuADzaNWs5uD_wegEkZ",
     "run--349b7ab7-ba16-45c9-97d9-389918870ee6",
     "run--c49d1e75-a793-4d87-92df-afb73f5a0633",
