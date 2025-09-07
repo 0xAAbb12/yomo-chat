@@ -18,6 +18,7 @@ export default tseslint.config(
       ...tseslint.configs.stylisticTypeChecked,
     ],
     rules: {
+      "@typescript-eslint/no-non-null-asserted-optional-chain": "off",
       "@typescript-eslint/prefer-optional-chain": "off",
       "@typescript-eslint/no-explicit-any": "off",
       "@next/next/no-img-element": "off",

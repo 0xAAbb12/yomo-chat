@@ -1,5 +1,3 @@
-import type { Message } from "~/core/messages";
-
 
 interface DeepResearchProps {
     messages: string[];

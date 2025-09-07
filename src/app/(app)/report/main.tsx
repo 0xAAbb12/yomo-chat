@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Report from "~/components/report";
 
 export default function Main() {

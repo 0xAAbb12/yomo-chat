@@ -11,7 +11,6 @@ import { mergeMessage } from "../messages";
 import { parseJSON } from "../utils";
 
 import { getChatStreamSettings } from "./settings-store";
-import { splitBySeparator } from "~/lib/utils";
 const THREAD_ID = nanoid();
 
 export const useStore = create<{
@@ -195,10 +194,6 @@ export function getMessage(id: string) {
 
 export function getMessages() {
   return useStore.getState().messages;
-}
-
-export function getDeepResearchIds() {
-  return useStore.getState().deepResearchIds;
 }
 
 export function findMessageByToolCallId(toolCallId: string) {

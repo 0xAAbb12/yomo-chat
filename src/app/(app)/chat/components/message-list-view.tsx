@@ -55,9 +55,9 @@ import {
 import { parseJSON } from "~/core/utils";
 import useCopyClipboard from "~/hooks/useCopyClipboard";
 import { cn } from "~/lib/utils";
-import DeepResearch from "./deep-research";
+// import DeepResearch from "./deep-research";
 import DeepResarchReport from "~/components/report";
-import { MESSAGE_IDS } from "~/components/report/confit";
+// import { MESSAGE_IDS } from "~/components/report/confit";
 
 export function MessageListView({
   className,
@@ -97,13 +97,13 @@ export function MessageListView({
     };
   }, []);
 
-  const deepAgents = ['planner', 'reporter', 'social_agent', 'on_chain_agent', 'ta_agent', 'research_agent']
   const messageIdsConfig = useMemo(() => {
+    const deepAgents = ['planner', 'reporter', 'social_agent', 'on_chain_agent', 'ta_agent', 'research_agent']
     return messageIds.map(m => {
       const message = messages.get(m)
       return {
         id: m,
-        isDeepResearch: deepAgents.indexOf(message?.agent || '') > -1
+        isDeepResearch: deepAgents.includes(message?.agent || '')
       }
     })
   }, [messageIds, messages]);
@@ -123,16 +123,16 @@ export function MessageListView({
         {messageIds.map((messageId, index) => {
           if (messageIdsConfig[index]?.isDeepResearch) {
             if (!messageIdsConfig[index-1]?.isDeepResearch && messageIdsConfig[index]?.isDeepResearch) {
-              let arrs: string[] = []
+              const arrs: string[] = []
               for(let i = index; i <= messageIdsConfig.length; i++) {
                 if (messageIdsConfig[i]?.isDeepResearch) {
-                  messageIdsConfig[i] && arrs.push(messageIdsConfig[i]?.id as string)
+                  arrs.push(messageIdsConfig[i]?.id!);
                 } else {
                   break;
                 }
               }
               console.log(`----arrs__${index}`, arrs)
-              return <DeepResarchReport messageIds={arrs} />
+              return <DeepResarchReport key={index} messageIds={arrs} />
               // return <DeepResearch messages={arrs} from="stream" />
             } else {
               return null;
