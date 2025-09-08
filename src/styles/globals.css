@@ -341,3 +341,6 @@ textarea {
 button {
   cursor: pointer;
 }
+[data-radix-scroll-area-viewport] > div {
+  display: '' !important;
+}
