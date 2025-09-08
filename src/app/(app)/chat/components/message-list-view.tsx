@@ -243,7 +243,7 @@ function MessageListItem({
             )}
           >
             <MessageBubble message={message}>
-              <div className="flex w-full flex-col break-words">
+              <div className="flex flex-1 min-w-0 flex-col break-words">
                 <Markdown
                   className={cn(
                     message.role === "user" &&

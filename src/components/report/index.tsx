@@ -4,9 +4,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "~/components/ui/tabs";
 import { ClipboardList, Workflow } from "lucide-react";
 import ResearchFindings from "./ResearchFindings";
 import ThinkingProcess from "./ThinkingProcess";
-import mockReportData from "~/mock/mockReportData";
-import { getMessages } from "~/core/store";
-
+import { getMessage, getMessages } from "~/core/store";
 import { MESSAGES, MESSAGE_IDS } from "./confit";
 
 interface ReportProps {
@@ -26,11 +24,34 @@ export default function DeepResarchReport({
   }, [messages, messageIds]);
 
   const deepResearchMessages = useMemo(() => {
-    return messageIds.map(id => messages.get(id)).filter(msg => msg?.agent !== 'reporter' || msg !== undefined);
-  }, [messages, messageIds])
-  
+    return messageIds
+      .map((id) => messages.get(id))
+      .filter((msg) => msg?.agent !== "reporter" || msg !== undefined);
+  }, [messages, messageIds]);
+
+  const projectData = useMemo(() => {
+    let res = null;
+    if (deepResearchMessages && deepResearchMessages.length > 0) {
+      deepResearchMessages
+        ?.filter((f) => f?.agent === "planner")
+        .forEach((m) => {
+          if (m?.toolCalls && m?.toolCalls.length > 0) {
+            m?.toolCalls.forEach((tool) => {
+              if (tool?.name === "get_web3_project" && tool?.result) {
+                res = JSON.parse(tool?.result || "{}");
+              }
+            });
+          }
+        });
+    }
+    return res;
+  }, [deepResearchMessages, messageIds]);
+
+  // console.log("repostMesssage", repostMesssage);
+  // console.log("deepResearchMessages", deepResearchMessages);
+  // console.log("projectData", projectData);
   return (
-    <div className={"flex flex-col mt-4 px-4"}>
+    <div className={"mt-4 flex flex-col px-4"}>
       <Tabs defaultValue="thinking" className="w-full">
         <TabsList className="relative flex w-fit gap-3" aria-label="tab">
           <TabsTrigger
@@ -53,7 +74,7 @@ export default function DeepResarchReport({
           <TabsContent value="result" className="focus-visible:outline-none">
             <ResearchFindings
               message={repostMesssage}
-              markdown={mockReportData}
+              projectData={projectData}
             />
           </TabsContent>
           <TabsContent value="thinking" className="focus-visible:outline-none">

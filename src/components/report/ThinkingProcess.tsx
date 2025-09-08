@@ -77,6 +77,7 @@ interface ThinkingProcessProps {
 }
 export default function ThinkingProcess({ messasges }: ThinkingProcessProps) {
   const [agent, setAgent] = React.useState<string>("planner");
+  const contentRef = React.useRef<HTMLDivElement>(null);
   const items = React.useMemo(() => {
     let agents = new Map<string, Message>();
     messasges.forEach((msg) => {
@@ -86,6 +87,11 @@ export default function ThinkingProcess({ messasges }: ThinkingProcessProps) {
     });
     return Array.from(agents.keys()).map((key) => AGNET_CONFIG[key]);
   }, [messasges]);
+
+  React.useEffect(() => {
+    // 用 scrollTo 兼容性更好
+    contentRef.current?.scrollTo({ top: 0, left: 0 });
+  }, [agent]);
 
   return (
     <div className="text-black">
@@ -112,7 +118,10 @@ export default function ThinkingProcess({ messasges }: ThinkingProcessProps) {
             </TabsList>
 
             {/* 右侧：flex-1 内容区域，占位布局 */}
-            <div className="h-[620px] min-w-0 flex-1 overflow-y-auto">
+            <div
+              ref={contentRef}
+              className="h-[620px] min-w-0 flex-1 overflow-y-auto"
+            >
               {messasges
                 .filter((f) => f?.agent === agent)
                 .map((m) => {
@@ -131,6 +140,7 @@ export default function ThinkingProcess({ messasges }: ThinkingProcessProps) {
                           if (tool.name === "get_web3_project") {
                             return (
                               <ProjectReport
+                                key={index}
                                 projectData={JSON.parse(tool?.result || "{}")}
                               />
                             );

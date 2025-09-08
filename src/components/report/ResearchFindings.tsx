@@ -5,13 +5,14 @@ import React, { useState, useMemo, useRef, useEffect } from "react";
 import { Card } from "~/components/ui/card";
 import type { Message } from "~/core/messages";
 import MarkdownStyled from "./MarkdownStyled";
+import ReportHead from "./ReportHead";
 
 export default function ResearchFindings({
-  markdown,
   message,
+  projectData,
 }: {
-  markdown: string;
   message: Message | undefined;
+  projectData: any;
 }) {
   const toc = useMemo(
     () => buildToc(message?.content || ""),
@@ -256,9 +257,13 @@ export default function ResearchFindings({
   return (
     <div className="w-full text-black">
       {/* Top */}
-      <div className="h-[260px] w-full rounded-2xl bg-gradient-to-r from-[#fff] to-[#979797] ring-1 ring-black/10 backdrop-blur-xl"></div>
+      {projectData && (
+        <div className="mb-8">
+          <ReportHead projectData={projectData} />
+        </div>
+      )}
       {/* Main */}
-      <div className="mt-[30px] flex gap-[30px]">
+      <div className="flex gap-[30px]">
         <aside className="relative w-[230px] flex-shrink-0">
           <Card className="sticky top-6 overflow-auto rounded-2xl border-black/10 p-4 backdrop-blur-md">
             <div className="text-sm font-semibold text-neutral-800">目录</div>
