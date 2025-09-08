@@ -147,16 +147,16 @@ export default function ThinkingProcess({ messasges }: ThinkingProcessProps) {
                           }
                           if (tool.name === "search_web3_project") {
                             return (
-                              <WebsiteListView source={tool?.result || ""} />
+                              <WebsiteListView  key={index} source={tool?.result || ""} />
                             );
                           }
                           if (tool.name === "web_search") {
-                            return <PageListView source={tool?.result || ""} />;
+                            return <PageListView  key={index} source={tool?.result || ""} />;
                           }
                           if (tool.name === "analyze_crypto_technical") {
                             return (
                               <div className="flex w-full flex-col break-words">
-                                <MarkdownStyled markdown={tool?.result || ""} />
+                                <MarkdownStyled key={index} markdown={tool?.result || ""} />
                               </div>
                               // <div className="flex w-full flex-col break-words">
                               //   <Markdown className={cn("prose-invert text-[#2C2C2C]")}>

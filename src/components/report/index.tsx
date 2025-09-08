@@ -31,18 +31,22 @@ export default function DeepResarchReport({
 
   const projectData = useMemo(() => {
     let res = null;
-    if (deepResearchMessages && deepResearchMessages.length > 0) {
-      deepResearchMessages
-        ?.filter((f) => f?.agent === "planner")
-        .forEach((m) => {
-          if (m?.toolCalls && m?.toolCalls.length > 0) {
-            m?.toolCalls.forEach((tool) => {
-              if (tool?.name === "get_web3_project" && tool?.result) {
-                res = JSON.parse(tool?.result || "{}");
-              }
-            });
-          }
-        });
+    try {
+      if (deepResearchMessages && deepResearchMessages.length > 0) {
+        deepResearchMessages
+          ?.filter((f) => f?.agent === "planner")
+          .forEach((m) => {
+            if (m?.toolCalls && m?.toolCalls.length > 0) {
+              m?.toolCalls.forEach((tool) => {
+                if (tool?.name === "get_web3_project" && tool?.result) {
+                  res = JSON.parse(tool?.result || "{}");
+                }
+              });
+            }
+          });
+      }
+    } catch (error) {
+      console.log(error)
     }
     return res;
   }, [deepResearchMessages, messageIds]);
