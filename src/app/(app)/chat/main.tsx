@@ -18,7 +18,7 @@ export default function Main() {
       <MessagesBlock
         className={cn(
           "shrink-0 transition-all duration-300 ease-out",
-          `w-[768px] max-lg:w-full`,
+          `w-[1024px] max-lg:w-full`,
           // doubleColumnMode && `w-[538px]`,
         )}
       />

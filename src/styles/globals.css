@@ -342,5 +342,5 @@ button {
   cursor: pointer;
 }
 [data-radix-scroll-area-viewport] > div {
-  display: '' !important;
+  display: unset !important;
 }
