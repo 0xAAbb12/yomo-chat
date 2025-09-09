@@ -11,7 +11,7 @@ export const separate = (value: number | string, formatString?: number) => {
     let integerPart = val;
     const integerLen = val.length;
     if (val.includes(".")) {
-      [integerPart] = val.split(".");
+      [integerPart = ""] = val.split(".");
       decimalPart = `.${val.split(".")[1]}`;
       if (formatString) {
         decimalPart = decimalPart.padEnd(formatString + 1, "0");
@@ -41,7 +41,7 @@ export const numeral = (
       const bigValue = `${context}`;
       if (bigValue.includes(".")) {
         const int = bigValue.split(".")[0];
-        let dec = bigValue.split(".")[1];
+        let dec = bigValue.split(".")[1] || "";
         dec = dec.slice(0, formatString);
         return Number(dec) === 0 ? `${int}` : `${int}.${dec}`;
       }
