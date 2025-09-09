@@ -21,23 +21,23 @@ import { ScrollArea } from "~/components/ui/scroll-area";
 import { Markdown } from "../yomo/markdown";
 import WebsiteListView from "./website";
 import PageListView from "./page";
-import { ScrollContainer } from "~/components/yomo/scroll-container";
+// import { ScrollContainer } from "~/components/yomo/scroll-container";
 const ACCENT = "#F67C00";
 
 const AGNET_CONFIG: {
   [key in string]: { id: string; label: string; icon: any };
 } = {
   planner: { id: "planner", label: "Planner", icon: Gauge },
-  social_agent: { id: "social_agent", label: "social_agent", icon: Gauge },
+  social_agent: { id: "social_agent", label: "Social", icon: Gauge },
   on_chain_agent: {
     id: "on_chain_agent",
-    label: "on_chain_agent",
+    label: "Chain",
     icon: Gauge,
   },
-  ta_agent: { id: "ta_agent", label: "ta_agent", icon: Gauge },
+  ta_agent: { id: "ta_agent", label: "Technical", icon: Gauge },
   research_agent: {
     id: "research_agent",
-    label: "research_agent",
+    label: "Research",
     icon: Gauge,
   },
 };
