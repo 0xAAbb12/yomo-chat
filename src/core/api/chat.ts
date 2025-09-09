@@ -49,6 +49,13 @@ export async function* chatStream(
   try{
     const { state } = JSON.parse(localStorage.getItem('yomo') ?? '{}');
     if (!state.token) return;
+    
+    let hasCompletedRunStatus = false;
+    let hasFailedStatus = false;
+    let lastEventTime = Date.now();
+    let lastEventId = "";
+    let shouldReconnect = false;
+    
     const stream = fetchStream(resolveServiceURL("v1/chat/stream"), {
     // const stream = fetchStream(resolveServiceURL("v1/chat/stream_legacy"), {
       headers: {
@@ -62,30 +69,130 @@ export async function* chatStream(
       signal: options.abortSignal,
     });
     
-    for await (const event of stream) {
-      console.log("收到的event", event)
-      let parsed: any = {};
-      try {
-        parsed = JSON.parse(event.data || "{}");
-      } catch (e) {
-        console.error("ThreadMapStorage Invalid JSON:", event.data, e);
+    // 设置超时检测定时器
+    const timeoutCheckInterval = setInterval(() => {
+      const now = Date.now();
+      const timeSinceLastEvent = now - lastEventTime;
+      
+      // 如果2分钟没有收到事件，且没有收到过completed状态和失败状态，则重连
+      if (timeSinceLastEvent >= 120000 && !hasCompletedRunStatus && !hasFailedStatus && lastEventId) {
+        console.log("检测到超时，准备重连...");
+        shouldReconnect = true;
+        lastEventTime = now; // 重置时间避免重复触发
       }
-      const threadId = parsed?.thread_id;
-      if (threadId) {
-        ThreadMapStorage.set(threadId, event.id);
+    }, 30000); // 每30秒检查一次
+    
+    try {
+      for await (const event of stream) {
+        // 检查是否需要重连
+        if (shouldReconnect) {
+          console.log("检测到重连标志，跳出当前循环");
+          break;
+        }
+        
+        // console.log("收到的event", event)
+        lastEventTime = Date.now();
+        lastEventId = event.id;
+        
+        let parsed: any = {};
+        try {
+          parsed = JSON.parse(event.data || "{}");
+        } catch (e) {
+          console.error("ThreadMapStorage Invalid JSON:", event.data, e);
+        }
+        
+        // 检查是否收到completed状态
+        if (event.event === "run_status" && parsed?.status === "completed") {
+          hasCompletedRunStatus = true;
+          clearInterval(timeoutCheckInterval);
+        }
+        
+        // 检查是否收到failed状态或error事件
+        if ((event.event === "run_status" && parsed?.status === "failed") || event.event === 'error') {
+          hasFailedStatus = true;
+          clearInterval(timeoutCheckInterval);
+        }
+        
+        const threadId = parsed?.thread_id;
+        if (threadId) {
+          ThreadMapStorage.set(threadId, event.id);
+        }
+        if (event.event === 'error') {
+          toast.error("An error occurred while generating the response. Please try again.");
+        }
+        if (event.event === "ping" || event.event === "stream_open") {
+          continue;
+        }
+        yield {
+          id: event.id,
+          type: event.event,
+          data: JSON.parse(event.data || "{}"),
+        } as ChatEvent;
       }
-      if (event.event === 'error') {
-        toast.error("An error occurred while generating the response. Please try again.");
-      }
-      if (event.event === "ping" || event.event === "stream_open") {
-        continue;
-      }
-      yield {
-        id: event.id,
-        type: event.event,
-        data: JSON.parse(event.data || "{}"),
-      } as ChatEvent;
+    } finally {
+      clearInterval(timeoutCheckInterval);
     }
+    
+    // 如果需要重连（超时检测触发）且没有收到completed状态和失败状态，尝试重连
+    if (shouldReconnect && !hasCompletedRunStatus && !hasFailedStatus && lastEventId) {
+      console.log("流结束但未收到completed状态，尝试重连...");
+      
+      // 重连时使用相同的接口，但只传thread_id
+      const reconnectStream = fetchStream(resolveServiceURL("v1/chat/stream"), {
+        headers: {
+          "Content-Type": "application/json",
+          "X-Auth-Token": state.token,
+          "Last-Event-ID": lastEventId
+        },
+        body: JSON.stringify({
+          thread_id: params.thread_id
+        }),
+        signal: options.abortSignal,
+      });
+      
+      // 继续循环处理重连的流输出
+      for await (const event of reconnectStream) {
+        // console.log("重连收到的event", event)
+        lastEventTime = Date.now();
+        lastEventId = event.id;
+        
+        let parsed: any = {};
+        try {
+          parsed = JSON.parse(event.data || "{}");
+        } catch (e) {
+          console.error("ThreadMapStorage Invalid JSON:", event.data, e);
+        }
+        
+        // 检查是否收到completed状态
+        if (event.event === "run_status" && parsed?.status === "completed") {
+          hasCompletedRunStatus = true;
+          break; // 收到completed状态后退出重连循环
+        }
+        
+        // 检查是否收到failed状态或error事件
+        if ((event.event === "run_status" && parsed?.status === "failed") || event.event === 'error') {
+          hasFailedStatus = true;
+          break; // 收到失败状态后退出重连循环
+        }
+        
+        const threadId = parsed?.thread_id;
+        if (threadId) {
+          ThreadMapStorage.set(threadId, event.id);
+        }
+        if (event.event === 'error') {
+          toast.error("An error occurred while generating the response. Please try again.");
+        }
+        if (event.event === "ping" || event.event === "stream_open") {
+          continue;
+        }
+        yield {
+          id: event.id,
+          type: event.event,
+          data: JSON.parse(event.data || "{}"),
+        } as ChatEvent;
+      }
+    }
+    
   }catch(e){
     console.error(e);
   }
