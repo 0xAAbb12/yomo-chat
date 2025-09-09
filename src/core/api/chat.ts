@@ -49,8 +49,8 @@ export async function* chatStream(
   try{
     const { state } = JSON.parse(localStorage.getItem('yomo') ?? '{}');
     if (!state.token) return;
-    // const stream = fetchStream(resolveServiceURL("chat/stream"), {
-    const stream = fetchStream(resolveServiceURL("v1/chat/stream_legacy"), {
+    const stream = fetchStream(resolveServiceURL("v1/chat/stream"), {
+    // const stream = fetchStream(resolveServiceURL("v1/chat/stream_legacy"), {
       headers: {
         "Content-Type": "application/json",
         "X-Auth-Token": state.token,
@@ -63,6 +63,7 @@ export async function* chatStream(
     });
     
     for await (const event of stream) {
+      console.log("收到的event", event)
       let parsed: any = {};
       try {
         parsed = JSON.parse(event.data || "{}");
@@ -75,6 +76,9 @@ export async function* chatStream(
       }
       if (event.event === 'error') {
         toast("An error occurred while generating the response. Please try again.");
+      }
+      if (event.event === "ping" || event.event === "stream_open") {
+        continue;
       }
       yield {
         id: event.id,
