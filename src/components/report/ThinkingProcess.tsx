@@ -1,7 +1,7 @@
 "use client";
 import React, { useMemo } from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "~/components/ui/tabs";
-import { cn } from "~/lib/utils";
+import { cn, safeParse } from "~/lib/utils";
 import {
   LibrarySquare,
   Gauge,
@@ -141,17 +141,17 @@ export default function ThinkingProcess({ messasges }: ThinkingProcessProps) {
                             return (
                               <ProjectReport
                                 key={index}
-                                projectData={JSON.parse(tool?.result || "{}")}
+                                source={tool?.result}
                               />
                             );
                           }
                           if (tool.name === "search_web3_project") {
                             return (
-                              <WebsiteListView  key={index} source={tool?.result || ""} />
+                              <WebsiteListView  key={index} source={tool?.result} />
                             );
                           }
                           if (tool.name === "web_search") {
-                            return <PageListView  key={index} source={tool?.result || ""} />;
+                            return <PageListView  key={index} source={tool?.result} />;
                           }
                           if (tool.name === "analyze_crypto_technical") {
                             return (

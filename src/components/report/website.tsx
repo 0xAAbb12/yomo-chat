@@ -26,14 +26,17 @@ const Website = ({web}:WebsiteProps) => {
 }
 
 interface WebsiteListViewProps {
-    source: string
+    source: string | undefined
 }
 const WebsiteListView = ({ source }:WebsiteListViewProps) => {
 
     const websites = useMemo(() => {
         if (source) {
-            const params = JSON.parse(source);
-            return params as WebsiteOffice[]
+            try {
+                return JSON.parse(source) as WebsiteOffice[];
+            } catch (error) {
+                return []
+            }
         }
         return []
     }, [source]);

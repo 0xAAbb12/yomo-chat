@@ -1,5 +1,5 @@
 import { type ProjectData } from "~/modal/project";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { numFormat } from "~/lib/utils";
 import ChartContainer from "~/components/charts/ChartContainer";
 import TvlTrendChart from "~/components/charts/TvlTrendChart";
@@ -19,10 +19,18 @@ import XIcon from "~/assets/images/search/X_icon.png";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 export const ProjectReport = ({
-  projectData,
+  source,
 }: {
-  projectData: ProjectData;
+  source: string | undefined
 }) => {
+  const projectData = useMemo(() => {
+    if (!source) return undefined;
+    try {
+      return JSON.parse(source) as ProjectData;
+    } catch {
+      return undefined;
+    }
+  },[source])
   const formatPercentage = (num: number) => {
     return num > 0 ? `+${num.toFixed(2)}%` : `${num.toFixed(2)}%`;
   };

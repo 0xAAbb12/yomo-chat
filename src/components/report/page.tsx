@@ -22,14 +22,17 @@ const PageItem = ({page}:PageItemProps) => {
 }
 
 interface PageListViewProps {
-    source: string
+    source: string | undefined
 }
 const PageListView = ({ source }:PageListViewProps) => {
 
     const pages = useMemo(() => {
         if (source) {
-            const params = JSON.parse(source);
-            return params as Page[]
+            try {
+                return JSON.parse(source) as Page[];
+            } catch (error) {
+                return []
+            }
         }
         return []
     }, [source]);

@@ -224,11 +224,10 @@ function MessageListItem({
       } else if (message.toolCalls) {
         const toolCall = message.toolCalls.find(f => f.name === 'generate_project_brief_report');
         if (toolCall) {
-          const projectData = JSON.parse(toolCall.result ?? '{}');
           content = (
             <div className="px-4">
               <ProjectReport
-                projectData={projectData}
+                source={toolCall.result}
               />
             </div>
           );

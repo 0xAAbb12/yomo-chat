@@ -22,8 +22,7 @@ export async function* fetchStream(
       rootStore.getState().updateToken("");
       await Router.push("/");
     }
-    toast("An error occurred while generating the response. Please try again.");
-    // toast("")
+    toast.error("An error occurred while generating the response. Please try again.");
     throw new Error(`Failed to fetch from ${url}: ${response.status}`);
   }
   // Read from response body, event by event. An event always ends with a '\n\n'.

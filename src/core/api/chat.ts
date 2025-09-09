@@ -75,7 +75,7 @@ export async function* chatStream(
         ThreadMapStorage.set(threadId, event.id);
       }
       if (event.event === 'error') {
-        toast("An error occurred while generating the response. Please try again.");
+        toast.error("An error occurred while generating the response. Please try again.");
       }
       if (event.event === "ping" || event.event === "stream_open") {
         continue;

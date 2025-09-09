@@ -164,7 +164,7 @@ export async function sendMessage(
       }
     }
   } catch {
-    toast("An error occurred while generating the response. Please try again.");
+    toast.error("An error occurred while generating the response. Please try again.");
     // Update message status.
     // TODO: const isAborted = (error as Error).name === "AbortError";
     if (messageId != null) {
@@ -344,7 +344,7 @@ export async function listenToPodcast(researchId: string) {
             },
           ),
         }));
-        toast("An error occurred while generating podcast. Please try again.");
+        toast.error("An error occurred while generating podcast. Please try again.");
         return;
       }
       useStore.setState((state) => ({

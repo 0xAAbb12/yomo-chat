@@ -67,3 +67,12 @@ export function splitBySeparator<T>(arr: T[], separator: T): T[][] {
 
   return result;
 }
+
+export function safeParse<T = unknown>(input: string | null | undefined, fallback: T): T {
+  if (!input) return fallback;
+  try {
+    return JSON.parse(input) as T;
+  } catch {
+    return fallback;
+  }
+}
