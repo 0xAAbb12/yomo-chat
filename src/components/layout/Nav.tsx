@@ -26,7 +26,7 @@ export default function Nav() {
   const { logout } = useLogout();
   useEffect(() => {
     const handleResize = debounce(() => {
-      if (window.innerWidth < 1024) {
+      if (window.innerWidth < 1300) {
         setIsOpen(false);
       } else {
         setIsOpen(true);
