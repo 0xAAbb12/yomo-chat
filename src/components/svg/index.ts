@@ -37,3 +37,5 @@ export { default as ExitIcon } from "./Icons/ExitIcon";
 export { default as PlusIcon } from "./Icons/PlusIcon";
 export { default as HistoryIcon } from "./Icons/HistoryIcon";
 export { default as AddChat } from "./Icons/AddChat";
+export { default as SendIcon } from "./Icons/SendIcon";
+
