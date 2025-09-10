@@ -193,7 +193,7 @@ const ChatHistory = ({ open, onOpenChange }: ChatHistoryProps) => {
             threadId: message.thread_id,
             toolCalls: message.tool_calls,
             finishReason: message.finish_reason,
-            reasoningContent: message.reasoning_content
+            reasoningContent: message.reasoning_content,
           });
         });
       }
@@ -351,8 +351,8 @@ const ChatHistory = ({ open, onOpenChange }: ChatHistoryProps) => {
           <div className="h-[calc(100vh-120px)] overflow-y-auto px-4 pt-5 pb-2">
             {Object.keys(threads)
               .sort((a, b) => Number(b) - Number(a))
-              .map((key) => (
-                <>
+              .map((key, outIndex) => (
+                <div key={outIndex}>
                   <div className="flex items-center justify-between">
                     <p className="text-muted-foreground mt-2 text-sm">
                       {dayjs
@@ -409,7 +409,7 @@ const ChatHistory = ({ open, onOpenChange }: ChatHistoryProps) => {
                       );
                     })}
                   </div>
-                </>
+                </div>
               ))}
             {Object.keys(threads).length === 0 && (
               <div className="pt-[100px]">

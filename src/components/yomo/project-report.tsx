@@ -18,11 +18,7 @@ import DAppIcon from "~/assets/images/search/DApp_icon.png";
 import XIcon from "~/assets/images/search/X_icon.png";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
-export const ProjectReport = ({
-  source,
-}: {
-  source: string | undefined
-}) => {
+export const ProjectReport = ({ source }: { source: string | undefined }) => {
   const projectData = useMemo(() => {
     if (!source) return undefined;
     try {
@@ -30,7 +26,7 @@ export const ProjectReport = ({
     } catch {
       return undefined;
     }
-  },[source])
+  }, [source]);
   const formatPercentage = (num: number) => {
     return num > 0 ? `+${num.toFixed(2)}%` : `${num.toFixed(2)}%`;
   };
@@ -557,7 +553,7 @@ export const ProjectReport = ({
                   <span className="text-gray-700">Support Exchanges</span>
                   <div className="ml-2 flex-1 overflow-hidden">
                     <div className="scrollbar-hide flex gap-1 overflow-x-auto">
-                      <div className="ml-auto flex gap-1">
+                      <div className="ml-auto flex flex-wrap justify-end gap-1">
                         {(projectData.market_data?.support_exchanges &&
                           projectData.market_data?.support_exchanges
                             ?.slice(0, 10)
@@ -571,7 +567,7 @@ export const ProjectReport = ({
                                 return (
                                   <div
                                     key={index}
-                                    className="flex h-5 flex-shrink-0 items-center justify-center"
+                                    className="flex h-9 items-center justify-center"
                                     title={exchange.name}
                                   >
                                     {/* <Avatar className="h-full rounded-full object-cover">
@@ -580,9 +576,9 @@ export const ProjectReport = ({
                                       
                                     </AvatarFallback>
                                   </Avatar> */}
-                                    <span className="text-base">
+                                    <div className="flex items-center gap-1 rounded-[8px] border border-gray-200 bg-gray-100 px-2 py-1">
                                       {exchange.name}
-                                    </span>
+                                    </div>
                                     {/* <img
                                     src={exchange.logo || ""}
                                     alt={exchange.name}
