@@ -32,6 +32,7 @@ import {
 } from "~/components/ui/collapsible";
 import { LoadingAnimation } from "~/components/yomo/loading-animation";
 import { Markdown } from "~/components/yomo/markdown";
+import MarkdownStyled from "~/components/report/MarkdownStyled";
 import { ProjectReport } from "~/components/yomo/project-report";
 import { RainbowText } from "~/components/yomo/rainbow-text";
 import { RollingText } from "~/components/yomo/rolling-text";
@@ -243,14 +244,15 @@ function MessageListItem({
           >
             <MessageBubble message={message}>
               <div className="flex flex-1 min-w-0 flex-col break-words">
-                <Markdown
+                {/* <Markdown
                   className={cn(
                     message.role === "user" &&
                       "prose-invert text-[#2C2C2C]",
                   )}
                 >
                   {message?.content}
-                </Markdown>
+                </Markdown> */}
+                <MarkdownStyled markdown={message?.content || ""}/>
               </div>
             </MessageBubble>
           </div>

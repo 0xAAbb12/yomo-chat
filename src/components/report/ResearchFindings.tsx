@@ -270,7 +270,7 @@ export default function ResearchFindings({
             <nav className="space-y-2">
               {toc.map((item, idx) => (
                 <button
-                  key={item.id}
+                  key={idx}
                   onClick={() => handleJump(item.id)}
                   className={
                     "flex w-full items-center gap-3 rounded-xl px-3 py-2 text-left text-sm transition-colors " +
@@ -289,7 +289,11 @@ export default function ResearchFindings({
                   >
                     {idx + 1}
                   </span>
-                  <span className="line-clamp-1">{item.text}</span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block max-w-[130px] truncate">
+                      {item.text}
+                    </span>
+                  </span>
                 </button>
               ))}
             </nav>
