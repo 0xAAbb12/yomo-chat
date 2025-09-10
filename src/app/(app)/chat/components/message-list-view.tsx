@@ -61,10 +61,15 @@ import DeepResarchReport from "~/components/report";
 
 export function MessageListView({
   className,
+  externalmMessageInfo,
   onFeedback,
   onSendMessage,
 }: {
   className?: string;
+  externalmMessageInfo?: {
+    messageIds: string[];
+    messages: Map<string, Message>;
+  };
   onFeedback?: (feedback: { option: Option }) => void;
   onSendMessage?: (
     message: string,
@@ -72,7 +77,10 @@ export function MessageListView({
   ) => void;
 }) {
   const scrollContainerRef = useRef<ScrollContainerRef>(null);
-  const messageIds = useMessageIds();
+  const storeMessageIds = useMessageIds();
+  const messageIds = externalmMessageInfo
+    ? externalmMessageInfo?.messageIds
+    : storeMessageIds;
   const interruptMessage = useLastInterruptMessage();
   const waitingForFeedbackMessageId = useLastFeedbackMessageId();
   const responding = useStore((state) => state.responding);
@@ -82,7 +90,9 @@ export function MessageListView({
   const ongoingResearchIsOpen = useStore(
     (state) => state.ongoingResearchId === state.openResearchId,
   );
-  const messages = getMessages();
+  const messages = externalmMessageInfo
+    ? externalmMessageInfo?.messages
+    : getMessages();
 
   const handleToggleResearch = useCallback(() => {
     // Fix the issue where auto-scrolling to the bottom
@@ -98,19 +108,26 @@ export function MessageListView({
   }, []);
 
   const messageIdsConfig = useMemo(() => {
-    const deepAgents = ['planner', 'reporter', 'social_agent', 'on_chain_agent', 'ta_agent', 'research_agent']
-    return messageIds.map(m => {
-      const message = messages.get(m)
+    const deepAgents = [
+      "planner",
+      "reporter",
+      "social_agent",
+      "on_chain_agent",
+      "ta_agent",
+      "research_agent",
+    ];
+    return messageIds.map((m) => {
+      const message = messages.get(m);
       return {
         id: m,
-        isDeepResearch: deepAgents.includes(message?.agent || '')
-      }
-    })
+        isDeepResearch: deepAgents.includes(message?.agent || ""),
+      };
+    });
   }, [messageIds, messages]);
 
   console.log("messageIds", messageIds);
   console.log("messages", messages);
-  console.log("messageIdsConfig", messageIdsConfig)
+  console.log("messageIdsConfig", messageIdsConfig);
 
   return (
     <ScrollContainer
@@ -122,17 +139,26 @@ export function MessageListView({
       <ul className="flex flex-col">
         {messageIds.map((messageId, index) => {
           if (messageIdsConfig[index]?.isDeepResearch) {
-            if (!messageIdsConfig[index-1]?.isDeepResearch && messageIdsConfig[index]?.isDeepResearch) {
-              const arrs: string[] = []
-              for(let i = index; i <= messageIdsConfig.length; i++) {
+            if (
+              !messageIdsConfig[index - 1]?.isDeepResearch &&
+              messageIdsConfig[index]?.isDeepResearch
+            ) {
+              const arrs: string[] = [];
+              for (let i = index; i <= messageIdsConfig.length; i++) {
                 if (messageIdsConfig[i]?.isDeepResearch) {
                   arrs.push(messageIdsConfig[i]?.id!);
                 } else {
                   break;
                 }
               }
-              console.log(`arrs__${index}`, arrs)
-              return <DeepResarchReport key={index} messageIds={arrs} />
+              console.log(`arrs__${index}`, arrs);
+              return (
+                <DeepResarchReport
+                  key={index}
+                  messageIds={arrs}
+                  externalmMessageInfo={externalmMessageInfo}
+                />
+              );
               // return <DeepResearch messages={arrs} from="stream" />
             } else {
               return null;
@@ -144,11 +170,12 @@ export function MessageListView({
               messageId={messageId}
               waitForFeedback={waitingForFeedbackMessageId === messageId}
               interruptMessage={interruptMessage}
+              externalmMessageInfo={externalmMessageInfo}
               onFeedback={onFeedback}
               onSendMessage={onSendMessage}
               onToggleResearch={handleToggleResearch}
             />
-          )
+          );
         })}
         <div className="flex h-8 w-full shrink-0"></div>
       </ul>
@@ -164,6 +191,7 @@ function MessageListItem({
   messageId,
   waitForFeedback,
   interruptMessage,
+  externalmMessageInfo,
   onFeedback,
   onSendMessage,
   onToggleResearch,
@@ -178,13 +206,20 @@ function MessageListItem({
     options?: { interruptFeedback?: string },
   ) => void;
   onToggleResearch?: () => void;
+  externalmMessageInfo?: {
+    messageIds: string[];
+    messages: Map<string, Message>;
+  };
 }) {
-  const message = useMessage(messageId);
+  const orMessage = useMessage(messageId);
+  const message = externalmMessageInfo
+    ? externalmMessageInfo?.messages?.get(messageId)
+    : orMessage;
   const researchIds = useStore((state) => state.researchIds);
   const startOfResearch = useMemo(() => {
     return researchIds.includes(messageId);
   }, [researchIds, messageId]);
-    const [isCopied, setCopied] = useCopyClipboard();
+  const [isCopied, setCopied] = useCopyClipboard();
   if (message) {
     // console.log("message", message);
     if (
@@ -222,7 +257,9 @@ function MessageListItem({
           </div>
         );
       } else if (message.toolCalls) {
-        const toolCall = message.toolCalls.find(f => f.name === 'generate_project_brief_report');
+        const toolCall = message.toolCalls.find(
+          (f) => f.name === "generate_project_brief_report",
+        );
         if (toolCall) {
           content = (
             <div className="px-4">
@@ -242,11 +279,10 @@ function MessageListItem({
             )}
           >
             <MessageBubble message={message}>
-              <div className="flex flex-1 min-w-0 flex-col break-words">
+              <div className="flex min-w-0 flex-1 flex-col break-words">
                 <Markdown
                   className={cn(
-                    message.role === "user" &&
-                      "prose-invert text-[#2C2C2C]",
+                    message.role === "user" && "prose-invert text-[#2C2C2C]",
                   )}
                 >
                   {message?.content}
@@ -271,7 +307,7 @@ function MessageListItem({
           >
             {content}
             {message.role !== "user" && (
-              <div className="flex items-center gap-2 w-full px-8 mt-2">
+              <div className="mt-2 flex w-full items-center gap-2 px-8">
                 <div
                   onClick={() => {
                     setCopied(
@@ -279,18 +315,18 @@ function MessageListItem({
                         id: message.id,
                         threadId: message.threadId,
                         content: message.content,
-                      })
+                      }),
                     );
                   }}
                 >
                   {isCopied ? (
-                    <CheckIcon className="w-4 h-4 text-gray-400 cursor-pointer" />
+                    <CheckIcon className="h-4 w-4 cursor-pointer text-gray-400" />
                   ) : (
-                    <CopyIcon className="w-4 h-4 text-gray-400 cursor-pointer" />
+                    <CopyIcon className="h-4 w-4 cursor-pointer text-gray-400" />
                   )}
                 </div>
-                <QuoteIcon className="w-4 h-4 text-gray-400 cursor-pointer" />
-                <Share2Icon className="w-4 h-4 text-gray-400 cursor-pointer" />
+                <QuoteIcon className="h-4 w-4 cursor-pointer text-gray-400" />
+                <Share2Icon className="h-4 w-4 cursor-pointer text-gray-400" />
                 {/* <ThumbsUpIcon className="w-4 h-4 text-gray-400 cursor-pointer" />
                 <ThumbsDownIcon className="w-4 h-4 text-gray-400 cursor-pointer" /> */}
               </div>
@@ -316,7 +352,7 @@ function MessageBubble({
     <div
       className={cn(
         "group flex w-auto max-w-[90vw] flex-col rounded-2xl px-4 py-3 break-words",
-        message.role === "user" && "bg-[#F6F6F8] rounded-ee-none",
+        message.role === "user" && "rounded-ee-none bg-[#F6F6F8]",
         message.role === "assistant" && "bg-card rounded-es-none",
         className,
       )}
@@ -575,14 +611,17 @@ function PlanCard({
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div style={{ wordBreak: 'break-all', whiteSpace: 'normal' }}>
+              <div style={{ wordBreak: "break-all", whiteSpace: "normal" }}>
                 <Markdown className="opacity-80" animated={message.isStreaming}>
                   {plan.thought}
                 </Markdown>
                 {plan.steps && (
                   <ul className="my-2 flex list-decimal flex-col gap-4 border-l-[2px] pl-8">
                     {plan.steps.map((step, i) => (
-                      <li key={`step-${i}`} style={{ wordBreak: 'break-all', whiteSpace: 'normal' }}>
+                      <li
+                        key={`step-${i}`}
+                        style={{ wordBreak: "break-all", whiteSpace: "normal" }}
+                      >
                         <div className="flex items-start gap-2">
                           <div className="flex-1">
                             <h3 className="mb flex items-center gap-2 text-lg font-medium">
@@ -600,7 +639,13 @@ function PlanCard({
                                 </Tooltip>
                               )}
                             </h3>
-                            <div className="text-muted-foreground text-sm" style={{ wordBreak: 'break-all', whiteSpace: 'normal' }}>
+                            <div
+                              className="text-muted-foreground text-sm"
+                              style={{
+                                wordBreak: "break-all",
+                                whiteSpace: "normal",
+                              }}
+                            >
                               <Markdown animated={message.isStreaming}>
                                 {step.description}
                               </Markdown>
@@ -737,7 +782,7 @@ function ToolsDisplay({ tools }: { tools: string[] }) {
       {tools.map((tool, index) => (
         <span
           key={index}
-          className="rounded-md bg-muted px-2 py-1 text-xs font-mono text-muted-foreground"
+          className="bg-muted text-muted-foreground rounded-md px-2 py-1 font-mono text-xs"
         >
           {tool}
         </span>

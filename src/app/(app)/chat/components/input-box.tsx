@@ -1,6 +1,6 @@
 import { MagicWandIcon } from "@radix-ui/react-icons";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUp, Lightbulb, X } from "lucide-react";
+import { ArrowUp, Lightbulb, X, Share2Icon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useCallback, useRef, useState } from "react";
 import { useStore } from "~/core/store";
@@ -24,6 +24,7 @@ import { cn } from "~/lib/utils";
 import { HistoryIcon } from "~/components/yomo/icons/history";
 import ChatHistory from "~/components/yomo/chat-history";
 import { AddChat } from "~/components/yomo/icons/add-chat";
+import ShareModal from "~/components/dialogs/share-modal";
 
 export function InputBox({
   className,
@@ -61,6 +62,7 @@ export function InputBox({
   const inputRef = useRef<MessageInputRef>(null);
   const feedbackRef = useRef<HTMLDivElement>(null);
   const [open, setOpen] = useState(false);
+  const [shareOpen, setShareOpen] = useState(false);
 
   // Enhancement state
   const [isEnhancing, setIsEnhancing] = useState(false);
@@ -133,6 +135,18 @@ export function InputBox({
     <div className="flex flex-col">
       <div className="flex w-full justify-end pb-1">
         <div className="flex items-center">
+          <Tooltip title={t("Share")}>
+            <Button
+              variant="ghost"
+              size="icon"
+              className={cn("hover:bg-accent h-10 w-10", "animate-pulse")}
+              onClick={() => {
+                setShareOpen(true);
+              }}
+            >
+              <Share2Icon className="" />
+            </Button>
+          </Tooltip>
           <Tooltip title={t("enhancePrompt")}>
             <Button
               variant="ghost"
@@ -385,6 +399,7 @@ export function InputBox({
             setOpen(false);
           }}
         />
+        <ShareModal open={shareOpen} onOpenChange={setShareOpen} />
       </div>
     </div>
   );

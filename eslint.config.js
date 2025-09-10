@@ -47,6 +47,7 @@ export default tseslint.config(
       "@typescript-eslint/prefer-nullish-coalescing": "off",
       "@typescript-eslint/ban-ts-comment": "off",
       "import/order": "off",
+      "@typescript-eslint/no-floating-promises": "off",
     },
   },
   {

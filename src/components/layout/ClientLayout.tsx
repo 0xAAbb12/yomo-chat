@@ -13,7 +13,7 @@ export default function ClientLayout({ children }: ClientLayoutProps) {
     <div className="min-h-screen bg-white flex flex-col relative">
       <BackgroundCircles />
       <Header />
-      <main className="flex-1 flex">
+      <main className="flex-1 flex min-h-0 overflow-y-auto">
         {children}
       </main>
       <Footer />

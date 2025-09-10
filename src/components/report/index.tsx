@@ -6,16 +6,24 @@ import ResearchFindings from "./ResearchFindings";
 import ThinkingProcess from "./ThinkingProcess";
 import { getMessage, getMessages } from "~/core/store";
 import { MESSAGES, MESSAGE_IDS } from "./confit";
+import type { Message } from "~/core/messages";
 
 interface ReportProps {
   messageIds?: string[];
+  externalmMessageInfo?: {
+    messageIds: string[];
+    messages: Map<string, Message>;
+  };
 }
 // const
 export default function DeepResarchReport({
   messageIds = MESSAGE_IDS,
+  externalmMessageInfo,
 }: ReportProps) {
   // const messages = MESSAGES;
-  const messages = getMessages();
+  const messages = externalmMessageInfo
+    ? externalmMessageInfo?.messages
+    : getMessages();
   const repostMesssage = useMemo(() => {
     if (messages.get(messageIds.at(-1) || "")?.agent === "reporter") {
       return messages.get(messageIds.at(-1) || "");
@@ -46,7 +54,7 @@ export default function DeepResarchReport({
           });
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
     return res;
   }, [deepResearchMessages, messageIds]);
