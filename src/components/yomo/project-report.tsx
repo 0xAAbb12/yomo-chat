@@ -43,20 +43,20 @@ export const ProjectReport = ({
           <div className="mb-6 px-4">
             <div className="mb-3 flex items-center gap-2">
               <div className="h-5 w-1 rounded bg-orange-500"></div>
-              <div className="font-brand-medium text-lg">
+              <div className="font-brand-medium text-xl">
                 Project Introduction
               </div>
             </div>
-            <div className="text-sm leading-relaxed text-gray-700">
+            <div className="text-base leading-relaxed text-gray-700">
               {projectData?.project_info?.short_intro}
             </div>
-            <div className="text-sm leading-relaxed text-gray-700">
+            <div className="text-base leading-relaxed text-gray-700">
               {projectData?.project_info?.description}
             </div>
             {projectData?.project_info?.team_info &&
               Array.isArray(projectData.project_info.team_info) &&
               projectData.project_info.team_info.length > 0 && (
-                <div className="text-sm leading-relaxed text-gray-700">
+                <div className="text-base leading-relaxed text-gray-700">
                   <div className="mb-2 font-medium">Team Members:</div>
                   <div className="space-y-1">
                     {projectData.project_info.team_info.map(
@@ -72,7 +72,7 @@ export const ProjectReport = ({
                 </div>
               )}
             {projectData?.project_info?.sector_analysis && (
-              <div className="text-sm text-gray-700">
+              <div className="text-base text-gray-700">
                 {typeof projectData.project_info.sector_analysis === "string"
                   ? projectData.project_info.sector_analysis
                   : "Sector analysis available"}
@@ -85,18 +85,18 @@ export const ProjectReport = ({
             <div className="mt-4 mb-6 px-4">
               {/* <div className="flex items-center gap-2 mb-3">
                 <div className="w-1 h-5 bg-orange-500 rounded"></div>
-                <div className="text-lg font-brand-medium">
+                <div className="text-xl font-brand-medium">
                   Financing Information
                 </div>
               </div>
-              <div className="mb-4 text-sm leading-relaxed text-gray-700">
+              <div className="mb-4 text-base leading-relaxed text-gray-700">
                 {"--"}
               </div> */}
               {projectData?.fundraising_info?.investors &&
                 Array.isArray(projectData.fundraising_info.investors) &&
                 projectData.fundraising_info.investors.length > 0 && (
                   <>
-                    <div className="font-brand-medium mb-4 text-base">
+                    <div className="font-brand-medium mb-4 text-lg">
                       Investment Institutions:
                     </div>
                     <div className="">
@@ -119,7 +119,7 @@ export const ProjectReport = ({
                                   }}
                                 />
                               )}
-                              <span className="text-sm font-medium text-gray-700">
+                              <span className="text-base font-medium text-gray-700">
                                 {investor.name}
                               </span>
                             </div>
@@ -137,15 +137,15 @@ export const ProjectReport = ({
             <div className="mb-6 px-4">
               <div className="mb-3 flex items-center gap-2">
                 <div className="h-5 w-1 rounded bg-orange-500"></div>
-                <div className="font-brand-medium text-lg">Project Data</div>
+                <div className="font-brand-medium text-xl">Project Data</div>
               </div>
-              {/* <div className="mb-3 text-sm text-gray-700">社区热度与媒体报道</div>
+              {/* <div className="mb-3 text-base text-gray-700">社区热度与媒体报道</div>
                 <Card className="mb-4 bg-gray-100 border border-gray-200 h-36">
                   <CardContent className="flex items-center justify-center h-full p-0">
-                    <div className="text-sm text-gray-500">投资机构列表</div>
+                    <div className="text-base text-gray-500">投资机构列表</div>
                   </CardContent>
                 </Card> */}
-              <div className="mb-4 space-y-2 text-sm">
+              <div className="mb-4 space-y-2 text-base">
                 {projectData?.social_media_stats?.twitter && (
                   <div className="flex justify-between">
                     <span className="text-gray-700">X (Twitter)</span>
@@ -240,7 +240,7 @@ export const ProjectReport = ({
                   ) &&
                   projectData.social_media_stats.media_mentions.length > 0 && (
                     <div className="space-y-2">
-                      <div className="text-sm font-medium text-gray-700">
+                      <div className="text-base font-medium text-gray-700">
                         Media Coverage
                       </div>
                       <div className="flex flex-wrap gap-2">
@@ -261,7 +261,7 @@ export const ProjectReport = ({
                                   href={item}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="inline-block cursor-pointer rounded-full bg-blue-100 px-3 py-1 text-sm text-blue-700 transition-colors hover:bg-blue-200"
+                                  className="inline-block cursor-pointer rounded-full bg-blue-100 px-3 py-1 text-base text-blue-700 transition-colors hover:bg-blue-200"
                                   title={item}
                                 >
                                   {displayName}
@@ -285,7 +285,7 @@ export const ProjectReport = ({
                                   href={url}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="inline-block cursor-pointer rounded-full bg-blue-100 px-3 py-1 text-sm text-blue-700 transition-colors hover:bg-blue-200"
+                                  className="inline-block cursor-pointer rounded-full bg-blue-100 px-3 py-1 text-base text-blue-700 transition-colors hover:bg-blue-200"
                                   title={displayName}
                                 >
                                   {displayName}
@@ -304,7 +304,7 @@ export const ProjectReport = ({
 
               {/* 链上数据部分 */}
               {projectData?.on_chain_data && (
-                <div className="mb-4 space-y-2 text-sm">
+                <div className="mb-4 space-y-2 text-base">
                   {projectData.on_chain_data.tvl && (
                     <div className="flex justify-between">
                       <span className="text-gray-700">
@@ -341,7 +341,7 @@ export const ProjectReport = ({
                   {projectData.on_chain_data.tvl_trend &&
                     projectData.on_chain_data.tvl_trend.length > 0 && (
                       <div className="mb-4">
-                        <div className="mb-2 text-sm font-medium text-gray-700">
+                        <div className="mb-2 text-base font-medium text-gray-700">
                           TVL Trend (7D)
                         </div>
                         <ChartContainer>
@@ -355,7 +355,7 @@ export const ProjectReport = ({
                   {projectData.on_chain_data.tvl_distribution &&
                     projectData.on_chain_data.tvl_distribution.length > 0 && (
                       <div className="mb-4">
-                        <div className="mb-2 text-sm font-medium text-gray-700">
+                        <div className="mb-2 text-base font-medium text-gray-700">
                           TVL Distribution
                         </div>
                         <ChartContainer>
@@ -472,18 +472,18 @@ export const ProjectReport = ({
               {/* <div className="grid grid-cols-1 gap-4 mb-2">
                   <Card className="bg-gray-100 border border-gray-200 h-36">
                     <CardContent className="flex items-center justify-center h-full p-0">
-                      <div className="text-sm text-gray-500">
+                      <div className="text-base text-gray-500">
                         TVL 和 协议交互地址数据折现图
                       </div>
                     </CardContent>
                   </Card>
                   <Card className="bg-gray-100 border border-gray-200 h-36">
                     <CardContent className="flex items-center justify-center h-full p-0">
-                      <div className="text-sm text-gray-500">TVL 分布饼图</div>
+                      <div className="text-base text-gray-500">TVL 分布饼图</div>
                     </CardContent>
                   </Card>
                 </div>
-                <div className="text-sm text-right text-gray-500">
+                <div className="text-base text-right text-gray-500">
                   update date: {new Date().toLocaleString()}
                 </div> */}
             </div>
@@ -493,7 +493,7 @@ export const ProjectReport = ({
             <div className="mb-6 px-4">
               <div className="mb-3 flex items-center gap-2">
                 <div className="h-5 w-1 rounded bg-orange-500"></div>
-                <div className="font-brand-medium text-lg">Markets</div>
+                <div className="font-brand-medium text-xl">Markets</div>
               </div>
               {projectData?.market_data?.kline_30d &&
                 projectData.market_data.kline_30d.length > 0 && (
@@ -508,7 +508,7 @@ export const ProjectReport = ({
                     </ChartContainer>
                   </div>
                 )}
-              <div className="mb-4 space-y-2 text-sm">
+              <div className="mb-4 space-y-2 text-base">
                 <div className="flex items-center justify-between">
                   <span className="text-gray-700">Trading Volume (24H)</span>
                   <span className="text-black">
@@ -580,7 +580,7 @@ export const ProjectReport = ({
                                       
                                     </AvatarFallback>
                                   </Avatar> */}
-                                    <span className="text-sm">
+                                    <span className="text-base">
                                       {exchange.name}
                                     </span>
                                     {/* <img
@@ -612,10 +612,10 @@ export const ProjectReport = ({
             <div className="mb-6 px-4">
               <div className="mb-3 flex items-center gap-2">
                 <div className="h-5 w-1 rounded bg-orange-500"></div>
-                <div className="font-brand-medium text-lg">Tokenomics</div>
+                <div className="font-brand-medium text-xl">Tokenomics</div>
               </div>
 
-              <div className="mb-4 space-y-2 text-sm">
+              <div className="mb-4 space-y-2 text-base">
                 <div className="flex justify-between">
                   <span className="text-gray-700">Token Symbol</span>
                   <span className="font-medium text-black">
@@ -678,11 +678,11 @@ export const ProjectReport = ({
               {(() => {
                 return (
                   <>
-                    <div className="font-brand-medium mb-2 text-base">
+                    <div className="font-brand-medium mb-2 text-lg">
                       Distribution Overview
                     </div>
                     <div className="mb-2 rounded-lg border border-gray-200 bg-white p-3">
-                      <div className="mb-4 space-y-2 text-sm">
+                      <div className="mb-4 space-y-2 text-base">
                         <div className="flex items-center justify-between border-b border-gray-200 pb-3">
                           <span className="text-gray-600">Token Symbol:</span>
                           <span className="font-semibold text-gray-800">
@@ -724,7 +724,7 @@ export const ProjectReport = ({
                       </div>
 
                       {/* <div className="space-y-2">
-                        <div className="pb-2 text-sm border-b border-gray-100">
+                        <div className="pb-2 text-base border-b border-gray-100">
                           <div className="flex items-start justify-between mb-1">
                             <div className="text-gray-600">
                               Community & Launch
@@ -736,13 +736,13 @@ export const ProjectReport = ({
                                 : "-"}
                             </div>
                           </div>
-                          <div className="text-sm text-gray-500">
+                          <div className="text-base text-gray-500">
                             {projectData?.tokenomics?.distribution_details
                               ?.community_launch?.vesting || "-"}
                           </div>
                         </div>
 
-                        <div className="pb-2 text-sm border-b border-gray-100">
+                        <div className="pb-2 text-base border-b border-gray-100">
                           <div className="flex items-start justify-between mb-1">
                             <div className="text-gray-600">
                               Ecosystem Growth
@@ -754,13 +754,13 @@ export const ProjectReport = ({
                                 : "-"}
                             </div>
                           </div>
-                          <div className="text-sm text-gray-500">
+                          <div className="text-base text-gray-500">
                             {projectData?.tokenomics?.distribution_details
                               ?.ecosystem_growth?.vesting || "-"}
                           </div>
                         </div>
 
-                        <div className="pb-2 text-sm border-b border-gray-100">
+                        <div className="pb-2 text-base border-b border-gray-100">
                           <div className="flex items-start justify-between mb-1">
                             <div className="text-gray-600">DAO Treasury</div>
                             <div className="font-semibold text-gray-800">
@@ -770,13 +770,13 @@ export const ProjectReport = ({
                                 : "-"}
                             </div>
                           </div>
-                          <div className="text-sm text-gray-500">
+                          <div className="text-base text-gray-500">
                             {projectData?.tokenomics?.distribution_details
                               ?.dao_treasury?.vesting || "-"}
                           </div>
                         </div>
 
-                        <div className="pb-2 text-sm border-b border-gray-100">
+                        <div className="pb-2 text-base border-b border-gray-100">
                           <div className="flex items-start justify-between mb-1">
                             <div className="text-gray-600">Investors</div>
                             <div className="font-semibold text-gray-800">
@@ -786,13 +786,13 @@ export const ProjectReport = ({
                                 : "-"}
                             </div>
                           </div>
-                          <div className="text-sm text-gray-500">
+                          <div className="text-base text-gray-500">
                             {projectData?.tokenomics?.distribution_details
                               ?.investors?.vesting || "-"}
                           </div>
                         </div>
 
-                        <div className="pb-2 text-sm border-b border-gray-100">
+                        <div className="pb-2 text-base border-b border-gray-100">
                           <div className="flex items-start justify-between mb-1">
                             <div className="text-gray-600">Public Sale</div>
                             <div className="font-semibold text-gray-800">
@@ -802,13 +802,13 @@ export const ProjectReport = ({
                                 : "-"}
                             </div>
                           </div>
-                          <div className="text-sm text-gray-500">
+                          <div className="text-base text-gray-500">
                             {projectData?.tokenomics?.distribution_details
                               ?.public_sale?.vesting || "-"}
                           </div>
                         </div>
 
-                        <div className="pb-2 text-sm">
+                        <div className="pb-2 text-base">
                           <div className="flex items-start justify-between mb-1">
                             <div className="text-gray-600">Team</div>
                             <div className="font-semibold text-gray-800">
@@ -818,7 +818,7 @@ export const ProjectReport = ({
                                 : "-"}
                             </div>
                           </div>
-                          <div className="text-sm text-gray-500">
+                          <div className="text-base text-gray-500">
                             {projectData?.tokenomics?.distribution_details?.team
                               ?.vesting || "-"}
                           </div>
@@ -885,7 +885,7 @@ export const ProjectReport = ({
               <div className="mb-6 px-4">
                 <div className="mb-3 flex items-center gap-2">
                   <div className="h-5 w-1 rounded bg-orange-500"></div>
-                  <div className="font-brand-medium text-lg">Project Links</div>
+                  <div className="font-brand-medium text-xl">Project Links</div>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {availablePlatforms.map((platform: any, index: number) => (
@@ -907,7 +907,7 @@ export const ProjectReport = ({
                           }}
                         />
                       )}
-                      <span className="text-sm font-medium">
+                      <span className="text-base font-medium">
                         {platform.name}
                       </span>
                     </div>
@@ -928,7 +928,7 @@ export const ProjectReport = ({
                           alt={platform.name}
                           className="object-contain w-6 h-6"
                         />
-                        <div className="text-sm font-medium text-center text-gray-700">
+                        <div className="text-base font-medium text-center text-gray-700">
                           {platform.name}
                         </div>
                       </CardContent>
@@ -944,7 +944,7 @@ export const ProjectReport = ({
               <div className="mb-4 px-4">
                 <div className="mb-3 flex items-center gap-2">
                   <div className="h-5 w-1 rounded bg-orange-500"></div>
-                  <div className="font-brand-medium text-lg">
+                  <div className="font-brand-medium text-xl">
                     Funding Rounds
                   </div>
                 </div>
@@ -956,10 +956,10 @@ export const ProjectReport = ({
                         className="flex items-center justify-between rounded-lg bg-gray-50 p-2"
                       >
                         <div className="flex items-center gap-3">
-                          <div className="text-sm font-medium text-gray-900">
+                          <div className="text-base font-medium text-gray-900">
                             {round.round}
                           </div>
-                          <div className="text-sm text-gray-500">
+                          <div className="text-base text-gray-500">
                             {new Date(round.date * 1000).toLocaleDateString(
                               "en-US",
                               {
@@ -970,7 +970,7 @@ export const ProjectReport = ({
                             )}
                           </div>
                         </div>
-                        <div className="text-sm font-semibold text-green-600">
+                        <div className="text-base font-semibold text-green-600">
                           ${numFormat(round.amount, 2)}
                         </div>
                       </div>
@@ -978,10 +978,10 @@ export const ProjectReport = ({
                   )}
                   {projectData?.fundraising_info?.total_raised && (
                     <div className="flex items-center justify-between rounded-lg border border-green-200 bg-green-50 p-2">
-                      <div className="text-sm font-medium text-gray-900">
+                      <div className="text-base font-medium text-gray-900">
                         Total Raised
                       </div>
-                      <div className="text-sm font-bold text-green-700">
+                      <div className="text-base font-bold text-green-700">
                         $
                         {numFormat(
                           projectData.fundraising_info?.total_raised || 0,
@@ -998,13 +998,13 @@ export const ProjectReport = ({
           {/* <div className="px-4 mt-4 mb-3">
             <div className="flex items-center gap-2 ">
               <div className="w-1 h-5 bg-orange-500 rounded"></div>
-              <div className="text-lg font-brand-medium">Project Summary</div>
+              <div className="text-xl font-brand-medium">Project Summary</div>
             </div>
           </div> */}
 
           {/* 总结内容部分 */}
           {/* <div className="px-4 mb-6">
-            <div className="text-sm leading-relaxed text-gray-700">--</div>
+            <div className="text-base leading-relaxed text-gray-700">--</div>
           </div> */}
         </>
       )}
