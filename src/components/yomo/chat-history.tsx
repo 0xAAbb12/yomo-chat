@@ -187,8 +187,14 @@ const ChatHistory = ({ open, onOpenChange }: ChatHistoryProps) => {
       console.log("thread detail:", data);
       let messages: Message[] = [];
       if (data && data.messages && Array.isArray(data.messages)) {
-        data.messages.forEach((message) => {
-          messages.push(message);
+        data.messages.forEach((message: any) => {
+          messages.push({
+            ...message,
+            threadId: message.thread_id,
+            toolCalls: message.tool_calls,
+            finishReason: message.finish_reason,
+            reasoningContent: message.reasoning_content
+          });
         });
       }
       if (messages.length) {
