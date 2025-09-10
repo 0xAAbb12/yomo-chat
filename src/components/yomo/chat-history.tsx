@@ -30,7 +30,7 @@ import { BaseDialog } from "~/components/yomo/base-modal";
 import { Button } from "../ui/button";
 interface ChatHistoryProps {
   open: boolean;
-  onOpenChange: () => void;
+  onOpenChange: (open: boolean) => void;
 }
 
 function DeleteModal({
@@ -232,10 +232,12 @@ const ChatHistory = ({ open, onOpenChange }: ChatHistoryProps) => {
           }
         }
       }
-      // onOpenChange(false)
+
       // setOpen(false);
     } catch (error) {
       console.error("Error fetching history metadata:", error);
+    } finally {
+      onOpenChange(false);
     }
   };
 
@@ -365,7 +367,7 @@ const ChatHistory = ({ open, onOpenChange }: ChatHistoryProps) => {
                         >
                           <div className="flex w-full items-center justify-between gap-2">
                             <div className="flex-1 space-y-1">
-                              <h4 className="text-sm font-medium">
+                              <h4 className="line-clamp-1 max-w-[260px] text-sm font-medium">
                                 {thread.title || `Chat${index}`}
                               </h4>
                             </div>

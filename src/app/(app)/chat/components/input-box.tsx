@@ -378,13 +378,7 @@ export function InputBox({
           />
         </>
       )} */}
-        <ChatHistory
-          open={open}
-          onOpenChange={() => {
-            console.log("close chat history");
-            setOpen(false);
-          }}
-        />
+        <ChatHistory open={open} onOpenChange={setOpen} />
       </div>
     </div>
   );
