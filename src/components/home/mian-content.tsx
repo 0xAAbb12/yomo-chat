@@ -32,7 +32,6 @@ const MainContent = () => {
                 <Button
                     onClick={() => {
                         if (token) {
-                            // window
                             router.push("/chat")
                         } else {
                             setLoginModalOpen(true);

@@ -19,10 +19,13 @@ export async function* fetchStream(
   if (response.status !== 200) {
     if (response.status === 401) {
       rootStore.getState().updateToken("");
+      rootStore.getState().setLoginModalOpen(true);
+      toast.error("Your login status has expired. Please log in again.");
       // await Router.push("/");
-      window.location.href = "/"; // 直接跳转
+      // window.location.href = "/"; // 直接跳转
+    } else {
+      toast.error("An error occurred while generating the response. Please try again.");
     }
-    toast.error("An error occurred while generating the response. Please try again.");
     throw new Error(`Failed to fetch from ${url}: ${response.status}`);
   }
   // Read from response body, event by event. An event always ends with a '\n\n'.
