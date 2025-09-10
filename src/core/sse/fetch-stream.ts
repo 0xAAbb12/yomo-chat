@@ -1,7 +1,6 @@
 "use client";
 
 import { rootStore } from "~/store";
-import Router from "next/router";
 import { type StreamEvent } from "./StreamEvent";
 import { toast } from "sonner";
 
@@ -20,7 +19,8 @@ export async function* fetchStream(
   if (response.status !== 200) {
     if (response.status === 401) {
       rootStore.getState().updateToken("");
-      await Router.push("/");
+      // await Router.push("/");
+      window.location.href = "/"; // 直接跳转
     }
     toast.error("An error occurred while generating the response. Please try again.");
     throw new Error(`Failed to fetch from ${url}: ${response.status}`);
