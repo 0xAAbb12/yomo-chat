@@ -33,7 +33,7 @@ export function getThreadDetail(thread_id: string) {
   })
     .then((res) => res.json())
     .then((res) => {
-      return res as ThreadDetail;
+      return res;
     })
     .catch(() => {
       return null;

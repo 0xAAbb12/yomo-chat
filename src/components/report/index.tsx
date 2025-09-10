@@ -1,5 +1,5 @@
 "use client";
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "~/components/ui/tabs";
 import { ClipboardList, Workflow } from "lucide-react";
 import ResearchFindings from "./ResearchFindings";
@@ -14,6 +14,7 @@ interface ReportProps {
 export default function DeepResarchReport({
   messageIds = MESSAGE_IDS,
 }: ReportProps) {
+  const [tabValue, setTabValue] = useState("thinking");
   // const messages = MESSAGES;
   const messages = getMessages();
   const repostMesssage = useMemo(() => {
@@ -26,7 +27,7 @@ export default function DeepResarchReport({
   const deepResearchMessages = useMemo(() => {
     return messageIds
       .map((id) => messages.get(id))
-      .filter((msg) => msg?.agent !== "reporter" || msg !== undefined);
+      .filter((msg) => msg && msg?.agent !== "reporter");
   }, [messages, messageIds]);
 
   const projectData = useMemo(() => {
@@ -51,20 +52,23 @@ export default function DeepResarchReport({
     return res;
   }, [deepResearchMessages, messageIds]);
 
-  // console.log("repostMesssage", repostMesssage);
-  // console.log("deepResearchMessages", deepResearchMessages);
-  // console.log("projectData", projectData);
+  useEffect(() => {
+    setTabValue(deepResearchMessages.length ? "thinking" : "result")
+  }, [deepResearchMessages])
+
   return (
     <div className={"mt-4 flex flex-col px-4"}>
-      <Tabs defaultValue="thinking" className="w-full">
+      <Tabs defaultValue="thinking" value={tabValue} onValueChange={setTabValue} className="w-full">
         <TabsList className="relative flex w-fit gap-3" aria-label="tab">
-          <TabsTrigger
-            value="thinking"
-            className="group relative inline-flex items-center"
-          >
-            <Workflow className="mr-2 h-4 w-4" />
-            Thinking process
-          </TabsTrigger>
+          {!!deepResearchMessages.length &&
+            <TabsTrigger
+              value="thinking"
+              className="group relative inline-flex items-center"
+            >
+              <Workflow className="mr-2 h-4 w-4" />
+              Thinking process
+            </TabsTrigger>
+          }
           <TabsTrigger
             value="result"
             className="group relative inline-flex items-center"
@@ -81,9 +85,11 @@ export default function DeepResarchReport({
               projectData={projectData}
             />
           </TabsContent>
-          <TabsContent value="thinking" className="focus-visible:outline-none">
-            <ThinkingProcess messasges={deepResearchMessages} />
-          </TabsContent>
+          {!!deepResearchMessages.length &&
+            <TabsContent value="thinking" className="focus-visible:outline-none">
+              <ThinkingProcess messasges={deepResearchMessages} />
+            </TabsContent>
+          }
         </div>
       </Tabs>
     </div>

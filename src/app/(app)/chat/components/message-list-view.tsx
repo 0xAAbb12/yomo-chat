@@ -111,7 +111,6 @@ export function MessageListView({
 
   console.log("messageIds", messageIds);
   console.log("messages", messages);
-  console.log("messageIdsConfig", messageIdsConfig)
 
   return (
     <ScrollContainer
@@ -132,7 +131,6 @@ export function MessageListView({
                   break;
                 }
               }
-              console.log(`arrs__${index}`, arrs)
               return <DeepResarchReport key={index} messageIds={arrs} />
               // return <DeepResearch messages={arrs} from="stream" />
             } else {
@@ -187,7 +185,6 @@ function MessageListItem({
   }, [researchIds, messageId]);
     const [isCopied, setCopied] = useCopyClipboard();
   if (message) {
-    // console.log("message", message);
     if (
       message.role === "user" ||
       message.agent === "coordinator" ||
