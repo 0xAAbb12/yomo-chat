@@ -6,6 +6,7 @@ import ResearchFindings from "./ResearchFindings";
 import ThinkingProcess from "./ThinkingProcess";
 import { getMessage, getMessages } from "~/core/store";
 import { MESSAGES, MESSAGE_IDS } from "./confit";
+import DeepRearesach from "./DeepRearesach";
 
 interface ReportProps {
   messageIds?: string[];
@@ -47,31 +48,36 @@ export default function DeepResarchReport({
           });
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
     return res;
   }, [deepResearchMessages, messageIds]);
 
   useEffect(() => {
-    setTabValue(deepResearchMessages.length ? "thinking" : "result")
-  }, [deepResearchMessages])
+    setTabValue(deepResearchMessages.length ? "thinking" : "result");
+  }, [deepResearchMessages]);
 
   return (
     <div className={"mt-4 flex flex-col px-4"}>
-      <Tabs defaultValue="thinking" value={tabValue} onValueChange={setTabValue} className="w-full">
+      <Tabs
+        defaultValue="thinking"
+        value={tabValue}
+        onValueChange={setTabValue}
+        className="w-full"
+      >
         <TabsList className="relative flex w-fit gap-3" aria-label="tab">
-          {!!deepResearchMessages.length &&
+          {!!deepResearchMessages.length && (
             <TabsTrigger
               value="thinking"
-              className="group relative inline-flex items-center"
+              className="group relative inline-flex items-center text-[12px] md:text-sm"
             >
               <Workflow className="mr-2 h-4 w-4" />
               Thinking process
             </TabsTrigger>
-          }
+          )}
           <TabsTrigger
             value="result"
-            className="group relative inline-flex items-center"
+            className="group relative inline-flex items-center text-[12px] md:text-sm"
             disabled={repostMesssage ? false : true}
           >
             <ClipboardList className="mr-2 h-4 w-4" />
@@ -85,11 +91,21 @@ export default function DeepResarchReport({
               projectData={projectData}
             />
           </TabsContent>
-          {!!deepResearchMessages.length &&
-            <TabsContent value="thinking" className="focus-visible:outline-none">
-              <ThinkingProcess messasges={deepResearchMessages} />
+          {!!deepResearchMessages.length && (
+            <TabsContent
+              value="thinking"
+              className="focus-visible:outline-none"
+            >
+              <div className="hidden min-[1300px]:block">
+                <ThinkingProcess messasges={deepResearchMessages} />
+              </div>
+
+              {/* 仅 <1300px 显示（小屏版本） */}
+              <div className="block min-[1300px]:hidden">
+                <DeepRearesach messasges={deepResearchMessages} />
+              </div>
             </TabsContent>
-          }
+          )}
         </div>
       </Tabs>
     </div>
