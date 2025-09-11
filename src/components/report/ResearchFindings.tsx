@@ -264,37 +264,43 @@ export default function ResearchFindings({
       )}
       {/* Main */}
       <div className="flex gap-[30px]">
-        <aside className="relative w-[230px] flex-shrink-0">
-          <Card className="sticky top-6 overflow-auto rounded-2xl border-black/10 p-4 backdrop-blur-md">
-            <div className="text-sm font-semibold text-neutral-800">目录</div>
-            <nav className="space-y-2">
-              {toc.map((item, idx) => (
-                <button
-                  key={item.id}
-                  onClick={() => handleJump(item.id)}
-                  className={
-                    "flex w-full items-center gap-3 rounded-xl px-3 py-2 text-left text-sm transition-colors " +
-                    (activeId === item.id
-                      ? "bg-black/5 text-black"
-                      : "text-neutral-500 hover:bg-black/5 hover:text-black")
-                  }
-                >
-                  <span
+        <div className="hidden md:block">
+          <aside className="relative w-[230px] flex-shrink-0">
+            <Card className="sticky top-6 overflow-auto rounded-2xl border-black/10 p-4 backdrop-blur-md">
+              <div className="text-sm font-semibold text-neutral-800">目录</div>
+              <nav className="space-y-2">
+                {toc.map((item, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => handleJump(item.id)}
                     className={
-                      "grid h-6 w-6 place-content-center rounded-full border text-xs " +
+                      "flex w-full items-center gap-3 rounded-xl px-3 py-2 text-left text-sm transition-colors " +
                       (activeId === item.id
-                        ? "border-[#f67c00]/70 bg-[#f67c00]/20"
-                        : "border-black/10 bg-black/5")
+                        ? "bg-black/5 text-black"
+                        : "text-neutral-500 hover:bg-black/5 hover:text-black")
                     }
                   >
-                    {idx + 1}
-                  </span>
-                  <span className="line-clamp-1">{item.text}</span>
-                </button>
-              ))}
-            </nav>
-          </Card>
-        </aside>
+                    <span
+                      className={
+                        "grid h-6 w-6 place-content-center rounded-full border text-xs " +
+                        (activeId === item.id
+                          ? "border-[#f67c00]/70 bg-[#f67c00]/20"
+                          : "border-black/10 bg-black/5")
+                      }
+                    >
+                      {idx + 1}
+                    </span>
+                    <span className="min-w-0 flex-1">
+                      <span className="block max-w-[130px] truncate">
+                        {item.text}
+                      </span>
+                    </span>
+                  </button>
+                ))}
+              </nav>
+            </Card>
+          </aside>
+        </div>
 
         {/* [CHG] 绑定 ref，供定位与观察使用；若你有外层自定义滚动容器，可把 ref 绑到它上面 */}
         <article ref={articleRef} className="min-h-[60vh] min-w-0 flex-1">

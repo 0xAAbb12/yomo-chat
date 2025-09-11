@@ -45,7 +45,7 @@ export default function MarkdownStyled({ markdown }: { markdown: string }) {
             </h3>
           ),
           p: ({ node, children, ...props }) => (
-            <p {...props} className="mb-3 leading-7 text-neutral-800">
+            <p {...props} className="leading-7 text-neutral-800">
               {children}
             </p>
           ),

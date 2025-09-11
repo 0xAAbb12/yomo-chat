@@ -40,7 +40,7 @@ export default function Nav() {
   return (
     <div
       className={cn(
-        "relative flex h-full flex-col items-center p-2",
+        "relative flex h-full flex-col items-center p-2 transition-[width] duration-300 ease-out",
         isOpen ? "w-[240px]" : "w-[60px]",
       )}
     >

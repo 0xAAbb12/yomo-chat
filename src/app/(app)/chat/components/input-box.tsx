@@ -6,18 +6,18 @@ import { useCallback, useRef, useState } from "react";
 import { useStore } from "~/core/store";
 // import { BorderBeam } from "~/components/magicui/border-beam";
 import { Button } from "~/components/ui/button";
-import { Detective } from "~/components/yomo/icons/detective";
+// import { Detective } from "~/components/yomo/icons/detective";
 import MessageInput, {
   type MessageInputRef,
 } from "~/components/yomo/message-input";
-import { ReportStyleDialog } from "~/components/yomo/report-style-dialog";
+// import { ReportStyleDialog } from "~/components/yomo/report-style-dialog";
 import { Tooltip } from "~/components/yomo/tooltip";
 import { enhancePrompt } from "~/core/api";
 import { useConfig } from "~/core/api/hooks";
 import type { Option, Resource } from "~/core/messages";
 import {
-  setEnableDeepThinking,
-  setEnableBackgroundInvestigation,
+  // setEnableDeepThinking,
+  // setEnableBackgroundInvestigation,
   useSettingsStore,
 } from "~/core/store";
 import { cn } from "~/lib/utils";
@@ -25,6 +25,7 @@ import { HistoryIcon } from "~/components/yomo/icons/history";
 import ChatHistory from "~/components/yomo/chat-history";
 import { AddChat } from "~/components/yomo/icons/add-chat";
 import ShareModal from "~/components/dialogs/share-modal";
+import { SendIcon } from "~/components/svg";
 
 export function InputBox({
   className,
@@ -50,12 +51,12 @@ export function InputBox({
 }) {
   const t = useTranslations("chat.inputBox");
   const tCommon = useTranslations("common");
-  const enableDeepThinking = useSettingsStore(
-    (state) => state.general.enableDeepThinking,
-  );
-  const backgroundInvestigation = useSettingsStore(
-    (state) => state.general.enableBackgroundInvestigation,
-  );
+  // const enableDeepThinking = useSettingsStore(
+  //   (state) => state.general.enableDeepThinking,
+  // );
+  // const backgroundInvestigation = useSettingsStore(
+  //   (state) => state.general.enableBackgroundInvestigation,
+  // );
   const { config, loading } = useConfig();
   const reportStyle = useSettingsStore((state) => state.general.reportStyle);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -70,6 +71,9 @@ export function InputBox({
   const [currentPrompt, setCurrentPrompt] = useState("");
 
   const handleAddNewChat = () => {
+    if (responding) {
+      onCancel?.();
+    }
     useStore.getState().clearMessages();
   };
 
@@ -276,7 +280,7 @@ export function InputBox({
       </Tooltip> */}
         <div className="flex items-center px-4 py-2">
           <div className="flex grow gap-2">
-            {config?.models.reasoning?.[0] && (
+            {/* {config?.models.reasoning?.[0] && (
               <Tooltip
                 className="max-w-60"
                 title={
@@ -334,11 +338,11 @@ export function InputBox({
               >
                 <Detective /> {t("investigation")}
               </Button>
-            </Tooltip>
-            <ReportStyleDialog />
+            </Tooltip> */}
+            {/* <ReportStyleDialog /> */}
           </div>
           <div className="flex shrink-0 items-center gap-2">
-            <Tooltip title={t("enhancePrompt")}>
+            {/* <Tooltip title={t("enhancePrompt")}>
               <Button
                 variant="ghost"
                 size="icon"
@@ -357,7 +361,7 @@ export function InputBox({
                   <MagicWandIcon className="text-brand" />
                 )}
               </Button>
-            </Tooltip>
+            </Tooltip> */}
 
             <Tooltip title={responding ? tCommon("stop") : tCommon("send")}>
               <Button
@@ -371,7 +375,7 @@ export function InputBox({
                     <div className="bg-foreground h-4 w-4 rounded-sm opacity-70" />
                   </div>
                 ) : (
-                  <ArrowUp />
+                  <SendIcon />
                 )}
               </Button>
             </Tooltip>
@@ -392,14 +396,8 @@ export function InputBox({
           />
         </>
       )} */}
-        <ChatHistory
-          open={open}
-          onOpenChange={() => {
-            console.log("close chat history");
-            setOpen(false);
-          }}
-        />
         <ShareModal open={shareOpen} onOpenChange={setShareOpen} />
+        <ChatHistory open={open} onOpenChange={setOpen} />
       </div>
     </div>
   );

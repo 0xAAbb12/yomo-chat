@@ -30,7 +30,7 @@ import { BaseDialog } from "~/components/yomo/base-modal";
 import { Button } from "../ui/button";
 interface ChatHistoryProps {
   open: boolean;
-  onOpenChange: () => void;
+  onOpenChange: (open: boolean) => void;
 }
 
 function DeleteModal({
@@ -187,8 +187,14 @@ const ChatHistory = ({ open, onOpenChange }: ChatHistoryProps) => {
       console.log("thread detail:", data);
       let messages: Message[] = [];
       if (data && data.messages && Array.isArray(data.messages)) {
-        data.messages.forEach((message) => {
-          messages.push(message);
+        data.messages.forEach((message: any) => {
+          messages.push({
+            ...message,
+            threadId: message.thread_id,
+            toolCalls: message.tool_calls,
+            finishReason: message.finish_reason,
+            reasoningContent: message.reasoning_content,
+          });
         });
       }
       if (messages.length) {
@@ -232,10 +238,12 @@ const ChatHistory = ({ open, onOpenChange }: ChatHistoryProps) => {
           }
         }
       }
-      // onOpenChange(false)
+
       // setOpen(false);
     } catch (error) {
       console.error("Error fetching history metadata:", error);
+    } finally {
+      onOpenChange(false);
     }
   };
 
@@ -343,8 +351,8 @@ const ChatHistory = ({ open, onOpenChange }: ChatHistoryProps) => {
           <div className="h-[calc(100vh-120px)] overflow-y-auto px-4 pt-5 pb-2">
             {Object.keys(threads)
               .sort((a, b) => Number(b) - Number(a))
-              .map((key) => (
-                <>
+              .map((key, outIndex) => (
+                <div key={outIndex}>
                   <div className="flex items-center justify-between">
                     <p className="text-muted-foreground mt-2 text-sm">
                       {dayjs
@@ -365,7 +373,7 @@ const ChatHistory = ({ open, onOpenChange }: ChatHistoryProps) => {
                         >
                           <div className="flex w-full items-center justify-between gap-2">
                             <div className="flex-1 space-y-1">
-                              <h4 className="text-sm font-medium">
+                              <h4 className="line-clamp-1 max-w-[260px] text-sm font-medium">
                                 {thread.title || `Chat${index}`}
                               </h4>
                             </div>
@@ -401,7 +409,7 @@ const ChatHistory = ({ open, onOpenChange }: ChatHistoryProps) => {
                       );
                     })}
                   </div>
-                </>
+                </div>
               ))}
             {Object.keys(threads).length === 0 && (
               <div className="pt-[100px]">

@@ -75,12 +75,12 @@ export async function* chatStream(
       const timeSinceLastEvent = now - lastEventTime;
       
       // 如果2分钟没有收到事件，且没有收到过completed状态和失败状态，则重连
-      if (timeSinceLastEvent >= 120000 && !hasCompletedRunStatus && !hasFailedStatus && lastEventId) {
+      if (timeSinceLastEvent >= 30000 && !hasCompletedRunStatus && !hasFailedStatus && lastEventId) {
         console.log("检测到超时，准备重连...");
         shouldReconnect = true;
         lastEventTime = now; // 重置时间避免重复触发
       }
-    }, 30000); // 每30秒检查一次
+    }, 10000); // 每30秒检查一次
     
     try {
       for await (const event of stream) {
