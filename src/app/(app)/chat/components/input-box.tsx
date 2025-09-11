@@ -69,6 +69,9 @@ export function InputBox({
   const [currentPrompt, setCurrentPrompt] = useState("");
 
   const handleAddNewChat = () => {
+    if (responding) {
+      onCancel?.();
+    }
     useStore.getState().clearMessages();
   };
 
