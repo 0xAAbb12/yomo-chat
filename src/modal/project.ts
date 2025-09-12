@@ -84,6 +84,13 @@ export interface TimeSeriesEvent {
   value: number;
 }
 
+interface HeatmapItem {
+  username: string;
+  followers: string;
+  score: string;
+  level: number;
+}
+
 // Twitter 数据
 export interface TwitterStats {
   /** Number of Twitter followers */
@@ -98,6 +105,7 @@ export interface TwitterStats {
   trend: TimeSeriesEvent[];
   /** Sentiment distribution: [positive, neutral, negative] */
   sentiment?: number[];
+  heatmap?: HeatmapItem[];
 }
 
 // Telegram 数据

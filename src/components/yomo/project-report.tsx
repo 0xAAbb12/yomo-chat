@@ -1,6 +1,6 @@
 import { type ProjectData } from "~/modal/project";
 import { useEffect, useMemo } from "react";
-import { numFormat } from "~/lib/utils";
+import { cn, numFormat } from "~/lib/utils";
 import ChartContainer from "~/components/charts/ChartContainer";
 import TvlTrendChart from "~/components/charts/TvlTrendChart";
 import TvlDistributionChart from "~/components/charts/TvlDistributionChart";
@@ -17,6 +17,7 @@ import DocsIcon from "~/assets/images/search/Docs_icon.png";
 import DAppIcon from "~/assets/images/search/DApp_icon.png";
 import XIcon from "~/assets/images/search/X_icon.png";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import { amountFormat } from "~/lib/format";
 
 export const ProjectReport = ({ source }: { source: string | undefined }) => {
   const projectData = useMemo(() => {
@@ -30,6 +31,43 @@ export const ProjectReport = ({ source }: { source: string | undefined }) => {
   const formatPercentage = (num: number) => {
     return num > 0 ? `+${num.toFixed(2)}%` : `${num.toFixed(2)}%`;
   };
+
+  const bgColorMap: { [key: string]: string } = {
+    "1": "border border-[#FDCCCC] hover:bg-[#FDCCCC]/40",
+    "2": "border border-[#FCBCA3] hover:bg-[#FCBCA3]/40",
+    "3": "border border-[#FDE5CC] hover:bg-[#FDE5CC]/40",
+    "4": "border border-[#D0DDA7] hover:bg-[#D0DDA7]/40",
+    "5": "border border-[#D1F1D0] hover:bg-[#D1F1D0]/40",
+  };
+
+  const textColorMap: { [key: string]: string } = {
+    "1": "text-[#F60000]",
+    "2": "text-[#EA461D]",
+    "3": "text-[#F67C00]",
+    "4": "text-[#6FDC2E]",
+    "5": "text-[#1ABB15]",
+  };
+
+  const textMap: { [key: string]: string } = {
+    "1": "Unknown",
+    "2": "Noted",
+    "3": "Credible",
+    "4": "Supreme",
+    "5": "Supreme",
+  };
+
+  const getCurBg = (level: string) => {
+    return bgColorMap[level] || bgColorMap[1];
+  };
+
+  const getCurTextColor = (level: string) => {
+    return textColorMap[level] || textColorMap[1];
+  };
+
+  const getCurText = (level: string) => {
+    return textMap[level] || textMap[1];
+  };
+
   return (
     <>
       {/* 项目详情 - 选择项目或直接搜索时显示 */}
@@ -484,6 +522,60 @@ export const ProjectReport = ({ source }: { source: string | undefined }) => {
                 </div> */}
             </div>
           )}
+          {/* twitter heatmap */}
+          {projectData?.social_media_stats?.twitter?.heatmap &&
+            projectData?.social_media_stats?.twitter?.heatmap?.length > 0 && (
+              <div className="mx-auto mb-6 max-w-[960px] p-4">
+                <div className="mb-3 flex items-center gap-2">
+                  <div className="h-5 w-1 rounded bg-orange-500"></div>
+                  <div className="font-brand-medium text-xl">Twitter Score</div>
+                </div>
+                <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-6">
+                  {projectData?.social_media_stats?.twitter?.heatmap.map(
+                    (item: any, index: number) => {
+                      return (
+                        <div
+                          key={index}
+                          className={cn(
+                            "flex h-[80px] cursor-pointer flex-col rounded-[8px] p-[6px]",
+                            getCurBg(item?.level || "1"),
+                          )}
+                        >
+                          <div className="flex items-center">
+                            <span className="text-brand-gray1 min-w-0 truncate text-sm">
+                              {item?.username}
+                            </span>
+                            {/* <span className="ml-2">
+                              {numFormat(item?.followers || 0, 2)}
+                            </span> */}
+                          </div>
+                          <div className="mt-1 flex items-center justify-end">
+                            <span className="font-brand-medium">
+                              {amountFormat(item?.score || 0, 0)}
+                            </span>
+                          </div>
+                          <div className="flex items-center">
+                            <div className="flex items-center">
+                              <span className="text-brand-gray1 text-sm">
+                                Level:
+                              </span>{" "}
+                              <span
+                                className={cn(
+                                  "ml-1 text-sm font-brand-medium",
+                                  getCurTextColor(item?.level || "1"),
+                                )}
+                              >
+                                {item?.level}.{getCurText(item?.level || "1")}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    },
+                  )}
+                </div>
+              </div>
+            )}
           {/* 市场数据部分 */}
           {projectData?.market_data && (
             <div className="mb-6 px-4">
@@ -505,15 +597,14 @@ export const ProjectReport = ({ source }: { source: string | undefined }) => {
                   </div>
                 )}
               <div className="mb-4 space-y-2 text-base">
-                {projectData.market_data?.token_price &&
+                {projectData.market_data?.token_price && (
                   <div className="flex items-center justify-between">
                     <span className="text-gray-700">Token Price</span>
                     <span className="text-black">
-                      $
-                      {projectData.market_data?.token_price}{" "}
+                      ${projectData.market_data?.token_price}{" "}
                     </span>
                   </div>
-                }
+                )}
                 <div className="flex items-center justify-between">
                   <span className="text-gray-700">Trading Volume (24H)</span>
                   <span className="text-black">
@@ -673,9 +764,12 @@ export const ProjectReport = ({ source }: { source: string | undefined }) => {
                   )}
                 <div className="flex justify-between">
                   <span className="text-gray-700">Referral Docs</span>
-                  <a href={projectData?.tokenomics?.referral_docs?.[0] ?? '/'} target="_blank">
+                  <a
+                    href={projectData?.tokenomics?.referral_docs?.[0] ?? "/"}
+                    target="_blank"
+                  >
                     <span className="cursor-pointer text-blue-600 underline">
-                    {projectData?.tokenomics?.token_symbol} Tokenomics
+                      {projectData?.tokenomics?.token_symbol} Tokenomics
                     </span>
                   </a>
                 </div>
