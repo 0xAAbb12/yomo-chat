@@ -149,7 +149,7 @@ export function InputBox({
     <div className="flex flex-col">
       <div className="flex w-full justify-end pb-1">
         <div className="flex items-center">
-          <Tooltip title={t("Share")}>
+          <Tooltip title={"Share"}>
             <Button
               variant="ghost"
               size="icon"
