@@ -505,6 +505,15 @@ export const ProjectReport = ({ source }: { source: string | undefined }) => {
                   </div>
                 )}
               <div className="mb-4 space-y-2 text-base">
+                {projectData.market_data?.token_price &&
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-700">Token Price</span>
+                    <span className="text-black">
+                      $
+                      {projectData.market_data?.token_price}{" "}
+                    </span>
+                  </div>
+                }
                 <div className="flex items-center justify-between">
                   <span className="text-gray-700">Trading Volume (24H)</span>
                   <span className="text-black">
@@ -664,9 +673,11 @@ export const ProjectReport = ({ source }: { source: string | undefined }) => {
                   )}
                 <div className="flex justify-between">
                   <span className="text-gray-700">Referral Docs</span>
-                  <span className="cursor-pointer text-blue-600 underline">
+                  <a href={projectData?.tokenomics?.referral_docs?.[0] ?? '/'} target="_blank">
+                    <span className="cursor-pointer text-blue-600 underline">
                     {projectData?.tokenomics?.token_symbol} Tokenomics
-                  </span>
+                    </span>
+                  </a>
                 </div>
               </div>
 
