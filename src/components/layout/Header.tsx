@@ -17,11 +17,12 @@ export default function Header() {
   // const currentLangConfig = getLanguageConfig(currentLanguage);
 
   return (
-    <header className="flex h-[72px] w-full items-center justify-between bg-[rgba(255,255,255,0.40)] px-4 backdrop-blur-[4px] lg:px-8">
+    <header className="sticky top-0 z-50 flex h-[72px] w-full items-center justify-between bg-[rgba(255,255,255,0.40)] px-4 backdrop-blur-[4px] lg:px-8">
       <Image
-        className="h-7 w-auto object-cover lg:h-9"
+        className="h-7 w-auto cursor-pointer object-cover lg:h-9"
         alt="Element"
         src={logoText}
+        onClick={() => router.push("/")}
       />
 
       <div className="flex items-center gap-3 lg:gap-6">

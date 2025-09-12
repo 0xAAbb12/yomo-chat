@@ -63,6 +63,7 @@ import DeepResarchReport from "~/components/report";
 export function MessageListView({
   className,
   externalmMessageInfo,
+  autoScrollToBottom = true,
   onFeedback,
   onSendMessage,
 }: {
@@ -71,6 +72,7 @@ export function MessageListView({
     messageIds: string[];
     messages: Map<string, Message>;
   };
+  autoScrollToBottom?: boolean;
   onFeedback?: (feedback: { option: Option }) => void;
   onSendMessage?: (
     message: string,
@@ -134,7 +136,7 @@ export function MessageListView({
     <ScrollContainer
       className={cn("flex h-full w-full flex-col overflow-hidden", className)}
       scrollShadowColor="var(--app-background)"
-      autoScrollToBottom
+      autoScrollToBottom={autoScrollToBottom}
       ref={scrollContainerRef}
     >
       <ul className="flex flex-col">
@@ -263,9 +265,7 @@ function MessageListItem({
         if (toolCall) {
           content = (
             <div className="px-4">
-              <ProjectReport
-                source={toolCall.result}
-              />
+              <ProjectReport source={toolCall.result} />
             </div>
           );
         }
@@ -279,7 +279,7 @@ function MessageListItem({
             )}
           >
             <MessageBubble message={message}>
-              <div className="flex flex-1 min-w-0 flex-col break-words">
+              <div className="flex min-w-0 flex-1 flex-col break-words">
                 {/* <Markdown
                   className={cn(
                     message.role === "user" && "prose-invert text-[#2C2C2C]",
@@ -287,7 +287,7 @@ function MessageListItem({
                 >
                   {message?.content}
                 </Markdown> */}
-                <MarkdownStyled markdown={message?.content || ""}/>
+                <MarkdownStyled markdown={message?.content || ""} />
               </div>
             </MessageBubble>
           </div>

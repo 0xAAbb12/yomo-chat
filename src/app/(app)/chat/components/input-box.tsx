@@ -2,8 +2,8 @@ import { MagicWandIcon } from "@radix-ui/react-icons";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUp, Lightbulb, X, Share2Icon } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useCallback, useRef, useState } from "react";
-import { useStore } from "~/core/store";
+import { useCallback, useMemo, useRef, useState } from "react";
+import { useMessageIds, useStore } from "~/core/store";
 // import { BorderBeam } from "~/components/magicui/border-beam";
 import { Button } from "~/components/ui/button";
 // import { Detective } from "~/components/yomo/icons/detective";
@@ -26,6 +26,7 @@ import ChatHistory from "~/components/yomo/chat-history";
 import { AddChat } from "~/components/yomo/icons/add-chat";
 import ShareModal from "~/components/dialogs/share-modal";
 import { SendIcon } from "~/components/svg";
+import { useRootStore } from "~/store";
 
 export function InputBox({
   className,
@@ -64,7 +65,8 @@ export function InputBox({
   const feedbackRef = useRef<HTMLDivElement>(null);
   const [open, setOpen] = useState(false);
   const [shareOpen, setShareOpen] = useState(false);
-
+  const { token } = useRootStore();
+  const storeMessageIds = useMessageIds();
   // Enhancement state
   const [isEnhancing, setIsEnhancing] = useState(false);
   const [isEnhanceAnimating, setIsEnhanceAnimating] = useState(false);
@@ -135,6 +137,14 @@ export function InputBox({
     }
   }, [currentPrompt, isEnhancing, reportStyle]);
 
+  const isDis = useMemo(() => {
+    let res = false;
+    if (!token || !storeMessageIds || storeMessageIds.length === 0) {
+      res = true;
+    }
+    return res;
+  }, [token, storeMessageIds]);
+
   return (
     <div className="flex flex-col">
       <div className="flex w-full justify-end pb-1">
@@ -143,6 +153,7 @@ export function InputBox({
             <Button
               variant="ghost"
               size="icon"
+              disabled={isDis}
               className={cn("hover:bg-accent h-10 w-10", "animate-pulse")}
               onClick={() => {
                 setShareOpen(true);

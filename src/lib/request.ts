@@ -4,6 +4,7 @@ import _ from "lodash";
 import { env } from "~/env";
 
 const API_URL = env.NEXT_PUBLIC_API_BASE_URL;
+const BASE_URL = env.NEXT_PUBLIC_API_URL;
 
 interface MyResponseType<T> {
   code: number;

@@ -1,90 +1,73 @@
-import { useEffect, useMemo, useState } from "react";
-import type { Thread } from "~/core/history";
-import { getStateValue } from "~/lib/utils";
-import { queryHistoryMetadata, getThreadDetail } from "~/core/api/history";
+import { useCallback, useState } from "react";
 import { useRootStore } from "~/store";
 import { useStore } from "~/core/store";
 import { type Message } from "~/core/messages";
+import { createShareId, getShareMessages } from "~/core/api/share";
 
 export const useShareMessage = () => {
-  const [threads, setThreads] = useState<Record<string, Thread[]>>({});
+  const threadId = useStore.getState().threadId;
+  const [shareId, setShareId] = useState<string>("");
   const [messageIds, setMessageIds] = useState<string[]>([]);
+
   const [messages, setMessages] = useState<Map<string, Message>>(
     new Map<string, Message>(),
   );
-  const curThreads = useMemo(() => {
-    const key =
-      Object.keys(threads).sort((a, b) => Number(b) - Number(a))[0] || "";
-    if (key && threads[key] && threads[key][0]) {
-      return threads[key][0];
-    }
-    return null;
-  }, [threads]);
   const { token } = useRootStore();
-  function groupByDayTimestamp(data: Thread[]): Record<string, Thread[]> {
-    return data.reduce(
-      (acc, item) => {
-        const dayStart = Math.floor(item.created_at / 86400) * 86400;
-        if (!acc[dayStart.toString()]) {
-          acc[dayStart] = [];
+
+  const fetchShareId = useCallback(async () => {
+    try {
+      if (threadId && token) {
+        const res: any = await createShareId(threadId);
+        if (res && res?.share_id && res?.shared_content?.messages) {
+          setShareId(res?.share_id);
+          handleMsg(res?.shared_content?.messages as Message[]);
+          // fetchShareMessages(res?.share_id);
         }
-        acc[dayStart]?.push(item);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }, [threadId, token]);
 
-        return acc;
-      },
-      {} as Record<string, Thread[]>,
-    );
-  }
-  const fetchHistoryMetadata = async () => {
+  const fetchShareMessages = async (share_id: string) => {
     try {
-      const user_id = getStateValue("state.userDetail.uid");
-      if (!user_id) return;
-      const data = await queryHistoryMetadata(user_id, "", "all");
-      if (data && Array.isArray(data)) {
-        const dataObj = groupByDayTimestamp(data);
-        setThreads(dataObj);
+      const data: any = await getShareMessages(share_id);
+      if (data && Array.isArray(data?.messages)) {
+        handleMsg(data?.messages);
       }
     } catch (error) {
       console.error("Error fetching history metadata:", error);
     }
   };
 
-  const handlethread = async (thread: Thread) => {
-    try {
-      useStore.getState().clearMessages();
-      const data = await getThreadDetail(thread.thread_id);
-      const messagesArr: Message[] = [];
-      const mIds: string[] = [];
-      if (data && data.messages && Array.isArray(data.messages)) {
-        data.messages.forEach((message) => {
-          messagesArr.push(message);
-          mIds.push(message?.id);
-        });
-      }
-      setMessageIds(mIds);
-      if (messagesArr.length) {
-        const ms = new Map(messagesArr.map((m) => [m.id, m]));
-        setMessages(ms);
-      }
-    } catch (error) {
-      console.error("Error fetching history metadata:", error);
+  const handleMsg = (messages: Message[]) => {
+    const messagesArr: Message[] = [];
+    const mIds: string[] = [];
+    if (messages && Array.isArray(messages)) {
+      const msgArr = messages;
+      msgArr.forEach((message: any) => {
+        messagesArr.push(message);
+        mIds.push(message?.id);
+      });
+    }
+    setMessageIds(mIds);
+    if (messagesArr.length) {
+      const ms = new Map(messagesArr.map((m) => [m.id, m]));
+      setMessages(ms);
     }
   };
 
-  useEffect(() => {
-    if (curThreads) {
-      handlethread(curThreads);
-    }
-  }, [curThreads]);
-
-  useEffect(() => {
-    if (token) {
-      fetchHistoryMetadata();
-    }
-  }, [token]);
+  // useEffect(() => {
+  //   if (threadId && token) {
+  //     fetchShareId();
+  //   }
+  // }, [threadId, token]);
 
   return {
     messageIds,
     messages,
+    shareId,
+    fetchShareId,
+    fetchShareMessages,
   };
 };
