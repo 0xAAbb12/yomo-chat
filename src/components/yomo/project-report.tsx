@@ -68,6 +68,10 @@ export const ProjectReport = ({ source }: { source: string | undefined }) => {
     return textMap[level] || textMap[1];
   };
 
+  const getNumberColorClass = (value: string | number) => {
+    return value && Number(value) >= 0 ? "text-green-500" : "text-red-500";
+  };
+
   return (
     <>
       {/* 项目详情 - 选择项目或直接搜索时显示 */}
@@ -185,15 +189,21 @@ export const ProjectReport = ({ source }: { source: string | undefined }) => {
                     <span className="text-gray-700">X (Twitter)</span>
                     <span className="text-black">
                       {numFormat(
-                        projectData.social_media_stats.twitter.followers || 0,
+                        projectData?.social_media_stats?.twitter?.followers ||
+                          0,
                       )}{" "}
                       {projectData.social_media_stats.twitter
                         ?.followers_7d_increment && (
-                        <span className="text-green-500">
+                        <span
+                          className={`ml-1 ${getNumberColorClass(
+                            projectData?.social_media_stats?.twitter
+                              ?.followers_7d_increment,
+                          )}`}
+                        >
                           (
                           {formatPercentage(
                             projectData.social_media_stats.twitter
-                              .followers_7d_increment || 0,
+                              ?.followers_7d_increment || 0,
                           )}
                           /7d)
                         </span>
@@ -208,7 +218,12 @@ export const ProjectReport = ({ source }: { source: string | undefined }) => {
                       {numFormat(
                         projectData.social_media_stats.telegram.members || 0,
                       )}{" "}
-                      <span className="text-green-500">
+                      <span
+                        className={`ml-1 ${getNumberColorClass(
+                          projectData?.social_media_stats?.telegram
+                            ?.members_7d_increment || 0,
+                        )}`}
+                      >
                         (
                         {formatPercentage(
                           projectData.social_media_stats.telegram
@@ -226,11 +241,16 @@ export const ProjectReport = ({ source }: { source: string | undefined }) => {
                       {numFormat(
                         projectData.social_media_stats.discord.members || 0,
                       )}{" "}
-                      <span className="text-green-500">
+                      <span
+                        className={`ml-1 ${getNumberColorClass(
+                          projectData.social_media_stats?.discord
+                            ?.members_7d_increase || 0,
+                        )}`}
+                      >
                         (
                         {formatPercentage(
-                          projectData.social_media_stats.discord
-                            .members_7d_increase || 0,
+                          projectData.social_media_stats?.discord
+                            ?.members_7d_increase || 0,
                         )}
                         /7d)
                       </span>
@@ -246,7 +266,12 @@ export const ProjectReport = ({ source }: { source: string | undefined }) => {
                       )}{" "}
                       {projectData.social_media_stats.twitter
                         .mentions_7d_increment && (
-                        <span className="text-green-500">
+                        <span
+                          className={`${getNumberColorClass(
+                            projectData.social_media_stats.twitter
+                              .mentions_7d_increment || 0,
+                          )}`}
+                        >
                           (
                           {formatPercentage(
                             projectData.social_media_stats.twitter
@@ -348,11 +373,9 @@ export const ProjectReport = ({ source }: { source: string | undefined }) => {
                         ${numFormat(projectData.on_chain_data.tvl)}
                         {projectData.on_chain_data.tvl_7d_increment && (
                           <span
-                            className={`ml-1 ${
-                              projectData.on_chain_data.tvl_7d_increment >= 0
-                                ? "text-green-500"
-                                : "text-red-500"
-                            }`}
+                            className={`ml-1 ${getNumberColorClass(
+                              projectData.on_chain_data.tvl_7d_increment,
+                            )}`}
                           >
                             (
                             {projectData.on_chain_data.tvl_7d_increment >= 0
@@ -412,12 +435,10 @@ export const ProjectReport = ({ source }: { source: string | undefined }) => {
                         {projectData.on_chain_data
                           .active_addresses_7d_change && (
                           <span
-                            className={`ml-1 ${
+                            className={`ml-1 ${getNumberColorClass(
                               projectData.on_chain_data
-                                .active_addresses_7d_change >= 0
-                                ? "text-green-500"
-                                : "text-red-500"
-                            }`}
+                                .active_addresses_7d_change,
+                            )}`}
                           >
                             (
                             {projectData.on_chain_data
@@ -446,12 +467,10 @@ export const ProjectReport = ({ source }: { source: string | undefined }) => {
                         {projectData.on_chain_data
                           .contract_interactions_7d_change && (
                           <span
-                            className={`ml-1 ${
+                            className={`ml-1 ${getNumberColorClass(
                               projectData.on_chain_data
-                                .contract_interactions_7d_change >= 0
-                                ? "text-green-500"
-                                : "text-red-500"
-                            }`}
+                                .contract_interactions_7d_change,
+                            )}`}
                           >
                             (
                             {projectData.on_chain_data
@@ -561,7 +580,7 @@ export const ProjectReport = ({ source }: { source: string | undefined }) => {
                               </span>{" "}
                               <span
                                 className={cn(
-                                  "ml-1 text-sm font-brand-medium",
+                                  "font-brand-medium ml-1 text-sm",
                                   getCurTextColor(item?.level || "1"),
                                 )}
                               >
@@ -613,12 +632,9 @@ export const ProjectReport = ({ source }: { source: string | undefined }) => {
                       projectData.market_data?.trading_volume_24h || 0,
                     )}{" "}
                     <span
-                      className={`${
-                        (projectData.market_data?.trading_volume_change_24h ||
-                          0) >= 0
-                          ? "text-green-500"
-                          : "text-red-500"
-                      }`}
+                      className={`${getNumberColorClass(
+                        projectData.market_data?.trading_volume_change_24h || 0,
+                      )}`}
                     >
                       {(projectData.market_data?.trading_volume_change_24h ||
                         0) >= 0
