@@ -46,8 +46,15 @@ export const useShareMessage = () => {
     if (messages && Array.isArray(messages)) {
       const msgArr = messages;
       msgArr.forEach((message: any) => {
-        messagesArr.push(message);
-        mIds.push(message?.id);
+        const ms = {
+          ...message, 
+          threadId: message.thread_id,
+          toolCalls: message.tool_calls,
+          finishReason: message.finish_reason,
+          reasoningContent: message.reasoning_content,
+        }
+        messagesArr.push(ms);
+        mIds.push(ms?.id);
       });
     }
     setMessageIds(mIds);
