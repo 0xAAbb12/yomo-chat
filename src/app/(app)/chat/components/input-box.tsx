@@ -6,7 +6,7 @@ import { useCallback, useMemo, useRef, useState } from "react";
 import { useMessageIds, useStore } from "~/core/store";
 // import { BorderBeam } from "~/components/magicui/border-beam";
 import { Button } from "~/components/ui/button";
-// import { Detective } from "~/components/yomo/icons/detective";
+import { Detective } from "~/components/yomo/icons/detective";
 import MessageInput, {
   type MessageInputRef,
 } from "~/components/yomo/message-input";
@@ -16,8 +16,8 @@ import { enhancePrompt } from "~/core/api";
 import { useConfig } from "~/core/api/hooks";
 import type { Option, Resource } from "~/core/messages";
 import {
-  // setEnableDeepThinking,
-  // setEnableBackgroundInvestigation,
+  setEnableDeepThinking,
+  setEnableBackgroundInvestigation,
   useSettingsStore,
 } from "~/core/store";
 import { cn } from "~/lib/utils";
@@ -52,12 +52,12 @@ export function InputBox({
 }) {
   const t = useTranslations("chat.inputBox");
   const tCommon = useTranslations("common");
-  // const enableDeepThinking = useSettingsStore(
-  //   (state) => state.general.enableDeepThinking,
-  // );
-  // const backgroundInvestigation = useSettingsStore(
-  //   (state) => state.general.enableBackgroundInvestigation,
-  // );
+  const enableDeepThinking = useSettingsStore(
+    (state) => state.general.enableDeepThinking,
+  );
+  const backgroundInvestigation = useSettingsStore(
+    (state) => state.general.enableBackgroundInvestigation,
+  );
   const { config, loading } = useConfig();
   const reportStyle = useSettingsStore((state) => state.general.reportStyle);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -291,7 +291,7 @@ export function InputBox({
       </Tooltip> */}
         <div className="flex items-center px-4 py-2">
           <div className="flex grow gap-2">
-            {/* {config?.models.reasoning?.[0] && (
+            {config?.models.reasoning?.[0] && (
               <Tooltip
                 className="max-w-60"
                 title={
@@ -339,8 +339,9 @@ export function InputBox({
             >
               <Button
                 className={cn(
-                  "rounded-2xl",
-                  backgroundInvestigation && "!border-brand !text-brand",
+                  "rounded-2xl ",
+                  !backgroundInvestigation && "border-[#E9E9E9] text-[#E9E9E9]",
+                  // backgroundInvestigation && "!border-brand !text-brand",
                 )}
                 variant="outline"
                 onClick={() =>
@@ -349,7 +350,7 @@ export function InputBox({
               >
                 <Detective /> {t("investigation")}
               </Button>
-            </Tooltip> */}
+            </Tooltip>
             {/* <ReportStyleDialog /> */}
           </div>
           <div className="flex shrink-0 items-center gap-2">
